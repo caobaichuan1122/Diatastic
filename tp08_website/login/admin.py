@@ -1,5 +1,3 @@
-from django.contrib import admin
-
 # login/admin.py
 
 from django.contrib import admin
