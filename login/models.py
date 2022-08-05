@@ -5,11 +5,6 @@ from django.db import models
 
 class User(models.Model):
 
-    gender = (
-        ('male'),
-        ('female'),
-    )
-
     #create the user info
     name = models.CharField(max_length=128,unique=True)
     password = models.CharField(max_length=256)
