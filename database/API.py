@@ -18,11 +18,7 @@ def api_call(delay):
     final_df = pd.DataFrame()
 
     # Iterate through all postcodes
-    for row in postcodes_coords_df.itertuples(index=False):
-        postcode = row.postcode
-        lat = row.lat
-        long = row.long
-
+    for postcode, lat, long in postcodes_coords_df.itertuples(index=False):
         print(f"Retrieving data from the API\t{postcode=}\t{lat=}\t{long=}")
 
         # Exclude all metrics other than `hourly`
@@ -37,14 +33,13 @@ def api_call(delay):
         if response.status_code == 200:
             print("Successful!")
 
+            # Convert response into postcode
             API_df = JSONtoPandas(response.json())
 
             # Include postcode data
             API_df["postcode"] = postcode
             API_df["lat"] = lat
             API_df["lng"] = long
-
-            # print(API_df)
 
             # Concatenate new rows to final df
             final_df = pd.concat([final_df, API_df], ignore_index=True)
