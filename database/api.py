@@ -1,5 +1,6 @@
 from datetime import datetime as dt
 from time import sleep
+
 import pandas as pd
 import requests
 
@@ -29,7 +30,7 @@ def api_call(delay=2) -> pd.DataFrame:
         # If successful, read the response
         if response.status_code == 200:
             print(f"SUCCESS! \t{postcode=}\t{lat=:>9.4f}\t{long=:>9.4f}")
-            
+
             weather_df = pd.json_normalize(response.json(), record_path=["hourly"])
 
             postcode_weather_data = [
