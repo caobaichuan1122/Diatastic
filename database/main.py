@@ -13,7 +13,14 @@ port = 3306
 
 def main() -> None:
     app = WeatherApp(
-        config_path=config_path, postcodes_csv_path=postcodes_csv_path, api_key=API_KEY
+        config_path=config_path,
+        postcodes_csv_path=postcodes_csv_path,
+        api_key=API_KEY,
+        host=host,
+        user=user,
+        password=password,
+        database=database,
+        port=port,
     )
     app.perpetual_run_daily()
 
