@@ -97,18 +97,22 @@ class WeatherApp:
 
         engine.dispose()
 
-    def perpetual_run_daily(self, table="weather", force=False):
+    def perpetual_run_daily(self, table="weather", forced=False):
         print("WARNING: APP RUNNING PERPETUALLY!")
         while True:
-            # Pull if never pulled before, forced or if at least 23 hours have elapsed
-            if (
+
+            if forced:
+                print("[FORCING PULL]")
+                df = self.api_call(delay=1)
+                self.push_df_to_db(df, table)
+                forced = False
+            # Pull if never pulled before or if at least 23 hours have elapsed
+            elif (
                 self.last_pulled is None
                 or (dt.now() - self.last_pulled).seconds > 23 * 60 * 60
-                or force
             ):
                 df = self.api_call(delay=1)
                 self.push_df_to_db(df, table)
-                force = False
 
             else:
                 print(f"Not past 23hrs yet\tLast pulled: {self.last_pulled}")

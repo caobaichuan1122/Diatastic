@@ -24,7 +24,7 @@ def main() -> None:
         database=database,
         port=port,
     )
-    app.perpetual_run_daily(table="weather_2", force=False)
+    app.perpetual_run_daily(table="weather_2", forced=True)
 
 
 if __name__ == "__main__":
