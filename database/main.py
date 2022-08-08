@@ -23,6 +23,9 @@ def main() -> None:
             update_mysql(host, user, password, database, port, data)
             config.last_pulled = dt.now()
         else:
+            print(
+                f"Not a day yet since last pulled\nSleeping for another hour\nLast pulled: {config.last_pulled}\n..."
+            )
             sleep(60 * 60)
 
 
