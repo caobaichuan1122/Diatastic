@@ -53,15 +53,19 @@ class WeatherApp:
         # Empty list to be added with new rows of data
         final_data_list = []
 
+        n_postcodes = len(self.postcodes_df)
+
         # Iterate through postcodes
-        for postcode, lat, long in self.postcodes_df.itertuples(index=False):
+        for index, postcode, lat, long in self.postcodes_df.itertuples():
 
             # Call the API
             url = f"https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={long}&exclude={exclusions}&appid={self.api_key}"
             response = requests.get(url)
 
             if response.status_code == 200:  # Success
-                print(f"SUCCESS! \t{postcode=}\t{lat=:>9.4f}\t{long=:>9.4f}")
+                print(
+                    f"SUCCESS! \t{postcode=}\t{lat=:>9.4f}\t{long=:>9.4f}\t{index+1: 2d}/{n_postcodes}"
+                )
 
                 weather_df = pd.json_normalize(response.json(), record_path=["hourly"])
 
@@ -89,20 +93,27 @@ class WeatherApp:
 
         df.to_sql(name=table, con=engine, if_exists="replace", index=False)
         self.last_pulled = dt.now()
+        print(f"COMPLETE! `{table}` updated with {len(df)} rows")
 
         engine.dispose()
 
-    def perpetual_run_daily(self):
+    def perpetual_run_daily(self, table="weather", force=False):
         print("WARNING: APP RUNNING PERPETUALLY!")
         while True:
-            if self.last_pulled is None or (dt.now() - self.last_pulled).days > 0:
+            # Pull if never pulled before, forced or if at least 23 hours have elapsed
+            if (
+                self.last_pulled is None
+                or (dt.now() - self.last_pulled).seconds > 23 * 60 * 60
+                or force
+            ):
                 df = self.api_call(delay=1)
-                self.push_df_to_db(df, table="weather")
+                self.push_df_to_db(df, table)
+                force = False
+
             else:
-                print(
-                    f"Not a day yet, sleeping for an hour..\nLast pulled: {self.last_pulled}\n......"
-                )
-                sleep(60 * 60)  # Sleep an hour
+                print(f"Not past 23hrs yet\tLast pulled: {self.last_pulled}")
+            print("[sleeping for an hour.. zzz...]")
+            sleep(60 * 60)  # Sleep an hour
 
 
 def main() -> None:
