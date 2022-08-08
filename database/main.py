@@ -2,7 +2,7 @@ from datetime import datetime as dt
 from time import sleep
 
 from api import api_call
-from config_manager import Config
+from config_manager import WeatherApp
 from update import update_mysql
 
 
@@ -16,7 +16,7 @@ def main() -> None:
     config_file_path = "./database/.ini"
 
     while True:
-        config = Config(config_file_path)
+        config = WeatherApp(config_file_path)
 
         if config.last_pulled is None or (dt.now() - config.last_pulled).days > 0:
             data = api_call(delay=1)
