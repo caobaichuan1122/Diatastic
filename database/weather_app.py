@@ -39,9 +39,9 @@ class WeatherApp:
 
     @property
     def last_pulled(self):
-        if self.config["API"]["last_pulled"] == "":
+        if (conf_last_pulled := self.config["API"]["last_pulled"]) == "":
             return None
-        return dt.strptime(self.config["API"]["last_pulled"], TIME_FORMAT)
+        return dt.strptime(conf_last_pulled, TIME_FORMAT)
 
     @last_pulled.setter
     def last_pulled(self, datetime):
