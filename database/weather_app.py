@@ -93,6 +93,9 @@ class WeatherApp:
                 self.push_df_to_db(data)
                 self.last_pulled = dt.now()
             else:
+                print(
+                    f"Not a day yet since last pulled\nSleeping for another hour\nLast pulled: {self.last_pulled}\n..."
+                )
                 sleep(60*60)  # Sleep an hour
 
 
