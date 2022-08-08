@@ -1,13 +1,21 @@
-import pandas as pd
-from time import sleep
 from configparser import ConfigParser
 from datetime import datetime as dt
-import requests
+from time import sleep
 
+import pandas as pd
+import requests
 from sqlalchemy import create_engine
 
-from settings import config_path, postcodes_csv_path, API_KEY
-from settings import host, user, password, database, port
+from main import (
+    API_KEY,
+    config_path,
+    database,
+    host,
+    password,
+    port,
+    postcodes_csv_path,
+    user,
+)
 
 TIME_FORMAT = "%d/%m/%Y %H:%M:%S"
 
@@ -41,7 +49,7 @@ class WeatherApp:
         with open(self.config_path, "w") as config_file:
             self.config.write(config_file)
 
-    def api_call(self, delay=2):
+    def api_call(self, delay=1):
         # Empty list to be added with new rows of data
         final_data_list = []
 
@@ -75,16 +83,25 @@ class WeatherApp:
 
         final_df = pd.DataFrame(final_data_list)
         return final_df
-    
-    def push_df_to_db(self, df, table="weather", host=host, user=user, password=password, database=database, port=port):
+
+    def push_df_to_db(
+        self,
+        df,
+        table="weather",
+        host=host,
+        user=user,
+        password=password,
+        database=database,
+        port=port,
+    ):
         engine = create_engine(
-        f"mysql+pymysql://{user}:{password}@{host}:{port}/{database}"
-    )
+            f"mysql+pymysql://{user}:{password}@{host}:{port}/{database}"
+        )
 
         df.to_sql(name=table, con=engine, if_exists="replace", index=False)
 
         engine.dispose()
-        
+
     def perpetual_run_daily(self):
         print("WARNING: APP RUNNING PERPETUALLY!")
         while True:
@@ -96,7 +113,7 @@ class WeatherApp:
                 print(
                     f"Not a day yet since last pulled\nSleeping for another hour\nLast pulled: {self.last_pulled}\n..."
                 )
-                sleep(60*60)  # Sleep an hour
+                sleep(60 * 60)  # Sleep an hour
 
 
 def main() -> None:
