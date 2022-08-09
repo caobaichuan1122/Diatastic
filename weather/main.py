@@ -1,8 +1,8 @@
 from app import WeatherApp
 from sqlalchemy import create_engine
 
-config_path = "./database/.ini"
-postcodes_csv_path = "./database/Postcodes.csv"
+config_path = "./weather/.ini"
+postcodes_csv_path = "./weather/postcodes.csv"
 API_KEY = (
     "3a178218d81590de8682b7e41b33743e" or "3b8bfa253dd09a9f809435251aded64b"
 )  # Luck's or Rash's, short-circuits to first api key
@@ -24,7 +24,7 @@ def main() -> None:
         api_key=API_KEY,
     )
     
-    app.perpetual_run_daily(table="weather", forced=False)
+    app.perpetual_run_daily(table="weather")
 
 
 if __name__ == "__main__":

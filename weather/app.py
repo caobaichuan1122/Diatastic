@@ -6,7 +6,8 @@ import pandas as pd
 import requests
 from sqlalchemy import create_engine
 
-TIME_FORMAT = "%d/%m/%Y %H:%M:%S"
+DAY_SECONDS = 24 * 60 * 60
+time_format = "%d/%m/%Y %H:%M:%S"
 
 # Exclude all metrics other than `hourly`
 exclusion_list = ["current", "minutely", "daily", "alerts"]
@@ -14,13 +15,7 @@ exclusions = ",".join(exclusion_list)
 
 
 class WeatherApp:
-    def __init__(
-        self,
-        engine,
-        config_path,
-        postcodes_csv_path,
-        api_key
-    ):
+    def __init__(self, engine, config_path, postcodes_csv_path, api_key):
         self.config_path = config_path
         self.config = ConfigParser()
         self.config.read(config_path)
@@ -35,12 +30,12 @@ class WeatherApp:
     def last_pulled(self):
         if (conf_last_pulled := self.config["API"]["last_pulled"]) == "":
             return None
-        return dt.strptime(conf_last_pulled, TIME_FORMAT)
+        return dt.strptime(conf_last_pulled, time_format)
 
     @last_pulled.setter
     def last_pulled(self, datetime):
         # Update and write last pulled to config file
-        self.config["API"]["last_pulled"] = dt.strftime(datetime, TIME_FORMAT)
+        self.config["API"]["last_pulled"] = dt.strftime(datetime, time_format)
         with open(self.config_path, "w") as config_file:
             self.config.write(config_file)
 
@@ -92,7 +87,6 @@ class WeatherApp:
         print(f"COMPLETE! `{table}` updated with {len(df)} rows")
 
     def perpetual_run_daily(self, table="weather", forced=False):
-        print("WARNING: APP RUNNING PERPETUALLY!")
         while True:
             # Pull if never pulled before, if a day has elapsed or if forced
             if (
@@ -104,15 +98,17 @@ class WeatherApp:
                     print("[FORCING PULL]")
                     forced = False
 
-                # Call API and push data to database
                 df = self.api_call(delay=1)
                 self.push_df_to_db(df, table)
 
             else:
-                print(f"Not a day yet\tLast pulled: {self.last_pulled}")
-
-            print("[sleeping for an hour.. zzz...]")
-            sleep(60 * 60)  # Sleep an hour
+                print(f"Last pulled: {self.last_pulled}")
+                while (elapsed := (dt.now() - self.last_pulled).seconds) < DAY_SECONDS:
+                    print(
+                        f" {DAY_SECONDS - elapsed:05}s till next pull",
+                        end="\r",
+                        flush=True,
+                    )
 
 
 def main() -> None:
