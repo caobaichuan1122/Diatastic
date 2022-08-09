@@ -1,10 +1,10 @@
-from weather_app import WeatherApp
+from app import WeatherApp
 
 config_path = "./database/.ini"
 postcodes_csv_path = "./database/Postcodes.csv"
 API_KEY = (
     "3a178218d81590de8682b7e41b33743e" or "3b8bfa253dd09a9f809435251aded64b"
-)  # Luck's or Rash's, short-circuits to first api key 
+)  # Luck's or Rash's, short-circuits to first api key
 
 host = "3.25.191.104"
 user = "mysql"

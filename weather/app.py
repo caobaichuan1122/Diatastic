@@ -31,11 +31,11 @@ class WeatherApp:
 
         self.postcodes_df = pd.read_csv(postcodes_csv_path)
         self.api_key = api_key
-        self.host = host
-        self.user = user
-        self.password = password
-        self.database = database
-        self.port = port
+
+        # Connector to MySql database
+        self.engine = create_engine(
+            f"mysql+pymysql://{user}:{password}@{host}:{port}/{database}"
+        )
 
     @property
     def last_pulled(self):
@@ -90,19 +90,12 @@ class WeatherApp:
         return pd.DataFrame(final_data_list)
 
     def push_df_to_db(self, df, table="weather"):
-        # Connector to MySql database
-        engine = create_engine(
-            f"mysql+pymysql://{self.user}:{self.password}@{self.host}:{self.port}/{self.database}"
-        )
-
         # Replace table with new updated data
-        df.to_sql(name=table, con=engine, if_exists="replace", index=False)
+        df.to_sql(name=table, con=self.engine, if_exists="replace", index=False)
 
         # Update `last pulled` in config file
         self.last_pulled = dt.now()
         print(f"COMPLETE! `{table}` updated with {len(df)} rows")
-
-        engine.dispose()
 
     def perpetual_run_daily(self, table="weather", forced=False):
         print("WARNING: APP RUNNING PERPETUALLY!")
