@@ -45,6 +45,7 @@ class WeatherApp:
 
     @last_pulled.setter
     def last_pulled(self, datetime):
+        # Update and write last pulled to config file
         self.config["API"]["last_pulled"] = dt.strftime(datetime, TIME_FORMAT)
         with open(self.config_path, "w") as config_file:
             self.config.write(config_file)
@@ -69,6 +70,7 @@ class WeatherApp:
 
                 weather_df = pd.json_normalize(response.json(), record_path=["hourly"])
 
+                # Store relevant data from row into dictionary
                 postcode_weather_data = [
                     {
                         "postcode": postcode,
@@ -84,14 +86,19 @@ class WeatherApp:
 
                 sleep(delay)
 
+        # Construct dataframe of weather data for all postcodes
         return pd.DataFrame(final_data_list)
 
     def push_df_to_db(self, df, table="weather"):
+        # Connector to MySql database
         engine = create_engine(
             f"mysql+pymysql://{self.user}:{self.password}@{self.host}:{self.port}/{self.database}"
         )
 
+        # Replace table with new updated data
         df.to_sql(name=table, con=engine, if_exists="replace", index=False)
+
+        # Update `last pulled` in config file
         self.last_pulled = dt.now()
         print(f"COMPLETE! `{table}` updated with {len(df)} rows")
 
@@ -100,22 +107,23 @@ class WeatherApp:
     def perpetual_run_daily(self, table="weather", forced=False):
         print("WARNING: APP RUNNING PERPETUALLY!")
         while True:
-
-            if forced:
-                print("[FORCING PULL]")
-                df = self.api_call(delay=1)
-                self.push_df_to_db(df, table)
-                forced = False
-            # Pull if never pulled before or if at least 23 hours have elapsed
-            elif (
+            # Pull if never pulled before, if a day has elapsed or if forced
+            if (
                 self.last_pulled is None
-                or (dt.now() - self.last_pulled).seconds > 23 * 60 * 60
+                or (dt.now() - self.last_pulled).days > 0
+                or forced
             ):
+                if forced:
+                    print("[FORCING PULL]")
+                    forced = False
+                
+                # Call API and push data to database    
                 df = self.api_call(delay=1)
                 self.push_df_to_db(df, table)
 
             else:
-                print(f"Not past 23hrs yet\tLast pulled: {self.last_pulled}")
+                print(f"Not a day yet\tLast pulled: {self.last_pulled}")
+
             print("[sleeping for an hour.. zzz...]")
             sleep(60 * 60)  # Sleep an hour
 
