@@ -1,4 +1,5 @@
 from app import WeatherApp
+from sqlalchemy import create_engine
 
 config_path = "./database/.ini"
 postcodes_csv_path = "./database/Postcodes.csv"
@@ -14,16 +15,15 @@ port = 3306
 
 
 def main() -> None:
+    engine = create_engine(f"mysql+pymysql://{user}:{password}@{host}:{port}/{database}")
+    
     app = WeatherApp(
+        engine = engine,
         config_path=config_path,
         postcodes_csv_path=postcodes_csv_path,
         api_key=API_KEY,
-        host=host,
-        user=user,
-        password=password,
-        database=database,
-        port=port,
     )
+    
     app.perpetual_run_daily(table="weather", forced=False)
 
 

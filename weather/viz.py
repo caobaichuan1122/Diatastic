@@ -6,12 +6,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 
-def construct_viz(user, password, host, port, database, postcode):
-    # Set up connection to MySql database
-    engine = create_engine(
-        f"mysql+pymysql://{user}:{password}@{host}:{port}/{database}"
-    )
-
+def construct_viz(engine, postcode):
     # Pull data as df from db
     df = pd.read_sql("weather", engine)
 
@@ -49,16 +44,14 @@ def main() -> None:
     database = "tp08_website"
     port = 3306
 
+    engine = create_engine(
+        f"mysql+pymysql://{user}:{password}@{host}:{port}/{database}"
+    )
+    
     postcode = 3996  # Change this
 
-    construct_viz(
-        host=host,
-        user=user,
-        password=password,
-        database=database,
-        port=port,
-        postcode=postcode,
-    )
+
+    construct_viz(engine, postcode=postcode)
 
 
 if __name__ == "__main__":

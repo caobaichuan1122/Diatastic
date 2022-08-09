@@ -16,14 +16,10 @@ exclusions = ",".join(exclusion_list)
 class WeatherApp:
     def __init__(
         self,
+        engine,
         config_path,
         postcodes_csv_path,
-        api_key,
-        host,
-        user,
-        password,
-        database,
-        port,
+        api_key
     ):
         self.config_path = config_path
         self.config = ConfigParser()
@@ -33,9 +29,7 @@ class WeatherApp:
         self.api_key = api_key
 
         # Connector to MySql database
-        self.engine = create_engine(
-            f"mysql+pymysql://{user}:{password}@{host}:{port}/{database}"
-        )
+        self.engine = engine
 
     @property
     def last_pulled(self):
