@@ -109,8 +109,8 @@ class WeatherApp:
                 if forced:
                     print("[FORCING PULL]")
                     forced = False
-                
-                # Call API and push data to database    
+
+                # Call API and push data to database
                 df = self.api_call(delay=1)
                 self.push_df_to_db(df, table)
 
