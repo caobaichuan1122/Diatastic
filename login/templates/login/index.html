@@ -1,7 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Protect Skin</title>
+	<title>{% block title %}Protect Skin{% endblock %}</title>
+	{% block css %}
+
+    {% endblock %}
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
@@ -15,9 +19,9 @@
 	<link rel="stylesheet" href="../static/css/jquery.timepicker.css">
 	<link rel="stylesheet" href="../static/css/flaticon.css">
 	<link rel="stylesheet" href="../static/css/style.css">
+	<link rel="stylesheet" href="../static/css/roll.css">
 </head>
 <body>
-	<div id="fullpage">
 		<div class="section">
 			<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 				<div class="container" >
@@ -37,24 +41,25 @@
 									</div>
 								</div>
 								<div class="ftco-animate" style="width:1100px;margin-bottom:5%;">
-									<div style="width:20%;color:white;display:inline-block;margin-left:10%;text-align:justify;" ><i class="las la-sun"></i>&nbsp;<b><font color="white">Welcome to Protectsun! We protect you against direct exposure to sunlight, by educating you about the harmful effects, as well as providing suggestions on how to better protect yourself</font></b></div>
-									<div style="width:20%;color:white;display:inline-block;margin-left:10%;text-align:justify;"><i class="las la-cloud"></i>&nbsp;<b><font color="white">Welcome to Protectsun! We protect you against direct exposure to sunlight, by educating you about the harmful effects, as well as providing suggestions on how to better protect yourself</font></b></div>
-									<div style="width:20%;color:white;display:inline-block;margin-left:10%;text-align:justify;"><i class="las la-tshirt"></i>&nbsp;<b><font color="white">Welcome to Protectsun! We protect you against direct exposure to sunlight, by educating you about the harmful effects, as well as providing suggestions on how to better protect yourself</font></b></div>
+									<div style="width:20%;color:white;display:inline-block;margin-left:10%" ><i class="las la-sun"></i>&nbsp;<b><font color="white">2 in 3 Australians will be diagnosed with skin cancer by the age of 70 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</font></b></div>
+									<div style="width:20%;color:white;display:inline-block;margin-left:10%;"><i class="las la-cloud"></i>&nbsp;<b><font color="white">Approximately 34,000 skin cancer types are caused by occupational exposures in Australia per year</font></b></div>
+									<div style="width:20%;color:white;display:inline-block;margin-left:10%;"><i class="las la-tshirt"></i>&nbsp;<b><font color="white">Effective management of UV exposure can reduce the risk of developing cancer by as much as 30%</font></b></div>
 								</div>
 								<div class="ftco-animate" style="text-align:center;margin-left: 23%;color:white">Please enter the postcode to check the local temperature and UVI</div>
-								<div class="d-flex meta ftco-animate" style=" width:1500px;margin-bottom:20%;margin-left: 20%;">
-									<input type="text" oninput="value=value.replace(/[^\d]/g,'')" name="postcode" value="" placeholder="3000"  maxlength="10" size="10" style="width:200px; margin:0px 0px 0px 12px;height:50px;border-radius:20px;border:0px solid #DBDBDB;text-align:center;"/>
-									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-									<div class="" style="text-align:center"><p class="mb-0"><a href="#btm" class="btn btn-secondary py-3 px-2 px-md-4">Enter Postcode</a></p></div>
-								</div>
+								<form action="/enter_postcode/" method="post">
+									{% csrf_token %}
+									<div class="d-flex meta ftco-animate" style=" width:1500px;margin-bottom:10%;margin-left: 14%;">
+										<input type="text" oninput="value=value.replace(/[^\d]/g,'')" name="postcode" value="" placeholder="3000"  maxlength="10" size="10" style="width:200px; margin:0px 0px 0px 12px;height:50px;border-radius:20px;border:0px solid #DBDBDB;text-align:center;"/>
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<div class="" style="text-align:center"><p class="mb-0"><a href="#btm" class="btn btn-secondary py-3 px-2 px-md-4">Enter Postcode</a></p></div>
+									</div>
+								</form>
 							</div>
 						</div>
 					</div>
 				</div>
 			</section>
-		</div>
 
-		<div class="section">
 			<section class="ftco-section ftco-no-pb ftco-animate">
 				<div class="container-fluid">
 					<div class="row">
@@ -119,11 +124,10 @@
 				</div>
 			</div>
 		</div>
-	</div>
 
 	<!-- loader -->
 	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
-
+	<script src="../static/js/jquery-3.2.1.min.js"></script>
 	<script src="../static/js/jquery.min.js"></script>
 	<script src="../static/js/jquery-migrate-3.0.1.min.js"></script>
 	<script src="../static/js/popper.min.js"></script>
@@ -141,21 +145,10 @@
 	<script src="../static/js/google-map.js"></script>
 	<script src="../static/js/main.js"></script>
 	<script src="../static/js/backend-bundle.min.js"></script>
-	<script src="../static/js/table-treeview.js"></script>
-	<script src="../static/js/customizer.js"></script>
 	<script async src="../static/js/chart-custom.js"></script>
 	<script src="../static/js/app.js"></script>
 	<script>
 	 $('#test').css({'left':'300px','top':'300px'});
-	 new fullpage('#fullpage', {
-
-		  // Get your license at https://alvarotrigo.com/fullPage/pricing/
-		  licenseKey: 'YOUR LICENSE KEY HERE '
-		});
-		.section {
-	  text-align:center;
-	  font-size: 3em;
-	}
 	</script>
 	<a name="btm"></a>
 
