@@ -4982,10 +4982,10 @@ if (jQuery("#editor").length) {
   if (jQuery("#layout1-chart1").length) {
     options = {
       chart: {
-        height: 350,
+        height: 345,
         type: "candlestick"
       },
-      colors: ["#32BDEA", "#FF7E41"],
+
       series: [{
         data: [{
           x: new Date(15387786e5),
@@ -5155,7 +5155,7 @@ if (jQuery("#editor").length) {
         }]
       }],
       title: {
-        text: "$45,78956",
+        text: "UV",
         align: "left"
       },
       xaxis: {
@@ -5241,7 +5241,7 @@ if (jQuery("#editor").length) {
       "country": "Aug",
       "visits": 711
     }];
-    
+
     prepareParetoData();
     
     function prepareParetoData(){
@@ -5323,7 +5323,7 @@ if (jQuery("#editor").length) {
     
     }); // end am4core.ready()
   }
-  if (jQuery("#layout1-chart-3").length) {    
+  if (jQuery("#layout1-chart-3").length) {
     options = {
       series: [{
         name: "Desktops",

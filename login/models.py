@@ -18,3 +18,19 @@ class User(models.Model):
         ordering = ['c_time']
         verbose_name = 'user'
         verbose_name_plural = 'user'
+
+class Weather(models.Model):
+
+    #create the user info
+    postcode = models.IntegerField(unique=True,primary_key=True)
+    timestamp = models.DateTimeField()
+    temp = models.FloatField()
+    uv = models.FloatField()
+
+class Weather_2(models.Model):
+
+    #create the user info
+    postcode = models.IntegerField(unique=True,primary_key=True)
+    timestamp = models.DateTimeField()
+    temp = models.FloatField()
+    uv = models.FloatField()
