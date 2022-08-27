@@ -12,6 +12,6 @@ def index(request):
 
 
 def test(request):
-    foods = diaryentries.objects.all()
+    foods = calorie.objects.all()
     print(foods)
     return render(request, 'login/test.html')
