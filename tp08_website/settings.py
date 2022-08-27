@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-*%e^y9xux5@x47t$s7pw^77^$yh!dly(16h5v(=@6!8&*+q7jk
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['3.25.191.104','www.protecsun.tk','protecsun.tk','www.tp08.site','tp08.site','localhost','127.0.0.1']
+ALLOWED_HOSTS = ['3.25.191.104','www.protecsun.tk','protecsun.tk','www.tp08.site','tp08.site','diatastic.tk','www.diatastic.tk','localhost','127.0.0.1']
 
 
 # Application definition
@@ -78,10 +78,10 @@ WSGI_APPLICATION = 'tp08_website.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'tp08_website',
-        'USER': 'mysql',
-        'PASSWORD': 'TP08',
-        'HOST': '3.25.191.104',
+        'NAME': 'Nutrients',
+        'USER': 'root',
+        'PASSWORD': 'tp08tp08',
+        'HOST': '3.26.174.141',
         'PORT': '3306',
     }
 }

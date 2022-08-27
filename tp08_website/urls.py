@@ -21,5 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('index/', views.index, name='index'),
+    path('test/', views.test, name='test'),
     path('enter_postcode/', views.enter_postcode, name='enter_postcode'),
 ]
