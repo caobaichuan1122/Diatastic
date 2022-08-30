@@ -9,9 +9,26 @@ def index(request):
     pass
     return render(request, 'login/index.html')
 
+def prevention(request):
+    pass
+    return render(request, 'login/prevention.html')
 
+def symptoms(request):
+    pass
+    return render(request, 'login/symptoms.html')
 
-def test(request):
-    foods = calorie.objects.all()
-    print(foods)
-    return render(request, 'login/test.html')
+def community(request):
+    pass
+    return render(request, 'login/community.html')
+
+def about(request):
+    pass
+    return render(request, 'login/about.html')
+
+def contact(request):
+    pass
+    return render(request, 'login/contact.html')
+
+def diary(request):
+    pass
+    return render(request, 'login/diary.html')

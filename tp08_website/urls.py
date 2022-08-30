@@ -22,6 +22,11 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('index/', views.index, name='index'),
-    path('test/', views.test, name='test'),
+    path('prevention/', views.prevention, name='prevention'),
+    path('symptoms/', views.symptoms, name='symptoms'),
+    path('community/', views.community, name='community'),
+    path('about/', views.about, name='about'),
+    path('contact/', views.contact, name='contact'),
+    path('diary/', views.diary, name='diary'),
     path('^favicon\.ico$', RedirectView.as_view(url='/static/media/favicon.ico')),
 ]
