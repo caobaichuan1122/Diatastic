@@ -1,691 +1,1065 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="zxx">
+﻿<!doctype html>
+<html lang="en">
+
 <head>
-<title>Health Plus a Medical Category Bootstrap Responsive Website Template | Home :: w3layouts</title>
-<!-- for-meta-tags-->
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="keywords" content="Health Plus Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
-Smartphone Compatible web template, free web designs for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
-		function hideURLbar(){ window.scrollTo(0,1); } </script>
-<!-- //for-meta-tags-->
-<link href="../static/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
-<link rel="stylesheet" href="../static/css/flexslider.css" type="text/css" media="screen" Department="" />
-<link href="../static/css/services.css" rel="stylesheet" type="text/css" media="all" />
-<link href="../static/css/ziehharmonika.css" rel="stylesheet" type="text/css">
-<link href="../static/css/JiSlider.css" rel="stylesheet">
-<link href="../static/css/style.css" rel="stylesheet" type="text/css" media="all" />
-<!-- font-awesome icons -->
-<link href="../static/css/font-awesome.css" rel="stylesheet">
-<!-- //font-awesome icons -->
-<link href="//fonts.googleapis.com/css?family=Raleway:200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800" rel="stylesheet">
-<link href="//fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,900" rel="stylesheet">
+  <link rel="shortcut icon" href="../static/images/icons8-rh-plus-gradient-16.png">
+  <!-- BEGIN: Title -->
+  <title>NoCov &mdash; Coronavirus Social Awareness Template</title>
+  <!-- END: Title -->
+
+  <!-- BEGIN: Meta -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- END: Meta -->
+  
+  <!-- BEGIN: Favicon -->
+<!--  <link rel="shortcut icon" href="../static/images/favicon.png">-->
+  <!-- END: Favicon -->
+
+  <!-- BEGIN: Stylesheets -->
+  <link rel="stylesheet" href="../static/css/bootstrap/bootstrap.css">
+  <link rel="stylesheet" href="../static/css/tiny-slider.css">
+  <link rel="stylesheet" href="../static/fonts/lineicons/LineIcons.min.css">
+  <link rel="stylesheet" href="../static/fonts/icomoon/style.css">
+  <link rel="stylesheet" href="../static/css/animate.min.css">
+  <link rel="stylesheet" href="../static/css/jquery.lavalamp.css">
+  <link rel="stylesheet" href="../static/css/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="../static/css/style.css">
+  <!-- END: Stylesheets -->
+
 </head>
-	
+
 <body>
-<div class="main" id="home">
-<!-- banner -->
-		<div class="header_agileinfo">
-						<div class="w3_agileits_header_text">
-								<ul class="top_agile_w3l_info_icons">
-									<li><i class="fa fa-home" aria-hidden="true"></i>12K Street,New York City.</li>
-									<li class="second"><i class="fa fa-phone" aria-hidden="true"></i>(+000) 000 000 00</li>
-									
-									<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:maria@example.com">info@example.com</a></li>
-								</ul>
+  
+  <!-- BEGIN: .site-wrap -->
+  <div class="site-wrap">
+  
+    <!-- BEGIN: #site-header -->  
+    <header id="site-header">
 
-						</div>
-						<div class="agileinfo_social_icons">
-							<ul class="agileits_social_list">
-								<li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-								<li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-								<li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-								<li><a href="#" class="w3_agile_rss"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-							</ul>
-						</div>
-						<div class="clearfix"> </div>
-			</div>				
+      <!-- Add '.navbar_dark' class if you want the color of the text to -->
+      <nav class="navbar navbar-expand-lg navbar-dark">
+        <div class="container">
 
-		<div class="header-bottom">
-			<nav class="navbar navbar-default">
-				<!-- Brand and toggle get grouped for better mobile display -->
-				<div class="navbar-header">
-				  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-					<span class="sr-only">Toggle navigation</span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-				  </button>
-					<div class="logo">
-						<h1><a class="navbar-brand" href="index.html"><span>H</span>ealth <i class="fa fa-plus" aria-hidden="true"></i> <p>Quality Care 4U</p></a></h1>
-					</div>
-				</div>
+          <!-- BEGIN: .navbar-brand -->
+          <a class="navbar-brand" href="index.html">
+          <img src="../static/images/icons8-rh-plus-gradient-32.png" >de
+          <img src="../static/images/logo_dark.png" alt="Covid" id="logo_dark">
+          </a>
+          <!-- END: .navbar-brand -->
 
-				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
-					<nav class="menu menu--sebastian">
-					<ul id="m_nav_list" class="m_nav menu__list">
-						<li class="m_nav_item menu__item menu__item--current" id="m_nav_item_1"> <a href="index.html" class="menu__link"> Home </a></li>
-						<li class="m_nav_item menu__item" id="moble_nav_item_2"> <a href="about.html" class="menu__link"> About Us </a> </li>		
-						<li class="m_nav_item menu__item" id="moble_nav_item_4"> <a href="appointment.html" class="menu__link">Appointment  </a> </li>
-						<li class="m_nav_item menu__item" id="moble_nav_item_3 dropdown"> <a href="#" class="menu__link dropdown-toggle" data-toggle="dropdown">Pages  <b class="caret"></b></a> 
-						   <ul class="dropdown-menu agile_short_dropdown">
-									<li><a href="icons.html">Web Icons</a></li>
-									<li><a href="typography.html">Typography</a></li>
-								</ul>
-						</li>
-						<li class="m_nav_item menu__item" id="moble_nav_item_5"> <a href="gallery.html" class="menu__link">Departments</a> </li>
-						<li class="m_nav_item menu__item" id="moble_nav_item_6"> <a href="contact.html" class="menu__link"> Contact </a> </li>
-					</ul>
-				</nav>
+          <!-- BEGIN: .navbar-toggler -->
+          <a href="#" class="burger-toggle-menu js-burger-toggle-menu ml-auto py-4" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+          </a>
+          <!-- END: .navbar-toggler -->
 
-				</div>
-				<!-- /.navbar-collapse -->
-			</nav>
-	 </div>
-</div>
-<!-- banner -->
-	<div class="banner-silder">
-		<div id="JiSlider" class="jislider">
-			<ul>
-				<li>
-					<div class="w3layouts-banner-top">
+          <!-- BEGIN: #main-nav -->
+          <div class="collapse navbar-collapse" id="main-nav">
 
-							<div class="container">
-									<div class="agileits-banner-info">
-									<span>Health Plus</span>
-									<h3>Quality Care </h3>
-									 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed blandit massa vel mauris sollicitudin dignissim.</p>
-									
-								</div>	
-							</div>
-						</div>
-				</li>
-				<li>
-						<div class="w3layouts-banner-top w3layouts-banner-top1">
-						<div class="container">
-								<div class="agileits-banner-info">
-								 <span>Real</span>
-									<h3>Free Consultation </h3>
-									 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed blandit massa vel mauris sollicitudin dignissim.</p>
-									
-								</div>	
-							</div>
-						</div>
-				</li>
-				<li>
-						<div class="w3layouts-banner-top w3layouts-banner-top2">
-							<div class="container">
-								<div class="agileits-banner-info">
-								     <span>Amazing</span>
-									<h3>Quality Care </h3>
-									 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed blandit massa vel mauris sollicitudin dignissim.</p>
-									
-								</div>
-								
-							</div>
-						</div>
-					</li>
-				
-			</ul>
-		</div>
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="prevention.html">Prevention</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="symptoms.html">Symptoms</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="community.html">Community</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="news.html">News</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact</a>
+              </li>
+            </ul>
+
+          </div>
+          <!-- END: #main-nav -->
+
+        </div>
+      </nav>
+    </header>
+    <!-- END: #site-header -->
+
+    <!-- BEGIN: .cover -->
+    <div class="cover overlay" style="background-image: url('../static/images/hero_bg_2.jpg');">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-12 col-lg-7">
+            <span class="caption mb-3 d-block">Welcome to Covid19 Awareness</span>
+            <h1 class="heading">Save Our Community From Coronavirus Disease</h1>
+            <p>
+              <a href="https://www.youtube.com/watch?v=wZAjVQWbMlE" data-fancybox="" data-ratio="2" class="btn btn-outline-white"><span class="icon-play mr-2"></span> Watch Video</a>
+              <a href="#" class="btn btn-outline-white-reverse"><span class="icon-heart mr-2"></span> Make A Donation</a>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- END: .cover -->
+    
+    <div class="analytics no-gutters d-block d-md-flex align-items-stretch ml-auto section-counter">
+
+      <div class="col">
+        <div class="data h-100 cases">
+
+          <span class="number number-counter" data-number="462">0</span>
+          <span class="caption d-block mb-5">Total Cases as of 3pm today</span>
+          <div class="last-record d-flex justify-content-between">
+            <div class="data">
+              <span class="caption">Yesterday</span>
+              <span class="number number-counter" data-number="380">0</span>
+            </div>
+            <div class="data">
+              <span class="caption">Today</span>
+              <span class="number">+ <span class="number-counter" data-number="82">0</span></span>
+            </div>
+          </div>
+          
+        </div>
+
+      </div>
+      <div class="col">
+        <div class="data h-100 deaths">
+
+          <span class="number number-counter" data-number="33">0</span>
+          <span class="caption d-block mb-5">Total Deaths as of 3pm today</span>
+          <div class="last-record d-flex justify-content-between">
+            <div class="data">
+              <span class="caption">Yesterday</span>
+              <span class="number number-counter" data-number="25">0</span>
+            </div>
+            <div class="data">
+              <span class="caption number-counter">Today</span>
+              <span class="number">+<span class="number-counter" data-number="8">0</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="data h-100 recovered">
+          <span class="number number-counter" data-number="18">0</span>
+          <span class="caption d-block mb-5">Total Recovered as of 3pm today</span>
+          <div class="last-record d-flex justify-content-between">
+            <div class="data">
+              <span class="caption">Yesterday</span>
+              <span class="number number-counter" data-number="15">0</span>
+            </div>
+            <div class="data">
+              <span class="caption">Today</span>
+              <span class="number">+<span class="number-counter" data-number="3"></span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      
+      
+    </div>
+
+    <!-- BEGIN: #main -->
+    <div id="main">
+      
+      <!-- BEGIN: .bg-floating-1 -->
+      <span class="bg-floating-1"></span>
+      <!-- END: .bg-floating-1 -->
+      
+      <!-- BEGIN: .container -->
+      <div class="container">
+
+      
+        <!-- BEGIN: .feature-29103 -->
+        <div class="row no-gutters feature-29103 align-items-stretch">
+          <div class="col">
+            <a href="#" class="feature-item-29103 h-100">
+              <span class="d-block img-wrap">
+                <img src="../static/images/flaticon/svg/001-virus.svg" alt="Virus">
+              </span>
+              <span class="heading d-block">Protect Yourself</span>
+              <span class="excerpt">Separated they live in bookmarksgrove a large language ocean.</span>
+
+              <span class="more">More</span>
+            </a>
+          </div>
+          <div class="col">
+            <a href="#" class="feature-item-29103 h-100">
+              <span class="d-block img-wrap">
+                <img src="../static/images/flaticon/svg/035-airplane.svg" alt="Virus">
+              </span>
+              <span class="heading d-block">Travel Advice</span>
+              <span class="excerpt">Separated they live in bookmarksgrove a large language ocean.</span>
+              <span class="more">More</span>
+            </a>  
+          </div>
+          <div class="col">
+            <a href="#" class="feature-item-29103 h-100">
+              <span class="d-block img-wrap">
+                <img src="../static/images/flaticon/svg/034-medical-mask.svg" alt="Virus">
+              </span>
+              <span class="heading d-block">Technical Guidance</span>
+              <span class="excerpt">Separated they live in bookmarksgrove a large language ocean.</span>
+              <span class="more">More</span>
+            </a>
+          </div>
+          <div class="col">
+            <a href="#" class="feature-item-29103 h-100">
+              <span class="d-block img-wrap">
+                <img src="../static/images/flaticon/svg/012-temperature.svg" alt="Virus">
+              </span>
+              <span class="heading d-block">Community Advice</span>
+              <span class="excerpt">Separated they live in bookmarksgrove a large language ocean.</span>
+              <span class="more">More</span>
+            </a>
+          </div>
+          <div class="col">
+            <a href="#" class="feature-item-29103 h-100">
+              <span class="d-block img-wrap">
+                <img src="../static/images/flaticon/svg/025-epidemic-1.svg" alt="Virus">
+              </span>
+              <span class="heading d-block">Companies Advice</span>
+              <span class="excerpt">Separated they live in bookmarksgrove a large language ocean.</span>
+              <span class="more">More</span>
+            </a>
+          </div>
+        </div>
+        <!-- BEGIN: .feature-29103 -->
+
+      </div>
+      <!-- END: .container -->
+      
+      <!-- BEGIN: .section-21219 -->
+      <div class="section-21219 bg-light">
+        <div class="container">
+          <div class="row justify-content-between align-items-stretch">
+            <div class="col-lg-8">
+              
+              <div class="pr-md-4 bg h-100">
+                
+                <!-- BEGIN: .bg-floating -->
+                <span class="bg-floating-2"></span>
+                <!-- END: .bg-floating -->
+                
+                <!-- 
+                You can change the color of the line by addings these 'classes'
+                '.line-black', '.line-primary', '.line-white'
+                -->
+                <h3 class="section-heading line-black">Did you know?</h3>
+                
+                <!-- BEGIN: .slider-29101-wrap -->
+                <div class="slider-29101-wrap d-lg-flex">
+                  <ul class="list-unstyled slider-custom-nav row d-lg-block">
+                    <li class="active col-sm"><a href="#" class="w-100">Symptoms</a></li>
+                    <li class="col-sm"><a href="#" class="w-100">Contagion</a></li>
+                    <li class="col-sm"><a href="#" class="w-100">Prevention</a></li>
+                  </ul>
+
+                  <div class="slider-290101 w-100" id="vertical-slider">
+
+                    <!-- BEGIN: .item -->
+                    <div class="item">
+                      <div class="row">
+                        <div class="col-6 col-sm-6 col-md-6">
+                          <!-- BEGIN: .symptom -->
+                          <div class="symptom">
+                            <div class="img-wrap">
+                              <img src="../static/images/symptom_01.png" alt="Image" class="d-block">
+                              <span class="number d-block">1</span>
+                            </div>
+                            <h3>High Fever</h3>
+                            <p>Separated they live in bookmarksgrove a large language ocean.</p>
+                          </div>
+                          <!-- END: .symptom -->
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-6">
+                          <!-- BEGIN: .symptom -->
+                          <div class="symptom">
+                            <div class="img-wrap">
+                              <img src="../static/images/symptom_02.png" alt="Image" class="d-block">
+                              <span class="number d-block">2</span>
+                            </div>
+                            <h3>Cough</h3>
+                            <p>Separated they live in bookmarksgrove a large language ocean.</p>
+                          </div>
+                          <!-- END: .symptom -->
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-6">
+                          <!-- BEGIN: .symptom -->
+                          <div class="symptom mb-0">
+                            <div class="img-wrap">
+                              <img src="../static/images/symptom_03.png" alt="Image" class="d-block">
+                              <span class="number d-block">3</span>
+                            </div>
+                            <h3>Sore Throat</h3>
+                            <p>Separated they live in bookmarksgrove a large language ocean.</p>
+                          </div>
+                          <!-- END: .symptom -->
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-6">
+                          <!-- BEGIN: .symptom -->
+                          <div class="symptom mb-0">
+                            <div class="img-wrap">
+                              <img src="../static/images/symptom_04.png" alt="Image" class="d-block">
+                              <span class="number d-block">4</span>
+                            </div>
+                            <h3>Headache</h3>
+                            <p>Separated they live in bookmarksgrove a large language ocean.</p>
+                          </div>
+                          <!-- END: .symptom -->
+                        </div>
+
+                      </div>
+                    </div>
+                    <!-- END: .item -->
+
+                    <!-- BEGIN: .item -->
+                    <div class="item">
+                      <div class="row">
+                        <div class="col-6 col-sm-6 col-md-6">
+                          <!-- BEGIN: .symptom -->
+                          <div class="symptom">
+                            <div class="img-wrap">
+                              <img src="../static/images/contagion_01.png" alt="Image" class="d-block">
+                              <span class="number d-block">1</span>
+                            </div>
+                            <h3>Air By Cough or Sneeze</h3>
+                            <p>Separated they live in bookmarksgrove a large language ocean.</p>
+                          </div>
+                          <!-- END: .symptom -->
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-6">
+                          <!-- BEGIN: .symptom -->
+                          <div class="symptom">
+                            <div class="img-wrap">
+                              <img src="../static/images/contagion_02.png" alt="Image" class="d-block">
+                              <span class="number d-block">2</span>
+                            </div>
+                            <h3>Personal Contact</h3>
+                            <p>Separated they live in bookmarksgrove a large language ocean.</p>
+                          </div>
+                          <!-- END: .symptom -->
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-6">
+                          <!-- BEGIN: .symptom -->
+                          <div class="symptom mb-0">
+                            <div class="img-wrap">
+                              <img src="../static/images/contagion_03.png" alt="Image" class="d-block">
+                              <span class="number d-block">3</span>
+                            </div>
+                            <h3>Contaminated Objects</h3>
+                            <p>Separated they live in bookmarksgrove a large language ocean.</p>
+                          </div>
+                          <!-- END: .symptom -->
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-6">
+                          <!-- BEGIN: .symptom -->
+                          <div class="symptom mb-0">
+                            <div class="img-wrap">
+                              <img src="../static/images/contagion_04.png" alt="Image" class="d-block">
+                              <span class="number d-block">4</span>
+                            </div>
+                            <h3>Animal Contact</h3>
+                            <p>Separated they live in bookmarksgrove a large language ocean.</p>
+                          </div>
+                          <!-- END: .symptom -->
+                        </div>
+
+                      </div>
+                    </div>
+                    <!-- END: .item -->
+
+                    <!-- BEGIN: .item -->
+                    <div class="item">
+                      <div class="row">
+                        <div class="col-6 col-sm-6 col-md-6">
+                          <!-- BEGIN: .symptom -->
+                          <div class="symptom">
+                            <div class="img-wrap">
+                              <img src="../static/images/prevention_01.png" alt="Image" class="d-block">
+                              <span class="number d-block">1</span>
+                            </div>
+                            <h3>Wash Your Hands Often</h3>
+                            <p>Separated they live in bookmarksgrove a large language ocean.</p>
+                          </div>
+                          <!-- END: .symptom -->
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-6">
+                          <!-- BEGIN: .symptom -->
+                          <div class="symptom">
+                            <div class="img-wrap">
+                              <img src="../static/images/prevention_02.png" alt="Image" class="d-block">
+                              <span class="number d-block">2</span>
+                            </div>
+                            <h3>Wear a Face Mask</h3>
+                            <p>Separated they live in bookmarksgrove a large language ocean.</p>
+                          </div>
+                          <!-- END: .symptom -->
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-6">
+                          <!-- BEGIN: .symptom -->
+                          <div class="symptom mb-0">
+                            <div class="img-wrap">
+                              <img src="../static/images/prevention_03.png" alt="Image" class="d-block">
+                              <span class="number d-block">3</span>
+                            </div>
+                            <h3>Avoid Contact With Sick People</h3>
+                            <p>Separated they live in bookmarksgrove a large language ocean.</p>
+                          </div>
+                          <!-- END: .symptom -->
+                        </div>
+
+                        <div class="col-6 col-sm-6 col-md-6">
+                          <!-- BEGIN: .symptom -->
+                          <div class="symptom mb-0">
+                            <div class="img-wrap">
+                              <img src="../static/images/prevention_04.png" alt="Image" class="d-block">
+                              <span class="number d-block">4</span>
+                            </div>
+                            <h3>Always Cover Your Cough or Sneeze</h3>
+                            <p>Separated they live in bookmarksgrove a large language ocean.</p>
+                          </div>
+                          <!-- END: .symptom -->
+                        </div>
+
+                      </div>
+                    </div>
+                    <!-- END: .item -->
+
+
+                  </div>
+                </div>
+
+                <!-- END: .slider-29101-wrap -->
+
+              </div>
+              
+            </div>
+            <div class="col-lg-4 pl-lg-5 h-100">
+              <!-- BEGIN: .widget-29182 -->
+              <div class="widget-29182">
+                <div class="widget-inner text-center">
+                  <h3>Community COVID Guidelines</h3>
+                  <img src="../static/images/hero_bg_2.jpg" alt="Image" class="img-mb-2 img-fluid">
+                </div>
+                
+                <div class="widget-inner">
+                  <ul class="list-unstyled">
+                    <li><a href="#">Executive Order from the Mayor</a></li>
+                    <li><a href="#">Business &amp; Industry Advice</a></li>
+                    <li><a href="#">Home Quarantine</a></li>
+                    <li><a href="#">Community Food Supply</a></li>
+                    <li><a href="#">Community Lockdown</a></li>
+                    <li><a href="#">Skeletal Work Force Arrangement</a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- END: .widget-29182 -->
+
+              <a href="#" class="btn btn-primary btn-block text-center has-icon d-flex"><span class="mx-auto d-flex align-items-center"><span class="lni lni-stethoscope mr-3"></span> <span>I have Covid19</span></span></a>
+              <a href="#" class="btn btn-primary btn-block text-center has-icon d-flex"><span class="mx-auto d-flex align-items-center"><span class="lni lni-envelope mr-3"></span> <span>Get In Touch</span></span></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END: .section-21219 -->
+
+      <!-- BEGIN: .site-section -->
+      <div class="site-section pt-0 section-29191">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8 pr-md-5 pt-5">
+              <h2 class="section-heading line-primary">Community Help</h2>
+            </div>
+            <div class="col-md-4">
+              <div class="bg"></div>
+            </div>
+
+            <div class="col-lg-6">
+
+              <!-- BEGIN: .media-29149 -->
+              <div class="media-29149 d-flex no-gutters align-items-stretch">
+                <div class="col-3 img-wrap">
+                  <a href="#"><img src="../static/images/img_1.jpg" alt="Image"></a>
+                </div>
+                <div class="col">
+                  <div class="text h-100">
+                    <h3><a href="#">How to Prepare</a></h3>
+                    <p>Separated they live in bookmarksgrove a large language ocean.</p>
+                    <p><a href="#" class="more">Read more</a></p>
+                  </div>
+                </div>
+              </div>
+              <!-- END: .media-29149 -->
+            </div>
+
+            <div class="col-lg-6">
+
+              <!-- BEGIN: .media-29149 -->
+              <div class="media-29149 d-flex no-gutters align-items-stretch">
+                <div class="col-3 img-wrap">
+                  <a href="#"><img src="../static/images/img_2.jpg" alt="Image"></a>
+                </div>
+                <div class="col">
+                  <div class="text h-100">
+                    <h3><a href="#">Symptoms &amp; Testing</a></h3>
+                    <p>Separated they live in bookmarksgrove a large language ocean.</p>
+                    <p><a href="#" class="more">Read more</a></p>
+                  </div>
+                </div>
+              </div>
+              <!-- END: .media-29149 -->
+            </div>
+
+            <div class="col-lg-6">
+
+              <!-- BEGIN: .media-29149 -->
+              <div class="media-29149 d-flex no-gutters align-items-stretch">
+                <div class="col-3 img-wrap">
+                  <a href="#"><img src="../static/images/img_3.jpg" alt="Image"></a>
+                </div>
+                <div class="col">
+                  <div class="text h-100">
+                    <h3><a href="#">Are You at Higher Risk?</a></h3>
+                    <p>Separated they live in bookmarksgrove a large language ocean.</p>
+                    <p><a href="#" class="more">Read more</a></p>
+                  </div>
+                </div>
+              </div>
+              <!-- END: .media-29149 -->
+            </div>
+
+            <div class="col-lg-6">
+
+              <!-- BEGIN: .media-29149 -->
+              <div class="media-29149 d-flex no-gutters align-items-stretch">
+                <div class="col-3 img-wrap">
+                  <a href="#"><img src="../static/images/img_4.jpg" alt="Image"></a>
+                </div>
+                <div class="col">
+                  <div class="text h-100">
+                    <h3><a href="#">Feeling unwell?</a></h3>
+                    <p>Separated they live in bookmarksgrove a large language ocean.</p>
+                    <p><a href="#" class="more">Read more</a></p>
+                  </div>
+                </div>
+              </div>
+              <!-- END: .media-29149 -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- END: .site-section -->
+          
+      <!-- BEGIN: .site-section -->
+      <!-- 
+        Add '.overlay' class to '.bg-image' if you want to add a darker background image 
+      -->
+      <div class="site-section overflow-hidden pb-0 bg-light">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg
+            -7">
+              <!-- 
+                You can change the color of the line by addings these 'classes'
+                '.line-black', '.line-primary', '.line-white'
+
+                Line Alignment: Add classes like '.text-center', '.text-left', 'text-right'
+                -->
+              <h2 class="section-heading line-primary text-center">Frequently Ask Questions</h2>
+            </div>
+          </div>
+          <div class="row align-items-stretch">
+            <div class="col-lg-6 align-self-end">
+
+              <div class="video-wrap">
+                <figure class="video">
+                  <!-- BEGIN: .video-play-button -->
+                  <!-- Add '.bottom' class to make the button at the bottom position -->
+                  <a href="https://vimeo.com/45830194" class="video-play-button bottom" data-fancybox="" data-ratio="2">
+                    <span class="icon icon-play"></span>
+                  </a>
+                  <!-- END: .video-play-button -->
+                  <img src="../static/images/person_transparent_2.png" alt="Image" class="img-fluid">
+                </figure>
+              </div>
+
+            </div>
+            <div class="col-lg-6 pl-lg-5 mb-5">
+              
+              <!-- BEGIN: .custom-accordion -->
+              <div class="custom-accordion" id="accordion_1">
+                <div class="accordion-item">
+                  <h2 class="mb-0" id="headingOne">
+                    <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">What is a novel coronavirus?</button>
+                  </h2>
+
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion_1">
+                    <div class="accordion-body">
+                      Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+                    </div>
+                  </div>
+                </div> <!-- .accordion-item -->
+
+                <div class="accordion-item">
+                  <h2 class="mb-0" id="headingTwo">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">What is the source of the virus?</button>
+                  </h2>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion_1">
+                    <div class="accordion-body">
+                      Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+                    </div>
+                  </div>
+                </div> <!-- .accordion-item -->
+                <div class="accordion-item">
+                  <h2 class="mb-0" id="headingThree">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">How does the virus spread?</button>
+                  </h2>
+
+                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion_1">
+                    <div class="accordion-body">
+                      Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+                    </div>
+                  </div>
+
+                </div> <!-- .accordion-item -->
+
+                <div class="accordion-item">
+                  <h2 class="mb-0" id="headingFour">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">How can I help protect myself?</button>
+                  </h2>
+
+                  <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion_1">
+                    <div class="accordion-body">
+                      Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+                    </div>
+                  </div>
+
+                </div> <!-- .accordion-item -->
+
+                <div class="accordion-item">
+                  <h2 class="mb-0" id="headingFive">
+                    <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">Is it okay for me to donate blood?</button>
+                  </h2>
+
+                  <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion_1">
+                    <div class="accordion-body">
+                      Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+                    </div>
+                  </div>
+
+                </div> <!-- .accordion-item -->
+
+                
+
+              </div>
+              <!-- END: .custom-accordion -->
+
+            </div>      
+          </div>
+        </div>
+
+      </div>
+      <!-- END: .site-section -->
+
+      <div class="site-section">
+        <!-- BEGIN: .section-counter-78529 -->
+        <div class="section-counter-78529">
+          <div class="container">
+
+            <div class="row">
+              <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+
+                <div class="counter-78529 d-flex align-items-start">
+                  <div class="icon-wrap"><span class="flaticon-muscle text-primary icon-stethoscope"></span></div>
+                  <div class="counter-text">
+                    <strong class="block-counter-78529" data-number="2260">0</strong>
+                    <span>Number of Medical Staffs</span>
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                <div class="counter-78529 d-flex align-items-start">
+                  <div class="icon-wrap"><span class="flaticon-stationary-bike text-primary icon-person"></span></div>
+                  <div class="counter-text">
+                    <strong class="block-counter-78529" data-number="210">0</strong>
+                    <span>Person Under Monitoring</span>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-lg-3  mb-4 mb-lg-0">
+
+                <div class="counter-78529 d-flex align-items-star">
+                  <div class="icon-wrap"><span class="flaticon-banana text-primary icon-healing"></span></div>
+                  <div class="counter-text">
+                    <strong class="block-counter-78529" data-number="887">0</strong>
+                    <span>Person Under Investigation</span>
+                  </div>
+                </div>
+
+              </div>
+              <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
+                <div class="counter-78529 d-flex align-items-start">
+                  <div class="icon-wrap"><span class="flaticon-heart text-primary icon-heartbeat"></span></div>
+                  <div class="counter-text">
+                    <strong class="block-counter-78529" data-number="1920">0</strong>
+                    <span>Number of Health Program</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- END: .section-counter-78529 -->
       </div>
 
-<!-- //banner -->
+      <!-- BEGIN: .news-updates-22796 -->
+      <div class=" site-section bg-light news-updates-22796">
+        <div class="container">
 
-<!-- about -->
-	<div class="about" id="about">
-		<div class="container">
-			<h2 class="w3_heade_tittle_agile">Welcome to our Health Plus</h2>
-			<p class="sub_t_agileits">Add Short Description</p>
-			
-			<p class="ab">Lorem ipsum dolor sit amet, consectetur adipiscing elit.Sed blandit massa vel mauris sollicitudin dignissim.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at placerat ante. Praesent nulla nunc, pretium dapibus efficitur in, auctor eget elit. Lorem ipsum dolor sit amet</p>
+          <div class="row">
+            <!-- BEGIN: news -->
+            <div class="col-lg-9 mb-4 mb-lg-0">
+              <div class="section-heading">
+                <h2 class="section-heading line-black heading-sm">Latest news</h2>
+              </div>
+              <div class="row">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                  <div class="post-entry-big-22796">
+                    <a href="#" class="img-link"><img src="../static/images/img_1.jpg" alt="Image" class="img-fluid"></a>
+                    <div class="post-content">
+                      <div class="post-meta">
+                        <a href="#">June 6, 2019</a>
+                        <span class="mx-1">/</span>
+                        <a href="#">Health</a>, <a href="#">News</a>
+                      </div>
+                      <h3 class="post-heading"><a href="#">Always Cover Your Cough or Sneeze</a></h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-6">
+                  <div class="post-entry-big-22796 horizontal d-flex mb-4">
+                    <a href="#" class="img-link mr-4"><img src="../static/images/img_2.jpg" alt="Image" class="img-fluid"></a>
+                    <div class="post-content">
+                      <div class="post-meta">
+                        <a href="#">June 6, 2019</a>
+                        <span class="mx-1">/</span>
+                        <a href="#">Covid</a>, <a href="#">News</a>
+                      </div>
+                      <h3 class="post-heading"><a href="#">Always Cover Your Cough or Sneeze</a></h3>
+                    </div>
+                  </div>
 
-			 <div class="about-w3lsrow"> 
-				
-				<div class="col-md-6 w3about-img"> 
-				    <img src="../static/images/about.jpg" alt=" " class="img-responsive">
-				</div> 
-				<div class="col-md-6 col-sm-7 w3about-img two"> 
-					<div class="w3about-text"> 
-						<h5 class="w3l-subtitle">We Care About Your Health</h5>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at placerat ante. Praesent nulla nunc, pretium dapibus efficitur in, auctor eget elit. Lorem ipsum dolor sit amet</p>
+                  <div class="post-entry-big-22796 horizontal d-flex mb-4">
+                    <a href="#" class="img-link mr-4"><img src="../static/images/img_3.jpg" alt="Image" class="img-fluid"></a>
+                    <div class="post-content">
+                      <div class="post-meta">
+                        <a href="#">June 6, 2019</a>
+                        <span class="mx-1">/</span>
+                        <a href="#">Health</a>, <a href="#">News</a>
+                      </div>
+                      <h3 class="post-heading"><a href="#">Always Cover Your Cough or Sneeze</a></h3>
+                    </div>
+                  </div>
 
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at placerat ante. Praesent nulla nunc, pretium dapibus efficitur in, auctor eget elit. Lorem ipsum dolor sit amet</p>
-						  <div class="read"><a href="single.html" class="hvr-rectangle-in">Read More</a></div>
-					</div>
-				</div> 
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-</div>
-<!-- /about-bottom -->
-<!-- /girds_agileits -->
-	<div class="Department_girds_agileits">
-		<div class="agile_team_grid">	
-	
-					<div class="col-md-3 w3ls_banner_bottom_grid">
-						<img src="../static/images/g1.jpg" alt=" " class="img-responsive" />
-						<div class="overlay">
-							<h4>Department 1</h4>
-							<ul class="social_agileinfo">
-								<li><a href="#" class="w3_facebook"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#" class="w3_twitter"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#" class="w3_instagram"><i class="fa fa-instagram"></i></a></li>
-								<li><a href="#" class="w3_google"><i class="fa fa-google-plus"></i></a></li>
-							</ul>
-						</div>
-					</div>
+                  <div class="post-entry-big-22796 horizontal d-flex mb-4">
+                    <a href="#" class="img-link mr-4"><img src="../static/images/img_4.jpg" alt="Image" class="img-fluid"></a>
+                    <div class="post-content">
+                      <div class="post-meta">
+                        <a href="#">June 6, 2019</a>
+                        <span class="mx-1">/</span>
+                        <a href="#">Health</a>, <a href="#">News</a>
+                      </div>
+                      <h3 class="post-heading"><a href="#">Always Cover Your Cough or Sneeze</a></h3>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- END: news -->
 
-					<div class="col-md-3 w3ls_banner_bottom_grid">
-						<img src="../static/images/g2.jpg" alt=" " class="img-responsive" />
-						<div class="overlay">
-							<h4>Department 2</h4>
-							<ul class="social_agileinfo">
-								<li><a href="#" class="w3_facebook"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#" class="w3_twitter"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#" class="w3_instagram"><i class="fa fa-instagram"></i></a></li>
-								<li><a href="#" class="w3_google"><i class="fa fa-google-plus"></i></a></li>
-							</ul>
-						</div>
-					</div>
+            <!-- BEGIN: videos -->
+            <div class="col-lg-3">
+              <div class="section-heading">
+                <h2 class="section-heading heading-sm line-black">Community Videos</h2>
+              </div>
+              <a href="https://vimeo.com/45830194" class="video-41036 mb-4" data-fancybox="" data-ratio="2">
+                <span class="play">
+                  <span class="icon-play"></span>
+                </span>
+                <img src="../static/images/img_sm_1.jpg" alt="Image" class="img-fluid">
+              </a>
+              <a href="https://vimeo.com/45830194" class="video-41036 mb-4" data-fancybox="" data-ratio="2">
+                <span class="play">
+                  <span class="icon-play"></span>
+                </span>
+                <img src="../static/images/img_sm_8.jpg" alt="Image" class="img-fluid">
+              </a>
+            </div>
+            <!-- BEGIN: videos -->
+          </div>
+        </div>
+      </div>
+      <!-- BEGIN: .news-updates-22796 -->
 
+      <!-- BEGIN: .site-section -->
+      <div class="site-section">
+        <div class="container">
+          <div class="row justify-content-between">
+            <div class="col-md-5">
+              <h2 class="section-heading line-primary">Community Preventive Measures</h2>
+            </div>
+            <div class="col-md-6">
+              <p>A small river named Duden flows by their place and supplies it with the necessary regelialia. It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+              <!-- BEGIN: .widget-29182 -->
+              <!-- 
+                Add '.widget-29182-v2' class for v2 style
+              -->
+              <div class="widget-29182 widget-29182-v2 mb-0 pb-0">
+                <div class="widget-inner">
+                  <h3>Community Guidelines</h3>
+                </div>
+                <div class="widget-inner"><img src="../static/images/img_sm_1.jpg" alt="Image" class="img-mb-2 img-fluid">
+                  </div>
+                
+                <div class="widget-inner">
+                  <ul class="list-unstyled">
+                    <li><a href="#">Executive Order from the Mayor</a></li>
+                    <li><a href="#">Business &amp; Industry Advice</a></li>
+                    <li><a href="#">Home Quarantine</a></li>
+                    <li><a href="#">Community Food Supply</a></li>
+                    <li><a href="#">Community Lockdown</a></li>
+                    <li><a href="#">Skeletal Work Force Arrangement</a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- END: .widget-29182 -->
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+              <!-- BEGIN: .widget-29182 -->
+              <!-- 
+                Add '.widget-29182-v2' class for v2 style
+              -->
+              <div class="widget-29182 widget-29182-v2 mb-0 pb-0">
+                <div class="widget-inner">
+                  <h3>City Guidelines</h3>
+                </div>
+                <div class="widget-inner"><img src="../static/images/img_sm_2.jpg" alt="Image" class="img-mb-2 img-fluid">
+                  </div>
+                <div class="widget-inner">
+                  <ul class="list-unstyled">
+                    <li><a href="#">Executive Order from the Mayor</a></li>
+                    <li><a href="#">Business &amp; Industry Advice</a></li>
+                    <li><a href="#">Home Quarantine</a></li>
+                    <li><a href="#">Community Food Supply</a></li>
+                    <li><a href="#">Community Lockdown</a></li>
+                    <li><a href="#">Skeletal Work Force Arrangement</a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- END: .widget-29182 -->
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+              <!-- BEGIN: .widget-29182 -->
+              <!-- 
+                Add '.widget-29182-v2' class for v2 style
+              -->
+              <div class="widget-29182 widget-29182-v2 mb-0 pb-0">
+                <div class="widget-inner">
+                  <h3>Lockdown Guidelines</h3>
+                </div>
+                <div class="widget-inner"><img src="../static/images/img_sm_3.jpg" alt="Image" class="img-mb-2 img-fluid">
+                  </div>
+                <div class="widget-inner">
+                  <ul class="list-unstyled">
+                    <li><a href="#">Executive Order from the Mayor</a></li>
+                    <li><a href="#">Business &amp; Industry Advice</a></li>
+                    <li><a href="#">Home Quarantine</a></li>
+                    <li><a href="#">Community Food Supply</a></li>
+                    <li><a href="#">Community Lockdown</a></li>
+                    <li><a href="#">Skeletal Work Force Arrangement</a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- END: .widget-29182 -->
+            </div>
+            <div class="col-12 col-sm-6 col-md-6 col-lg-3">
+              <!-- BEGIN: .widget-29182 -->
+              <!-- 
+                Add '.widget-29182-v2' class for v2 style
+              -->
+              <div class="widget-29182 widget-29182-v2 mb-0 pb-0">
+                <div class="widget-inner">
+                  <h3>Home Quarantine Guidelines</h3>
+                </div>
+                <div class="widget-inner"><img src="../static/images/img_sm_4.jpg" alt="Image" class="img-mb-2 img-fluid">
+                  </div>
+                <div class="widget-inner">
+                  <ul class="list-unstyled">
+                    <li><a href="#">Executive Order from the Mayor</a></li>
+                    <li><a href="#">Business &amp; Industry Advice</a></li>
+                    <li><a href="#">Home Quarantine</a></li>
+                    <li><a href="#">Community Food Supply</a></li>
+                    <li><a href="#">Community Lockdown</a></li>
+                    <li><a href="#">Skeletal Work Force Arrangement</a></li>
+                  </ul>
+                </div>
+              </div>
+              <!-- END: .widget-29182 -->
+            </div>
+            
+          </div>
+        </div>
+      </div>
+      <!-- END: .site-section -->
+      
+    </div>
+    <!-- END: #main -->
+    
+    <!-- BEGIN: #footer -->
+    <footer id="footer">
+      <div class="container">
+        
+        <!-- BEGIN: .footer-subscribe -->
+        <div class="row footer-subscribe">
+          <div class="col-md-6">
+            <h3 class="mt-2">Get our newsletter, join the community.</h3>
+          </div>
+          <div class="col-md-6">
+            <form action="#" id="mc-form" class="form-subscribe">
+              <div class="d-flex align-items-stretch w-100">
+                <input type="email" id="mc-email" placeholder="Email address" class="form-control">
+                <input type="submit" value="Sign up" class="btn btn-outline-white-reverse">
+              </div>
+              <div class="form-group">
+                <label for="mc-email"></label>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- END: .footer-subscribe -->
 
-					<div class="col-md-3 w3ls_banner_bottom_grid hvr-shutter-in-horizontal">
-						<img src="../static/images/g3.jpg" alt=" " class="img-responsive" />
-						<div class="overlay">
-							<h4>Department 3</h4>
-							<ul class="social_agileinfo">
-								<li><a href="#" class="w3_facebook"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#" class="w3_twitter"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#" class="w3_instagram"><i class="fa fa-instagram"></i></a></li>
-								<li><a href="#" class="w3_google"><i class="fa fa-google-plus"></i></a></li>
-							</ul>
-						</div>
-					</div>
+        <div class="row">
+          <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+            <!-- BEGIN: .widget -->
+            <div class="widget">
+              <h3>About</h3>
+              <ul class="nav-link">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Situation</a></li>
+                <li><a href="#">Prevention</a></li>
+                <li><a href="#">Symptoms</a></li>
+                <li><a href="#">Community</a></li>
+              </ul>
+            </div>
+            <!-- END: .widget -->
+          </div>
+          <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+            <!-- BEGIN: .widget -->
+            <div class="widget">
+              <h3>Helpful Links</h3>
+              <ul class="nav-link">
+                <li><a href="#">Reduce The Spread</a></li>
+                <li><a href="#">Who Are At Risk</a></li>
+                <li><a href="#">Social Distancing</a></li>
+                <li><a href="#">Community Advice</a></li>
+                <li><a href="#">Technical Guidance</a></li>
+              </ul>
+            </div>
+            <!-- END: .widget -->
+          </div>
+          <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+            <!-- BEGIN: .widget -->
+            <div class="widget">
+              <h3>Protect Yourself</h3>
+              <ul class="nav-link">
+                <li><a href="#">Wash Your Hands Often</a></li>
+                <li><a href="#">Wear a Face Mask</a></li>
+                <li><a href="#">Avoid Contact With Sick People</a></li>
+                <li><a href="#">Always Cover Your Cough or Sneeze</a></li>
+                <li><a href="#">Protect Your Family</a></li>
+              </ul>
+            </div>
+            <!-- END: .widget -->
+          </div>
+          <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+            <div class="d-block">
+              <ul class="list-unstyled d-flex social-29021">
+                <li><a href="#"><span class="icon-facebook"></span></a></li>
+                <li><a href="#"><span class="icon-twitter"></span></a></li>
+                <li><a href="#"><span class="icon-instagram"></span></a></li>
+                <li><a href="#"><span class="icon-linkedin"></span></a></li>
+              </ul>
+            </div>
 
+            <div class="d-block mb-4">
+              <a href="#" class="d-flex call align-items-center">
+                <span class="lni lni-mobile wrap-icon"></span>
+                <span class="number">329 4902 392</span>
+              </a>
+            </div>
+            <div class="d-block">
+              <p>If you have any question, please contact us at <a href="#" class="link-underline text-primary">info@unslate.co</a></p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- BEGIN: .copyright -->
+        <div class="row copyright">
+          <div class="col-md-6 order-2 text-center text-md-right"><a href="#" class="js-top"><span class="icon-long-arrow-up mr-2"></span> Go to Top</a></div>
+          <div class="col-md-6 text-center text-md-left">
+            <p>&copy; 2020. All Rights Reserved. Design by <a href="http://www.bootstrapmb.com" target="_blank" class="link-underline text-primary">Unslate.co</a></p>
+          </div>
+        </div>
+        <!-- END: .copyright -->
+      </div>
+    </footer>
+    <!-- END: #footer -->
 
-					<div class="col-md-3 w3ls_banner_bottom_grid">
-						<img src="../static/images/g4.jpg" alt=" " class="img-responsive" />
-						<div class="overlay">
-							<h4>Department 4</h4>
-							<ul class="social_agileinfo">
-								<li><a href="#" class="w3_facebook"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#" class="w3_twitter"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#" class="w3_instagram"><i class="fa fa-instagram"></i></a></li>
-								<li><a href="#" class="w3_google"><i class="fa fa-google-plus"></i></a></li>
-							</ul>
-						</div>
-					</div>
+  </div>
+  <!-- END: .site-wrap -->
 
-		</div>
-		<div class="clearfix"></div>
-	</div>
-<!-- //girds_agileits -->
+  <!-- Loader -->
+  <div id="site-overlayer"></div>
+  <div class="site-loader-wrap">
+    <div class="site-loader"></div>
+  </div>
 
-	<div class="agile_menu" id="menu">
-		<div class="container">
-		<h3 class="w3_heade_tittle_agile">Our Departments</h3>
-		<p class="sub_t_agileits">Add Short Description</p>
-		<div class="menu_w3ls_agile_top_section">
-			<div class="ziehharmonika">
-			<h3>Neurology</h3>
-			<div>
-				  <div class="w3_agile_recipe-grid">
-                                  
-								<div class="col-md-6 col-sm-6 tab-image">
-									<img src="../static/images/g5.jpg" alt="Medicinal">
-								</div>
-								<div class="col-md-6 col-sm-6 tab-info">
-								<h4>We are having department to us</h4>
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting... </p>
-									<div class="read"><a href="#" class="hvr-rectangle-in">Read More</a></div>
-								</div>
-								<div class="clearfix"></div>
-					    </div>
-
-			</div>
-			<h3>Dental</h3>
-			<div>
-				  <div class="w3_agile_recipe-grid">
-                                  
-								
-									<div class="col-md-6 col-sm-6 tab-info two">
-								<h4>We are having department to us</h4>
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting... </p>
-									<div class="read"><a href="#" class="hvr-rectangle-in">Read More</a></div>
-								</div>
-								<div class="col-md-6 col-sm-6 tab-image two">
-									<img src="../static/images/g6.jpg" alt="Medicinal">
-								</div>
-								<div class="clearfix"></div>
-					    </div>
-
-			</div>
-			<h3>Eye Care</h3>
-			<div>
-			 <div class="w3_agile_recipe-grid">
-                                  
-								<div class="col-md-6 col-sm-6 tab-image">
-									<img src="../static/images/g7.jpg" alt="Medicinal">
-								</div>
-									<div class="col-md-6 col-sm-6 tab-info">
-								<h4>We are having department to us</h4>
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting... </p>
-									<div class="read"><a href="#" class="hvr-rectangle-in">Read More</a></div>
-								</div>
-								<div class="clearfix"></div>
-					    </div>
-
-
-			</div>
-			<h3>Baby Care</h3>
-			<div>
-				  <div class="w3_agile_recipe-grid">
-                                  
-								
-								<div class="col-md-6 col-sm-6 tab-info two">
-								<h4>We are having department to us</h4>
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting... </p>
-									<div class="read"><a href="#" class="hvr-rectangle-in">Read More</a></div>
-								</div>
-								<div class="col-md-6 col-sm-6 tab-image two">
-									<img src="../static/images/g2.jpg" alt="Medicinal">
-								</div>
-								<div class="clearfix"></div>
-					    </div>
-			</div>
-		</div>
-		</div>
-	</div>
-</div>
-<!-- services section -->
-<div class="service-w3l jarallax" id="service">
-	<div class="container">
-	<h3 class="w3_heade_tittle_agile two">What We Do Best</h3>
-		<p class="sub_t_agileits">Add Short Description</p>
-		<div class="col-lg-4 col-md-4 col-sm-12 serv-agileinfo1">
-			<div class="col-lg-12 col-md-12 col-sm-6 serv-wthree1" data-aos="zoom-in">
-				<ul class="ch-grid">
-					<li>
-						<div class="ch-item">				
-							<div class="ch-info">
-								<div class="ch-info-front ch-img-1"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></div>
-								<div class="ch-info-back">
-									<h5>Health Plus</h5>
-									<p>Best In Services</p>
-								</div>	
-							</div>
-						</div>
-					</li>
-				</ul>
-				<h4 class="text-center">Easy Booking</h4>
-				<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat risus eu pretium commodo.</p>	
-			</div>
-			<div class="col-lg-12 col-md-12 col-sm-6 serv-wthree2" data-aos="zoom-in">
-				<ul class="ch-grid">
-					<li>
-						<div class="ch-item">				
-							<div class="ch-info">
-								<div class="ch-info-front ch-img-2"><i class="fa fa-user-md" aria-hidden="true"></i></div>
-								<div class="ch-info-back">
-									<h5>Health Plus</h5>
-									<p>Best In Services</p>
-								</div>	
-							</div>
-						</div>
-					</li>
-				</ul>
-				<h4 class="text-center">Experience</h4>
-				<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat risus eu pretium commodo.</p>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-		<div class="col-lg-4 col-md-4 col-sm-6 serv-agileinfo2">
-			<div class="col-lg-12 col-md-12 col-sm-6 serv-wthree4" data-aos="zoom-in">
-				<ul class="ch-grid">
-					<li>
-						<div class="ch-item">				
-							<div class="ch-info">
-								<div class="ch-info-front ch-img-3"><i class="fa fa-ambulance" aria-hidden="true"></i></div>
-								<div class="ch-info-back">
-									<h5>Health Plus</h5>
-									<p>Best In Services</p>
-								</div>	
-							</div>
-						</div>
-					</li>
-				</ul>
-				<h4 class="text-center">Emergency Care</h4>
-				<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat risus eu pretium commodo.</p>
-			</div>
-			<div class="clearfix"></div>
-		</div>	
-		<div class="col-lg-4 col-md-4 col-sm-6 serv-agileinfo3">
-			<div class="col-lg-12 col-md-12 col-sm-6 serv-wthree6" data-aos="zoom-in">
-				<ul class="ch-grid">
-					<li>
-						<div class="ch-item">				
-							<div class="ch-info">
-								<div class="ch-info-front ch-img-4"><i class="fa fa-tint" aria-hidden="true"></i></div>
-								<div class="ch-info-back">
-									<h5>Health Plus</h5>
-									<p>Best In Services</p>
-								</div>	
-							</div>
-						</div>
-					</li>
-				</ul>
-				<h4 class="text-center">DNA Testing</h4>
-				<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat risus eu pretium commodo.</p>
-			</div>
-			<div class="col-lg-12 col-md-12 col-sm-6 serv-wthree5" data-aos="zoom-in">
-				<ul class="ch-grid">
-					<li>
-						<div class="ch-item">				
-							<div class="ch-info">
-								<div class="ch-info-front ch-img-5"><i class="fa fa-wheelchair" aria-hidden="true"></i></div>
-								<div class="ch-info-back">
-									<h5>Health Plus</h5>
-									<p>Best In Services</p>
-								</div>	
-							</div>
-						</div>
-					</li>
-				</ul>
-				<h4 class="text-center">General Treatment</h4>
-				<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla volutpat risus eu pretium commodo.</p>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-		<div class="clearfix"></div>
-	</div>
-</div>
-<!-- /services section -->
-
-<!-- stats -->
-	<div class="stats" id="stats">
-	    <div class="container"> 
-			<div class="inner_w3l_agile_grids">
-		<div class="col-md-3 w3layouts_stats_left w3_counter_grid">
-		   	<i class="fa fa-building-o" aria-hidden="true"></i>
-			<p class="counter">120</p>
-			<h3>Hospital Rooms</h3>
-		</div>
-		<div class="col-md-3 w3layouts_stats_left w3_counter_grid1">
-		   <i class="fa fa-wheelchair" aria-hidden="true"></i>
-			<p class="counter">165</p>
-			<h3>Wheelchair</h3>
-		</div>
-		<div class="col-md-3 w3layouts_stats_left w3_counter_grid2">
-		<i class="fa fa-ambulance" aria-hidden="true"></i>
-			<p class="counter">563</p>
-			<h3>Ambulance Car</h3>
-		</div>
-		<div class="col-md-3 w3layouts_stats_left w3_counter_grid3">
-	<i class="fa fa-heart-o" aria-hidden="true"></i>
-			<p class="counter">245</p>
-			<h3>Saved Hearts</h3>
-		</div>
-		<div class="clearfix"> </div>
-	</div>
-   </div>	
-</div>
-<!-- //stats -->
-
-<!-- services-bottom -->
-	<div class="services-bottom">
-	<div class="col-md-5 wthree_services_bottom_right">
-			<section class="slider">
-				<div class="flexslider">
-					<ul class="slides">
-						<li>
-							<div class="w3_agile_services_bottom_right_grid">
-								<p class="w3layouts_head_slide">Health Care <span>Center</span></p>
-							</div>
-						</li>
-						<li>
-							<div class="w3_agile_services_bottom_right_grid1">
-								<p class="w3layouts_head_slide">Hospital <span> Departments</span></p>
-							</div>
-						</li>
-						<li>
-							<div class="w3_agile_services_bottom_right_grid2">
-								<p class="w3layouts_head_slide">Health Care <span>Center</span></p>
-							</div>
-						</li>
-					</ul>
-				</div>
-			</section>
-		</div>
-		<div class="col-md-7 wthree_services_bottom_left">
-			<div class="wthree_services_bottom_left_grid">
-				<div class="col-md-6 w3_agileits_services_bottom_l_grid">
-					<div class="agile_services_bottom_l_grid1">
-						<img src="../static/images/g4.jpg" alt=" " class="img-responsive" />
-						<div class="w3_service_bottom_grid_pos">
-							<h3>Quality Care</h3>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6 w3_agileits_services_bottom_r_grid">
-					<h4>Best Surgeons</h4>
-					<p>Praesent vulputate ipsum a velit tempor convallis. 
-						Phasellus ultrices lorem eget erat tempus commodo efficitur odio.</p>
-					
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<div class="wthree_services_bottom_left_grid">
-				<div class="col-md-6 w3_agileits_services_bottom_r_grid">
-					<h4>Latest Technologies</h4>
-					<p>Praesent vulputate ipsum a velit tempor convallis. 
-						Phasellus ultrices lorem eget erat tempus commodo efficitur odio.</p>
-					
-				</div>
-				<div class="col-md-6 w3_agileits_services_bottom_l_grid">
-					<div class="agile_services_bottom_l_grid1">
-						<img src="../static/images/g2.jpg" alt=" " class="img-responsive" />
-						<div class="w3_service_bottom_grid_pos">
-								<h3>Quality Care</h3>
-						</div>
-					</div>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-		
-		<div class="clearfix"> </div>
-	</div>
-<!-- //services-bottom -->
-
-<!-- footer -->
-	<div class="footer">
-		<div class="container">
-			<h4>Subscribe to <span>Newsletter</span></h4>
-			<form action="#" method="post">
-				<input type="email" name="Email" placeholder="Enter Your Email..." required="">
-				<input type="submit" value="Send">
-			</form>
-			<div class="agile_footer_copy">
-				<div class="w3agile_footer_grids">
-					<div class="col-md-4 w3agile_footer_grid">
-						<h3>About Us</h3>
-						<p>Duis aute irure dolor in reprehenderit in voluptate velit esse.<span>Excepteur sint occaecat cupidatat 
-							non proident, sunt in culpa qui officia deserunt mollit.</span></p>
-					</div>
-					<div class="col-md-4 w3agile_footer_grid">
-						<h3>Contact Info</h3>
-						<ul>
-							<li><i class="fa fa-map-marker" aria-hidden="true"></i>1234k Avenue, 4th block, <span>New York City.</span></li>
-							<li><i class="fa fa-envelope-o" aria-hidden="true"></i><a href="mailto:info@example.com">info@example.com</a></li>
-							<li><i class="fa fa-phone" aria-hidden="true"></i>+1234 567 567</li>
-						</ul>
-					</div>
-					<div class="col-md-4 w3agile_footer_grid w3agile_footer_grid1">
-						<h3>Navigation</h3>
-						<ul>
-							<li><span class="fa fa-long-arrow-right" aria-hidden="true"></span><a href="gallery.html">Department</a></li>
-							<li><span class="fa fa-long-arrow-right" aria-hidden="true"></span><a href="appointment.html">Appointment</a></li>
-							<li><span class="fa fa-long-arrow-right" aria-hidden="true"></span><a href="about.html">About</a></li>
-							<li><span class="fa fa-long-arrow-right" aria-hidden="true"></span><a href="contact.html">Contact Us</a></li>
-						</ul>
-					</div>
-					<div class="clearfix"> </div>
-				</div>
-			</div>
-			<div class="w3_agileits_copy_right_social">
-				<div class="col-md-6 agileits_w3layouts_copy_right">
-					<p>&copy; 2017 Health Plus. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
-				</div>
-				<div class="col-md-6 w3_agile_copy_right">
-					<ul class="agileits_social_list">
-								<li><a href="#" class="w3_agile_facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-								<li><a href="#" class="agile_twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-								<li><a href="#" class="w3_agile_dribble"><i class="fa fa-dribbble" aria-hidden="true"></i></a></li>
-								<li><a href="#" class="w3_agile_rss"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
-							</ul>
-				</div>
-				<div class="clearfix"> </div>
-			</div>
-		</div>
-	</div>
-<!-- //footer -->
-<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
- <!-- js -->
-<script src="../static/js/jquery-2.2.3.min.js"></script>
-<script src="../static/js/JiSlider.js"></script>
-		<script>
-			$(window).load(function () {
-				$('#JiSlider').JiSlider({color: '#fff', start: 3, reverse: true}).addClass('ff')
-			})
-		</script><script type="text/javascript">
-
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-36251023-1']);
-  _gaq.push(['_setDomainName', 'jqueryscript.net']);
-  _gaq.push(['_trackPageview']);
-
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-
-</script>
-
-<script src="../static/js/ziehharmonika.js"></script>
-<script>
-$(document).ready(function() {
-		$('.ziehharmonika').ziehharmonika({
-			collapsible: true,
-			prefix: ''
-		});
-	});
-</script>
-<!-- stats -->
-	<script src="../static/js/jquery.waypoints.min.js"></script>
-	<script src="../static/js/jquery.countup.js"></script>
-		<script>
-			$('.counter').countUp();
-		</script>
-<!-- //stats -->
-<script type="text/javascript">
-$(function(){
-  $("#bars li .bar").each(function(key, bar){
-    var percentage = $(this).data('percentage');
-
-    $(this).animate({
-      'height':percentage+'%'
-    }, 1000);
-  })
-})
-</script>
-
-<!-- bootstrap-pop-up -->
-	<div class="modal video-modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModal">
-		<div class="modal-dialog" role="document">
-			<div class="modal-content">
-				<div class="modal-header">
-					Health Plus
-					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>						
-				</div>
-				<section>
-					<div class="modal-body">
-						<img src="../static/images/g9.jpg" alt=" " class="img-responsive" />
-						<p>Ut enim ad minima veniam, quis nostrum 
-							exercitationem ullam corporis suscipit laboriosam, 
-							nisi ut aliquid ex ea commodi consequatur? Quis autem 
-							vel eum iure reprehenderit qui in ea voluptate velit 
-							esse quam nihil molestiae consequatur, vel illum qui 
-							dolorem eum fugiat quo voluptas nulla pariatur.
-							<i>" Quis autem vel eum iure reprehenderit qui in ea voluptate velit 
-								esse quam nihil molestiae consequatur.</i></p>
-					</div>
-				</section>
-			</div>
-		</div>
-	</div>
-<!-- //bootstrap-pop-up -->
-
-<!-- flexSlider -->
-	<script defer src="../static/js/jquery.flexslider.js"></script>
-	<script type="text/javascript">
-		$(window).load(function(){
-		  $('.flexslider').flexslider({
-			animation: "slide",
-			start: function(slider){
-			  $('body').removeClass('loading');
-			}
-		  });
-		});
-  </script>
-<!-- //flexSlider -->
-
-
-<!-- start-smoth-scrolling -->
-<script type="text/javascript" src="../static/js/move-top.js"></script>
-<script type="text/javascript" src="../static/js/easing.js"></script>
-<script type="text/javascript">
-	jQuery(document).ready(function($) {
-		$(".scroll").click(function(event){		
-			event.preventDefault();
-			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-		});
-	});
-</script>
-<!-- start-smoth-scrolling -->
-			<script src="../static/js/jarallax.js"></script>
-	<script src="../static/js/SmoothScroll.min.js"></script>
-	<script type="text/javascript">
-		/* init Jarallax */
-		$('.jarallax').jarallax({
-			speed: 0.5,
-			imgWidth: 1366,
-			imgHeight: 768
-		})
-	</script>
-	
-	<script src="../static/js/bootstrap.js"></script>
-<!-- //for bootstrap working -->
-<!-- here stars scrolling icon -->
-	<script type="text/javascript">
-		$(document).ready(function() {
-			/*
-				var defaults = {
-				containerID: 'toTop', // fading element id
-				containerHoverID: 'toTopHover', // fading element hover id
-				scrollSpeed: 1200,
-				easingType: 'linear' 
-				};
-			*/
-								
-			$().UItoTop({ easingType: 'easeOutQuart' });
-								
-			});
-	</script>
-<!-- //here ends scrolling icon -->
+  <!-- BEGIN: JavaScripts -->
+  <script src="../static/js/jquery-3.4.1.min.js"></script>
+  <script src="../static/js/popper.min.js"></script>
+  <script src="../static/js/bootstrap.min.js"></script>
+  <script src="../static/js/jquery.waypoints.min.js"></script>
+  <script src="../static/js/jquery.animateNumber.min.js"></script>
+  <script src="../static/js/tiny-slider.js"></script>
+  <script src="../static/js/jquery.fancybox.min.js"></script>
+  <script src="../static/js/jquery.lavalamp.min.js"></script>
+  <script src="../static/js/jquery.ajaxchimp.min.js"></script>
+  <script src="../static/js/jquery.validate.min.js"></script>
+  <script src="../static/js/jquery.easing.1.3.js"></script>
+  <script src="../static/js/main.js"></script>
+  <!-- END: JavaScripts -->
+ 
 </body>
 </html>
