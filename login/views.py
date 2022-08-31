@@ -32,3 +32,11 @@ def contact(request):
 def diary(request):
     pass
     return render(request, 'login/diary.html')
+
+def test(request):
+    pass
+    return render(request, 'login/test.html')
+
+def add_diary(request):
+    pass
+    return render(request, 'login/diary.html')

@@ -48,6 +48,28 @@
     <link rel="stylesheet" href="../static/assets/css/chat_box.css" type="text/css" media="all">
   <!--END: help bot -->
 
+    <!-- BEGIN: diary form -->
+    <link rel="stylesheet" type="text/css" href="../static/form/css/normalize.css" /><!--CSS RESET-->
+    <link rel="stylesheet" type="text/css" href="../static/form/css/reset.css"><!--演示页面样式，使用时可以不引用-->
+    <link rel="stylesheet" type="text/css" href="../static/form/css/jquery.sTags.css"><!--标签插件样式-->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.14.2/styles/monokai-sublime.min.css"><!--代码高亮样式-->
+    <style type="text/css">
+    .container{
+        width: 900px;
+        margin: 0 auto;
+    }
+    hr{
+        margin: 100px 0 0 0;
+        border: #fb0000 solid;
+        border-width: 1px 0 0 0;
+    }
+    </style>
+
+    <script src="../static/form/js/jquery-1.11.0.min.js" type="text/javascript"></script>
+    <script src="https://cdn.bootcss.com/highlight.js/9.14.2/highlight.min.js"></script><!--代码高亮插件-->
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../static/form/js/jquery.sTags.js"></script>
+    <!--END: diary form -->
 </head>
 
 <body>
@@ -72,7 +94,7 @@
                       </div>
                       <div class="user-name">
                           <h6 class="user-title">
-                              <a href="#" target="_blank">TP08</a>
+                              <a href="#" target="_blank">Help Bot</a>
                           </h6>
                           <div class="user-role">
                               Administrator
@@ -103,14 +125,14 @@
               <div class="chat-controls">
                   <input class="message-input" id="message-input" placeholder="Type your message here..." type="text">
                   <div class="chat-extra">
-                      <a href="javascript:void(0)">
-                          <span class="extra-tooltip">Attach Document</span>
-                          <i class="material-icons">attach_file</i>
-                      </a>
-                      <a href="javascript:void(0)">
-                          <span class="extra-tooltip">Insert Photo</span>
-                          <i class="material-icons">add_a_photo</i>
-                      </a>
+<!--                      <a href="javascript:void(0)">-->
+<!--                          <span class="extra-tooltip">Attach Document</span>-->
+<!--                          <i class="material-icons">attach_file</i>-->
+<!--                      </a>-->
+<!--                      <a href="javascript:void(0)">-->
+<!--                          <span class="extra-tooltip">Insert Photo</span>-->
+<!--                          <i class="material-icons">add_a_photo</i>-->
+<!--                      </a>-->
                       <a href="javascript:void(0)" class="change_chat_theme">
                           <span class="extra-tooltip">Change chat theme</span>
                           <i class="material-icons">refresh</i>
@@ -125,9 +147,9 @@
 
   <!-- BEGIN: .site-wrap -->
   <div class="site-wrap">
-  
-    <!-- BEGIN: #site-header -->  
-    <!-- 
+
+    <!-- BEGIN: #site-header -->
+    <!--
       Add class '.position-relative' to display it as stack.
       Add '.navbar-light' to make the text dark or black.
     -->
@@ -159,23 +181,23 @@
                 <a class="nav-link" href="/index/">Home</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/diary/">Prevention</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Symptoms</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Community</a>
-              </li>
-              <li class="nav-item  active">
                 <a class="nav-link" href="/diary/">Diary</a>
               </li>
-              <li class="nav-item ">
-                <a class="nav-link" href="#">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Contact</a>
-              </li>
+<!--              <li class="nav-item">-->
+<!--                <a class="nav-link" href="#">Symptoms</a>-->
+<!--              </li>-->
+<!--              <li class="nav-item">-->
+<!--                <a class="nav-link" href="#">Community</a>-->
+<!--              </li>-->
+<!--              <li class="nav-item  active">-->
+<!--                <a class="nav-link" href="#">Prevention</a>-->
+<!--              </li>-->
+<!--              <li class="nav-item ">-->
+<!--                <a class="nav-link" href="#">About</a>-->
+<!--              </li>-->
+<!--              <li class="nav-item">-->
+<!--                <a class="nav-link" href="#">Contact</a>-->
+<!--              </li>-->
             </ul>
 
           </div>
@@ -205,111 +227,149 @@
         <span class="current">Diary</span>
       </div>
     </div>
-    <!-- END: .cover -->
-    
+    <span></span>
+    <!-- BEGIN: diary form -->
+    <div class="container">
+    </code>
+    </pre>
+    <input type="text" id="DemoInput1">
+        </code>
+    </pre>
+    </div>
+
+	<script type="text/javascript">
+	var TagsData=[]
+	TagsData.push({id:1,name:"PHP",screen:"php"})
+	TagsData.push({id:4,name:"C#",screen:"c"})
+	TagsData.push({id:6,name:"JavaScript",screen:"javascript"})
+	TagsData.push({id:2,name:"HTML5",screen:"html5"})
+	TagsData.push({id:3,name:"Python",screen:"python"})
+	TagsData.push({id:5,name:"数据库",screen:"sjk"})
+	TagsData.push({id:7,name:"服务器",screen:"fwq"})
+	TagsData.push({id:8,name:"PHP",screen:"php"})
+	TagsData.push({id:9,name:"C#",screen:"c"})
+	TagsData.push({id:10,name:"JavaScript",screen:"javascript"})
+	TagsData.push({id:11,name:"HTML5",screen:"html5"})
+	TagsData.push({id:12,name:"Python",screen:"python"})
+	TagsData.push({id:13,name:"数据库",screen:"sjk"})
+	TagsData.push({id:14,name:"服务器",screen:"fwq"})
+	TagsData.push({id:15,name:"C#",screen:"c"})
+	TagsData.push({id:16,name:"JavaScript",screen:"javascript"})
+	TagsData.push({id:17,name:"HTML5",screen:"html5"})
+	TagsData.push({id:18,name:"Python",screen:"python"})
+	TagsData.push({id:19,name:"数据库",screen:"sjk"})
+	TagsData.push({id:20,name:"服务器",screen:"fwq"})
+
+
+	$("#DemoInput1").sTags({
+		data:TagsData,
+	})
+    </script>
+    <!-- END: diary form -->
+
 
     <!-- BEGIN: #main -->
 
     <!-- END: #main -->
-    
+
     <!-- BEGIN: #footer -->
-    <footer id="footer">
-      <div class="container">
-        
-        <!-- BEGIN: .footer-subscribe -->
-        <div class="row footer-subscribe">
-          <div class="col-md-6">
-            <h3 class="mt-2">Get our newsletter, join us.</h3>
-          </div>
-          <div class="col-md-6">
-            <form action="#" id="mc-form" class="form-subscribe">
-              <div class="d-flex align-items-stretch w-100">
-                <input type="email" id="mc-email" placeholder="Email address" class="form-control">
-                <input type="submit" value="GET INFO" class="btn btn-outline-white-reverse">
-              </div>
-              <div class="form-group">
-                <label for="mc-email"></label>
-              </div>
-            </form>
-          </div>
-        </div>
-        <!-- END: .footer-subscribe -->
+<!--    <footer id="footer">-->
+<!--      <div class="container">-->
 
-        <div class="row">
-          <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
-            <!-- BEGIN: .widget -->
-            <div class="widget">
-              <h3>About</h3>
-              <ul class="nav-link">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Situation</a></li>
-                <li><a href="#">Prevention</a></li>
-                <li><a href="#">Symptoms</a></li>
-                <li><a href="#">Community</a></li>
-              </ul>
-            </div>
-            <!-- END: .widget -->
-          </div>
-          <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
-            <!-- BEGIN: .widget -->
-            <div class="widget">
-              <h3>Helpful Links</h3>
-              <ul class="nav-link">
-                <li><a href="#">Reduce The Spread</a></li>
-                <li><a href="#">Who Are At Risk</a></li>
-                <li><a href="#">Social Distancing</a></li>
-                <li><a href="#">Community Advice</a></li>
-                <li><a href="#">Technical Guidance</a></li>
-              </ul>
-            </div>
-            <!-- END: .widget -->
-          </div>
-          <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
-            <!-- BEGIN: .widget -->
-            <div class="widget">
-              <h3>Protect Yourself</h3>
-              <ul class="nav-link">
-                <li><a href="#">Wash Your Hands Often</a></li>
-                <li><a href="#">Wear a Face Mask</a></li>
-                <li><a href="#">Avoid Contact With Sick People</a></li>
-                <li><a href="#">Always Cover Your Cough or Sneeze</a></li>
-                <li><a href="#">Protect Your Family</a></li>
-              </ul>
-            </div>
-            <!-- END: .widget -->
-          </div>
-          <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
-            <div class="d-block">
-              <ul class="list-unstyled d-flex social-29021">
-                <li><a href="#"><span class="icon-facebook"></span></a></li>
-                <li><a href="#"><span class="icon-twitter"></span></a></li>
-                <li><a href="#"><span class="icon-instagram"></span></a></li>
-                <li><a href="#"><span class="icon-linkedin"></span></a></li>
-              </ul>
-            </div>
+<!--        &lt;!&ndash; BEGIN: .footer-subscribe &ndash;&gt;-->
+<!--        <div class="row footer-subscribe">-->
+<!--          <div class="col-md-6">-->
+<!--            <h3 class="mt-2">Get our newsletter, join us.</h3>-->
+<!--          </div>-->
+<!--          <div class="col-md-6">-->
+<!--            <form action="#" id="mc-form" class="form-subscribe">-->
+<!--              <div class="d-flex align-items-stretch w-100">-->
+<!--                <input type="email" id="mc-email" placeholder="Email address" class="form-control">-->
+<!--                <input type="submit" value="GET INFO" class="btn btn-outline-white-reverse">-->
+<!--              </div>-->
+<!--              <div class="form-group">-->
+<!--                <label for="mc-email"></label>-->
+<!--              </div>-->
+<!--            </form>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; END: .footer-subscribe &ndash;&gt;-->
 
-            <div class="d-block mb-4">
-              <a href="#" class="d-flex call align-items-center">
-                <span class="lni lni-mobile wrap-icon"></span>
-                <span class="number">329 4902 392</span>
-              </a>
-            </div>
-            <div class="d-block">
-              <p>If you have any question, please contact us at <a href="#" class="link-underline text-primary">info@diatastic.tk</a></p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- BEGIN: .copyright -->
-        <div class="row copyright">
-          <div class="col-md-6 order-2 text-center text-md-right"><a href="#" class="js-top"><span class="icon-long-arrow-up mr-2"></span> Go to Top</a></div>
-          <div class="col-md-6 text-center text-md-left">
-            <p>&copy; 2022. All Rights Reserved. Design by <a href="#" target="_blank" class="link-underline text-primary">TP08</a></p>
-          </div>
-        </div>
-        <!-- END: .copyright -->
-      </div>
-    </footer>
+<!--        <div class="row">-->
+<!--          <div class="col-md-6 col-lg-3 mb-4 mb-md-0">-->
+<!--            &lt;!&ndash; BEGIN: .widget &ndash;&gt;-->
+<!--            <div class="widget">-->
+<!--              <h3>About</h3>-->
+<!--              <ul class="nav-link">-->
+<!--                <li><a href="#">Home</a></li>-->
+<!--                <li><a href="#">Situation</a></li>-->
+<!--                <li><a href="#">Prevention</a></li>-->
+<!--                <li><a href="#">Symptoms</a></li>-->
+<!--                <li><a href="#">Community</a></li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; END: .widget &ndash;&gt;-->
+<!--          </div>-->
+<!--          <div class="col-md-6 col-lg-3 mb-4 mb-md-0">-->
+<!--            &lt;!&ndash; BEGIN: .widget &ndash;&gt;-->
+<!--            <div class="widget">-->
+<!--              <h3>Helpful Links</h3>-->
+<!--              <ul class="nav-link">-->
+<!--                <li><a href="#">Reduce The Spread</a></li>-->
+<!--                <li><a href="#">Who Are At Risk</a></li>-->
+<!--                <li><a href="#">Social Distancing</a></li>-->
+<!--                <li><a href="#">Community Advice</a></li>-->
+<!--                <li><a href="#">Technical Guidance</a></li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; END: .widget &ndash;&gt;-->
+<!--          </div>-->
+<!--          <div class="col-md-6 col-lg-3 mb-4 mb-md-0">-->
+<!--            &lt;!&ndash; BEGIN: .widget &ndash;&gt;-->
+<!--            <div class="widget">-->
+<!--              <h3>Protect Yourself</h3>-->
+<!--              <ul class="nav-link">-->
+<!--                <li><a href="#">Wash Your Hands Often</a></li>-->
+<!--                <li><a href="#">Wear a Face Mask</a></li>-->
+<!--                <li><a href="#">Avoid Contact With Sick People</a></li>-->
+<!--                <li><a href="#">Always Cover Your Cough or Sneeze</a></li>-->
+<!--                <li><a href="#">Protect Your Family</a></li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--            &lt;!&ndash; END: .widget &ndash;&gt;-->
+<!--          </div>-->
+<!--          <div class="col-md-6 col-lg-3 mb-4 mb-md-0">-->
+<!--            <div class="d-block">-->
+<!--              <ul class="list-unstyled d-flex social-29021">-->
+<!--                <li><a href="#"><span class="icon-facebook"></span></a></li>-->
+<!--                <li><a href="#"><span class="icon-twitter"></span></a></li>-->
+<!--                <li><a href="#"><span class="icon-instagram"></span></a></li>-->
+<!--                <li><a href="#"><span class="icon-linkedin"></span></a></li>-->
+<!--              </ul>-->
+<!--            </div>-->
+
+<!--            <div class="d-block mb-4">-->
+<!--              <a href="#" class="d-flex call align-items-center">-->
+<!--                <span class="lni lni-mobile wrap-icon"></span>-->
+<!--                <span class="number">329 4902 392</span>-->
+<!--              </a>-->
+<!--            </div>-->
+<!--            <div class="d-block">-->
+<!--              <p>If you have any question, please contact us at <a href="#" class="link-underline text-primary">info@diatastic.tk</a></p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+
+<!--        &lt;!&ndash; BEGIN: .copyright &ndash;&gt;-->
+<!--        <div class="row copyright">-->
+<!--          <div class="col-md-6 order-2 text-center text-md-right"><a href="#" class="js-top"><span class="icon-long-arrow-up mr-2"></span> Go to Top</a></div>-->
+<!--          <div class="col-md-6 text-center text-md-left">-->
+<!--            <p>&copy; 2022. All Rights Reserved. Design by <a href="#" target="_blank" class="link-underline text-primary">TP08</a></p>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        &lt;!&ndash; END: .copyright &ndash;&gt;-->
+<!--      </div>-->
+<!--    </footer>-->
     <!-- END: #footer -->
 
   </div>
