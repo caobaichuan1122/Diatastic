@@ -18,8 +18,11 @@ $(function () {
                 var val = ($(this).val() !== '') ? $(this).val() : "Lorem Ipsum is simply dummy text of the printing.";
                 $('.chat-messages').append('<div class="message self"><div class="message-content">' + val + '</div></div>');
                 $(this).val('');
+
+               // val = connect databases
+               //if val
                 setTimeout(function () {
-                    $('.chat-messages').append('<div class="message"><div class="message-content">' + val + '</div></div>');
+                    $('.chat-messages').append('<div class="message"><div class="message-content">' + 'hello world' + val + '</div></div>');
                     $messages_w.scrollTop($messages_w.prop("scrollHeight"));
                     $messages_w.perfectScrollbar('update');
                 }, 200)

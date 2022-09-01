@@ -1,9 +1,7 @@
-
 from django.shortcuts import render, get_object_or_404, redirect
-
 from decimal import Decimal
-
 from .models import Food, Drink, DiaryEntries
+# from helpbot import helpbot_response
 
 
 import pandas as pd
@@ -126,3 +124,7 @@ def insulin_calculation(food, drinks, blood_sugar_level):
 
 def get_queryset():
     return DiaryEntries.objects.all().order_by('date')
+
+
+def hello(user_input):
+    return 'hello world' + user_input
