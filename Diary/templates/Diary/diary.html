@@ -229,42 +229,86 @@
     </div>
     <span></span>
     <!-- BEGIN: diary form -->
+<!--    <div class="container">-->
+<!--    </code>-->
+<!--    </pre>-->
+<!--    <input type="text" id="DemoInput1">-->
+<!--        </code>-->
+<!--    </pre>-->
+<!--    </div>-->
+
+<!--	<script type="text/javascript">-->
+<!--	var TagsData=[]-->
+<!--	TagsData.push({id:1,name:"PHP",screen:"php"})-->
+<!--	TagsData.push({id:4,name:"C#",screen:"c"})-->
+<!--	TagsData.push({id:6,name:"JavaScript",screen:"javascript"})-->
+<!--	TagsData.push({id:2,name:"HTML5",screen:"html5"})-->
+<!--	TagsData.push({id:3,name:"Python",screen:"python"})-->
+<!--	TagsData.push({id:5,name:"数据库",screen:"sjk"})-->
+<!--	TagsData.push({id:7,name:"服务器",screen:"fwq"})-->
+<!--	TagsData.push({id:8,name:"PHP",screen:"php"})-->
+<!--	TagsData.push({id:9,name:"C#",screen:"c"})-->
+<!--	TagsData.push({id:10,name:"JavaScript",screen:"javascript"})-->
+<!--	TagsData.push({id:11,name:"HTML5",screen:"html5"})-->
+<!--	TagsData.push({id:12,name:"Python",screen:"python"})-->
+<!--	TagsData.push({id:13,name:"数据库",screen:"sjk"})-->
+<!--	TagsData.push({id:14,name:"服务器",screen:"fwq"})-->
+<!--	TagsData.push({id:15,name:"C#",screen:"c"})-->
+<!--	TagsData.push({id:16,name:"JavaScript",screen:"javascript"})-->
+<!--	TagsData.push({id:17,name:"HTML5",screen:"html5"})-->
+<!--	TagsData.push({id:18,name:"Python",screen:"python"})-->
+<!--	TagsData.push({id:19,name:"数据库",screen:"sjk"})-->
+<!--	TagsData.push({id:20,name:"服务器",screen:"fwq"})-->
+
+
+<!--	$("#DemoInput1").sTags({-->
+<!--		data:TagsData,-->
+<!--	})-->
+<!--    </script>-->
+
+
+      <form method="post" action="/list_view/">
+          {% csrf_token %}
+        <div class="container">
+
+                <div class="form-check">
+                    <label for="field1">Date: </label>
+                    <input id="field1" type="date" class="form-control" value={{ date }} ></input>
+                </div>
+
+                <div class="form-check">
+                    <label for="field2">Time: </label>
+                    <input id="field2" type="time" class="form-control" value={{ time }} ></input>
+                </div>
+
+                <div class="form-check">
+                    <label for="field3"/>Blood Sugar Level: </label>
+                    <input id="field3" type="Decimal" class="form-control" value={{ blood_sugar_level }} ></input>
+                </div>
+
+                <div class="form-check">
+                    <label for="field4"/>Food: </label>
+                    <input id="field4" type="select" class="form-control" value={{ food_items }} ></input>
+                </div>
+
+                <div class="form-check">
+                    <label for="field5"/>Drinks:</label>
+                    <input id="field5" type="select" class="form-control" value={{ drinks }} ></input>
+                </div>
+
+                &nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-primary">submit</button>
+                <button type="reset" class="btn btn-primary">reset</button>
+<!--                <input type="button" value="Reset" id="resetBtn" onClick="this.form.reset()"/>-->
+        </div>
+    </form>
+      <span></span>
     <div class="container">
-    </code>
-    </pre>
-    <input type="text" id="DemoInput1">
-        </code>
-    </pre>
+  {% for instance in object_list %}
+            <p>{{ instance.id }} -<a href="/entry_view/{{ instance.diary_id }}/">{{ instance.date }}</a></p>
+    {% endfor %}
     </div>
 
-	<script type="text/javascript">
-	var TagsData=[]
-	TagsData.push({id:1,name:"PHP",screen:"php"})
-	TagsData.push({id:4,name:"C#",screen:"c"})
-	TagsData.push({id:6,name:"JavaScript",screen:"javascript"})
-	TagsData.push({id:2,name:"HTML5",screen:"html5"})
-	TagsData.push({id:3,name:"Python",screen:"python"})
-	TagsData.push({id:5,name:"数据库",screen:"sjk"})
-	TagsData.push({id:7,name:"服务器",screen:"fwq"})
-	TagsData.push({id:8,name:"PHP",screen:"php"})
-	TagsData.push({id:9,name:"C#",screen:"c"})
-	TagsData.push({id:10,name:"JavaScript",screen:"javascript"})
-	TagsData.push({id:11,name:"HTML5",screen:"html5"})
-	TagsData.push({id:12,name:"Python",screen:"python"})
-	TagsData.push({id:13,name:"数据库",screen:"sjk"})
-	TagsData.push({id:14,name:"服务器",screen:"fwq"})
-	TagsData.push({id:15,name:"C#",screen:"c"})
-	TagsData.push({id:16,name:"JavaScript",screen:"javascript"})
-	TagsData.push({id:17,name:"HTML5",screen:"html5"})
-	TagsData.push({id:18,name:"Python",screen:"python"})
-	TagsData.push({id:19,name:"数据库",screen:"sjk"})
-	TagsData.push({id:20,name:"服务器",screen:"fwq"})
 
-
-	$("#DemoInput1").sTags({
-		data:TagsData,
-	})
-    </script>
     <!-- END: diary form -->
 
 

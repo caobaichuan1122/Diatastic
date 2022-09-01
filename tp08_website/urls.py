@@ -5,17 +5,17 @@ The `urlpatterns` list routes URLs to views. For more information please see:
 Examples:
 Function views
     1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.login, name='login')
+    2. Add a URL to urlpatterns:  path('', views.Diary, name='Diary')
 Class-based views
     1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='login')
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='Diary')
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
 from django.urls import path
-from login import views
+from Diary import views
 from django.views.generic.base import RedirectView
 
 urlpatterns = [
@@ -29,5 +29,8 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('diary/', views.diary, name='diary'),
     path('test/', views.test, name='test'),
+    path('create_view/', views.create_view, name='create_view'),
+    path('list_view/', views.list_view, name='list_view'),
+    path('entry_view/<int:diary_id>/', views.entry_view, name='entry_view'),
     path('favicon\.ico$', RedirectView.as_view(url='/static/images/favicon.ico')),
 ]
