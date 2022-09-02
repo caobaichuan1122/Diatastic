@@ -36,7 +36,7 @@ $(function () {
                     $messages_w.perfectScrollbar('update');
                     return false;
                     }
-               else if (val.match("types")){
+               else if (val.match("type")){
                     setTimeout(function () {
                         $('.chat-messages').append('<div class="message"><div class="message-content">' + 'hello' + "&nbsp;"+ val_date[1] + '</div></div>');
                         $messages_w.scrollTop($messages_w.prop("scrollHeight"));
