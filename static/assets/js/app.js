@@ -25,7 +25,7 @@ $(function () {
                                     "Type 2 diabetes is increasing at the fastest rate. There are large numbers of people with silent, undiagnosed type 2 diabetes which may be damaging their bodies. An estimated 2 million Australians are at high risk of developing type 2 diabetes and are already showing early signs of the condition.\nType 2 diabetes is one of the major consequences of the obesity epidemic. The combination of massive changes to diet and the food supply, combined with massive changes to physical activity with more sedentary work and less activity, means most populations are seeing more type 2 diabetes.\nGenes also play a part with higher risk of type 2 diabetes in Chinese, South Asian, Indian, Pacific Islander and Aboriginal and Torres Strait Islander populations.",
                                     "In type 1 diabetes, symptoms are often sudden and can be life-threatening; therefore it is usually diagnosed quite quickly. In type 2 diabetes, many people have no symptoms at all, while other signs can go unnoticed being seen as part of ‘getting older’. Therefore, by the time symptoms are noticed, complications of diabetes may already be present. Common symptoms include: Being more thirsty than usual, Passing more urine, Feeling tired and lethargic, Always feeling hungry, Having cuts that heal slowly, Itching, skin infections, Blurred vision, Unexplained weight loss (type 1), Gradually putting on weight (type 2), Mood swings, Headaches, Feeling dizzy, Leg cramps",
                                         ];
-               if (val.match("what")){
+               if (val.match("what|diabetes")){
                     setTimeout(function () {
                         $('.chat-messages').append('<div class="message"><div class="message-content">' +  val_date[0] + '</div></div>');
                         $messages_w.scrollTop($messages_w.prop("scrollHeight"));
@@ -58,7 +58,7 @@ $(function () {
                     $messages_w.perfectScrollbar('update');
                     return false;
                     }
-               else if (val.match("how")){
+               else if (val.match("how|affect")){
                     setTimeout(function () {
                         $('.chat-messages').append('<div class="message"><div class="message-content">' + 'hello' + "&nbsp;"+ val_date[3] + '</div></div>');
                         $messages_w.scrollTop($messages_w.prop("scrollHeight"));
@@ -69,7 +69,7 @@ $(function () {
                     $messages_w.perfectScrollbar('update');
                     return false;
                     }
-               else if (val.match("why")){
+               else if (val.match("why|increasing")){
                     setTimeout(function () {
                         $('.chat-messages').append('<div class="message"><div class="message-content">' + 'hello' + "&nbsp;"+ val_date[4] + '</div></div>');
                         $messages_w.scrollTop($messages_w.prop("scrollHeight"));
