@@ -78,7 +78,7 @@ WSGI_APPLICATION = 'tp08_website.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Nutrients',
+        'NAME': 'new_nutrients',
         'USER': 'root',
         'PASSWORD': 'tp08tp08',
         'HOST': '13.239.85.203',

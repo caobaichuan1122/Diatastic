@@ -52,3 +52,7 @@ class DiaryEntries(models.Model):
 
     food = models.CharField(max_length=120)
     drinks = models.CharField(max_length=120)
+    insulin = models.DecimalField(
+        decimal_places=2,
+        max_digits=5
+    )

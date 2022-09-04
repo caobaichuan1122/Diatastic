@@ -94,7 +94,6 @@ def entry_view(request, diary_id):
 
 def list_view(request):
     diary_entry = DiaryEntries.objects.all()
-    print(diary_entry)
     return render(request,'Diary/list_view.html',context={'diary_entry':diary_entry})
 
 
