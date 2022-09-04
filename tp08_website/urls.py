@@ -31,6 +31,6 @@ urlpatterns = [
     path('test/', views.test, name='test'),
     path('create_view/', views.create_view, name='create_view'),
     path('list_view/', views.list_view, name='list_view'),
-    path('entry_view/<int:diary_id>/', views.entry_view, name='entry_view'),
+    path('entry_view/', views.list_view, name='list_view'),
     path('favicon\.ico$', RedirectView.as_view(url='/static/images/favicon.ico')),
 ]

@@ -69,12 +69,12 @@ def create_view(request):
 
     return render(request, "Diary/diary.html", context)
 
-def list_view(request):
-    queryset = get_queryset()
-    context = {
-        'object_list': queryset
-    }
-    return render(request, "Diary/diary.html", context)
+# def list_view(request):
+#     queryset = get_queryset()
+#     context = {
+#         'object_list': queryset
+#     }
+#     return render(request, "Diary/list_view.html", context)
 
 def entry_view(request, diary_id):
     obj = get_object_or_404(DiaryEntries, diary_id=diary_id)
@@ -88,7 +88,12 @@ def entry_view(request, diary_id):
         'Insulin': val
     }
 
-    return render(request, "Diary/diary_list.html", context)
+    return render(request, "Diary/entry_view.html", context)
+
+def list_view(request):
+    diary_entry = DiaryEntries.objects.all()
+    print(diary_entry)
+    return render(request,'Diary/list_view.html',context={'diary_entry':diary_entry})
 
 
 def insulin_calculation(food, drinks, blood_sugar_level):
