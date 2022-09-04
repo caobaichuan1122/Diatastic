@@ -50,7 +50,6 @@ def add_diary(request):
 def create_view(request):
     my_form = DiaryForm(request.POST or None)
     if my_form.is_valid():
-
         date_entered = my_form.cleaned_data['date']
         time_entered = my_form.cleaned_data['time']
         blood_sugar_level = my_form.cleaned_data['blood_sugar_level']
