@@ -247,28 +247,47 @@
 <!--    </script>-->
 
 
-      <form method="post" action="/list_view/">
+      <form method="post" action="/create_view/" style="align-items: center;" >
           {% csrf_token %}
         <div class="container">
 
+<!--                <div class="form-group">-->
+<!--                    {{ DiaryForm.date.label_tag }}-->
+<!--                    {{ DiaryForm.date}}-->
+<!--                </div>-->
+
+<!--                <div class="form-group">-->
+<!--                    {{ DiaryForm.time.label_tag }}-->
+<!--                    {{ DiaryForm.time}}-->
+<!--                </div>-->
+
+<!--                <div class="form-group">-->
+<!--                    {{ DiaryForm.blood_sugar_level.label_tag }}-->
+<!--                    {{ DiaryForm.blood_sugar_level}}-->
+<!--                </div>-->
+
+<!--                <div class="form-group">-->
+<!--                    {{ DiaryForm.date.label_tag }}-->
+<!--                    {{ DiaryForm.date}}-->
+<!--                </div>-->
                 <div class="form-check">
-                    <label for="field1">Date: </label>
-                    <input id="field1" type="date" class="form-control" value={{ date }} ></input>
+                    <label for="date">Date: </label>
+                    <input name="date" id="date" type="date" class="form-control" ></input>
                 </div>
 
                 <div class="form-check">
-                    <label for="field2">Time: </label>
-                    <input id="field2" type="time" class="form-control" value={{ time }} ></input>
+                    <label for="time">Time: </label>
+                    <input name="time"id="time" type="time" class="form-control" ></input>
                 </div>
 
                 <div class="form-check">
-                    <label for="field3"/>Blood Sugar Level: </label>
-                    <input id="field3" type="Decimal" class="form-control" value={{ blood_sugar_level }} ></input>
+                    <label for="blood_sugar_level"/>Blood Sugar Level: </label>
+                    <input name="blood_sugar_level" id="blood_sugar_level" type="Decimal" class="form-control" value={{ blood_sugar_level }} ></input>
                 </div>
 
                 <div class="form-check">
-                    <label for="field4"/>Food:</label>
-                    <select name="drink" id="field4" class="form-control select-picker" multiple="multiple">
+                    <label for="food"/>Food:</label>
+                    <select name="food" id="food" class="form-control select-picker" multiple="multiple">
                         {% for item in food %}
                         <option value="{{ item.name }}">{{ item.name }}</option>
                         {% endfor %}
@@ -276,8 +295,8 @@
                 </div>
 
                 <div class="form-check">
-                    <label for="field5"/>Drinks:</label>
-                    <select name="drink" id="field5" class="form-control select-picker" multiple="multiple">
+                    <label for="drink"/>Drinks:</label>
+                    <select name="drink" id="drink" class="form-control select-picker" multiple="multiple">
                         {% for item in drinks %}
                         <option value="{{ item.name }}">{{ item.name }}</option>
                         {% endfor %}
@@ -445,7 +464,7 @@
   <script src="../static/assets/js/app.js"></script>
   <script>
         $(function ($drinks) {
-            $("#field5").fSelect();
+            $("#drink").fSelect();
         });
 <!--        $(function ($food) {-->
 <!--            $("#field4").fSelect();-->

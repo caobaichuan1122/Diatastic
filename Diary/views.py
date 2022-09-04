@@ -1,15 +1,38 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from decimal import Decimal
-from .models import Food, Drink, DiaryEntries
-# from helpbot import helpbot_response
-
-
+from . import models
+from .models import Food, Drink
 import pandas as pd
 import ast
-
-from .forms import DiaryForm
+from .forms import DiaryForm,UserForm
 from .models import  DiaryEntries
 
+
+def login(request):
+    # if request.session.get('is_login',None):
+    #     return redirect('/index/') #sing in page
+
+    if request.method == "POST":
+        login_form = UserForm(request.POST)
+        message = "please check！"
+        if login_form.is_valid():
+            username = login_form.cleaned_data['username']
+            password = login_form.cleaned_data['password']
+            try:
+                user = models.User.objects.get(name=username)
+                if user.password == password:
+                    request.session['is_login'] = True
+                    request.session['user_id'] = user.id
+                    request.session['user_name'] = user.name
+                    return redirect('/index/')
+                else:
+                    message = "password error！"
+            except:
+                message = "user error！"
+        return render(request, 'Diary/login.html', locals())
+
+    login_form = UserForm()
+    return render(request, 'Diary/login.html', locals())
 
 def index(request):
     pass
@@ -38,45 +61,32 @@ def contact(request):
 def diary(request):
     drinks = Drink.objects.all()
     food = Food.objects.all()
-    print(drinks)
     return render(request, 'Diary/diary.html',context={'drinks':drinks,'food':food})
-
-def test(request):
-    pass
-    return render(request, 'Diary/test.html')
 
 def add_diary(request):
     pass
     return render(request, 'Diary/diary.html')
 
+def test(request):
+    pass
+    return render(request, 'Diary/diary.html')
+
 def create_view(request):
-    my_form = DiaryForm(request.POST or None)
-    if my_form.is_valid():
-        date_entered = my_form.cleaned_data['date']
-        time_entered = my_form.cleaned_data['time']
-        blood_sugar_level = my_form.cleaned_data['blood_sugar_level']
-        food = my_form.cleaned_data['food_items']
-        drinks = my_form.cleaned_data['drinks']
+    if request.method == "POST":
+        date = request.POST.get('date')
+        time = request.POST.get('time')
+        blood_sugar_level = request.POST.get('blood_sugar_level')
+        food = request.POST.getlist('food')
+        drinks = request.POST.getlist('drink')
+        DiaryEntries.objects.create(date=date,time=time,blood_sugar_level=blood_sugar_level,food=food,drinks=drinks,insulin=0.0)
+        diary_entry = DiaryEntries.objects.all()
+        for item in diary_entry:
+            if item.insulin == 0:
+                DiaryEntries.objects.filter(diary_id=item.diary_id).update(
+                    insulin=insulin_calculation(item.food, item.drinks, item.blood_sugar_level))
+        return redirect("/list_view/",context={'date':date,'time':time,'blood_sugar_level':blood_sugar_level,'food':food,'drinks':drinks})
 
-        p = DiaryEntries(date=date_entered, time=time_entered,
-                         blood_sugar_level=blood_sugar_level,
-                         food=food, drinks=drinks)
-        p.save()
-        return redirect("list")
-    else:
-        my_form = DiaryForm(request.POST or None)
-        context = {
-            'form': my_form
-        }
-
-    return render(request, "Diary/diary.html", context)
-
-# def list_view(request):
-#     queryset = get_queryset()
-#     context = {
-#         'object_list': queryset
-#     }
-#     return render(request, "Diary/list_view.html", context)
+    return render(request, "Diary/list_view.html")
 
 def entry_view(request, diary_id):
     obj = get_object_or_404(DiaryEntries, diary_id=diary_id)
@@ -94,6 +104,9 @@ def entry_view(request, diary_id):
 
 def list_view(request):
     diary_entry = DiaryEntries.objects.all()
+    for item in diary_entry:
+        if item.insulin == 0:
+            DiaryEntries.objects.filter(diary_id =item.diary_id).update(insulin = insulin_calculation(item.food, item.drinks, item.blood_sugar_level))
     return render(request,'Diary/list_view.html',context={'diary_entry':diary_entry})
 
 
@@ -130,6 +143,3 @@ def insulin_calculation(food, drinks, blood_sugar_level):
 def get_queryset():
     return DiaryEntries.objects.all().order_by('date')
 
-
-def hello(user_input):
-    return 'hello world' + user_input

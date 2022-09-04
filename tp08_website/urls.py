@@ -20,6 +20,7 @@ from Diary import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
+    path('login/', views.login, name='login'),
     path('index/', views.index, name='index'),
     path('prevention/', views.prevention, name='prevention'),
     path('symptoms/', views.symptoms, name='symptoms'),
@@ -30,6 +31,6 @@ urlpatterns = [
     path('test/', views.test, name='test'),
     path('create_view/', views.create_view, name='create_view'),
     path('list_view/', views.list_view, name='list_view'),
-    path('entry_view/', views.list_view, name='list_view'),
+    path('entry_view/', views.entry_view, name='entry_view'),
     # path('favicon\.ico$', RedirectView.as_view(url='/static/images/favicon.ico')),
 ]
