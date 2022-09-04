@@ -36,8 +36,10 @@ def contact(request):
     return render(request, 'Diary/contact.html')
 
 def diary(request):
-    pass
-    return render(request, 'Diary/diary.html')
+    drinks = Drink.objects.all()
+    food = Food.objects.all()
+    print(drinks)
+    return render(request, 'Diary/diary.html',context={'drinks':drinks,'food':food})
 
 def test(request):
     pass
