@@ -53,7 +53,6 @@ function respond(user_input) {
 
 $(function () {
     $.backstretch("assets/img/bg.jpg");
-    //www.bootstrapmb.com
     var count = 0;
     var classes = ["theme_1", "theme_2", "theme_3", "theme_4"];
     var length = classes.length;
@@ -84,7 +83,6 @@ $(function () {
         });
 
         $('.pvr_chat_wrapper .chat-messages').perfectScrollbar();
-        //www.bootstrapmb.com
         $(".change_chat_theme").on('click', function () {
             $(".chat-messages").removeAttr("class").addClass("chat-messages " + classes[count]);
             if (parseInt(count, 10) === parseInt(length, 10) - 1) {

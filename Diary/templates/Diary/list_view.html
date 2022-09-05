@@ -1,5 +1,5 @@
 {% load static %}
-<!doctype html>
+{% if request.session.is_login %}
 <html lang="en">
 
 <head>
@@ -346,3 +346,9 @@
 
 </body>
 </html>
+
+{% else %}
+<script type="text/javascript">
+    window.location.href = "/please_login/";
+</script>
+{% endif %}

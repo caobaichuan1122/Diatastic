@@ -15,23 +15,22 @@ def login(request):
     if request.method == "POST":
         login_form = UserForm(request.POST)
         message = "please check！"
-        if login_form.is_valid():
-            username = login_form.cleaned_data['username']
-            password = login_form.cleaned_data['password']
-            try:
-                user = models.User.objects.get(name=username)
-                if user.password == password:
-                    request.session['is_login'] = True
-                    request.session['user_id'] = user.id
-                    request.session['user_name'] = user.name
-                    return redirect('/index/')
-                else:
-                    message = "password error！"
-            except:
-                message = "user error！"
-        return render(request, 'Diary/login.html', locals())
-
-    login_form = UserForm()
+        # if login_form.is_valid():
+            # username = login_form.cleaned_data['username']
+            # password = login_form.cleaned_data['password']
+        username = request.POST.get('user')
+        password = request.POST.get('password')
+        try:
+            user = models.User.objects.get(name=username)
+            if user.password == password:
+                request.session['is_login'] = True
+                request.session['user_id'] = user.id
+                request.session['user_name'] = user.name
+                return redirect('/index/')
+            else:
+                message = "password error！"
+        except:
+            message = "user error！"
     return render(request, 'Diary/login.html', locals())
 
 def index(request):
@@ -142,4 +141,7 @@ def insulin_calculation(food, drinks, blood_sugar_level):
 
 def get_queryset():
     return DiaryEntries.objects.all().order_by('date')
+
+def please_login(request):
+    return render(request, "Diary/404.html")
 
