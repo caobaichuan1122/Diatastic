@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'Diary',
+    'iteration2',
 ]
 
 MIDDLEWARE = [
@@ -139,4 +140,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 HERE = os.path.join(HERE, '../')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
+    os.path.join(BASE_DIR, "iteration2", "static"),
+    # os.path.join(BASE_DIR, "login", "static"),
 ]
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
