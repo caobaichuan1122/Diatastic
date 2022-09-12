@@ -1,3 +1,20 @@
+// NEW STUFF HERE
+const keywords = new Map([
+    ["guide", "Beginner's guide"],
+    ["diabetes", "What is diabetes?"],
+    ["type1", "Type 1"],
+    ["type2", "Type 2"],
+    ["gestational", "Gestational"],
+    ["long term", "Long term negative effects"],
+    ["treatment", "type 1 treatment options"],
+    ["type 2 treatment", "type 2 treatment options"],
+    ["diet", "Healthy eating"],
+    ["daily", "recommended daily routine"],
+    ["help", "tips and tricks"],
+    ["tips", "tips and tricks"]
+]);
+// NEW STUFF ENDS HERE
+
 const info_list = [
     "Diabetes is a serious complex condition which can affect the entire body. Diabetes requires daily self care and if complications develop, diabetes can have a significant impact on quality of life and can reduce life expectancy. While there is currently no cure for diabetes, you can live an enjoyable life by learning about the condition and effectively managing it.",
     "There are main types of diabetes; all types are complex and serious. The three main types of diabetes are type 1, type 2 and gestational diabetes.",
