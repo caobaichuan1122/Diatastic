@@ -24,6 +24,8 @@ const keywords = new Map([
     ["type 1", "type 1"],
     ["type 2", "type 2"],
     ["gestational", "gestational"],
+    ["symptoms", "symptoms"],
+    ["hypoglycemia", "hypoglycemia"],
     // ["long term", "Long term negative effects"],
     // ["treatment", "type 1 treatment options"],
     // ["type 2 treatment", "type 2 treatment options"],
@@ -43,6 +45,8 @@ const info_map = new Map([
     ["type 1", "Type 1 diabetes is a chronic medical condition where cells that make insulin are destroyed, hence the body is unable to process glucose due to the lack of insulin."],
     ["type 2", "Type 2 diabetes is a chronic medical condition where your body is not able to respond to insulin as well as it should. In later stages, it also many not produce enough insulin. When uncontrolled, may lead to chronically high blood glucose levels, leading to serious complications."],
     ["gestational", "Gestational diabetes typically develops between the 24th to 28th week of pregnancy. Although not indicative of having diabetes before or after pregnancy, it raises the risk of type 2 diabetes in the future. If poorly managed, it can raise the child's chance of developing diabetes and create complications during pregnancy and delivery."],
+    ["hypoglycemia", "Hypoglycemia happens when blood glucose falls low, possibly a side effect of insulin. Severely low blood glucose can cause serious complications, including passing out, coma, or death."],
+    ["symptoms", "Symptoms of hypoglycemia: Rapid heartbeat, sweating, whiteness of skin, anxiety, numbness in fingers, toes and lips, sleepiness, confusion, headaches, slurred speech"]
     ["?help", "Available commands: ?diet, ?treatment"],
     ["?diet", "//Healthy eating is essential etc. LINK HERE//"],
     ["?treatment", "//Explore your treatment options here, includes all types of diabetes. LINK HERE//"]
