@@ -7,17 +7,17 @@ from iteration2 import models
 
 def index(request):
     pass
-    return render(request, 'iteration2/index.html')
+    return render(request, 'iteration2/index.html',{'iteration2':'iteration2'})
 
 def test(request):
     pass
-    return render(request, 'iteration2/test.html')
+    return render(request, 'iteration2/test.html',{'iteration2':'iteration2'})
 
 
 def login(request):
     # if request.session.get('is_login',None):
     #     return redirect('/index/') #sing in page
-
+    # print(123)
     if request.method == "POST":
         login_form = UserForm(request.POST)
         message = "please check！"
@@ -32,9 +32,12 @@ def login(request):
                 request.session['is_login'] = True
                 request.session['user_id'] = user.id
                 request.session['user_name'] = user.name
-                return redirect('/iteration2/index/')
+                return redirect('iteration2/index/')
             else:
                 message = "password error！"
         except:
             message = "user error！"
-    return render(request, 'iteration2/login.html', locals())
+    return render(request, 'iteration2/login.html',{'iteration2':'iteration2'})
+
+def please_login(request):
+    return render(request, "iteration2/404.html",{'iteration2':'iteration2'})

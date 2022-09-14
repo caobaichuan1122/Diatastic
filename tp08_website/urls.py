@@ -16,24 +16,26 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from Diary import views
-from iteration2 import urls as iteration2_urls
+# from iteration2 import urls as iteration2_urls
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('iteration2/',include(iteration2_urls)),
-    path('', views.login, name='login'),
-    path('login/', views.login, name='login'),
-    path('index/', views.index, name='index'),
-    path('prevention/', views.prevention, name='prevention'),
-    path('symptoms/', views.symptoms, name='symptoms'),
-    path('community/', views.community, name='community'),
-    path('about/', views.about, name='about'),
-    path('contact/', views.contact, name='contact'),
-    path('diary/', views.diary, name='diary'),
-    path('test/', views.test, name='test'),
-    path('create_view/', views.create_view, name='create_view'),
-    path('list_view/', views.list_view, name='list_view'),
-    path('entry_view/', views.entry_view, name='entry_view'),
-    path('please_login/', views.please_login, name='please_login'),
+    path('iteration2/',include('iteration2.urls')),
+    path('Diary/', include('Diary.urls')),
+    path('',include('iteration2.urls')),
+    # path('', views.login, name='login'),
+    # path('login/', views.login, name='login'),
+    # path('index/', views.index, name='index'),
+    # path('prevention/', views.prevention, name='prevention'),
+    # path('symptoms/', views.symptoms, name='symptoms'),
+    # path('community/', views.community, name='community'),
+    # path('about/', views.about, name='about'),
+    # path('contact/', views.contact, name='contact'),
+    # path('diary/', views.diary, name='diary'),
+    # path('test/', views.test, name='test'),
+    # path('create_view/', views.create_view, name='create_view'),
+    # path('list_view/', views.list_view, name='list_view'),
+    # path('entry_view/', views.entry_view, name='entry_view'),
+    # path('please_login/', views.please_login, name='please_login'),
     # path('favicon\.ico$', RedirectView.as_view(url='/static/images/favicon.ico')),
 ]

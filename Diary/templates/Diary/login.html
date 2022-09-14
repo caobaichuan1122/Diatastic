@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>login</title>
-    <link rel="stylesheet" href="../static/login/style.css">
+    <link rel="stylesheet" href="/static/login/style.css">
 </head>
 <body>
     <!-- partial:index.partial.html -->
@@ -32,7 +32,7 @@
                 </form>
             </div>
             <div class="sign-in-container">
-                <form action="/login/" method="post">
+                <form action="/Diary/login/" method="post">
                     {% csrf_token %}
                     <h1>login</h1>
                     <div class="social-links">
@@ -67,6 +67,6 @@
         </div>
     </div>
     <!-- partial -->
-    <script src="../static/login/script.js"></script>
+    <script src="/static/login/script.js"></script>
 </body>
 </html>
