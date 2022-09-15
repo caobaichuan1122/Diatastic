@@ -16,9 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+import Diary
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('iteration2/',include('iteration2.urls')),
     path('Diary/', include('Diary.urls')),
     path('',include('Diary.urls')),
 ]
+

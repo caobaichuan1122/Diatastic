@@ -39,4 +39,4 @@ def login(request):
     return render(request, 'iteration2/login.html',{'iteration2':'iteration2'})
 
 def please_login(request):
-    return render(request, "iteration2/404.html",{'iteration2':'iteration2'})
+    return render(request, "iteration2/please_login.html",{'iteration2':'iteration2'})

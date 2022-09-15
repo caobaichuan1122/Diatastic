@@ -15,4 +15,7 @@ urlpatterns = [
     path('list_view/', views.list_view, name='list_view'),
     path('entry_view/', views.entry_view, name='entry_view'),
     path('please_login/', views.please_login, name='please_login'),
+    # path('page_no_found/', views.page_no_found, name='page_no_found'),
 ]
+
+hander404 = views.page_no_found

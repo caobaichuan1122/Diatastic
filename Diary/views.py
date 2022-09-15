@@ -143,5 +143,8 @@ def get_queryset():
     return DiaryEntries.objects.all().order_by('date')
 
 def please_login(request):
+    return render(request, "Diary/please_login.html")
+
+def page_no_found(request,**kwargs):
     return render(request, "Diary/404.html")
 
