@@ -1,10 +1,10 @@
 from django.urls import path
 from Diary import views
 urlpatterns = [
-    # path('', views.login, name='login'),
+    path('', views.login, name='login'),
     path('login/', views.login, name='login'),
     path('index/', views.index, name='index'),
-    path('prevention/', views.prevention, name='prevention'),
+    path('guide/', views.guide, name='guide'),
     path('symptoms/', views.symptoms, name='symptoms'),
     path('community/', views.community, name='community'),
     path('about/', views.about, name='about'),

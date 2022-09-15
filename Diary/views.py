@@ -26,20 +26,20 @@ def login(request):
                 request.session['is_login'] = True
                 request.session['user_id'] = user.id
                 request.session['user_name'] = user.name
-                return redirect('Diary/index/')
+                return redirect('/index/')
             else:
                 message = "password error！"
         except:
             message = "user error！"
-    return render(request, 'Diary/login.html',{'iteration2':'iteration2'})
+    return render(request, 'Diary/login.html',{'Diary':'Diary'})
 
 def index(request):
     pass
-    return render(request, 'Diary/index.html',{'iteration2':'iteration2'})
+    return render(request, 'Diary/index.html',{'Diary':'Diary'})
 
-def prevention(request):
+def guide(request):
     pass
-    return render(request, 'Diary/prevention.html')
+    return render(request, 'Diary/guide.html')
 
 def symptoms(request):
     pass

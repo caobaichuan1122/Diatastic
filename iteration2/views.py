@@ -17,7 +17,6 @@ def test(request):
 def login(request):
     # if request.session.get('is_login',None):
     #     return redirect('/index/') #sing in page
-    # print(123)
     if request.method == "POST":
         login_form = UserForm(request.POST)
         message = "please check！"
@@ -32,7 +31,7 @@ def login(request):
                 request.session['is_login'] = True
                 request.session['user_id'] = user.id
                 request.session['user_name'] = user.name
-                return redirect('iteration2/index/')
+                return redirect('/index/')
             else:
                 message = "password error！"
         except:
