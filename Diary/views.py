@@ -39,7 +39,7 @@ def index(request):
 
 def guide(request):
     pass
-    return render(request, 'Diary/guide.html')
+    return render(request, 'Diary/Beginners Guide.mht')
 
 def symptoms(request):
     pass
@@ -147,4 +147,6 @@ def please_login(request):
 
 def page_no_found(request,**kwargs):
     return render(request, "Diary/404.html")
+
+
 
