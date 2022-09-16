@@ -76,11 +76,11 @@
               <div class="collapse navbar-collapse" id="main-nav">
 
                 <ul class="navbar-nav ml-auto">
-                  <li class="nav-item active">
+                  <li class="nav-item">
                     <a class="nav-link" href="/index/"><font color="black">Home</font></a>
                   </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="/guide/"><font color="black">Guide</font></a>
+                  <li class="nav-item  active">
+                    <a class="nav-link " href="/guide/"><font color="black">Guide</font></a>
                   </li>
     <!--              <li class="nav-item">-->
     <!--                <a class="nav-link" href="#">Symptoms</a>-->
