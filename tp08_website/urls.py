@@ -22,6 +22,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('iteration2/',include('iteration2.urls')),
     path('Diary/', include('Diary.urls')),
-    path('',include('Diary.urls')),
+    path('',include('iteration2.urls')),
 ]
 
