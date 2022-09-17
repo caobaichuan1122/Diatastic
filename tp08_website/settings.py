@@ -84,9 +84,26 @@ DATABASES = {
         'PASSWORD': 'tp08tp08',
         'HOST': '13.239.85.203',
         'PORT': '3306',
+    },
+    'iteration2': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Nutrients_I2',
+        'USER': 'root',
+        'PASSWORD': 'tp08tp08',
+        'HOST': '13.239.85.203',
+        'PORT': '3306',
     }
 }
 
+
+DATABASE_ROUTERS = ['tp08_website.database_router.DatabaseAppsRouter']
+
+DATABASE_APPS_MAPPING = {
+'Diary': 'default',
+
+'iteration2': 'default',
+
+}
 # DATABASES = {
 #     'default': {
 #                 'ENGINE': 'django.db.backends.sqlite3',
