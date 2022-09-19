@@ -31,15 +31,15 @@ def login(request):
                 message = "password error！"
         except:
             message = "user error！"
-    return render(request, 'Diary/login.html', locals())
+    return render(request, 'Diary/login.html',{'Diary':'Diary'})
 
 def index(request):
     pass
-    return render(request, 'Diary/index.html')
+    return render(request, 'Diary/index.html',{'Diary':'Diary'})
 
-def prevention(request):
+def guide(request):
     pass
-    return render(request, 'Diary/prevention.html')
+    return render(request, 'Diary/Beginners Guide.mht')
 
 def symptoms(request):
     pass
@@ -143,5 +143,10 @@ def get_queryset():
     return DiaryEntries.objects.all().order_by('date')
 
 def please_login(request):
+    return render(request, "Diary/please_login.html")
+
+def page_no_found(request,**kwargs):
     return render(request, "Diary/404.html")
+
+
 
