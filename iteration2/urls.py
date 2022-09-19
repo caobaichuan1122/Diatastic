@@ -15,4 +15,5 @@ urlpatterns = [
     path('list_view/', views.list_view, name='list_view'),
     path('entry_view/', views.entry_view, name='entry_view'),
     path('please_login/', views.please_login, name='please_login'),
+    path('add_diary/', views.add_diary, name='add_diary'),
 ]

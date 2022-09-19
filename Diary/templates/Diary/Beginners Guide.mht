@@ -1,8 +1,8 @@
 {% load static %}
-    <html lang="en">
+{% if request.session.is_login %}
+
 
     <head>
-      <link rel="shortcut icon" href="../static/images/icons8-rh-plus-gradient-16.png">
       <!-- BEGIN: Title -->
       <title>Diatastic &mdash; Easily Manage Blood Sugar</title>
       <!-- END: Title -->
@@ -13,43 +13,44 @@
       <!-- END: Meta -->
 
       <!-- BEGIN: Favicon -->
-    <!--  <link rel="shortcut icon" href="../static/images/favicon.png">-->
+      <link rel="shortcut icon" href="/static/images/icons8-rh-plus-gradient-16.png">
       <!-- END: Favicon -->
 
       <!-- BEGIN: Stylesheets -->
-      <link rel="stylesheet" href="../static/css/bootstrap/bootstrap.css">
-      <link rel="stylesheet" href="../static/css/tiny-slider.css">
-      <link rel="stylesheet" href="../static/fonts/lineicons/LineIcons.min.css">
-      <link rel="stylesheet" href="../static/fonts/icomoon/style.css">
-      <link rel="stylesheet" href="../static/css/animate.min.css">
-      <link rel="stylesheet" href="../static/css/jquery.lavalamp.css">
-      <link rel="stylesheet" href="../static/css/jquery.fancybox.min.css">
-      <link rel="stylesheet" href="../static/css/style.css">
+        <!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="/static/css/bootstrap/bootstrap.css">
+      <link rel="stylesheet" href="/static/css/tiny-slider.css">
+      <link rel="stylesheet" href="/static/fonts/lineicons/LineIcons.min.css">
+      <link rel="stylesheet" href="/static/fonts/icomoon/style.css">
+      <link rel="stylesheet" href="/static/css/animate.min.css">
+      <link rel="stylesheet" href="/static/css/jquery.lavalamp.css">
+      <link rel="stylesheet" href="/static/css/jquery.fancybox.min.css">
+      <link rel="stylesheet" href="/static/css/style.css">
+      <link rel="stylesheet" href="/static/css/select.css">
       <!-- END: Stylesheets -->
 
-        <!-- BEGIN: help bot -->
+      <!-- BEGIN: help bot -->
           <!-- meta -->
         <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
         <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1">
         <meta name="keywords" content="pvr, pvr tech studio, css chat box, pvr admin, pvr tech admin"/>
         <meta name="description" content="PVR Tech Studio, We Design your Future.">
         <!-- Add Your favicon here -->
-<!--        <link rel="icon" href="../static/assets/img/favicon/favicon-32x32.png">-->
 
 
         <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 
         <!-- ***** Boostrap Custom / Addons Stylesheets ***** -->
-        <link href="../static/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
-        <link href="../static/assets/plugins/material_icon/icon.css" rel="stylesheet"/>
+        <link href="/static/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+        <link href="/static/assets/plugins/material_icon/icon.css" rel="stylesheet"/>
 
         <!-- Required CSS file for CSS Chat Panels element -->
-        <link href="../static/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.min.css" rel="stylesheet"/>
-        <link rel="stylesheet" href="../static/assets/css/chat_box.css" type="text/css" media="all">
+        <link href="/static/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+        <link rel="stylesheet" href="/static/assets/css/chat_box.css" type="text/css" media="all">
       <!--END: help bot -->
 
-
     </head>
+
 
         <header id="site-header">
 

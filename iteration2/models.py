@@ -1,42 +1,64 @@
 # Diary/models.py
 
 from django.db import models
+from django.core.validators import MinValueValidator
 
+# # Ingredients
+# class Ingredients(models.Model):
+#     id = models.AutoField(primary_key=True)
+#     ingredients_code = models.IntegerField()
+#     category = models.CharField(max_length=1280)
+#
+#     carbohydrates = models.DecimalField(
+#         decimal_places=2,
+#         max_digits=10
+#     )
+
+# User
 class User(models.Model):
-
     name = models.CharField(max_length=128,unique=True)
     password = models.CharField(max_length=256)
-    c_time = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name
 
     class Meta:
-        ordering = ['c_time']
         verbose_name = 'user'
         verbose_name_plural = 'user'
+        app_label = "iteration2"
 
+class Category(models.Model):
+    name = models.CharField(max_length=1280)
+    def __str__(self):
+        return self.name
 
-class Food(models.Model):
+class Portion(models.Model):
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    name = models.CharField(max_length=1280)
+    def __str__(self):
+        return self.name
+
+# Menu
+class Menu(models.Model):
     id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=120)
+
+    category = models.CharField(max_length=1280)
+    portion = models.CharField(max_length=1280)
+
+    portion_weight = models.DecimalField(max_digits=10,
+                                         decimal_places=2)
+
     carbohydrates = models.DecimalField(
         decimal_places=2,
-        max_digits=10
+        max_digits=6
     )
-
-
-class Drink(models.Model):
-    id = models.AutoField(primary_key=True)
-    name = models.CharField(max_length=120)
-    carbohydrates = models.DecimalField(
-        decimal_places=2,
-        max_digits=10
-    )
+    def __str__(self):
+        return self.food_code
 
 
 class DiaryEntries(models.Model):
-    diary_id = models.AutoField(primary_key=True)
+    id = models.AutoField(primary_key=True)
+    diary_id = models.PositiveIntegerField()
     date = models.DateField()
     time = models.TimeField()
 
@@ -45,9 +67,26 @@ class DiaryEntries(models.Model):
         max_digits=5
     )
 
-    food = models.CharField(max_length=120)
-    drinks = models.CharField(max_length=120)
+    carbohydrates = models.DecimalField(
+        decimal_places=2,
+        max_digits=10
+    )
+
     insulin = models.DecimalField(
         decimal_places=2,
         max_digits=5
     )
+
+# Diary_Menu - Stores each item separately, and records the individual carb value.
+class Diary_Menu(models.Model):
+    id = models.AutoField(primary_key=True)
+    diary = models.ForeignKey(DiaryEntries,
+                              on_delete=models.CASCADE)
+
+    category = models.CharField(max_length=1280)
+    portion = models.CharField(max_length=1280)
+
+    quantity = models.PositiveIntegerField(validators=[MinValueValidator(1)])
+    carbohydrates = models.DecimalField(decimal_places=2,
+                                        max_digits=10)
+

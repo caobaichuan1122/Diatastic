@@ -1,4 +1,4 @@
-﻿﻿{% load static %}
+﻿{% load static %}
 {% if request.session.is_login %}
 
 
@@ -204,6 +204,7 @@
             <a href="/iteration2/index/">Home</a>
             <span class="mx-3 icon-keyboard_arrow_right"></span>
             <span class="current">Diary</span>
+            <a href="/list_view/" style="float:right"><button type="add" class="btn btn-outline-primary" style="float:right">List View</button></a>
           </div>
         </div>
         <span></span>
@@ -249,26 +250,6 @@
           <form method="post" action="/iteration2/create_view/" style="align-items: center;" >
               {% csrf_token %}
             <div class="container">
-
-    <!--                <div class="form-group">-->
-    <!--                    {{ DiaryForm.date.label_tag }}-->
-    <!--                    {{ DiaryForm.date}}-->
-    <!--                </div>-->
-
-    <!--                <div class="form-group">-->
-    <!--                    {{ DiaryForm.time.label_tag }}-->
-    <!--                    {{ DiaryForm.time}}-->
-    <!--                </div>-->
-
-    <!--                <div class="form-group">-->
-    <!--                    {{ DiaryForm.blood_sugar_level.label_tag }}-->
-    <!--                    {{ DiaryForm.blood_sugar_level}}-->
-    <!--                </div>-->
-
-    <!--                <div class="form-group">-->
-    <!--                    {{ DiaryForm.date.label_tag }}-->
-    <!--                    {{ DiaryForm.date}}-->
-    <!--                </div>-->
                     <div class="form-check">
                         <label for="date">Date: </label>
                         <input name="date" id="date" type="date" class="form-control" required="required"></input>
@@ -288,19 +269,9 @@
                         <label for="category"/>Category:</label>
                         <select name="category" id="category" class="form-control select-picker" required="required">
                             <option value="-----------">-----------</option>
-<!--                            {% for item in food %}-->
-<!--                            <option value="{{ item.name }}">{{ item.name }}</option>-->
-<!--                            {% endfor %}-->
-                        </select>
-                    </div>
-
-                    <div class="form-check">
-                        <label for="dscription"/>Dscription:</label>
-                        <select name="dscription" id="dscription" class="form-control select-picker"  required="required">
-                            <option value="-----------">-----------</option>
-<!--                            {% for item in food %}-->
-<!--                            <option value="{{ item.name }}">{{ item.name }}</option>-->
-<!--                            {% endfor %}-->
+                            {% for item in category %}
+                            <option value="{{ item }}">{{ item.category }}</option>
+                            {% endfor %}
                         </select>
                     </div>
 
@@ -308,46 +279,98 @@
                         <label for="portion"/>Portion:</label>
                         <select name="portion" id="portion" class="form-control select-picker" required="required" >
                             <option value="-----------">-----------</option>
-<!--                            {% for item in food %}-->
-<!--                            <option value="{{ item.name }}">{{ item.name }}</option>-->
-<!--                            {% endfor %}-->
+                            {% for item in portion %}
+                            <option value="{{ stationery.id }}">{ {  stationery.name  }}</option>
+                            {% endfor %}
                         </select>
                     </div>
 
                     <div class="form-check">
                         <label for="quantity"/>Quantity:</label>
-                        <input name="quantity" id="quantity" class="form-control" type="number" value="1">
-<!--                            {% for item in food %}-->
-<!--                            <option value="{{ item.name }}">{{ item.name }}</option>-->
-<!--                            {% endfor %}-->
+                        <input name="quantity" id="quantity" class="form-control" type="number" value="1" oninput="value=value.replace(/[^\d]/g,'')">
                         </input>
                     </div>
 
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-primary">submit</button>
+                    <button type="reset" class="btn btn-danger">reset</button>
+                    <button type="add" class="btn btn-outline-success" style="float:right">add to list</button>
+            </div>
+        </form>
+<script language="JavaScript">
+
+function testajax(ths){
+
+    var id=$(ths).val();
+
+    $.ajax({
+    type: 'GET',
+    url: 'portin',
+    dataType: 'json',
+    portion:{category=category},
+    success: function(ret){
+    var html = "";
+    for(var i=0;i<ret.length;i++){
+    var iteam = ret[i];
+    var id = iteam.id;
+
+    var name = iteam.name;
+
+    html += "<option value="+iteam.id+">"+iteam.name+"</option>";
+
+}
+$("#id_stationery").html(html);
+}
+});
+}
+</script>
+
+<!--          <form method="post" action="/create_view/" style="align-items: center;" >-->
+<!--              {% csrf_token %}-->
+<!--            <div class="container">-->
+<!--&lt;!&ndash;                    <div class="form-check">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <label for="date">Date: </label>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <input name="date" id="date" type="date" class="form-control" required="required"></input>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <div class="form-check">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <label for="time">Time: </label>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <input name="time"id="time" type="time" class="form-control" required="required"></input>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+
+<!--&lt;!&ndash;                    <div class="form-check">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <label for="blood_sugar_level"/>Blood Sugar Level: </label>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <input name="blood_sugar_level" id="blood_sugar_level" type="Decimal" class="form-control" required="required" value={{ blood_sugar_level }} ></input>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+
 <!--                    <div class="form-check">-->
-<!--                        <label for="drink"/>Drinks:</label>-->
-<!--                        <select name="drink" id="drink" class="form-control select-picker" required="required" multiple="multiple">-->
-<!--                            {% for item in drinks %}-->
+<!--                        <label for="menu"/>Items:</label>-->
+<!--                        <select name="menu" id="menu" class="form-control select-picker" required="required" multiple="multiple">-->
+<!--                            {% for item in menu %}-->
 <!--                            <option value="{{ item.name }}">{{ item.name }}</option>-->
 <!--                            {% endfor %}-->
 <!--                        </select>-->
 <!--                    </div>-->
-                    <br>
-                    &nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-primary">submit</button>
-                    <button type="reset" class="btn btn-primary">reset</button>
-    <!--                <input type="button" value="Reset" id="resetBtn" onClick="this.form.reset()"/>-->
-            </div>
-        </form>
-    <!--    <script>-->
-    <!--    // 获取值-->
-    <!--    function getVal() {-->
-    <!--        console.log($('#fruits').val());-->
-    <!--    }-->
 
-    <!--    // 回显操作-->
-    <!--    // var str = '3,4,5,6';-->
-    <!--    // var arr = str.split(',');-->
-    <!--    // $('#fruits').selectpicker('val', arr);-->
-    <!--    </script>-->
+<!--                    <div class="form-check">-->
+<!--                        <label for="quantity"/>Quantity: </label>-->
+<!--                        <input name="quantity" id="quantity" type="Decimal" class="form-control" required="required" value={{ quantity }} ></input>-->
+<!--                    </div>-->
+
+<!--&lt;!&ndash;                    <div class="form-check">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <label for="drink"/>Drinks:</label>&ndash;&gt;-->
+<!--&lt;!&ndash;                        <select name="drink" id="drink" class="form-control select-picker" required="required" multiple="multiple">&ndash;&gt;-->
+<!--&lt;!&ndash;                            {% for item in drinks %}&ndash;&gt;-->
+<!--&lt;!&ndash;                            <option value="{{ item.name }}">{{ item.name }}</option>&ndash;&gt;-->
+<!--&lt;!&ndash;                            {% endfor %}&ndash;&gt;-->
+<!--&lt;!&ndash;                        </select>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </div>&ndash;&gt;-->
+
+<!--                    <br>-->
+<!--                    &nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-primary">submit</button>-->
+<!--                    <button type="reset" class="btn btn-primary">reset</button>-->
+<!--    &lt;!&ndash;                <input type="button" value="Reset" id="resetBtn" onClick="this.form.reset()"/>&ndash;&gt;-->
+<!--            </div>-->
+<!--        </form>-->
           <span></span>
 
 
@@ -481,6 +504,7 @@
       <script src="/static/js/jquery.validate.min.js"></script>
       <script src="/static/js/jquery.easing.1.3.js"></script>
       <script src="/static/js/main.js"></script>
+      <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 
       <script src="/static/js/select.js"></script>
       <script src="/static/js/select_food.js"></script>

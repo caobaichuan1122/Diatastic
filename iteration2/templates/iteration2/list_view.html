@@ -176,8 +176,7 @@
                                     <th>Date</th>
                                     <th>Time</th>
                                     <th>Blood Sugar Level</th>
-                                    <th>Food</th>
-                                    <th>Drinks</th>
+                                    <th>Carbohydrates</th>
                                     <th>Insulin</th>
                                 </tr>
                                 </thead>
@@ -187,8 +186,7 @@
                                     <td>{{ item.date|date:"d-m-Y" }}</td>
                                     <td>{{ item.time }}</td>
                                     <td>{{ item.blood_sugar_level }}</td>
-                                    <td>{{ item.food}}</td>
-                                    <td>{{ item.drinks}}</td>
+                                    <td>{{ item.carbohydrates}}</td>
                                     <td>{{ item.insulin }}</td>
                                 </tr>
                                 {% endfor %}

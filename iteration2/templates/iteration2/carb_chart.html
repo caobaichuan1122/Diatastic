@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Carbohydrates Chart</title>
+</head>
+<body>
+<form method="GET" action="{% url 'carb_chart' %}">
+      {{ form.as_p }}
+    <button>Submit</button>
+</form>
+{{ carb_chart|safe }}
+</body>
+</html>
