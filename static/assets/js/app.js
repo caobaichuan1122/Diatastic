@@ -68,16 +68,7 @@ const punctuation = /[!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~]/g;
 
 function clean_tokens(text) {
     var tokens = text.toLowerCase().replace(punctuation, '').split(' ');
-    tokens = tokens.filter(el => !stopwords.includes(el))
-    return tokens
-}
-
-function check_keywords(text) {
-    if (keywords.has(text)) {
-        return info_map.get(keywords.get(text))
-    } else {
-        return false
-    }
+    return tokens.filter(el => !stopwords.includes(el))
 }
 
 function respond(user_input) {
@@ -89,23 +80,8 @@ function respond(user_input) {
     } else if (keywords.has(user_input)) {
         return info_map.get(keywords.get(user_input));
     };
-    // } else {
-    //     var best_score = 0;
-    //     let user_tokens = clean_tokens(user_input);
 
-    //     info_list.forEach(info => {
-    //         let info_tokens = clean_tokens(info);
-    //         let info_score = info_tokens.filter(el => user_tokens.includes(el)).length
-
-    //         if (info_score > best_score) {
-    //             best_score = info_score
-    //             answer = info
-    //         }
-
-    //     })
-    // }
-
-    return "Sorry I dont understand what you mean, please try again";
+    return "Sorry I dont understand what you mean, please check your spelling and try again 😅";
 }
 
 $(function () {
@@ -125,10 +101,10 @@ $(function () {
         $('.message-input').on('keypress', function (e) {
             if (e.which == 13) {
                 var val = ($(this).val() !== '') ? $(this).val() : "*empty frog croaks oh noe*";
-                $('.chat-messages').append('<div class="message self"><div class="message-content">' + val + '</div></div>');
+                $('.chat-messages').append(`<div class="message self"><div class="message-content">${val}</div></div>`);
                 $(this).val('');
                 setTimeout(function () {
-                    $('.chat-messages').append('<div class="message"><div class="message-content">' + respond(val) + '</div></div>');
+                    $('.chat-messages').append(`<div class="message"><div class="message-content">${respond(val)}</div></div>`);
                     $messages_w.scrollTop($messages_w.prop("scrollHeight"));
                     $messages_w.perfectScrollbar('update');
                 }, 200)
