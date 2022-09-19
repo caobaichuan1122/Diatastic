@@ -285,22 +285,52 @@
                     </div>
 
                     <div class="form-check">
-                        <label for="food"/>Food:</label>
-                        <select name="food" id="food" class="form-control select-picker" required="required" multiple="multiple">
-                            {% for item in food %}
-                            <option value="{{ item.name }}">{{ item.name }}</option>
-                            {% endfor %}
+                        <label for="category"/>Category:</label>
+                        <select name="category" id="category" class="form-control select-picker" required="required">
+                            <option value="-----------">-----------</option>
+<!--                            {% for item in food %}-->
+<!--                            <option value="{{ item.name }}">{{ item.name }}</option>-->
+<!--                            {% endfor %}-->
                         </select>
                     </div>
 
                     <div class="form-check">
-                        <label for="drink"/>Drinks:</label>
-                        <select name="drink" id="drink" class="form-control select-picker" required="required" multiple="multiple">
-                            {% for item in drinks %}
-                            <option value="{{ item.name }}">{{ item.name }}</option>
-                            {% endfor %}
+                        <label for="dscription"/>Dscription:</label>
+                        <select name="dscription" id="dscription" class="form-control select-picker"  required="required">
+                            <option value="-----------">-----------</option>
+<!--                            {% for item in food %}-->
+<!--                            <option value="{{ item.name }}">{{ item.name }}</option>-->
+<!--                            {% endfor %}-->
                         </select>
                     </div>
+
+                    <div class="form-check">
+                        <label for="portion"/>Portion:</label>
+                        <select name="portion" id="portion" class="form-control select-picker" required="required" >
+                            <option value="-----------">-----------</option>
+<!--                            {% for item in food %}-->
+<!--                            <option value="{{ item.name }}">{{ item.name }}</option>-->
+<!--                            {% endfor %}-->
+                        </select>
+                    </div>
+
+                    <div class="form-check">
+                        <label for="quantity"/>Quantity:</label>
+                        <input name="quantity" id="quantity" class="form-control" type="number" value="1">
+<!--                            {% for item in food %}-->
+<!--                            <option value="{{ item.name }}">{{ item.name }}</option>-->
+<!--                            {% endfor %}-->
+                        </input>
+                    </div>
+
+<!--                    <div class="form-check">-->
+<!--                        <label for="drink"/>Drinks:</label>-->
+<!--                        <select name="drink" id="drink" class="form-control select-picker" required="required" multiple="multiple">-->
+<!--                            {% for item in drinks %}-->
+<!--                            <option value="{{ item.name }}">{{ item.name }}</option>-->
+<!--                            {% endfor %}-->
+<!--                        </select>-->
+<!--                    </div>-->
                     <br>
                     &nbsp;&nbsp;&nbsp;&nbsp;<button type="submit" class="btn btn-primary">submit</button>
                     <button type="reset" class="btn btn-primary">reset</button>
