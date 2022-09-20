@@ -1,11 +1,12 @@
+from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from decimal import Decimal
+
 from . import models
-from .models import Food, Drink, User
-import pandas as pd
-import ast
-from .forms import DiaryForm,UserForm
+from .models import User, Diary_Menu, Portion, Menu
+from .forms import DiaryForm, UserForm, DateForm
 from .models import  DiaryEntries
+import plotly.express as px
 
 
 def login(request):
@@ -14,12 +15,11 @@ def login(request):
     if request.method == "POST":
         login_form = UserForm(request.POST)
         message = "please check！"
-        # if login_form.is_valid():
-            # username = login_form.cleaned_data['username']
-            # password = login_form.cleaned_data['password']
+        if login_form.is_valid():
+            username = login_form.cleaned_data['username']
+            password = login_form.cleaned_data['password']
         username = request.POST.get('user')
         password = request.POST.get('password')
-        print(User.objects.all())
         try:
             user = User.objects.get(name=username)
             if user.password == password:
@@ -58,9 +58,24 @@ def contact(request):
     return render(request, 'iteration2/contact.html')
 
 def diary(request):
-    drinks = Drink.objects.all()
-    food = Food.objects.all()
-    return render(request, 'iteration2/diary.html',context={'drinks':drinks,'food':food})
+    category = Menu.objects.values('category').distinct()
+    return render(request, 'iteration2/diary.html',context={'category':category})
+
+# def diary(request):
+#     if request.method == 'GET':
+#         pass
+#     else:
+#         try:
+#             category = Menu.objects.values('category').distinct()
+#             # portion = Menu.objects.filter(category=category).order_by('portion')
+#         except Exception:
+#             return render(request,'iteration2/diary.html')
+#     return render(request, 'iteration2/diary.html',context={'category':category})
+
+def load_portion(request):
+    category_id = request.GET.get('category')
+    portion = Portion.objects.filter(category_id=category_id).order_by('name')
+    return render(request, 'iteration2/portion_dropdown_list_options.html', {'portion': portion})
 
 def add_diary(request):
     pass
@@ -71,21 +86,61 @@ def test(request):
     return render(request, 'iteration2/diary.html')
 
 def create_view(request):
-    if request.method == "POST":
-        date = request.POST.get('date')
-        time = request.POST.get('time')
-        blood_sugar_level = request.POST.get('blood_sugar_level')
-        food = request.POST.getlist('food')
-        drinks = request.POST.getlist('drink')
-        DiaryEntries.objects.create(date=date,time=time,blood_sugar_level=blood_sugar_level,food=food,drinks=drinks,insulin=0.0)
-        diary_entry = DiaryEntries.objects.all()
-        for item in diary_entry:
-            if item.insulin == 0:
-                DiaryEntries.objects.filter(diary_id=item.diary_id).update(
-                    insulin=insulin_calculation(item.food, item.drinks, item.blood_sugar_level))
-        return redirect("/iteration2/list_view/",context={'date':date,'time':time,'blood_sugar_level':blood_sugar_level,'food':food,'drinks':drinks})
+    my_form = DiaryForm(request.POST or None)
+    if my_form.is_valid():
 
-    return render(request, "iteration2/list_view.html")
+    # Get form data.
+        date = my_form.cleaned_data['date']
+        time = my_form.cleaned_data['time']
+        blood_sugar_level = my_form.cleaned_data['blood_sugar_level']
+        category = my_form.cleaned_data['category']
+        portion = my_form.cleaned_data['portion']
+        quantity = my_form.cleaned_data['quantity']
+
+    # This will be a list at some point. (carb.append?)
+        ## Retrieve carb values for given entry. (.getlist?)
+        carbs = Menu.objects.get(category=category,
+                                 portion=portion,
+                                 ).carbohydrates
+
+        ## Retrieve weight values for given entry.
+        weight = Menu.objects.get(category=category,
+                                  portion=portion
+                                  ).portion_weight
+
+    # Carbohydrate formula.
+        carbs = carbs/weight*quantity
+        insulin = insulin_calculation(carbs, blood_sugar_level)
+
+    # Updating.
+        ## First, update the DiaryEntries model to generate a diary_id.
+        DiaryEntries.objects.create(date=date, time=time,
+                                    blood_sugar_level=blood_sugar_level,
+                                    carbohydrates=0.0,
+                                    insulin=0.0)
+
+        # Retrieve generated diary_id.
+        id = DiaryEntries.objects.order_by('id').values_list('id', flat=True).last()
+
+        ## Use generated diary_id to populate diary_menu.
+        Diary_Menu.objects.create(category=category,
+                                  portion=portion,
+                                  quantity=quantity,
+                                  carbohydrates=carbs
+                                  )
+
+        my_form = DiaryForm() # Show stored value.
+        context = {
+            'form': my_form
+        }
+
+        return render(request, 'iteration2/test.html', context)
+    else:
+        my_form = DiaryForm(request.POST or None)
+        context = {
+            'form': my_form
+        }
+    return render(request, 'iteration2/test.html', context)
 
 def entry_view(request, diary_id):
     obj = get_object_or_404(DiaryEntries, diary_id=diary_id)
@@ -103,35 +158,20 @@ def entry_view(request, diary_id):
 
 def list_view(request):
     diary_entry = DiaryEntries.objects.all()
-    for item in diary_entry:
-        if item.insulin == 0:
-            DiaryEntries.objects.filter(diary_id =item.diary_id).update(insulin = insulin_calculation(item.food, item.drinks, item.blood_sugar_level))
-    return render(request,'Diary/list_view.html',context={'diary_entry':diary_entry})
+    return render(request,'iteration2/list_view.html',context={'diary_entry':diary_entry})
 
 
-def insulin_calculation(food, drinks, blood_sugar_level):
+def insulin_calculation(carbs, blood_sugar_level):
     ## Carbohydrate correction dose.
     # Initialising values.
-    carbs = Decimal(0.0)
+    carbs = Decimal(carbs)
     target = Decimal(5.0)
-
-    # Retrieving the drink data.
-    drinks_data = Drink.objects.all().values()
-    drinks_df = pd.DataFrame.from_records(drinks_data)
-    drinks_df = drinks_df[drinks_df['name'].isin(ast.literal_eval(drinks))]
-    # Retrieving the food data.
-    food_data = Food.objects.all().values()
-    food_df = pd.DataFrame.from_records(food_data)
-    food_df = food_df[food_df['name'].isin(ast.literal_eval(food))]
-
-    # Calculating the carbohydrates.
-    carbs += Decimal(sum(food_df['carbohydrates'].values)) + Decimal(sum(drinks_df['carbohydrates'].values))
 
     # Calculating the carbohydrate balancing dose.
     CHO = carbs/10
 
-    ## High Blood Sugar Correction Dose
-    # Initialising the target blood sugar.
+    # High Blood Sugar Correction Dose
+    ## Initialising the target blood sugar.
     difference = blood_sugar_level - target
     HBSCD = difference/50
 
@@ -147,6 +187,41 @@ def please_login(request):
 
 def page_no_found(request,**kwargs):
     return render(request, "iteration2/404.html")
+
+
+#
+# def please_login(request):
+#     return render(request, "Diary/404.html")
+
+def carb_chart(request):
+
+    entries = DiaryEntries.objects.all().order_by('-date')
+    start = request.GET.get('start')
+    end = request.GET.get('end')
+
+    if start:
+        entries = entries.filter(date__gte=start)
+    if end:
+        entries = entries.filter(date__lte=end)
+
+    fig = px.line(
+        x=[c.date for c in entries],
+        y=[c.carbohydrates for c in entries],
+        title = 'Carbohydrates Chart',
+        labels={'x': 'Date', 'y': 'Carbohydrates (g)'}
+    )
+
+    fig.update_layout(title = {
+        'font_size': 22,
+        'xanchor': 'center',
+        'x': 0.5
+    })
+
+    carb_chart = fig.to_html()
+
+    context = {'carb_chart': carb_chart,
+               'form': DateForm}
+    return render(request, 'iteration2/carb_chart.html', context)
 
 
 
