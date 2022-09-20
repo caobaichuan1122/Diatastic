@@ -15,12 +15,11 @@ def login(request):
     if request.method == "POST":
         login_form = UserForm(request.POST)
         message = "please check！"
-        # if login_form.is_valid():
-            # username = login_form.cleaned_data['username']
-            # password = login_form.cleaned_data['password']
+        if login_form.is_valid():
+            username = login_form.cleaned_data['username']
+            password = login_form.cleaned_data['password']
         username = request.POST.get('user')
         password = request.POST.get('password')
-        print(User.objects.all())
         try:
             user = User.objects.get(name=username)
             if user.password == password:

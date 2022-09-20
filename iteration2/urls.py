@@ -17,4 +17,5 @@ urlpatterns = [
     path('entry_view/', views.entry_view, name='entry_view'),
     path('please_login/', views.please_login, name='please_login'),
     path('add_diary/', views.add_diary, name='add_diary'),
+    path('carb_chart/', views.carb_chart, name='carb_chart'),
 ]
