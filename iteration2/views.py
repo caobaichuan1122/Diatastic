@@ -78,8 +78,16 @@ def load_portion(request):
     return render(request, 'iteration2/portion_dropdown_list_options.html', {'portion': portion})
 
 def add_diary(request):
-    pass
-    return render(request, 'iteration2/diary.html')
+    if request.method == "POST":
+        date = request.POST.get('date')
+        time = request.POST.get('time')
+        blood_sugar_level = request.POST.get('blood_sugar_level')
+        category = request.POST.get('category')
+        portion = request.POST.get('portion')
+        quantity = request.POST.get('quantity')
+        Diary_Menu.objects.create(date=date, time=time, blood_sugar_level=blood_sugar_level,  category=category,
+                                  portion=portion, quantity=quantity)
+    return redirect('/iteration2/diary/')
 
 def test(request):
     pass

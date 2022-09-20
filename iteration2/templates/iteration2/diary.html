@@ -204,7 +204,8 @@
             <a href="/iteration2/index/">Home</a>
             <span class="mx-3 icon-keyboard_arrow_right"></span>
             <span class="current">Diary</span>
-            <a href="/carb_chart/" style="margin-left:65%"><button type="add" class="btn btn-outline-primary">Carb Chart</button></a>
+              <a href="/add_diary/" style="margin-left:52.3%"><button type="add" class="btn btn-outline-success">+add to list</button></a>
+            <a href="/carb_chart/" ><button type="add" class="btn btn-outline-primary">Carb Chart</button></a>
             <a href="/list_view/" style="float:right"><button type="add" class="btn btn-outline-primary" style="float:right">List View</button></a>
           </div>
         </div>
@@ -280,6 +281,7 @@
                         <label for="portion"/>Portion:</label>
                         <select name="portion" id="portion" class="form-control select-picker" required="required" >
                             <option value="-----------">-----------</option>
+                            <option value="-----------">2</option>
                                 {% for item in portion %}
                                     <option value="{{ item.pk }}">{{ item.name }}</option>
                                 {% endfor %}
@@ -292,7 +294,7 @@
                         </input>
                     </div>
 
-                     &nbsp; &nbsp; &nbsp;<button type="add" class="btn btn-outline-success">+add to list</button>
+                &nbsp; &nbsp;
                     <button type="submit" class="btn btn-primary" style="float:right">submit</button>
                     <button type="reset" class="btn btn-danger">reset</button>
             </div>
