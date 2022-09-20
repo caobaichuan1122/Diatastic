@@ -11,7 +11,7 @@ const keywords = {
     "symptoms": 6,
     "?help": 7,
     "?diet": 8,
-    "?treament": 9,
+    "?treatment": 9,
     "syndrome": 10,
     "long term": 11,
     "treatment": 12,
@@ -44,8 +44,8 @@ const responses = {
     9: "Explore your treatment options! REDIRECTING YOU TO THE GUIDE",
     10: "HHNS is when your blood glucose level goes way too high, and if you don't treat it, it can cause death.  <a href='../guide#hhns'>Read more</a>",
     11: "Likely to develop heart disease, nerve damage (diabetic neuropathy), kidney damage, diabetic eye disease  <a href='../guide#longterm'>Read more</a>",
-    12: "Type 1: Insulin, Type 2: Diabetic pills and/or non-insulin injectables  <a href='../guide#treatment'>Read more</a>",
-    13: "Yes: Fruits, veges, legummes, poultry, avocados, nuts, seeds. No: Sugar, candy, soda, hot dogs, fatty red meat, butter  <a href='../guide#diet'>Read more</a>",
+    12: "Type 1: Insulin, Type 2: Diabetic pills and/or non-insulin injectables  <a href='../guide##Treatment%20options'>Read more</a>",
+    13: "Yes: Fruits, veges, legummes, poultry, avocados, nuts, seeds. No: Sugar, candy, soda, hot dogs, fatty red meat, butter  <a href='../guide#Healthy%20eating'>Read more</a>",
     14: "Check blood sugar 3-4 times a day, avoid skipping meals, exercise more, get enough sleep  <a href='../guide#routine'>Read more</a>",
     15: "Test blood glucose levels regularly, take insulin, stay active, have a healthy eating plan  <a href='../guide#habits'>Read more</a>",
     16: "Keeping track of your diet is key to diabeties management! REDICTING YOU TO THE DIARY"
@@ -80,10 +80,10 @@ function respond(user_input) {
     if (user_input in keywords) {
         switch (keywords[user_input]) {
             case 8:
-                window.location.href = "../guide#diet"
+                window.location.href = "../guide#Healthy%20eating"
                 break;
             case 9:
-                window.location.href = "../guide#treatment"
+                window.location.href = "../guide#Treatment%20options"
                 break;
             case 16:
                 window.location.href = "../diary"
