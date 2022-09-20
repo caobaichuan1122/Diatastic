@@ -58,7 +58,7 @@ class Menu(models.Model):
 
 class DiaryEntries(models.Model):
     id = models.AutoField(primary_key=True)
-    diary_id = models.PositiveIntegerField()
+    # diary_id = models.PositiveIntegerField()
     date = models.DateField()
     time = models.TimeField()
 

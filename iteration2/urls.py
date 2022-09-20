@@ -10,6 +10,7 @@ urlpatterns = [
     path('about/', views.about, name='about'),
     path('contact/', views.contact, name='contact'),
     path('diary/', views.diary, name='diary'),
+    path('ajax/load_portion/', views.load_portion, name='ajax_load_portion'),
     path('test/', views.test, name='test'),
     path('create_view/', views.create_view, name='create_view'),
     path('list_view/', views.list_view, name='list_view'),

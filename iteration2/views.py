@@ -1,6 +1,8 @@
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from decimal import Decimal
+
+from . import models
 from .models import User, Diary_Menu, Portion, Menu
 from .forms import DiaryForm, UserForm, DateForm
 from .models import  DiaryEntries
@@ -57,17 +59,24 @@ def contact(request):
     return render(request, 'iteration2/contact.html')
 
 def diary(request):
-    if request.method == 'GET':
-        category = Menu.objects.values('category').distinct()
-        portion = Menu.objects.filter(category=category).order_by('portion')
-    return render(request, 'iteration2/diary.html',context={'category':category,'portion':portion})
+    category = Menu.objects.values('category').distinct()
+    return render(request, 'iteration2/diary.html',context={'category':category})
 
-# def porti0n(request):
-#     if request.method == "POST":
-#         category = request.POST.get('category')
-#         if category:
-#             portion = Menu.objects.filter(category=category).values('portion')
-#     return JsonResponse(portion,safe=False)
+# def diary(request):
+#     if request.method == 'GET':
+#         pass
+#     else:
+#         try:
+#             category = Menu.objects.values('category').distinct()
+#             # portion = Menu.objects.filter(category=category).order_by('portion')
+#         except Exception:
+#             return render(request,'iteration2/diary.html')
+#     return render(request, 'iteration2/diary.html',context={'category':category})
+
+def load_portion(request):
+    category_id = request.GET.get('category')
+    portion = Portion.objects.filter(category_id=category_id).order_by('name')
+    return render(request, 'iteration2/portion_dropdown_list_options.html', {'portion': portion})
 
 def add_diary(request):
     pass
@@ -150,9 +159,6 @@ def entry_view(request, diary_id):
 
 def list_view(request):
     diary_entry = DiaryEntries.objects.all()
-    # for item in diary_entry:
-    #     if item.insulin == 0:
-    #         DiaryEntries.objects.filter(diary_id =item.diary_id).update(insulin = insulin_calculation(item.food, item.drinks, item.blood_sugar_level))
     return render(request,'iteration2/list_view.html',context={'diary_entry':diary_entry})
 
 
@@ -183,13 +189,7 @@ def please_login(request):
 def page_no_found(request,**kwargs):
     return render(request, "iteration2/404.html")
 
-def load_portion(request):
-    category_id = request.GET.get('category')
-    portion = Portion.objects.filter(category_id=category_id).order_by('name')
-    return render(request, 'iteration2/portion_dropdown_list_options.html', {'portion': portion})
 
-def get_queryset():
-    return DiaryEntries.objects.all().order_by('date')
 #
 # def please_login(request):
 #     return render(request, "Diary/404.html")

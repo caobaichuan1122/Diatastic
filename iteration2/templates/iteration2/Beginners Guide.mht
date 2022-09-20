@@ -49,6 +49,9 @@
         <link rel="stylesheet" href="/static/assets/css/chat_box.css" type="text/css" media="all">
       <!--END: help bot -->
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.2/minty/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/tree/dist/listree.min.css" />
+
 
     </head>
 
@@ -128,9 +131,127 @@
           </div>
         </div>
         <span></span>
+
+
+      <!-- PAGE HELP BOT -->
+      <div class="container perfect_scrollbar" id="container">
+          <div class="pvr_chat_button">
+              <i class="material-icons">chat</i>
+              <span>Help Bot</span>
+          </div>
+          <div class="pvr_chat_wrapper">
+              <div class="pvr_chat_content">
+                  <div class="close_chat">
+                      <i class="material-icons">close</i>
+                  </div>
+                  <div class="chat_header">
+                      <div class="pvr-user-w with-status status-green">
+                          <div class="pvr-user-avatar-w">
+                              <div class="user-avatar">
+                                  <img alt="" src="/static/assets/img/avatar/default-avatar.jpg">
+                              </div>
+                          </div>
+                          <div class="user-name">
+                              <h6 class="user-title">
+                                  <a href="#" target="_blank">Help Bot</a>
+                              </h6>
+                              <div class="user-role">
+                                  Administrator
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="chat-messages theme_2">
+                      <div class="message">
+                          <div class="message-content">
+                            Hi! I'm HelpBot. How can I help you today?
+                          </div>
+                      </div>
+    <!--                  <div class="date-break">-->
+    <!--                      Mon 10:20am-->
+    <!--                  </div>-->
+    <!--                  <div class="message">-->
+    <!--                      <div class="message-content">-->
+    <!--                        Healthy living starts with your daily diet.-->
+    <!--                      </div>-->
+    <!--                  </div>-->
+    <!--                  <div class="message self">-->
+    <!--                      <div class="message-content">-->
+    <!--                        Healthy living starts with your daily diet.-->
+    <!--                      </div>-->
+    <!--                  </div>-->
+                  </div>
+                  <div class="chat-controls">
+                      <input class="message-input" id="message-input" placeholder="Type your message here..." type="text">
+                      <div class="chat-extra">
+    <!--                      <a href="javascript:void(0)">-->
+    <!--                          <span class="extra-tooltip">Attach Document</span>-->
+    <!--                          <i class="material-icons">attach_file</i>-->
+    <!--                      </a>-->
+    <!--                      <a href="javascript:void(0)">-->
+    <!--                          <span class="extra-tooltip">Insert Photo</span>-->
+    <!--                          <i class="material-icons">add_a_photo</i>-->
+    <!--                      </a>-->
+                          <a href="javascript:void(0)" class="change_chat_theme">
+                              <span class="extra-tooltip">Change chat theme</span>
+                              <i class="material-icons">refresh</i>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- END: help bot -->
+
+    <div class="container" style="width:80%; margin-left:10%">
+
+
+        <ul class="listree">
+            <li>
+                <a href="#diabetes"><div class="listree-submenu-heading">What is diabetes?</div></a>
+                <ul class="listree-submenu-items">
+                    <li>
+                        <ul class="listree-submenu-items">
+                            <li>
+                                <a href='#type'><div class="listree-submenu-heading">Types of Diabetes</div></a>
+                                <ul class="listree-submenu-items">
+                                    <li>
+                                        <ul class="listree-submenu-items">
+                                            <li>
+                                                <a href="#type 1">Type 1</a>
+                                            </li>
+                                            <li>
+                                                <a href="#type 2">Type 2</a>
+                                            </li>
+                                            <li>
+                                                <a href="#Gestational Diabetes">Gestational Diabetes</a>
+                                            </li>
+                                            <li>
+                                                <a href="#Short">Short term negative effects of diabetes</a>
+                                            </li>
+                                            <li>
+                                                <a href="#Hyperosmolar">Hyperosmolar Hyperglycemic Nonketotic Syndrome</a>
+                                            </li>
+                                            <li>
+                                                <a href="#Long Term">Long Term</a>
+                                            </li>
+                                            <li>
+                                                <a href="#Treatment options">Treatment options</a>
+                                            </li>
+                                            <li>
+                                                <a href="#Healthy eating">Healthy eating</a>
+                                            </li>
+                                            <li>
+                                                <a href="#FAQ">FAQ</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+
+
+    </div>
+
 <div style="width:80%; margin-left:10%;margin-bottom:10%">
-
-
 <br><br><br>
 <div style="text-align:center"><h1>Beginners Guide</h1></div>
 <html xmlns:o=3D"urn:schemas-microsoft-com:office:office" xmlns:w=3D"urn:schemas-microsoft-com:office:word" xmlns:dt=3D"uuid:C2F41010-65B3-11d1-A29F-00AA00C14882" xmlns=3D"http://www.w3.org/TR/REC-html40"><head><meta http-equiv=3DContent-Type  content=3D"text/html; charset=3Dutf-8" ><meta name=3DProgId  content=3DWord.Document ><meta name=3DGenerator  content=3D"Microsoft Word 14" ><meta name=3DOriginator  content=3D"Microsoft Word 14" ><title></title><!--[if gte mso 9]><xml><o:DocumentProperties><o:Author>1</o:Author><o:LastAuthor>peter</o:LastAuthor><o:Revision>1</o:Revision><o:Pages>16</o:Pages><o:Characters>26186</o:Characters><o:Lines>278</o:Lines><o:Paragraphs>78</o:Paragraphs></o:DocumentProperties><o:CustomDocumentProperties><o:KSOProductBuildVer dt:dt=3D"string" >2052-11.1.0.12358</o:KSOProductBuildVer><o:ICV dt:dt=3D"string" >4CB60F26A10847C4A52384C77CCFD585</o:ICV></o:CustomDocumentProperties></xml><![endif]--><!--[if gte mso 9]><xml><o:OfficeDocumentSettings></o:OfficeDocumentSettings></xml><![endif]--><!--[if gte mso 9]><xml><w:WordDocument><w:BrowserLevel>MicrosoftInternetExplorer4</w:BrowserLevel><w:DisplayHorizontalDrawingGridEvery>0</w:DisplayHorizontalDrawingGridEvery><w:DisplayVerticalDrawingGridEvery>2</w:DisplayVerticalDrawingGridEvery><w:DocumentKind>DocumentNotSpecified</w:DocumentKind><w:DrawingGridVerticalSpacing>7.8 磅</w:DrawingGridVerticalSpacing><w:PunctuationKerning></w:PunctuationKerning><w:View>Web</w:View><w:Compatibility><w:DontGrowAutofit/><w:UseFELayout/></w:Compatibility><w:Zoom>0</w:Zoom></w:WordDocument></xml><![endif]--><!--[if gte mso 9]><xml><w:LatentStyles DefLockedState=3D"false"  DefUnhideWhenUsed=3D"true"  DefSemiHidden=3D"true"  DefQFormat=3D"false"  DefPriority=3D"99"  LatentStyleCount=3D"260" >
@@ -882,7 +1003,7 @@
 =20font-size:11.0000pt;" ></span></u></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  align=3Dcenter  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;text-align:center;" ><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-size:11.0000pt;" >&nbsp;</span><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;" ><b><u><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-weight:bold;text-decoration:underline;text-underline:single;
-=20font-size:11.0000pt;" >What is diabetes?</span></u></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;" ><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
+=20font-size:11.0000pt;" ><p id='diabetes'>What is diabetes?<p></span></u></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;" ><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-size:11.0000pt;" >&nbsp;</span><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-size:11.0000pt;background:rgb(255,255,255);mso-shading:rgb(255,255,255);" >Diabetes is a disease that occurs when your blood glucose, also called blood sugar, is too high. Blood glucose is your main source of energy and comes from the food you eat.</span><span><a href=3D"https://www.niddk.nih.gov/Dictionary/I/insulin" ><u><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20text-decoration:underline;text-underline:single;font-size:11.0000pt;
@@ -900,11 +1021,11 @@
 =20font-style:italic;font-size:11.0000pt;background:rgb(255,255,255);
 =20mso-shading:rgb(255,255,255);" >Diabetes occurs when your blood glucose from the food you eat becomes too high. Insulin helps move glucose from our bloodstream into the body's cells to make energy but for some individuals, the pancreas does not make enough or use insulin well.</span></i><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;" ><b><u><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(17,85,204);
 =20font-weight:bold;text-decoration:underline;text-underline:single;
-=20font-size:11.0000pt;background:rgb(255,255,255);mso-shading:rgb(255,255,255);" >Types of diabetes</span></u></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;" ><i><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(17,85,204);
+=20font-size:11.0000pt;background:rgb(255,255,255);mso-shading:rgb(255,255,255);" ><p id='type'>Types of diabetes</p></span></u></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;" ><i><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(17,85,204);
 =20font-style:italic;font-size:11.0000pt;background:rgb(255,255,255);
 =20mso-shading:rgb(255,255,255);" >There are 3 main types, type 1, type 2 and gestational diabetes, all being complex and serious.</span></i><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;" ><b><u><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-weight:bold;text-decoration:underline;text-underline:single;
-=20font-size:11.0000pt;" >Type 1 diabetes</span></u></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;" ><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
+=20font-size:11.0000pt;" ><p id='type 1'>Type 1 diabetes</p></span></u></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;" ><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-size:11.0000pt;" >Type 1 diabetes is a chronic disease. In people with type 1 diabetes, cells in the pancreas that make insulin are destroyed, so the body is unable to make insulin. Insulin is a hormone that helps your body’s cells use glucose (sugar) for energy. Your body gets glucose from the food you eat. Insulin allows the glucose to pass from your blood into your body’s cells. When the cells have enough, your liver and muscle tissues store the extra </span><span><a href=3D"https://www.healthline.com/health/glucose" ><u><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20text-decoration:underline;text-underline:single;font-size:11.0000pt;" >glucose</span></u></a></span><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-size:11.0000pt;" >&nbsp;in the form of glycogen. It’s broken down into blood sugar and released when you need energy between meals, during exercise, or while you sleep. With type 1 diabetes, your body is unable to process glucose due to the lack of </span><span><a href=3D"https://www.healthline.com/health/type-2-diabetes/insulin" ><u><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
@@ -912,7 +1033,7 @@
 =20font-size:11.0000pt;" >. Glucose from your food can’t make its way into your cells. This leaves too much glucose circulating in your blood.&nbsp;</span><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;" ><i><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(17,85,204);
 =20font-style:italic;font-size:11.0000pt;" >Type 1 diabetes is a chronic medical condition where cells that make insulin are destroyed, hence the body is unable to process glucose due to the lack of insulin.</span></i><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-bottom:15.0000pt;" ><b><u><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-weight:bold;text-decoration:underline;text-underline:single;
-=20font-size:11.0000pt;" >Type 2 diabetes</span></u></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-bottom:15.0000pt;" ><span><a href=3D"https://www.healthline.com/health/diabetes" ><u><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
+=20font-size:11.0000pt;" ><p id='type 2'>Type 2 diabetes</p></span></u></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-bottom:15.0000pt;" ><span><a href=3D"https://www.healthline.com/health/diabetes" ><u><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20text-decoration:underline;text-underline:single;font-size:11.0000pt;" >Type 2 diabetes</span></u></a></span><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-size:11.0000pt;" >&nbsp;is a chronic medical condition in which the levels of sugar, or </span><span><a href=3D"https://www.healthline.com/health/glucose" ><u><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20text-decoration:underline;text-underline:single;font-size:11.0000pt;" >glucose</span></u></a></span><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
@@ -922,7 +1043,7 @@
 =20font-style:italic;font-size:11.0000pt;" >Type 2 diabetes is a chronic medical condition where your body is not able to respond to insulin as well as it should. In later stages, it also many not produce enough insulin. When uncontrolled, may lead to chronically high blood glucose levels, leading to serious complications</span></i><i><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-style:italic;font-size:11.0000pt;" >.</span></i><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;" ><b><u><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-weight:bold;text-decoration:underline;text-underline:single;
-=20font-size:11.0000pt;" >Gestational Diabetes</span></u></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;" ><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
+=20font-size:11.0000pt;" ><a id='Gestational Diabetes'>Gestational Diabetes</a></span></u></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;" ><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-size:11.0000pt;" >During pregnancy, some people may develop high blood sugar levels. This condition is known as gestational diabetes mellitus (GDM) or gestational diabetes. Gestational diabetes typically develops between the 24th and 28th weeks of pregnancy. If you develop gestational diabetes while you’re pregnant, it doesn’t mean that you had </span><span><a href=3D"https://www.healthline.com/health/diabetes/class-c-diabetes" ><u><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20text-decoration:underline;text-underline:single;font-size:11.0000pt;" >diabetes before your pregnancy</span></u></a></span><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-size:11.0000pt;" >&nbsp;or will have it afterward. But gestational diabetes does raise your risk of developing </span><span><a href=3D"https://www.healthline.com/health/type-2-diabetes" ><u><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
@@ -932,7 +1053,7 @@
 =20font-size:11.0000pt;" >&nbsp;of developing diabetes and increase the possibility of complications for you and your baby during pregnancy and delivery.</span><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;" ><i><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(17,85,204);
 =20font-style:italic;font-size:11.0000pt;" >Gestational diabetes typically develops between the 24th to 28th week of pregnancy. Although not indicative of having diabetes before or after pregnancy, it raises the risk of type 2 diabetes in the future. If poorly managed, it can raise the child’s chance of developing diabetes and create complications during pregnancy and delivery.</span></i><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;" ><b><u><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-weight:bold;text-decoration:underline;text-underline:single;
-=20font-size:11.0000pt;" >Short term negative effects of diabetes</span></u></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;" ><b><u><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
+=20font-size:11.0000pt;" ><p id='Short'>Short term negative effects of diabetes</p></span></u></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;" ><b><u><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-weight:bold;text-decoration:underline;text-underline:single;
 =20font-size:11.0000pt;background:rgb(255,255,255);mso-shading:rgb(255,255,255);" >Hypoglycemia</span></u></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-size:11.0000pt;background:rgb(255,255,255);mso-shading:rgb(255,255,255);" >:</span><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;" ><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
@@ -981,7 +1102,7 @@
 =20font-weight:bold;text-decoration:underline;text-underline:single;
 =20font-size:11.0000pt;" >Symptoms</span></u></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal ><i><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(17,85,204);
 =20font-style:italic;font-size:11.0000pt;" >Hypoglycemia: Rapid heartbeat, sweating, whiteness of skin, anxiety, numbness in fingers, toes and lips, sleepiness, confusion, headaches, slurred speech.</span></i><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;" ><b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
-=20font-weight:bold;font-size:11.0000pt;" >Hyperosmolar Hyperglycemic Nonketotic Syndrome:</span></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;margin-left:54.0000pt;" ><b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
+=20font-weight:bold;font-size:11.0000pt;" ><p id='Hyperosmolar'>Hyperosmolar Hyperglycemic Nonketotic Syndrome:</p></span></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;margin-left:54.0000pt;" ><b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-weight:bold;font-size:11.0000pt;" >&nbsp;</span></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;margin-left:54.0000pt;" ><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-size:11.0000pt;" >Hyperosmolar hyperglycemic nonketotic syndrome (HHNS) is very rare, but you should be aware of it and know how to handle it if it occurs. HHNS is when your blood glucose level goes way too high, and if you don’t treat it, it can cause death.</span><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;margin-left:54.0000pt;" ><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-size:11.0000pt;" >&nbsp;</span><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;margin-left:54.0000pt;" ><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
@@ -994,7 +1115,7 @@
 =20font-style:italic;font-size:11.0000pt;" >Hyperosmolar Hyperglycemic Nonketotic Syndrome</span></u></i></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;" ><i><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(74,134,232);
 =20font-style:italic;font-size:11.0000pt;" >HHNS is when your blood glucose level goes way too high, and if you don’t treat it, it can cause death.</span></i><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal ><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p>&nbsp;</o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;margin-left:18.0000pt;" ><b><u><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-weight:bold;text-decoration:underline;text-underline:single;
-=20font-size:11.0000pt;background:rgb(255,255,255);mso-shading:rgb(255,255,255);" >Long Term:</span></u></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;margin-left:18.0000pt;" ><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
+=20font-size:11.0000pt;background:rgb(255,255,255);mso-shading:rgb(255,255,255);" ><p id='Long Term'>Long Term:</p></span></u></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;margin-left:18.0000pt;" ><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-size:11.0000pt;" >&nbsp;</span><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;margin-left:18.0000pt;
 =20text-indent:-18.0000pt;" ><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-size:11.0000pt;" >1.</span><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
@@ -1076,7 +1197,7 @@
 =20mso-shading:rgb(255,255,255);" >Diabetic eye disease.</span></i><i><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(74,134,232);
 =20font-style:italic;font-size:11.0000pt;" ><o:p></o:p></span></i></p><p class=3DMsoNormal  style=3D"margin-bottom:15.0000pt;" ><b><u><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-weight:bold;text-decoration:underline;text-underline:single;
-=20font-size:11.0000pt;" >Treatment options:</span></u></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;margin-left:18.0000pt;" ><b><u><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
+=20font-size:11.0000pt;" ><p id='Treatment options'>Treatment options:</p></span></u></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;margin-left:18.0000pt;" ><b><u><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-weight:bold;text-decoration:underline;text-underline:single;
 =20font-size:11.0000pt;" >Type 1:</span></u></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;margin-left:18.0000pt;" ><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-size:11.0000pt;" >&nbsp;</span><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;margin-left:54.0000pt;
@@ -1135,7 +1256,7 @@
 =20color:rgb(74,134,232);font-size:11.0000pt;" >Type 1: Insulin</span><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal ><span style=3D"mso-spacerun:'yes';font-family:Arial;mso-fareast-font-family:'Times New Roman';
 =20color:rgb(74,134,232);font-size:11.0000pt;" >type 2: Diabetic pills and/or non-insulin injectables.</span><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal ><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p>&nbsp;</o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:18.0000pt;margin-bottom:18.0000pt;mso-outline-level:2;" ><b><u><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-weight:bold;text-decoration:underline;text-underline:single;
-=20font-size:12.0000pt;" >Healthy eating</span></u></b><b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-weight:bold;
+=20font-size:12.0000pt;" ><p id='Healthy eating'>Healthy eating</p></span></u></b><b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-weight:bold;
 =20font-size:18.0000pt;" ><o:p></o:p></span></b></p><p class=3DMsoNormal  style=3D"margin-bottom:18.0000pt;" ><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-size:11.0000pt;" >A healthy eating plan is important for everyone who has diabetes. You don’t need to follow a strict diet, but you will likely need to make some changes in order to keep your blood glucose levels in your target range. An eating plan can also help you lose weight and control your blood pressure and cholesterol, as well.</span><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-bottom:18.0000pt;" ><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-size:11.0000pt;" >Here are foods to include in your diabetes eating plan:</span><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:14.0000pt;margin-bottom:18.0000pt;margin-left:36.0000pt;
@@ -1216,7 +1337,7 @@
 =20font-weight:bold;text-decoration:underline;text-underline:single;
 =20font-size:11.0000pt;" >&nbsp;</span></u></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  align=3Dcenter  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;text-align:center;" ><b><u><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-weight:bold;text-decoration:underline;text-underline:single;
-=20font-size:11.0000pt;" >FAQ:</span></u></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;margin-left:18.0000pt;" ><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
+=20font-size:11.0000pt;" ><p id='FAQ'>FAQ:</p></span></u></b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;margin-left:18.0000pt;" ><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-size:11.0000pt;" >&nbsp;</span><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-size:12.0000pt;" ><o:p></o:p></span></p><p class=3DMsoNormal  style=3D"margin-top:18.0000pt;margin-bottom:4.0000pt;mso-outline-level:2;" ><b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
 =20font-weight:bold;font-size:12.0000pt;" >What are the main symptoms of diabetes?</span></b><b><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';font-weight:bold;
 =20font-size:18.0000pt;" ><o:p></o:p></span></b></p><p class=3DMsoNormal  style=3D"margin-top:12.0000pt;margin-bottom:12.0000pt;margin-left:18.0000pt;" ><span style=3D"mso-spacerun:'yes';font-family:'Times New Roman';color:rgb(0,0,0);
@@ -1745,24 +1866,48 @@
 
 </div>
 </body>
-<script src="/static/js/jquery-3.4.1.min.js"></script>
-<script src="/static/js/popper.min.js"></script>
-<script src="/static/js/bootstrap.min.js"></script>
-<script src="/static/js/jquery.waypoints.min.js"></script>
-<script src="/static/js/jquery.animateNumber.min.js"></script>
-<script src="/static/js/tiny-slider.js"></script>
-<script src="/static/js/jquery.fancybox.min.js"></script>
-<script src="/static/js/jquery.lavalamp.min.js"></script>
-<script src="/static/js/jquery.ajaxchimp.min.js"></script>
-<script src="/static/js/jquery.validate.min.js"></script>
-<script src="/static/js/jquery.easing.1.3.js"></script>
-<script src="/static/js/main.js"></script>
+    <!-- BEGIN: JavaScripts -->
+      <script src="/static/js/jquery-3.4.1.min.js"></script>
+      <script src="/static/js/popper.min.js"></script>
+      <script src="/static/js/bootstrap.min.js"></script>
+      <script src="/static/js/jquery.waypoints.min.js"></script>
+      <script src="/static/js/jquery.animateNumber.min.js"></script>
+      <script src="/static/js/tiny-slider.js"></script>
+      <script src="/static/js/jquery.fancybox.min.js"></script>
+      <script src="/static/js/jquery.lavalamp.min.js"></script>
+      <script src="/static/js/jquery.ajaxchimp.min.js"></script>
+      <script src="/static/js/jquery.validate.min.js"></script>
+      <script src="/static/js/jquery.easing.1.3.js"></script>
+      <script src="/static/js/main.js"></script>
 
-<script src="/static/js/select.js"></script>
-<script src="/static/js/select_food.js"></script>
-  <script src="/static/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
-  <script src="/static/assets/plugins/backstretch/backstretch.js" type="text/javascript"></script>
-  <script src="/static/assets/js/app.js"></script>
+      <script src="/static/js/select.js"></script>
+      <script src="/static/js/select_food.js"></script>
+
+
+      <!--   Core JS Files   -->
+      <script src="/static/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
+      <script src="/static/assets/plugins/backstretch/backstretch.js" type="text/javascript"></script>
+      <script src="/static/assets/js/app.js"></script>
+      <script>
+
+
+    <!--[if !IE]> -->
+
+    <script src="/static/tree_files/jquery-2.0.3.min.js"></script>
+
+    <!-- <![endif]-->
+
+    <script src="/static/tree_files/bootstrap.min.js"></script>
+
+    <!-- page specific plugin scripts -->
+
+    <script src="/static/tree_files/fuelux.tree-sampledata.js"></script>
+    <script src="/static/tree_files/fuelux.tree.min.js"></script>
+
+    <script src="/static/tree/dist/listree.umd.min.js"></script>
+    <script>
+        listree();
+    </script>
 
 {% else %}
 <script type="text/javascript">
