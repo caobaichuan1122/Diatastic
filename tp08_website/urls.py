@@ -5,10 +5,10 @@ The `urlpatterns` list routes URLs to views. For more information please see:
 Examples:
 Function views
     1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.Diary, name='Diary')
+    2. Add a URL to urlpatterns:  path('', views.iteration, name='iteration')
 Class-based views
     1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='Diary')
+    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='iteration')
 Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
@@ -16,12 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
-import Diary
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('iteration2/',include('iteration2.urls')),
-    path('Diary/', include('Diary.urls')),
-    path('',include('iteration2.urls')),
+    path('iteration3/',include('iteration3.urls')),
+    path('iteration2/', include('iteration3.urls')),
+    path('iteration/', include('iteration.urls')),
+    path('',include('iteration3.urls')),
 ]
 

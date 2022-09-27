@@ -31,44 +31,44 @@ def login(request):
                 message = "password error！"
         except:
             message = "user error！"
-    return render(request, 'Diary/login.html',{'Diary':'Diary'})
+    return render(request, 'iteration/login.html',{'iteration':'iteration'})
 
 def index(request):
     pass
-    return render(request, 'Diary/index.html',{'Diary':'Diary'})
+    return render(request, 'iteration/index.html',{'iteration':'iteration'})
 
 def guide(request):
     pass
-    return render(request, 'Diary/Beginners Guide.mht')
+    return render(request, 'iteration/Beginners Guide.mht')
 
 def symptoms(request):
     pass
-    return render(request, 'Diary/symptoms.html')
+    return render(request, 'iteration/symptoms.html')
 
 def community(request):
     pass
-    return render(request, 'Diary/community.html')
+    return render(request, 'iteration/community.html')
 
 def about(request):
     pass
-    return render(request, 'Diary/about.html')
+    return render(request, 'iteration/about.html')
 
 def contact(request):
     pass
-    return render(request, 'Diary/contact.html')
+    return render(request, 'iteration/contact.html')
 
 def diary(request):
     drinks = Drink.objects.all()
     food = Food.objects.all()
-    return render(request, 'Diary/diary.html',context={'drinks':drinks,'food':food})
+    return render(request, 'iteration/diary.html',context={'drinks':drinks,'food':food})
 
 def add_diary(request):
     pass
-    return render(request, 'Diary/diary.html')
+    return render(request, 'iteration/diary.html')
 
 def test(request):
     pass
-    return render(request, 'Diary/diary.html')
+    return render(request, 'iteration/diary.html')
 
 def create_view(request):
     if request.method == "POST":
@@ -85,7 +85,7 @@ def create_view(request):
                     insulin=insulin_calculation(item.food, item.drinks, item.blood_sugar_level))
         return redirect("/list_view/",context={'date':date,'time':time,'blood_sugar_level':blood_sugar_level,'food':food,'drinks':drinks})
 
-    return render(request, "Diary/list_view.html")
+    return render(request, "iteration/list_view.html")
 
 def entry_view(request, diary_id):
     obj = get_object_or_404(DiaryEntries, diary_id=diary_id)
@@ -99,14 +99,14 @@ def entry_view(request, diary_id):
         'Insulin': val
     }
 
-    return render(request, "Diary/entry_view.html", context)
+    return render(request, "iteration/entry_view.html", context)
 
 def list_view(request):
     diary_entry = DiaryEntries.objects.all()
     for item in diary_entry:
         if item.insulin == 0:
             DiaryEntries.objects.filter(diary_id =item.diary_id).update(insulin = insulin_calculation(item.food, item.drinks, item.blood_sugar_level))
-    return render(request,'Diary/list_view.html',context={'diary_entry':diary_entry})
+    return render(request,'iteration/list_view.html',context={'diary_entry':diary_entry})
 
 
 def insulin_calculation(food, drinks, blood_sugar_level):
@@ -143,10 +143,10 @@ def get_queryset():
     return DiaryEntries.objects.all().order_by('date')
 
 def please_login(request):
-    return render(request, "Diary/please_login.html")
+    return render(request, "iteration/please_login.html")
 
 def page_no_found(request,**kwargs):
-    return render(request, "Diary/404.html")
+    return render(request, "iteration/404.html")
 
 
 

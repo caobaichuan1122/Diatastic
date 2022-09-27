@@ -1,4 +1,4 @@
-# Diary/models.py
+# iteration/models.py
 
 from django.db import models
 

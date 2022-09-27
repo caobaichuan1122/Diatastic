@@ -1,0 +1,72 @@
+﻿{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <link rel="stylesheet" href="/static/login/style.css">
+</head>
+<body>
+    <!-- partial:index.partial.html -->
+    <div class="wrapper">
+        <div class="container">
+            <div class="sign-up-container">
+                <form>
+                    <h1>register</h1>
+                    <div class="social-links">
+                        <div>
+                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        </div>
+                        <div>
+                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </div>
+                        <div>
+                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <span>use email</span>
+                    <input type="text" placeholder="email">
+                    <input type="email" placeholder="user">
+                    <input type="password" placeholder="password">
+                    <button class="form_btn">register</button>
+                </form>
+            </div>
+            <div class="sign-in-container">
+                <form action="/login/" method="post">
+                    {% csrf_token %}
+                    <h1>login</h1>
+                    <div class="social-links">
+                        <div>
+                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        </div>
+                        <div>
+                            <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </div>
+                        <div>
+                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                    <span>use account</span>
+                    <input name='user' type="user" placeholder="User">
+                    <input name='password' type="password" placeholder="Password">
+                    <button class="form_btn">login</button>
+                </form>
+            </div>
+            <div class="overlay-container">
+                <div class="overlay-left">
+                    <h1>welcome back!</h1>
+                    <p>Healthy living starts with your daily diet.</p>
+                    <button id="signIn" class="overlay_btn">login</button>
+                </div>
+                <div class="overlay-right">
+                    <h1>Hello, diatastic</h1>
+                    <p>Healthy living starts with your daily diet.</p>
+                    <button id="signUp" class="overlay_btn">sign up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- partial -->
+    <script src="/static/login/script.js"></script>
+</body>
+</html>

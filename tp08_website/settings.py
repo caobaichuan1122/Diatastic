@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'Diary',
-    'iteration2',
+    'iteration',
+    'iteration3',
 ]
 
 MIDDLEWARE = [
@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'tp08_website.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'new_nutrients',
+        'NAME': 'Nutrients',
         'USER': 'root',
         'PASSWORD': 'tp08tp08',
         'HOST': '13.239.85.203',
@@ -87,12 +87,20 @@ DATABASES = {
     },
     'iteration2': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Nutrients_I2',
+        'NAME': 'Nutrients_iteration2',
         'USER': 'root',
         'PASSWORD': 'tp08tp08',
         'HOST': '13.239.85.203',
         'PORT': '3306',
-    }
+    },
+    'iteration3': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'Nutrients_iteration3',
+            'USER': 'root',
+            'PASSWORD': 'tp08tp08',
+            'HOST': '13.239.85.203',
+            'PORT': '3306',
+        }
 }
 
 DATABASE_ROUTERS = ['tp08_website.database_router.DatabaseAppsRouter']
@@ -100,8 +108,9 @@ DATABASE_ROUTERS = ['tp08_website.database_router.DatabaseAppsRouter']
 DATABASE_APPS_MAPPING = {
     # example:
     # 'app_name':'database_name',
-    'Diary': 'default',
+    'iteration': 'default',
     'iteration2': 'iteration2',
+    'iteration3': 'iteration3',
 }
 # DATABASES = {
 #     'default': {
@@ -156,7 +165,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 HERE = os.path.join(HERE, '../')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    # os.path.join(BASE_DIR, "iteration2", "static"),
+    # os.path.join(BASE_DIR, "iteration3", "static"),
     # os.path.join(BASE_DIR, "login", "static"),
 ]
 # STATIC_ROOT = os.path.join(BASE_DIR, 'static')
