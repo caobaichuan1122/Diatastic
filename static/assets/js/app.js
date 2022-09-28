@@ -97,7 +97,7 @@ function respond(user_input) {
 $(function () {
     $.backstretch("assets/img/bg.jpg");
     $(function () {
-        $('.pvr_chat_wrapper').toggleClass('active');
+//        $('.pvr_chat_wrapper').toggleClass('active');
 
 
         $('.pvr_chat_button, .pvr_chat_wrapper .close_chat').on('click', function () {

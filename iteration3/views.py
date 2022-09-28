@@ -251,7 +251,7 @@ def page_no_found(request,**kwargs):
     return render(request, "iteration3/404.html")
 
 def please_login(request):
-    return render(request, "iteration/404.html")
+    return render(request, "iteration3/404.html")
 
 def index(request):
     pass
@@ -279,5 +279,5 @@ def contact(request):
 
 def test(request):
     pass
-    return render(request, 'iteration3/diary.html')
+    return render(request, 'iteration3/test.html')
 
