@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Arimo:wght@700&family=Muli:ital,wght@0,300;0,400;0,700;1,300;1,400&display=swap");
 body {
-  font-family: "Muli", sans-serif;
+  font-family:"Open Sans", Arial, sans-serif;
   line-height: 1.5; }
 
 a {
@@ -658,7 +658,7 @@ a.more {
         position: relative; }
         .widget-29182 ul li a:before {
           color: #2fcbce;
-          font-family: 'icomoon';
+          font-family:"Open Sans", Arial, sans-serif;
           content: "\e315";
           position: absolute;
           top: .3rem;
@@ -1015,7 +1015,7 @@ a.more {
       border-bottom-right-radius: 0px;
       border-bottom-left-radius: 0px; }
       .custom-accordion .accordion-item .btn-link:before {
-        font-family: "icomoon";
+        font-family:"Open Sans", Arial, sans-serif;
         content: "\e313";
         position: absolute;
         top: 50%;
@@ -1025,7 +1025,7 @@ a.more {
         transform: translateY(-50%);
         left: 15px; }
       .custom-accordion .accordion-item .btn-link[aria-expanded="true"]:before {
-        font-family: "icomoon";
+        font-family:"Open Sans", Arial, sans-serif;
         content: "\e316";
         position: absolute;
         color: #743beb;
@@ -1460,7 +1460,7 @@ a.more {
       .side-nav-29101 ul li.active:before {
         position: absolute;
         left: -20px;
-        font-family: 'icomoon';
+        font-family:"Open Sans", Arial, sans-serif;
         content: "\e315"; }
       .side-nav-29101 ul li.active a {
         color: #2fcbce;
@@ -1817,7 +1817,7 @@ span.error {
     opacity: 0; } }
 
 #footer {
-  background-color: #212121;
+  background-color: #f89899;
   padding: 4rem 0 4rem 0;
   position: relative;
   z-index: 1;
@@ -1882,3 +1882,9 @@ span.error {
       color: rgba(255, 255, 255, 0.5); }
     .footer-subscribe .form-control:-moz-placeholder {
       color: rgba(255, 255, 255, 0.5); }
+
+
+
+body {
+  font-family:"Open Sans", Arial, sans-serif;
+}
