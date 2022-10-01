@@ -14,7 +14,7 @@ class User(models.Model):
     class Meta:
         verbose_name = 'user'
         verbose_name_plural = 'user'
-        app_label = "iteration3"
+        app_label = "iteration2"
 
 class Category(models.Model):
     name = models.CharField(max_length=1280)

@@ -24,7 +24,7 @@ def login(request):
                 request.session['is_login'] = True
                 request.session['user_id'] = user.id
                 request.session['user_name'] = user.name
-                return redirect('/iteration3/index/')
+                return redirect('/index/')
             else:
                 message = "password error！"
         except:
@@ -259,7 +259,7 @@ def index(request):
 
 def guide(request):
     pass
-    return render(request, 'iteration3/Beginners Guide.mht')
+    return render(request, 'iteration3/Beginners Guide.html')
 
 def symptoms(request):
     pass
@@ -279,5 +279,5 @@ def contact(request):
 
 def test(request):
     pass
-    return render(request, 'iteration3/test.html')
+    return render(request, 'iteration3/iteration2.html')
 
