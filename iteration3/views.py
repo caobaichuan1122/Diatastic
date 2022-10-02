@@ -261,6 +261,14 @@ def guide(request):
     pass
     return render(request, 'iteration3/Beginners Guide.html')
 
+def FAQ(request):
+    pass
+    return render(request, 'iteration3/faq.html')
+
+def tips(request):
+    pass
+    return render(request, 'iteration3/tips.html')
+
 def symptoms(request):
     pass
     return render(request, 'iteration3/symptoms.html')

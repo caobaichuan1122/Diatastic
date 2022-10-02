@@ -1,0 +1,554 @@
+{% load static %}
+{% if request.session.is_login %}
+    <html lang="en">
+
+    <head>
+      <link rel="shortcut icon" href="../static/images/icons8-rh-plus-gradient-16.png">
+      <!-- BEGIN: Title -->
+      <title>Diatastic &mdash; Easily Manage Blood Sugar</title>
+      <!-- END: Title -->
+
+      <!-- BEGIN: Meta -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- END: Meta -->
+
+      <!-- BEGIN: Favicon -->
+    <!--  <link rel="shortcut icon" href="/static/images/favicon.png">-->
+      <!-- END: Favicon -->
+
+      <!-- BEGIN: Stylesheets -->
+      <link rel="stylesheet" href="/static/css/bootstrap/bootstrap.css">
+      <link rel="stylesheet" href="/static/css/tiny-slider.css">
+      <link rel="stylesheet" href="/static/fonts/lineicons/LineIcons.min.css">
+      <link rel="stylesheet" href="/static/fonts/icomoon/style.css">
+      <link rel="stylesheet" href="/static/css/animate.min.css">
+      <link rel="stylesheet" href="/static/css/jquery.lavalamp.css">
+      <link rel="stylesheet" href="/static/css/jquery.fancybox.min.css">
+      <link rel="stylesheet" href="/static/css/style.css">
+      <!-- END: Stylesheets -->
+
+    <!-- BEGIN: help bot -->
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <!-- ***** Boostrap Custom / Addons Stylesheets ***** -->
+    <link href="/static/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/static/assets/plugins/material_icon/icon.css" rel="stylesheet"/>
+    <!-- Required CSS file for CSS Chat Panels element -->
+    <link href="/static/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/static/assets/css/chat_box.css" type="text/css" media="all">
+    <!--END: help bot -->
+    <!-- BEGIN: tree -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="/static/tree/styles.css">
+    <!--END: tree -->
+
+
+    </head>
+
+        <header id="site-header">
+
+          <!-- Add '.navbar_dark' class if you want the color of the text to -->
+          <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+
+              <!-- BEGIN: .navbar-brand -->
+              <a class="navbar-brand" href="/iteration2/index/">
+              <img src="/static/images/icons8-rh-plus-gradient-32.png" ><font color="black">Diatastic</font>
+    <!--          <img src="/static/images/logo_dark.png" alt="Covid" id="logo_dark">-->
+              </a>
+              <!-- END: .navbar-brand -->
+
+              <!-- BEGIN: .navbar-toggler -->
+              <a href="#" class="burger-toggle-menu js-burger-toggle-menu ml-auto py-4" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+              </a>
+              <!-- END: .navbar-toggler -->
+
+              <!-- BEGIN: #main-nav -->
+              <div class="collapse navbar-collapse" id="main-nav">
+
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/index/"><font color="black">Home</font></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/diary/"><font color="black">Diary</font></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><font color="black">History</font></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/guide/"><font color="black">Beginner's Guide</font></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/tips/"><font color="black">Tips and Tricks</font></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/faq/"><font color="black">FAQ</font></a>
+                  </li>
+                </ul>
+
+              </div>
+              <!-- END: #main-nav -->
+
+            </div>
+          </nav>
+        </header>
+
+<br><br><br><br>
+ <div class="page-heading-85912" style="background-image: url('images/hero_bg_3.jpg')">
+          <div class="container">
+          </div>
+        </div>
+
+        <div class="custom-breadcrumns-23195 border-bottom">
+          <div class="container">
+            <a href="/iteration2/index/">Home</a>
+            <span class="mx-3 icon-keyboard_arrow_right"></span>
+            <span class="current">Frequently Asked Questions</span>
+          </div>
+        </div>
+        <span></span>
+
+
+      <!-- PAGE HELP BOT -->
+      <div class="container perfect_scrollbar" id="container">
+          <div class="pvr_chat_button">
+              <i class="material-icons">chat</i>
+              <span>Help Bot</span>
+          </div>
+          <div class="pvr_chat_wrapper">
+              <div class="pvr_chat_content">
+                  <div class="close_chat">
+                      <i class="material-icons">close</i>
+                  </div>
+                  <div class="chat_header">
+                      <div class="pvr-user-w with-status status-green">
+                          <div class="pvr-user-avatar-w">
+                              <div class="user-avatar">
+                                  <img alt="" src="/static/assets/img/avatar/default-avatar.jpg">
+                              </div>
+                          </div>
+                          <div class="user-name">
+                              <h6 class="user-title">
+                                  <a href="#" target="_blank">Help Bot</a>
+                              </h6>
+                              <div class="user-role">
+                                  Administrator
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="chat-messages theme_2">
+                      <div class="message">
+                          <div class="message-content">
+                            Hi! I'm HelpBot. How can I help you today?
+                          </div>
+                      </div>
+                  </div>
+                  <div class="chat-controls">
+                      <input class="message-input" id="message-input" placeholder="Type your message here..." type="text">
+                      <div class="chat-extra">
+
+                          <a href="javascript:void(0)" class="change_chat_theme">
+                              <span class="extra-tooltip">Change chat theme</span>
+                              <i class="material-icons">refresh</i>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- END: help bot -->
+
+
+<br><br><br>
+<div style="text-align:center"><h1>Frequently Asked Questions</h1></div>
+<br>
+<!-- PAGE tree -->
+<section class="accordion container">
+        <div class="accordion__container">
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='bx bx-plus accordion__icon'></i>
+                    <h3 class="accordion__title">What are the main symptoms of diabetes?</h3>
+                </header>
+
+                <div class="accordion__content">
+                    <ul class="accordion__description">
+                        Symptoms people with diabetes might experience are as follows (some might occur suddenly):<br/><br/>
+                        <li>Being thirstier than usual.</li>
+                        <li>Needing to pee more.</li>
+                        <li>Feeling tired and having no energy.</li>
+                        <li>Always feeling hungry.</li>
+                        <li>Having cuts that heal slowly.</li>
+                        <li>Itching, skin infections.</li>
+                        <li>Blurred vision.</li>
+                        <li>Losing weight for no reason (type 1).</li>
+                        <li>Gradually putting on weight (type 2).</li>
+                        <li>Mood swings.</li>
+                        <li>Headaches.</li>
+                        <li>Feeling dizzy.</li>
+                        <li>Leg cramps.</li><br/>
+                    But having one or more of these symptoms doesn’t necessarily mean that you have diabetes.
+                    However, if you experience any of these symptoms, go see your doctor.
+                </ul>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='bx bx-plus accordion__icon'></i>
+                    <h3 class="accordion__title">How is diabetes managed?</h3>
+                </header>
+
+                <div class="accordion__content">
+                        <ul class="accordion__description">
+                            Whether you have type 1, type 2 or gestational diabetes, the aim of any diabetes treatment is
+                            to get blood glucose levels as close to normal as often as possible:<br/><br/>
+                                <li>For type 1 diabetes, insulin injections are needed every day, along with a healthy diet
+                                    and regular physical activity.</li>
+                                <li>For type 2 diabetes, initially a healthy diet and regular physical activity may be all
+                                    that’s needed, but later on, some people may need tablets and/or insulin.</li>
+                                <li>For gestational diabetes, initially healthy eating, physical activity and monitoring
+                                    and maintaining a normal blood glucose level. If this doesn’t work, insulin injections will
+                                    be needed for the rest of the pregnancy.</li>
+                            </ul>
+                    </div>
+            </div>
+
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='bx bx-plus accordion__icon'></i>
+                    <h3 class="accordion__title">Is there a cure for diabetes?</h3>
+                </header>
+
+                <div class="accordion__content">
+                    <p class="accordion__description">
+                        At the moment, there is no cure for diabetes. However, there is a huge amount of research
+                        being done in Australia and overseas, with breakthroughs and innovations in diabetes
+                        treatment being made. So, you never know; someday, maybe in the not-too-distant future,
+                        there may be a cure.
+                    </p>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='bx bx-plus accordion__icon'></i>
+                    <h3 class="accordion__title">Can you ‘catch’ diabetes?</h3>
+                </header>
+
+                <div class="accordion__content">
+                    <p class="accordion__description">
+                        Diabetes is not contagious, so you cannot catch it from a person or from an environment.
+                    </p>
+                </div>
+            </div>
+        </div>
+</section>
+<br>
+ <section class="accordion container">
+        <div class="accordion__container">
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='bx bx-plus accordion__icon'></i>
+                    <h3 class="accordion__title">Who will help me if I have diabetes?</h3>
+                </header>
+
+                <div class="accordion__content">
+                    <p class="accordion__description">
+                        If you are diagnosed with diabetes, you don’t have to face it alone. Along with the support of
+                        family and friends, you will have the support of a team of health professionals to help you
+                        manage your diabetes. While you are the most important member of your diabetes team, team
+                        members generally include your doctor, a diabetes educator, a dietitian and a podiatrist
+                        (foot specialist). Team members may also include other medical specialists to provide medical,
+                        lifestyle and emotional help and support when you need it.<br/><br/>
+
+                        Organisations such as Diabetes Australia are also here to help and support people with diabetes.
+                        You can become a member of your local diabetes organisation and receive membership benefits.<br/><br/>
+
+                        You can also register with the National Diabetes Services Scheme for free. Registration only
+                        has to be done once and you get access to loads of information, support and subsidised products.
+                    </p>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='bx bx-plus accordion__icon'></i>
+                    <h3 class="accordion__title">How can I look after my diabetes?</h3>
+                </header>
+
+                <div class="accordion__content">
+                    <ul class="accordion__description">
+                    There are many steps you can take to manage your diabetes:<br/><br/>
+                        <li>Find the diabetes team members in your area. Your doctor may need to refer you,
+                        but this is not always necessary.</li>
+                        <li>Test your blood glucose levels regularly.</li>
+                        <li>Always take your insulin (if you need insulin).</li>
+                        <li>If your doctor gives you tablets to help manage your diabetes, blood pressure
+                        and/or cholesterol, make sure you take them regularly and on time.</li>
+                        <li>Stay active.</li>
+                        <li>Have a healthy eating plan.</li>
+                        <li>Stay positive.</li>
+                        <li>Don’t be afraid to ask for help whenever you need it.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='bx bx-plus accordion__icon'></i>
+                    <h3 class="accordion__title">How many people in Australia have diabetes?</h3>
+                </header>
+
+                <div class="accordion__content">
+                    <p class="accordion__description">
+                        The total number of Australians with diabetes and pre-diabetes is estimated to be
+                        approximately 3.7 million.<br/><br/>
+                        About one in four Australian adults over the age of 25 years has either diabetes or
+                        impaired glucose metabolism.<br/><br/>
+                        More than 1.2 million Australians have been diagnosed with diabetes. For every person
+                        diagnosed, it is estimated that there is another person who is not yet diagnosed.
+                    </p>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='bx bx-plus accordion__icon'></i>
+                    <h3 class="accordion__title">Is diabetes serious?</h3>
+                </header>
+
+                <div class="accordion__content">
+                        <ul class="accordion__description">
+                        Diabetes is serious. Diabetes can cause serious complications. For example:<br/><br/>
+                            <li>People with diabetes are up to two times more likely to develop heart disease and stroke.</li>
+                            <li>Diabetic retinopathy causes 17 per cent of all blindness and vision impairment and is the
+                            most common form of blindness in adults 20–74 years.</li>
+                            <li>The rate of lower limb amputation is 15 times higher in people with diabetes than those without diabetes.</li>
+                            <li>Diabetes is the leading cause of kidney failure. People with diabetes develop kidney damage
+                            at three times the rate of those who do not have diabetes.</li><br/>
+                    People with diabetes are at similar risk of death to smokers. Over five years, people with
+                    diabetes are twice as likely to die compared to people with normal glucose tolerance.
+                        </ul>
+                </div>
+            </div>
+        </div>
+</section>
+<br>
+    <section class="accordion container">
+        <div class="accordion__container">
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='bx bx-plus accordion__icon'></i>
+                    <h3 class="accordion__title">Who is most at risk of type 2 diabetes?</h3>
+                </header>
+
+                <div class="accordion__content">
+                        <ul class="accordion__description">
+                            People with one or more of the following risk factors are at increased risk of type 2 diabetes:<br/><br/>
+                            <li>People who are inactive, overweight or obese</li>
+                            <li>People with pre-diabetes this is where the glucose (sugar) levels in the body are
+                                higher than they should be, but not high enough to be diagnosed with diabetes.
+                                Not all people with pre-diabetes will develop diabetes but those that do have
+                                pre-diabetes are at high risk of developing the condition.</li>
+                            <li>People who have a family history of type 2 diabetes.</li>
+                            <li>People with high blood pressure and/or high fat levels in the blood or a history of
+                                cardiovascular disease.</li>
+                            <li>Aboriginal and Torres Strait Islander people.</li>
+                            <li>People from the following ethnic backgrounds: Pacific Island, Maori, Asian (including
+                                the Indian sub-continent), Middle Eastern, North African or Southern European.</li>
+                            <li>People who smoke.</li>
+                            <li>People taking antipsychotic medication.</li>
+                            <li>Women who have had diabetes during pregnancy (gestational diabetes).</li>
+                            <li>Women who have polycystic ovarian syndrome and who are overweight.</li>
+                        </ul>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='bx bx-plus accordion__icon'></i>
+                    <h3 class="accordion__title">What can I do to prevent type 2 diabetes?</h3>
+                </header>
+
+                <div class="accordion__content">
+                    <p class="accordion__description">
+                        Maintaining a healthy weight, being physically active and following a healthy eating plan can
+                        reduce a person's risk of developing type 2 diabetes.
+                    </p>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='bx bx-plus accordion__icon'></i>
+                    <h3 class="accordion__title">Are there ways that I can cut the costs of my medicines?</h3>
+                </header>
+
+                <div class="accordion__content">
+                    <ul class="accordion__description">
+                        <li>Be registered with the National Diabetes Services Scheme (NDSS) to get cheaper diabetes
+                            supplies and information. For further information about the NDSS call the Diabetes
+                            Infoline on 1800 637 700.</li>
+                        <li>Become a member of Diabetes Victoria to have up to date information on management, events,
+                            services and research to help you live well with diabetes. To join call our membership team
+                            on: 1300 437 386 or visit the membership page.</li>
+                        <li>If you or your family needs a lot of medicines in a year sign up for the Pharmaceutical
+                            Benefits Scheme (PBS) SafetyNet.</li>
+                        <li>Talk with your local chemist/pharmacist, visit the Medicare website or call PBS Infoline
+                            on 1800 552 152</li>
+                        <li>Talk with your local chemist/pharmacist about generic medicines that cost less. Also ask
+                            them if they offer a cheaper price if you buy in bulk, for example a 3 month supply of
+                            your medicine.</li>
+                        <li>Shop around for the best price on non-PBS scripts.</li>
+                        <li>Call the Medicines information line with the National Prescribing Service (NPS) on: 1300
+                            633 424 (1300 MEDICINE). NPS works to give you information on your prescription,
+                            over-the-counter and complementary medicines.This service is available Monday to
+                            Friday 9am–5pm AEST for the cost of a local call. Calls from mobiles may cost more.</li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+</section>
+<br>
+<!-- END: tree -->
+
+<!--         BEGIN: #footer-->
+        <footer id="footer">
+          <div class="container">
+
+            <!-- BEGIN: .footer-subscribe -->
+            <div class="row footer-subscribe">
+              <div class="col-md-6">
+                <h3 class="mt-2">manage your blood sugar, join US.</h3>
+              </div>
+              <div class="col-md-6">
+<!--                <form action="#" id="mc-form" class="form-subscribe">-->
+<!--                  <div class="d-flex align-items-stretch w-100">-->
+<!--                    <input type="email" id="mc-email" placeholder="Email address" class="form-control">-->
+<!--                    <input type="submit" value="GET INFO" class="btn btn-outline-white-reverse">-->
+<!--                  </div>-->
+<!--                  <div class="form-group">-->
+<!--                    <label for="mc-email"></label>-->
+<!--                  </div>-->
+<!--                </form>-->
+              </div>
+            </div>
+            <!-- END: .footer-subscribe -->
+
+            <div class="row">
+              <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                <!-- BEGIN: .widget -->
+                <div class="widget">
+                  <h3>About Our Team.</h3>
+<!--                  <ul class="nav-link">-->
+<!--                    <li><a href="#">Home</a></li>-->
+<!--                    <li><a href="#">Situation</a></li>-->
+<!--                    <li><a href="#">Prevention</a></li>-->
+<!--                    <li><a href="#">Symptoms</a></li>-->
+<!--                    <li><a href="#">Community</a></li>-->
+<!--                  </ul>-->
+                </div>
+                <!-- END: .widget -->
+              </div>
+              <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                <!-- BEGIN: .widget -->
+                <div class="widget">
+                  <h3>Our Motivation.</h3>
+<!--                  <ul class="nav-link">-->
+<!--                    <li><a href="#">Reduce The Spread</a></li>-->
+<!--                    <li><a href="#">Who Are At Risk</a></li>-->
+<!--                    <li><a href="#">Social Distancing</a></li>-->
+<!--                    <li><a href="#">Community Advice</a></li>-->
+<!--                    <li><a href="#">Technical Guidance</a></li>-->
+<!--                  </ul>-->
+                </div>
+                <!-- END: .widget -->
+              </div>
+              <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                <!-- BEGIN: .widget -->
+                <div class="widget">
+                  <h3>Our Data.</h3>
+<!--                  <ul class="nav-link">-->
+<!--                    <li><a href="#">Wash Your Hands Often</a></li>-->
+<!--                    <li><a href="#">Wear a Face Mask</a></li>-->
+<!--                    <li><a href="#">Avoid Contact With Sick People</a></li>-->
+<!--                    <li><a href="#">Always Cover Your Cough or Sneeze</a></li>-->
+<!--                    <li><a href="#">Protect Your Family</a></li>-->
+<!--                  </ul>-->
+                </div>
+                <!-- END: .widget -->
+              </div>
+              <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                <div class="d-block">
+<!--                  <ul class="list-unstyled d-flex social-29021">-->
+<!--                    <li><a href="#"><span class="icon-facebook"></span></a></li>-->
+<!--                    <li><a href="#"><span class="icon-twitter"></span></a></li>-->
+<!--                    <li><a href="#"><span class="icon-instagram"></span></a></li>-->
+<!--                    <li><a href="#"><span class="icon-linkedin"></span></a></li>-->
+<!--                  </ul>-->
+                </div>
+
+<!--                <div class="d-block mb-4">-->
+<!--                  <a href="#" class="d-flex call align-items-center">-->
+<!--                    <span class="lni lni-mobile wrap-icon"></span>-->
+<!--                    <span class="number">000 000 0000</span>-->
+<!--                  </a>-->
+<!--                </div>-->
+                <div class="d-block">
+                  <p>If you have any question, please contact us at <a href="#" class="link-underline text-primary">info@diatastic.tk</a></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BEGIN: .copyright -->
+            <div class="row copyright">
+              <div class="col-md-6 order-2 text-center text-md-right"><a href="#" class="js-top"><span class="icon-long-arrow-up mr-2"></span> Go to Top</a></div>
+              <div class="col-md-6 text-center text-md-left">
+                <p>&copy; 2022. All Rights Reserved. Design by <a href="#" target="_blank" class="link-underline text-primary">TP08</a></p>
+              </div>
+            </div>
+            <!-- END: .copyright -->
+          </div>
+        </footer>
+<!--         END: #footer -->
+</body>
+    <!-- BEGIN: JavaScripts -->
+    <script src="/static/js/jquery-3.4.1.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.waypoints.min.js"></script>
+    <script src="/static/js/jquery.animateNumber.min.js"></script>
+    <script src="/static/js/tiny-slider.js"></script>
+    <script src="/static/js/jquery.fancybox.min.js"></script>
+    <script src="/static/js/jquery.lavalamp.min.js"></script>
+    <script src="/static/js/jquery.ajaxchimp.min.js"></script>
+    <script src="/static/js/jquery.validate.min.js"></script>
+    <script src="/static/js/jquery.easing.1.3.js"></script>
+    <script src="/static/js/main.js"></script>
+
+    <script src="/static/js/select.js"></script>
+    <script src="/static/js/select_food.js"></script>
+
+
+  <!--   Core JS Files   -->
+    <script src="/static/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
+    <script src="/static/assets/plugins/backstretch/backstretch.js" type="text/javascript"></script>
+    <script src="/static/assets/js/app.js"></script>
+<!-- page specific plugin scripts -->
+
+<!-- BEGIN: tree -->
+    <script src="/static/tree/main.js"></script>
+    <!--END: tree -->
+
+
+{% else %}
+<script type="text/javascript">
+    window.location.href = "/please_login/";
+</script>
+{% endif %}

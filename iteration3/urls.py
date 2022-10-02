@@ -18,4 +18,6 @@ urlpatterns = [
     path('please_login/', views.please_login, name='please_login'),
     # path('add_diary/', views.add_diary, name='add_diary'),
     path('carb_chart/', views.carb_chart, name='carb_chart'),
+    path('FAQ/', views.FAQ, name='FAQ'),
+    path('tips/', views.tips, name='tips'),
 ]

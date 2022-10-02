@@ -1,0 +1,650 @@
+{% load static %}
+{% if request.session.is_login %}
+    <html lang="en">
+
+    <head>
+      <link rel="shortcut icon" href="../static/images/icons8-rh-plus-gradient-16.png">
+      <!-- BEGIN: Title -->
+      <title>Diatastic &mdash; Easily Manage Blood Sugar</title>
+      <!-- END: Title -->
+
+      <!-- BEGIN: Meta -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- END: Meta -->
+
+      <!-- BEGIN: Favicon -->
+    <!--  <link rel="shortcut icon" href="/static/images/favicon.png">-->
+      <!-- END: Favicon -->
+
+      <!-- BEGIN: Stylesheets -->
+      <link rel="stylesheet" href="/static/css/bootstrap/bootstrap.css">
+      <link rel="stylesheet" href="/static/css/tiny-slider.css">
+      <link rel="stylesheet" href="/static/fonts/lineicons/LineIcons.min.css">
+      <link rel="stylesheet" href="/static/fonts/icomoon/style.css">
+      <link rel="stylesheet" href="/static/css/animate.min.css">
+      <link rel="stylesheet" href="/static/css/jquery.lavalamp.css">
+      <link rel="stylesheet" href="/static/css/jquery.fancybox.min.css">
+      <link rel="stylesheet" href="/static/css/style.css">
+      <!-- END: Stylesheets -->
+
+    <!-- BEGIN: help bot -->
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <!-- ***** Boostrap Custom / Addons Stylesheets ***** -->
+    <link href="/static/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/static/assets/plugins/material_icon/icon.css" rel="stylesheet"/>
+    <!-- Required CSS file for CSS Chat Panels element -->
+    <link href="/static/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/static/assets/css/chat_box.css" type="text/css" media="all">
+    <!--END: help bot -->
+    <!-- BEGIN: tree -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="/static/tree/styles.css">
+    <!--END: tree -->
+
+
+    </head>
+
+        <header id="site-header">
+
+          <!-- Add '.navbar_dark' class if you want the color of the text to -->
+          <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+
+              <!-- BEGIN: .navbar-brand -->
+              <a class="navbar-brand" href="/iteration2/index/">
+              <img src="/static/images/icons8-rh-plus-gradient-32.png" ><font color="black">Diatastic</font>
+    <!--          <img src="/static/images/logo_dark.png" alt="Covid" id="logo_dark">-->
+              </a>
+              <!-- END: .navbar-brand -->
+
+              <!-- BEGIN: .navbar-toggler -->
+              <a href="#" class="burger-toggle-menu js-burger-toggle-menu ml-auto py-4" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+              </a>
+              <!-- END: .navbar-toggler -->
+
+              <!-- BEGIN: #main-nav -->
+              <div class="collapse navbar-collapse" id="main-nav">
+
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/index/"><font color="black">Home</font></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/diary/"><font color="black">Diary</font></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><font color="black">History</font></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/guide/"><font color="black">Beginner's Guide</font></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/tips/"><font color="black">Tips and Tricks</font></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/faq/"><font color="black">FAQ</font></a>
+                  </li>
+                </ul>
+
+              </div>
+              <!-- END: #main-nav -->
+
+            </div>
+          </nav>
+        </header>
+
+<br><br><br><br>
+ <div class="page-heading-85912" style="background-image: url('images/hero_bg_3.jpg')">
+          <div class="container">
+          </div>
+        </div>
+
+        <div class="custom-breadcrumns-23195 border-bottom">
+          <div class="container">
+            <a href="/iteration2/index/">Home</a>
+            <span class="mx-3 icon-keyboard_arrow_right"></span>
+            <span class="current">Tips and Tricks</span>
+          </div>
+        </div>
+        <span></span>
+
+
+      <!-- PAGE HELP BOT -->
+      <div class="container perfect_scrollbar" id="container">
+          <div class="pvr_chat_button">
+              <i class="material-icons">chat</i>
+              <span>Help Bot</span>
+          </div>
+          <div class="pvr_chat_wrapper">
+              <div class="pvr_chat_content">
+                  <div class="close_chat">
+                      <i class="material-icons">close</i>
+                  </div>
+                  <div class="chat_header">
+                      <div class="pvr-user-w with-status status-green">
+                          <div class="pvr-user-avatar-w">
+                              <div class="user-avatar">
+                                  <img alt="" src="/static/assets/img/avatar/default-avatar.jpg">
+                              </div>
+                          </div>
+                          <div class="user-name">
+                              <h6 class="user-title">
+                                  <a href="#" target="_blank">Help Bot</a>
+                              </h6>
+                              <div class="user-role">
+                                  Administrator
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="chat-messages theme_2">
+                      <div class="message">
+                          <div class="message-content">
+                            Hi! I'm HelpBot. How can I help you today?
+                          </div>
+                      </div>
+                  </div>
+                  <div class="chat-controls">
+                      <input class="message-input" id="message-input" placeholder="Type your message here..." type="text">
+                      <div class="chat-extra">
+
+                          <a href="javascript:void(0)" class="change_chat_theme">
+                              <span class="extra-tooltip">Change chat theme</span>
+                              <i class="material-icons">refresh</i>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- END: help bot -->
+
+
+<br><br><br>
+<div style="text-align:center"><h1>Tips and Tricks</h1></div>
+<br>
+<!-- PAGE tree -->
+<section class="accordion container">
+        <div class="accordion__container">
+
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='bx bx-plus accordion__icon'></i>
+                    <h3 class="accordion__title">Exercise</h3>
+                </header>
+
+                <div class="accordion__content">
+                    <p class="accordion__description">
+                        Being active most days of the week will make it easier for you to manage your blood glucose.
+                        At the same time, it can help you lower your blood pressure and cholesterol, manage your
+                        weight, sleep better and deal with stress.<br/><br/>
+                        Aim to be active most days of the week for at least 30 minutes. If that sounds like too much,
+                        set a goal to do 10 minutes of activity, three times a day. It’s OK to start out slow and work
+                        your way up.<br/><br/>
+                        Choose one or two activities that you might enjoy doing. Walking is a great choice because you
+                        can walk just about anywhere, and you don’t need a gym membership or expensive equipment.
+                        However, swimming, dancing, tennis and bicycling are good options, too. Find something that you
+                        like to do so that you’re more likely to stick with it.
+                    </p>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='bx bx-plus accordion__icon'></i>
+                    <h3 class="accordion__title">Routine.</h3>
+                </header>
+
+                <div class="accordion__content">
+                    <p class="accordion__description">
+                        Check blood sugar 3-4 times a day (usually before eating a meal). In the event of
+                        consistently high sugars, it is recommended to check the blood sugar before eating a meal,
+                        as well as 2 hours after each meal.<br/><br/>
+
+                        Take your breakfast on time and avoid skipping your meals because when you have diabetes,
+                        what matters is how much you are eating and what you are eating throughout the day.<br/><br/>
+
+                        Write down portions of each food you should consume and stick to that portion size to know
+                        the exact carbohydrate count consumed. Make sure your meal is a well balanced and
+                        nutritious one<br/><br/>
+                        Walking, jogging, working out, light aerobics, or dancing can help you maintain a healthy
+                        weight and also help in keeping your blood sugar levels in control.<br/><br/>
+
+                        For people with diabetes, getting enough sleep is important because lack of sleep can make
+                        it more challenging to manage blood sugar levels. At least 6-7 hours of sleep is mandatory
+                        every night to function at their best the next day.
+                    </p>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='bx bx-plus accordion__icon'></i>
+                    <h3 class="accordion__title">Good mental health.</h3>
+                </header>
+
+                <div class="accordion__content">
+                    <ul class="accordion__description">
+                        Finding out that you have a chronic condition like diabetes is scary, and it’s normal for you
+                        to feel frightened, sad or stressed. It’s important to deal with stress because stress can raise
+                        your glucose levels. And when you’re under stress, you’re less likely to take care of yourself.
+                        Stress may not go away, but there are ways to lower it. These include:<br/><br/>
+                        <li>Doing some type of physical activity.</li>
+                        <li>Talking with a friend or loved one.</li>
+                        <li>Gardening.</li>
+                        <li>Watching a favorite movie.</li>
+                        <li>Taking a nap.</li>
+                        <li>Doing yoga or meditation.</li>
+                        <li>You might also find that joining a diabetes support group can be helpful, either in-person or online.</li>
+                        <li>If you can’t seem to shake feelings of sadness, you may be depressed. Depression is more
+                            common in people with diabetes than in people without diabetes. Taking care of diabetes is
+                            hard, and you may feel alone. Having complications of diabetes,
+                            such as heart disease can also lead to depression. Don’t be afraid to reach out for help
+                            if you feel down.</li>
+                        <li>Do your best to make time to take care of yourself. That means getting seven to eight
+                            hours of sleep each night, eating regular meals, making time for physical activity and
+                            surrounding yourself with people who care about you.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='bx bx-plus accordion__icon'></i>
+                    <h3 class="accordion__title">No Smoking</h3>
+                </header>
+
+                <div class="accordion__content">
+                    <ul class="accordion__description">
+                        Smokers are 30 to 40 percent more likely to develop type 2 diabetes than nonsmokers. Smoking
+                        can also make managing the disease and regulating insulin levels more difficult because
+                        high levels of nicotine can lessen the effectiveness of insulin, causing smokers to need more
+                        insulin to regulate blood sugar levels. Without proper management, diabetes can lead to health
+                        problems, including but not limited to:<br/><br/>
+                        <li>Heart disease.</li>
+                        <li>Blindness.</li>
+                        <li>Kidney failure.</li>
+                        <li>Nerve and blood vessel damage to the feet and legs that can lead to amputation in severe cases.</li><br/>
+                        Smokers are also at greater risk of these complications from diabetes.
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='bx bx-plus accordion__icon'></i>
+                    <h3 class="accordion__title">Your diabetes care team.</h3>
+                </header>
+
+                <div class="accordion__content">
+                    <ul class="accordion__description">
+                        You probably have a primary-care provider, such as a doctor, nurse practitioner or physician
+                        assistant. When you have diabetes, you will likely need other members as part of your
+                        healthcare team. These may include:<br/><br/>
+                        <li>Endocrinologist for more specialized diabetes care.</li>
+                        <li>Registered dietitian.</li>
+                        <li>Nurse.</li>
+                        <li>Certified diabetes educator.</li>
+                        <li>Pharmacist.</li>
+                        <li>Dentist.</li>
+                        <li>Eye doctor.</li>
+                        <li>Podiatrist, or foot doctor, for foot care.</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+</section>
+<br>
+    <section class="accordion container">
+        <div class="accordion__container">
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='bx bx-plus accordion__icon'></i>
+                    <h3 class="accordion__title">Choose healthier carbohydrates</h3>
+                </header>
+
+                <div class="accordion__content">
+                    <ul class="accordion__description">
+                        All carbs affect blood glucose levels so it’s important to know which foods contain
+                        carbohydrates. Choose the healthier foods that contain carbs and be aware of your portion sizes.
+                        Here are some healthy sources of carbohydrates:<br/><br/>
+                        <li>Fruit.</li>
+                        <li>Vegetables.</li>
+                        <li>Whole grains, such as brown rice, buckwheat and whole oats.</li>
+                        <li>Pulses, such as chickpeas, beans and lentils.</li>
+                        <li>Dairy, such as unsweetened yoghurt and milk.</li><br/>
+                        At the same time, it’s also important to cut down on foods low in fibre such as white bread,
+                        white rice and highly-processed cereals. You can check food labels when you’re looking for
+                        foods high in fibre if you’re unsure.
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='bx bx-plus accordion__icon'></i>
+                    <h3 class="accordion__title">Eat less salt.</h3>
+                </header>
+
+                <div class="accordion__content">
+                        <p class="accordion__description">
+                            Eating lots of salt can increase your risk of high blood pressure, which in turn increases
+                            risk of heart diseases and stroke. And when you have diabetes, you’re already more at
+                            risk of all of these conditions.<br/><br/>
+                            Try to limit yourself to a maximum of 6g (one teaspoonful) of salt a day. Lots of
+                            pre-packaged foods already contain salt so remember to check food labels and choose those
+                            with less salt. Cooking from scratch will help you keep an eye on how much salt you’re
+                            eating. You can also get creative and swap out salt for different types of herbs and
+                            spices to add that extra flavour.
+                        </p>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='bx bx-plus accordion__icon'></i>
+                    <h3 class="accordion__title">Eat less red or processed meat.</h3>
+                </header>
+
+                <div class="accordion__content">
+                    <ul class="accordion__description">
+                        If you’re cutting down on carbs, you might start to have bigger portions of meat to fill you
+                        up. But it’s not a good idea to do this with red and processed meat, like ham, bacon, sausages,
+                        beef and lamb. These all have links with heart problems and cancers. Try swapping red and processed
+                        meat for these:<br/><br/>
+                        <li>Eggs.</li>
+                        <li>Fish.</li>
+                        <li>Unsalted nuts.</li>
+                        <li>Pulses, such as beans and lentils.</li>
+                        <li>Poultry, like chicken and turkey.</li><br/>
+                        Beans, peas and lentils are also very high in fibre and don’t affect your blood glucose levels
+                        too much – making them a great swap for processed and red meat and keeping you feeling full.
+                        Most of us know that fish is good for us, but oily fish like salmon and mackerel are even
+                        better. These are rich in something called omega-3 oil, which helps protect your heart.
+                        Try and aim to eat two portions of oily fish a week.
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='bx bx-plus accordion__icon'></i>
+                    <h3 class="accordion__title">Eat more fruit and veg</h3>
+                </header>
+
+                <div class="accordion__content">
+                    <ul class="accordion__description">
+                        We know eating fruit and veg is good for you. It’s always a good thing aim to eat more at meal
+                        times and have them as snacks if you’re hungry. This can help you get the vitamins,
+                        minerals and fibre your body needs every day to help keep you healthy.<br/><br/>
+
+                        You might be wondering about fruit and if you should avoid it because it’s sugary? The answer
+                        is no. Whole fruit is good for everyone and if you have diabetes, it’s no different. Fruits do
+                        contain sugar, but it’s natural sugar. This is different to the added sugar (also known as free
+                        sugars) that are in things like chocolate, biscuits and cakes.<br/><br/>
+
+                        Products like fruit juices also count as added sugar, so go for whole fruit instead. This can
+                        be fresh, frozen, dried or tinned (in juice, not in syrup). And it’s best to eat it throughout
+                        the day instead of one bigger portion in one go.
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='bx bx-plus accordion__icon'></i>
+                    <h3 class="accordion__title">Choose healthier fats.</h3>
+                </header>
+
+                <div class="accordion__content">
+                    <ul class="accordion__description">
+                        We all need fat in our diet because it gives us energy. But different types of fat affect our
+                        health in different ways. Healthier fats are in foods like unsalted nuts, seeds, avocados,
+                        oily fish, olive oil, rapeseed oil and sunflower oil. Some saturated fats can increase the
+                        amount of cholesterol in your blood, increasing your risk of heart problems. These are mainly
+                        found in animal products and prepared food like:<br/><br/>
+                        <li>Red and processed meat.</li>
+                        <li>Ghee.</li>
+                        <li>Butter.</li>
+                        <li>Lard.</li>
+                        <li>Biscuits.</li>
+                        <li>Cakes.</li>
+                        <li>Pies.</li>
+                        <li>Pastries.</li><br/>
+                        It’s still a good idea to cut down on using oils in general, so try to grill, steam or bake foods instead.
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='bx bx-plus accordion__icon'></i>
+                    <h3 class="accordion__title">Cut down on added sugar.</h3>
+                </header>
+
+                <div class="accordion__content">
+                    <ul class="accordion__description">
+                        We know cutting out sugar can be really hard at the beginning, so small practical swaps are a
+                        good starting point when you’re trying to cut down on excess sugar. Swapping sugary drinks,
+                        energy drinks and fruit juices with water, plain milk, or tea and coffee without sugar can be
+                        a good start.<br/><br/>
+                        You can always try low or zero-calorie sweeteners (also known as artificial sweeteners) to help
+                        you cut back. Cutting out these added sugars can help you control your blood glucose levels and
+                        help keep your weight down. If your diabetes treatment means you get hypos, and you use sugary
+                        drinks to treat them, this is still important for your diabetes management and you shouldn’t
+                        cut this out. However, if you are having regular hypos it is really important to discuss this
+                        with your diabetes team.
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='bx bx-plus accordion__icon'></i>
+                    <h3 class="accordion__title">Be smart with snacks.</h3>
+                </header>
+
+                <div class="accordion__content">
+                    <ul class="accordion__description">
+                        If you want a snack, choose yoghurts, unsalted nuts, seeds, fruits and vegetables instead of
+                        crisps, chips, biscuits and chocolates. But watch your portions still – it’ll help you keep an
+                        eye on your weight.
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='bx bx-plus accordion__icon'></i>
+                    <h3 class="accordion__title">Drink alcohol sensibly.</h3>
+                </header>
+
+                <div class="accordion__content">
+                    <ul class="accordion__description">
+                        Alcohol is high in calories, so if you do drink and you’re trying to lose weight, think about
+                        cutting back. Try to keep to a maximum of 14 units a week. But spread it out to avoid binge
+                        drinking, and go several days a week without alcohol.<br/><br/>
+                        If you take insulin or other diabetes medications, it’s also not a good idea to drink on an
+                        empty stomach. This is because alcohol can make hypos more likely to happen.
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='bx bx-plus accordion__icon'></i>
+                    <h3 class="accordion__title">Don’t bother with so-called diabetic food.</h3>
+                </header>
+
+                <div class="accordion__content">
+                    <ul class="accordion__description">
+                        To say food is a "diabetic food" is now against the law. This is because there isn’t any
+                        evidence that these foods offer you a special benefit over eating healthily. They can also
+                        often contain just as much fat and calories as similar products, and can still affect your
+                        blood glucose level. These foods can also sometimes have a laxative effect.
+                    </ul>
+                </div>
+            </div>
+
+            <div class="accordion__item">
+                <header class="accordion__header">
+                    <i class='bx bx-plus accordion__icon'></i>
+                    <h3 class="accordion__title">Get your minerals and vitamins from foods.</h3>
+                </header>
+
+                <div class="accordion__content">
+                    <ul class="accordion__description">
+                        There’s no evidence that mineral and vitamin supplements help you manage your diabetes. So,
+                        unless you’ve been told to take something by your healthcare team, like folic acid for
+                        pregnancy, you don’t need to take supplements.<br/><br/>
+                        It’s better to get your essential nutrients by eating a mixture of different foods. This is
+                        because some supplements can affect your medications or make some diabetes complications worse,
+                        like kidney disease.
+                    </ul>
+                </div>
+            </div>
+        </div>
+</div>
+</section>
+<br>
+<!-- END: tree -->
+
+<!--         BEGIN: #footer-->
+        <footer id="footer">
+          <div class="container">
+
+            <!-- BEGIN: .footer-subscribe -->
+            <div class="row footer-subscribe">
+              <div class="col-md-6">
+                <h3 class="mt-2">manage your blood sugar, join US.</h3>
+              </div>
+              <div class="col-md-6">
+<!--                <form action="#" id="mc-form" class="form-subscribe">-->
+<!--                  <div class="d-flex align-items-stretch w-100">-->
+<!--                    <input type="email" id="mc-email" placeholder="Email address" class="form-control">-->
+<!--                    <input type="submit" value="GET INFO" class="btn btn-outline-white-reverse">-->
+<!--                  </div>-->
+<!--                  <div class="form-group">-->
+<!--                    <label for="mc-email"></label>-->
+<!--                  </div>-->
+<!--                </form>-->
+              </div>
+            </div>
+            <!-- END: .footer-subscribe -->
+
+            <div class="row">
+              <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                <!-- BEGIN: .widget -->
+                <div class="widget">
+                  <h3>About Our Team.</h3>
+<!--                  <ul class="nav-link">-->
+<!--                    <li><a href="#">Home</a></li>-->
+<!--                    <li><a href="#">Situation</a></li>-->
+<!--                    <li><a href="#">Prevention</a></li>-->
+<!--                    <li><a href="#">Symptoms</a></li>-->
+<!--                    <li><a href="#">Community</a></li>-->
+<!--                  </ul>-->
+                </div>
+                <!-- END: .widget -->
+              </div>
+              <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                <!-- BEGIN: .widget -->
+                <div class="widget">
+                  <h3>Our Motivation.</h3>
+<!--                  <ul class="nav-link">-->
+<!--                    <li><a href="#">Reduce The Spread</a></li>-->
+<!--                    <li><a href="#">Who Are At Risk</a></li>-->
+<!--                    <li><a href="#">Social Distancing</a></li>-->
+<!--                    <li><a href="#">Community Advice</a></li>-->
+<!--                    <li><a href="#">Technical Guidance</a></li>-->
+<!--                  </ul>-->
+                </div>
+                <!-- END: .widget -->
+              </div>
+              <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                <!-- BEGIN: .widget -->
+                <div class="widget">
+                  <h3>Our Data.</h3>
+<!--                  <ul class="nav-link">-->
+<!--                    <li><a href="#">Wash Your Hands Often</a></li>-->
+<!--                    <li><a href="#">Wear a Face Mask</a></li>-->
+<!--                    <li><a href="#">Avoid Contact With Sick People</a></li>-->
+<!--                    <li><a href="#">Always Cover Your Cough or Sneeze</a></li>-->
+<!--                    <li><a href="#">Protect Your Family</a></li>-->
+<!--                  </ul>-->
+                </div>
+                <!-- END: .widget -->
+              </div>
+              <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                <div class="d-block">
+<!--                  <ul class="list-unstyled d-flex social-29021">-->
+<!--                    <li><a href="#"><span class="icon-facebook"></span></a></li>-->
+<!--                    <li><a href="#"><span class="icon-twitter"></span></a></li>-->
+<!--                    <li><a href="#"><span class="icon-instagram"></span></a></li>-->
+<!--                    <li><a href="#"><span class="icon-linkedin"></span></a></li>-->
+<!--                  </ul>-->
+                </div>
+
+<!--                <div class="d-block mb-4">-->
+<!--                  <a href="#" class="d-flex call align-items-center">-->
+<!--                    <span class="lni lni-mobile wrap-icon"></span>-->
+<!--                    <span class="number">000 000 0000</span>-->
+<!--                  </a>-->
+<!--                </div>-->
+                <div class="d-block">
+                  <p>If you have any question, please contact us at <a href="#" class="link-underline text-primary">info@diatastic.tk</a></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BEGIN: .copyright -->
+            <div class="row copyright">
+              <div class="col-md-6 order-2 text-center text-md-right"><a href="#" class="js-top"><span class="icon-long-arrow-up mr-2"></span> Go to Top</a></div>
+              <div class="col-md-6 text-center text-md-left">
+                <p>&copy; 2022. All Rights Reserved. Design by <a href="#" target="_blank" class="link-underline text-primary">TP08</a></p>
+              </div>
+            </div>
+            <!-- END: .copyright -->
+          </div>
+        </footer>
+<!--         END: #footer -->
+</body>
+    <!-- BEGIN: JavaScripts -->
+    <script src="/static/js/jquery-3.4.1.min.js"></script>
+    <script src="/static/js/popper.min.js"></script>
+    <script src="/static/js/bootstrap.min.js"></script>
+    <script src="/static/js/jquery.waypoints.min.js"></script>
+    <script src="/static/js/jquery.animateNumber.min.js"></script>
+    <script src="/static/js/tiny-slider.js"></script>
+    <script src="/static/js/jquery.fancybox.min.js"></script>
+    <script src="/static/js/jquery.lavalamp.min.js"></script>
+    <script src="/static/js/jquery.ajaxchimp.min.js"></script>
+    <script src="/static/js/jquery.validate.min.js"></script>
+    <script src="/static/js/jquery.easing.1.3.js"></script>
+    <script src="/static/js/main.js"></script>
+
+    <script src="/static/js/select.js"></script>
+    <script src="/static/js/select_food.js"></script>
+
+
+  <!--   Core JS Files   -->
+    <script src="/static/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
+    <script src="/static/assets/plugins/backstretch/backstretch.js" type="text/javascript"></script>
+    <script src="/static/assets/js/app.js"></script>
+<!-- page specific plugin scripts -->
+
+<!-- BEGIN: tree -->
+    <script src="/static/tree/main.js"></script>
+    <!--END: tree -->
+
+
+{% else %}
+<script type="text/javascript">
+    window.location.href = "/please_login/";
+</script>
+{% endif %}
