@@ -39,7 +39,7 @@ def load_portion(request):
 def load_description(request):
     category_id = request.GET.get('category')
     description = Description.objects.filter(category_id=category_id).order_by('name')
-    return render(request, 'Diary/description_dropdown_list_options.html', {'description': description})
+    return render(request, 'iteration3/description_dropdown_list_options.html', {'description': description})
 
 def diary(request):
     category = Category.objects.values('id', 'name')
