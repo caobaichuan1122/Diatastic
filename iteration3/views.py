@@ -47,9 +47,10 @@ def load_description(request):
 def diary(request):
     category = Category.objects.values('id', 'name')
     portion = Portion.objects.values('id', 'name')
+    description = Description.objects.values('id', 'name')
     return render(request, 'iteration3/diary1.html',
                   context={'category': category,
-                           'portion': portion})
+                           'portion': portion,'description':description})
 
 # def create_view(request):
 #     if request.method == "POST":
@@ -108,13 +109,14 @@ def create_view(request):
                 description = Description.objects.filter(id=item['descriptionId']).values('name')[0]['name']
                 portion = Portion.objects.filter(id=item['portionId']).values('name')[0]['name']
                 # Retrieving item carb value, and weight.
+
                 item_carbs = Menu.objects.filter(category=category,
                                                  description=description,
                                                  portion=portion).values('carbohydrates')[0]['carbohydrates']
                 item_weight = Menu.objects.filter(category=category,
                                                   description=description,
                                                   portion=portion).values('portion_weight')[0]['portion_weight']
-
+                print(item_carbs,item_weight)
                 # Calculate carb value for item.
                 item_carbs = item_carbs * item_weight * Decimal(0.01) * item['Q']
 

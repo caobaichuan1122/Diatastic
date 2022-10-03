@@ -1,7 +1,7 @@
 from django import forms
 
 from django import forms
-from .models import Diary_Menu, Category, Portion
+from .models import Diary_Menu, Category, Portion, Description
 import datetime as dt
 
 class DiaryForm(forms.ModelForm):
@@ -15,6 +15,7 @@ class DiaryForm(forms.ModelForm):
 
     # Menu-related fields.
     category = forms.ChoiceField(choices=[(cat.id, cat.name) for cat in Category.objects.all()])
+    description = forms.ChoiceField(choices=[(desc.id, desc.name) for desc in Description.objects.all()])
     portion = forms.ChoiceField(choices=[(port.id, port.name) for port in Portion.objects.all()])
 
     class Meta:
