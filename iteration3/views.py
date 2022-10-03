@@ -3,7 +3,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from decimal import Decimal
 from datetime import date, datetime
 from . import models
-from .models import User, Diary_Menu, Category, Portion, Menu
+from .models import User, Diary_Menu, Category, Portion, Menu, Description
 from .forms import DiaryForm, UserForm, DateForm
 from .models import DiaryEntries
 import plotly.express as px
@@ -36,10 +36,15 @@ def load_portion(request):
     portion = Portion.objects.filter(category_id=category_id).order_by('name')
     return render(request, 'iteration3/portion_dropdown_list_options.html', {'portion': portion})
 
+def load_description(request):
+    category_id = request.GET.get('category')
+    description = Description.objects.filter(category_id=category_id).order_by('name')
+    return render(request, 'Diary/description_dropdown_list_options.html', {'description': description})
+
 def diary(request):
     category = Category.objects.values('id', 'name')
     portion = Portion.objects.values('id', 'name')
-    return render(request, 'iteration3/diary.html',
+    return render(request, 'iteration3/diary1.html',
                   context={'category': category,
                            'portion': portion})
 
@@ -182,8 +187,26 @@ def entry_view(request, diary_id):
     return render(request, "iteration3/entry_view.html", context)
 
 def list_view(request):
-    diary_entry = DiaryEntries.objects.all()
-    return render(request,'iteration3/list_view.html',context={'diary_entry':diary_entry})
+    Entries = DiaryEntries.objects.values().all()
+    Details = Diary_Menu.objects.values().values_list()
+    ListViewDict = {}
+
+    if Entries.exists():
+        for item in Entries:
+            id = int(item['id'])
+            ListViewDict[id] = {'header': [], 'rows': []}
+            ListViewDict[id]['header'] = ['Category', 'Description', 'Portion', 'Quantity', 'Carbohydrates']
+
+            temp = Diary_Menu.objects.filter(diary_id=id).values_list()
+            for i in range(len(temp)):
+                ListViewDict[id]['rows'].append([temp[i][4], temp[i][5], temp[i][6], temp[i][7], temp[i][8]])
+            ListViewDict[id]['insulin'] = DiaryEntries.objects.filter(id=id).values_list('insulin', flat=True)[0]
+            ListViewDict[id]['BSL'] = DiaryEntries.objects.filter(id=id).values_list('blood_sugar_level', flat=True)[0]
+    context = {
+        'field': ListViewDict,
+        'details': Details,
+    }
+    return render(request, 'iteration3/list_view.html', context)
 
 def insulin_calculation(carbs, blood_sugar_level):
     ## Carbohydrate correction dose.

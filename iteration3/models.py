@@ -1,4 +1,4 @@
-# iteration/models.py
+# iteration3/models.py
 
 from django.db import models
 from django.core.validators import MinValueValidator
@@ -24,6 +24,13 @@ class Category(models.Model):
 class Portion(models.Model):
     name = models.CharField(max_length=1280)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.name
+
+class Description(models.Model):
+    name = models.CharField(max_length=1280)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+
     def __str__(self):
         return self.name
 
@@ -72,3 +79,5 @@ class Diary_Menu(models.Model):
     quantity = models.PositiveIntegerField(validators=[MinValueValidator(1)])
     carbohydrates = models.DecimalField(decimal_places=2,
                                         max_digits=10)
+    class Meta:
+        ordering = ['date', 'time']
