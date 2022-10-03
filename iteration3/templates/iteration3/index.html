@@ -482,17 +482,12 @@
         var lineConfig = {
             type: 'line',
             data: {
-                labels: ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
+                labels: ["1", "2", "3", "4"],
                 datasets: [{
                     label: "My First dataset",
                     backgroundColor: window.chartColors.red,
                     borderColor: window.chartColors.red,
                     data: [
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
                         randomScalingFactor(),
                         randomScalingFactor(),
                         randomScalingFactor(),
@@ -506,7 +501,7 @@
                 maintainAspectRatio: false,
                 title: {
                     display: true,
-                    text: 'Line Chart'
+                    text: 'Blood Sugar Level'
                 },
                 tooltips: {
                     mode: 'index',
@@ -600,7 +595,7 @@
                 maintainAspectRatio: false,
                 title: {
                     display: true,
-                    text: 'Line Chart'
+                    text: 'Carbohydrates'
                 },
                 tooltips: {
                     mode: 'index',
@@ -694,7 +689,7 @@
                 maintainAspectRatio: false,
                 title: {
                     display: true,
-                    text: 'Line Chart'
+                    text: 'Insulin'
                 },
                 tooltips: {
                     mode: 'index',

@@ -70,12 +70,14 @@ class DiaryEntries(models.Model):
 # Diary_Menu - Stores each item separately, and records the individual carb value.
 class Diary_Menu(models.Model):
     id = models.AutoField(primary_key=True)
-    diary_id = models.ForeignKey(DiaryEntries,
-                              on_delete=models.CASCADE,null=True,db_column='diary_id')
+    diary = models.ForeignKey(DiaryEntries, on_delete=models.CASCADE)
     date = models.DateField()
     time = models.TimeField()
+
     category = models.CharField(max_length=1280)
+    description = models.CharField(max_length=1280)
     portion = models.CharField(max_length=1280)
+
     quantity = models.PositiveIntegerField(validators=[MinValueValidator(1)])
     carbohydrates = models.DecimalField(decimal_places=2,
                                         max_digits=10)

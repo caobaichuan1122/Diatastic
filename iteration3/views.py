@@ -1,3 +1,6 @@
+import json
+
+from django.db.models import Sum
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from decimal import Decimal
@@ -48,42 +51,138 @@ def diary(request):
                   context={'category': category,
                            'portion': portion})
 
+# def create_view(request):
+#     if request.method == "POST":
+#         diary_entry = DiaryEntries.objects.all()
+#         date = request.POST.get('date')
+#         time = request.POST.get('time')
+#         blood_sugar_level = request.POST.get('blood_sugar_level')
+#         category = request.POST.get('category')
+#         portion = request.POST.get('portion')
+#         quantity = request.POST.get('quantity')
+#         list_date=[]
+#         if 'add_list' in request.POST:
+#             for items in diary_entry:
+#                 list_date.append(datetime.strftime(items.date,'%Y-%m-%d'))
+#             if date not in list_date:
+#                 DiaryEntries.objects.create(date=date,blood_sugar_level=blood_sugar_level,
+#                                 carbohydrates=0.0,time=time,insulin=0.0)
+#                 diaryentries_id = DiaryEntries.objects.filter(date = date).values('id')
+#                 Diary_Menu.objects.create(date=date, time=time,
+#                                           carbohydrates=0,
+#                                           category=category, portion=portion,
+#                                           quantity=quantity)
+#                 Diary_Menu.objects.filter(date = date).update(diary_id=diaryentries_id[0]['id'])
+#                 return redirect('/iteration3/diary/')
+#             else:
+#                 diaryentries_id = DiaryEntries.objects.filter(date = date).values('id')
+#                 Diary_Menu.objects.create(date=date, time=time,
+#                                           carbohydrates=0,
+#                                           category=category, portion=portion,
+#                                           quantity=quantity)
+#                 Diary_Menu.objects.filter(date = date).update(diary_id=diaryentries_id[0]['id'])
+#                 return redirect('/iteration3/diary/')
+#         elif 'submit' in request.POST:
+#             pass
+#         return render(request, 'iteration3/list_view.html', context={'diary_entry': diary_entry,'date':date,'time':time,'blood_sugar_level':blood_sugar_level,
+#                                                                      'category':category,'portion':portion,'quantity':quantity})
+#     return render(request, 'iteration3/list_view.html',locals())
+
+# Diary views.
 def create_view(request):
     if request.method == "POST":
-        diary_entry = DiaryEntries.objects.all()
-        date = request.POST.get('date')
-        time = request.POST.get('time')
-        blood_sugar_level = request.POST.get('blood_sugar_level')
-        category = request.POST.get('category')
-        portion = request.POST.get('portion')
-        quantity = request.POST.get('quantity')
-        list_date=[]
-        if 'add_list' in request.POST:
-            for items in diary_entry:
-                list_date.append(datetime.strftime(items.date,'%Y-%m-%d'))
-            if date not in list_date:
-                DiaryEntries.objects.create(date=date,blood_sugar_level=blood_sugar_level,
-                                carbohydrates=0.0,time=time,insulin=0.0)
-                diaryentries_id = DiaryEntries.objects.filter(date = date).values('id')
-                Diary_Menu.objects.create(date=date, time=time,
-                                          carbohydrates=0,
-                                          category=category, portion=portion,
-                                          quantity=quantity)
-                Diary_Menu.objects.filter(date = date).update(diary_id=diaryentries_id[0]['id'])
-                return redirect('/iteration3/diary/')
-            else:
-                diaryentries_id = DiaryEntries.objects.filter(date = date).values('id')
-                Diary_Menu.objects.create(date=date, time=time,
-                                          carbohydrates=0,
-                                          category=category, portion=portion,
-                                          quantity=quantity)
-                Diary_Menu.objects.filter(date = date).update(diary_id=diaryentries_id[0]['id'])
-                return redirect('/iteration3/diary/')
-        elif 'submit' in request.POST:
-            pass
-        return render(request, 'iteration3/list_view.html', context={'diary_entry': diary_entry,'date':date,'time':time,'blood_sugar_level':blood_sugar_level,
-                                                                     'category':category,'portion':portion,'quantity':quantity})
-    return render(request, 'iteration3/list_view.html',locals())
+        cart = request.POST.get('cart_items')
+        sub = request.POST.get('submit_items')
+        if len(json.loads(cart)) != 0:
+            cart = json.loads(cart)
+
+            # Generate the diary_id.
+            DiaryEntries.objects.create(date=cart[0]['date'], time=cart[0]['time'],
+                                        blood_sugar_level=cart[0]['BSL'],
+                                        carbohydrates=0.0, insulin=0.0)
+            # Retrieve the id.
+            diaryentries_id = DiaryEntries.objects.filter(date=cart[0]['date'], time=cart[0]['time']).values('id')[0]['id']
+
+            for item in cart:
+                category = Category.objects.filter(id=item['categoryId']).values('name')[0]['name']
+                description = Description.objects.filter(id=item['descriptionId']).values('name')[0]['name']
+                portion = Portion.objects.filter(id=item['portionId']).values('name')[0]['name']
+                # Retrieving item carb value, and weight.
+                item_carbs = Menu.objects.filter(category=category,
+                                                 description=description,
+                                                 portion=portion).values('carbohydrates')[0]['carbohydrates']
+                item_weight = Menu.objects.filter(category=category,
+                                                  description=description,
+                                                  portion=portion).values('portion_weight')[0]['portion_weight']
+
+                # Calculate carb value for item.
+                item_carbs = item_carbs * item_weight * Decimal(0.01) * item['Q']
+
+                # Update database.
+                Diary_Menu.objects.create(diary_id=diaryentries_id,
+                                          date=item['date'], time=item['time'],
+                                          category=category, description=description, portion=portion, quantity=item['Q'],
+                                          carbohydrates=item_carbs)
+
+            # Groupby to get the sum of carbohydrates.
+            carbs = Diary_Menu.objects.filter(date=cart[0]['date'], time=cart[0]['time'],
+                                              diary_id=diaryentries_id).aggregate(total_sum=Sum('carbohydrates'))
+            # Retrieve sum.
+            carbs = carbs['total_sum']
+
+            # Get insulin value.
+            insulin = insulin_calculation(carbs, cart[0]['BSL'])
+
+            # Update insulin value.
+            DiaryEntries.objects.filter(id=diaryentries_id).update(carbohydrates=carbs)
+            DiaryEntries.objects.filter(id=diaryentries_id).update(insulin=insulin)
+            return render(request, 'Diary/list_view.html', context={'cart': cart})
+
+        elif len(json.loads(sub)) != 0:
+            sub = json.loads(sub)
+            print(sub)
+            # Generate the diary_id.
+            DiaryEntries.objects.create(date=sub[0]['date'], time=sub[0]['time'],
+                                        blood_sugar_level=sub[0]['BSL'],
+                                        carbohydrates=0.0, insulin=0.0)
+            # Retrieve the id.
+            diaryentries_id = DiaryEntries.objects.filter(date=sub[0]['date'], time=sub[0]['time']).values('id')[0]['id']
+
+            category = Category.objects.filter(id=sub[0]['categoryId']).values('name')[0]['name']
+            description = Description.objects.filter(id=sub[0]['descriptionId']).values('name')[0]['name']
+            portion = Portion.objects.filter(id=sub[0]['portionId']).values('name')[0]['name']
+
+            # Retrieving item carb value, and weight.
+            item_carbs = Menu.objects.filter(category=category,
+                                             description=description,
+                                             portion=portion).values('carbohydrates')[0]['carbohydrates']
+            item_weight = Menu.objects.filter(category=category,
+                                              description=description,
+                                              portion=portion).values('portion_weight')[0]['portion_weight']
+
+            # Calculate carb value for item.
+            item_carbs = item_carbs * item_weight * Decimal(0.01) * sub[0]['Q']
+
+            # Update database.
+            Diary_Menu.objects.create(diary_id=diaryentries_id,
+                                      date=sub[0]['date'], time=sub[0]['time'],
+                                      category=category, description=description, portion=portion, quantity=sub[0]['Q'],
+                                      carbohydrates=item_carbs)
+
+            # Groupby to get the sum of carbohydrates.
+            carbs = Diary_Menu.objects.filter(date=sub[0]['date'], time=sub[0]['time'],
+                                              diary_id=diaryentries_id).aggregate(total_sum=Sum('carbohydrates'))
+            # Retrieve sum.
+            carbs = carbs['total_sum']
+
+            # Get insulin value.
+            insulin = insulin_calculation(carbs, sub[0]['BSL'])
+
+            # Update insulin value.
+            DiaryEntries.objects.filter(id=diaryentries_id).update(carbohydrates=carbs)
+            DiaryEntries.objects.filter(id=diaryentries_id).update(insulin=insulin)
+            return render(request, 'iteration3/list_view.html', context={'cart': cart})
+    return render(request, 'iteration3/list_view.html', context={'cart': request.GET.get('cart')})
 
 # def create_view(request):
 #     diary_entry = DiaryEntries.objects.all()
@@ -310,5 +409,5 @@ def contact(request):
 
 def test(request):
     pass
-    return render(request, 'iteration3/iteration2.html')
+    return render(request, 'iteration3/Beginners Guide.mht')
 
