@@ -116,7 +116,6 @@ def create_view(request):
                 item_weight = Menu.objects.filter(category=category,
                                                   description=description,
                                                   portion=portion).values('portion_weight')[0]['portion_weight']
-                print(item_carbs,item_weight)
                 # Calculate carb value for item.
                 item_carbs = item_carbs * item_weight * Decimal(0.01) * item['Q']
 
@@ -142,7 +141,6 @@ def create_view(request):
 
         elif len(json.loads(sub)) != 0:
             sub = json.loads(sub)
-            print(sub)
             # Generate the diary_id.
             DiaryEntries.objects.create(date=sub[0]['date'], time=sub[0]['time'],
                                         blood_sugar_level=sub[0]['BSL'],
@@ -364,6 +362,10 @@ def carb_chart(request):
                'form': DateForm}
     return render(request, 'iteration3/carb_chart.html', context)
 
+def load_cart(request):
+    cart = request.POST.get('cart_items')
+    cart = json.loads(cart)
+    return render(request, 'iteration3/diary.html', {'cart':cart})
 
 def get_queryset():
     return DiaryEntries.objects.all().order_by('date')

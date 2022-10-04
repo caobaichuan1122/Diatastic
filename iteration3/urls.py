@@ -11,6 +11,7 @@ urlpatterns = [
     path('contact/', views.contact, name='contact'),
     path('diary/', views.diary, name='diary'),
     path('ajax/load_portion/', views.load_portion, name='ajax_load_portion'),
+    path('ajax/load_cart/', views.load_cart, name='ajax_load_cart'),
     path('ajax/load_description/', views.load_description, name='ajax_load_description'),
     path('iteration2/', views.test, name='iteration2'),
     path('create_view/', views.create_view, name='create_view'),
