@@ -483,7 +483,7 @@
             data: {
                 labels: ["1", "2", "3", "4"],
                 datasets: [{
-                    label: "My First dataset",
+                    label: "Blood Sugar Level",
                     backgroundColor: window.chartColors.red,
                     borderColor: window.chartColors.red,
                     data: [
@@ -515,14 +515,14 @@
                         display: true,
                         scaleLabel: {
                             display: true,
-                            labelString: 'Value'
+                            labelString: 'Datetime'
                         }
                     }],
                     yAxes: [{
                         display: true,
                         scaleLabel: {
                             display: true,
-                            labelString: 'Value1'
+                            labelString: 'Value'
                         }
                     }]
                 }
@@ -558,24 +558,9 @@
         var lineConfig = {
             type: 'line',
             data: {
-                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                labels: ["January", "February", "March", "April"],
                 datasets: [{
-                    label: "My First dataset",
-                    backgroundColor: window.chartColors.red,
-                    borderColor: window.chartColors.red,
-                    data: [
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor()
-                    ],
-                    fill: false,
-                }, {
-                    label: "My Second dataset",
-                    fill: false,
+                    label: "Carbohydrates",
                     backgroundColor: window.chartColors.blue,
                     borderColor: window.chartColors.blue,
                     data: [
@@ -583,10 +568,8 @@
                         randomScalingFactor(),
                         randomScalingFactor(),
                         randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor()
                     ],
+                    fill: false,
                 }]
             },
             options: {
@@ -609,7 +592,7 @@
                         display: true,
                         scaleLabel: {
                             display: true,
-                            labelString: 'Month'
+                            labelString: 'Datetime'
                         }
                     }],
                     yAxes: [{
@@ -652,35 +635,18 @@
         var lineConfig = {
             type: 'line',
             data: {
-                labels: ["January", "February", "March", "April", "May", "June", "July"],
+                labels: ["January", "February", "March", "April"],
                 datasets: [{
-                    label: "My First dataset",
-                    backgroundColor: window.chartColors.red,
-                    borderColor: window.chartColors.red,
+                    label: "Insulin",
+                    backgroundColor: window.chartColors.green,
+                    borderColor: window.chartColors.green,
                     data: [
                         randomScalingFactor(),
                         randomScalingFactor(),
                         randomScalingFactor(),
                         randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor()
                     ],
                     fill: false,
-                }, {
-                    label: "My Second dataset",
-                    fill: false,
-                    backgroundColor: window.chartColors.blue,
-                    borderColor: window.chartColors.blue,
-                    data: [
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor(),
-                        randomScalingFactor()
-                    ],
                 }]
             },
             options: {
@@ -703,7 +669,7 @@
                         display: true,
                         scaleLabel: {
                             display: true,
-                            labelString: 'Month'
+                            labelString: 'Datetime'
                         }
                     }],
                     yAxes: [{

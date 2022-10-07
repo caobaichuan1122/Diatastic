@@ -109,7 +109,6 @@ meter::-webkit-meter-bar {
     </head>
 
 <body>
-
       <!-- PAGE HELP BOT -->
       <div class="container perfect_scrollbar" id="container">
           <div class="pvr_chat_button">
@@ -144,31 +143,11 @@ meter::-webkit-meter-bar {
                             Hi! I'm HelpBot. How can I help you today?
                           </div>
                       </div>
-    <!--                  <div class="date-break">-->
-    <!--                      Mon 10:20am-->
-    <!--                  </div>-->
-    <!--                  <div class="message">-->
-    <!--                      <div class="message-content">-->
-    <!--                        Healthy living starts with your daily diet.-->
-    <!--                      </div>-->
-    <!--                  </div>-->
-    <!--                  <div class="message self">-->
-    <!--                      <div class="message-content">-->
-    <!--                        Healthy living starts with your daily diet.-->
-    <!--                      </div>-->
-    <!--                  </div>-->
+
                   </div>
                   <div class="chat-controls">
                       <input class="message-input" id="message-input" placeholder="Type your message here..." type="text">
                       <div class="chat-extra">
-    <!--                      <a href="javascript:void(0)">-->
-    <!--                          <span class="extra-tooltip">Attach Document</span>-->
-    <!--                          <i class="material-icons">attach_file</i>-->
-    <!--                      </a>-->
-    <!--                      <a href="javascript:void(0)">-->
-    <!--                          <span class="extra-tooltip">Insert Photo</span>-->
-    <!--                          <i class="material-icons">add_a_photo</i>-->
-    <!--                      </a>-->
                           <a href="javascript:void(0)" class="change_chat_theme">
                               <span class="extra-tooltip">Change chat theme</span>
                               <i class="material-icons">refresh</i>
@@ -267,20 +246,16 @@ meter::-webkit-meter-bar {
               {% for k, v in field.items %}
               <button class="form-control collapsible" type="button">{{k}}. Comment</button>
               <div class="content">
-<!--              Header-->
                   <div class="row">
                       {% for item in v.header %}
-<!--                      <div class="form-control col-1">-->
                       <div class="col-lg-2">
                           <h5><u>{{ item }}</u></h5>
                       </div>
                       {% endfor %}
                   </div>
-<!--              Content-->
                   {% for row in v.rows %}
                   <div class="row">
                       {% for each in row %}
-<!--                        <div class="form-control col-1">-->
                       <div class="col-lg-2">
                             {{ each }}
                         </div>
