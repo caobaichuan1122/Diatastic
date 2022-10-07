@@ -52,42 +52,6 @@ def diary(request):
                   context={'category': category,
                            'portion': portion,'description':description})
 
-# def create_view(request):
-#     if request.method == "POST":
-#         diary_entry = DiaryEntries.objects.all()
-#         date = request.POST.get('date')
-#         time = request.POST.get('time')
-#         blood_sugar_level = request.POST.get('blood_sugar_level')
-#         category = request.POST.get('category')
-#         portion = request.POST.get('portion')
-#         quantity = request.POST.get('quantity')
-#         list_date=[]
-#         if 'add_list' in request.POST:
-#             for items in diary_entry:
-#                 list_date.append(datetime.strftime(items.date,'%Y-%m-%d'))
-#             if date not in list_date:
-#                 DiaryEntries.objects.create(date=date,blood_sugar_level=blood_sugar_level,
-#                                 carbohydrates=0.0,time=time,insulin=0.0)
-#                 diaryentries_id = DiaryEntries.objects.filter(date = date).values('id')
-#                 Diary_Menu.objects.create(date=date, time=time,
-#                                           carbohydrates=0,
-#                                           category=category, portion=portion,
-#                                           quantity=quantity)
-#                 Diary_Menu.objects.filter(date = date).update(diary_id=diaryentries_id[0]['id'])
-#                 return redirect('/iteration3/diary/')
-#             else:
-#                 diaryentries_id = DiaryEntries.objects.filter(date = date).values('id')
-#                 Diary_Menu.objects.create(date=date, time=time,
-#                                           carbohydrates=0,
-#                                           category=category, portion=portion,
-#                                           quantity=quantity)
-#                 Diary_Menu.objects.filter(date = date).update(diary_id=diaryentries_id[0]['id'])
-#                 return redirect('/iteration3/diary/')
-#         elif 'submit' in request.POST:
-#             pass
-#         return render(request, 'iteration3/list_view.html', context={'diary_entry': diary_entry,'date':date,'time':time,'blood_sugar_level':blood_sugar_level,
-#                                                                      'category':category,'portion':portion,'quantity':quantity})
-#     return render(request, 'iteration3/list_view.html',locals())
 
 # Diary views.
 def create_view(request):
@@ -184,92 +148,6 @@ def create_view(request):
             return render(request, 'iteration3/list_view.html', context={'cart': cart})
     return render(request, 'iteration3/list_view.html', context={'cart': request.GET.get('cart')})
 
-# def create_view(request):
-#     diary_entry = DiaryEntries.objects.all()
-#     my_form = DiaryForm(request.POST or None)
-#     if my_form.is_valid():
-#
-#         # Get form data.
-#         date = my_form.cleaned_data['date']
-#         time = my_form.cleaned_data['time']
-#         blood_sugar_level = my_form.cleaned_data['blood_sugar_level']
-#         category = my_form.cleaned_data['category']
-#         portion = my_form.cleaned_data['portion']
-#         quantity = my_form.cleaned_data['quantity']
-#
-#         category_name = Category.objects.filter(id=category).all().values('name')[0]['name']
-#         portion_name = Portion.objects.filter(id=category).all().values('name')[0]['name']
-#
-#         # # This will be a list at some point.
-#         # ## Retrieve carb values for given entry. (.getlist?)
-#         # carbs = Menu.objects.get(category=category_name,
-#         #                          portion=portion_name,
-#         #                          ).carbohydrates
-#         #
-#         # ## Retrieve weight values for given entry.
-#         # weight = Menu.objects.get(category=category_name,
-#         #                           portion=portion_name
-#         #                           ).portion_weight
-#         #
-#         # # Carbohydrate formula.
-#         # carbs = Decimal(0.01)*carbs*weight*quantity
-#         # insulin = insulin_calculation(carbs, blood_sugar_level)
-#
-#         # # Updating.
-#         # ## First, update the DiaryEntries model to generate a diary_id.
-#         # DiaryEntries.objects.create(date=date, time=time,
-#         #                             blood_sugar_level=blood_sugar_level,
-#         #                             carbohydrates=0.0,
-#         #                             insulin=0.0)
-#
-#         # Retrieve generated diary_id.
-#         # id = DiaryEntries.objects.order_by('id').values_list('id', flat=True).last()
-#
-#         # Add daily food, if no entries are created it will automatically create one for the day.
-#         if request.POST.has_key('add_list'):
-#             for items in diary_entry:
-#                 if date not in items.date:
-#                     DiaryEntries.objects.create(date=date,blood_sugar_level=blood_sugar_level,
-#                                     carbohydrates=0.0,
-#                                     insulin=0.0)
-#                     diaryentries_id = DiaryEntries.objects.filter(date = date).values('id')
-#                     Diary_Menu.objects.create(date=date, time=time,
-#                                               blood_sugar_level=blood_sugar_level,
-#                                               category=category, portion=portion,
-#                                               quantity=quantity,diary_id = diaryentries_id)
-#                     return redirect('/iteration3/diary/')
-#                 else:
-#                     diaryentries_id = DiaryEntries.objects.filter(date = date).values('id')
-#                     Diary_Menu.objects.create(date=date, time=time,
-#                                               blood_sugar_level=blood_sugar_level,
-#                                               category=category, portion=portion,
-#                                               quantity=quantity,diary_id = diaryentries_id)
-#                     return redirect('/iteration3/diary/')
-#         elif request.POST.has_key('submit'):
-#             pass
-#
-#         # ## Use generated diary_id to populate diary_menu.
-#         # Diary_Menu.objects.create(category=category_name,
-#         #                           portion=portion_name,
-#         #                           quantity=quantity,
-#         #                           carbohydrates=carbs,
-#         #                           date = date,
-#         #                           time=time,
-#         #                           diary_id = id
-#         #                           )
-#
-#         my_form = DiaryForm() # Show stored value.
-#         context = {
-#             'form': my_form
-#         }
-#
-#         return render(request, 'iteration3/list_view.html', context)
-#     else:
-#         my_form = DiaryForm(request.POST or None)
-#         context = {
-#             'form': my_form
-#         }
-#     return render(request, 'iteration3/list_view.html', context={'diary_entry':diary_entry})
 
 def entry_view(request, diary_id):
     obj = get_object_or_404(DiaryEntries, diary_id=diary_id)
@@ -376,9 +254,6 @@ def please_login(request):
 def page_no_found(request,**kwargs):
     return render(request, "iteration3/404.html")
 
-def please_login(request):
-    return render(request, "iteration3/404.html")
-
 def index(request):
     pass
     return render(request, 'iteration3/index.html',{'iteration3':'iteration3'})
@@ -395,23 +270,4 @@ def tips(request):
     pass
     return render(request, 'iteration3/tips.html')
 
-def symptoms(request):
-    pass
-    return render(request, 'iteration3/symptoms.html')
-
-def community(request):
-    pass
-    return render(request, 'iteration3/community.html')
-
-def about(request):
-    pass
-    return render(request, 'iteration3/about.html')
-
-def contact(request):
-    pass
-    return render(request, 'iteration3/contact.html')
-
-def test(request):
-    pass
-    return render(request, 'iteration3/Beginners Guide.mht')
 

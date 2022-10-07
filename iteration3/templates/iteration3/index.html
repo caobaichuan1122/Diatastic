@@ -1,5 +1,4 @@
 ﻿{% load static %}
-{% if request.session.is_login %}
     <head>
       <!-- BEGIN: Title -->
       <title>Diatastic &mdash; Easily Manage Blood Sugar</title>
@@ -727,8 +726,3 @@
 </script>
 
 </script>
-{% else %}
-<script type="text/javascript">
-    window.location.href = "/please_login/";
-</script>
-{% endif %}
