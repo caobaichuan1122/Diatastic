@@ -1,16 +1,10 @@
 ﻿
+
     <link href="" rel="stylesheet" />
 
     <script src="/static/add/jquery-1.11.3.min.js"></script>
     <script>
         $(function () {
-            $('.innerbtn').click(function () {
-                $(this).next('.pop_box').slideDown('400');
-            });
-            $('.closepop').click(function () {
-                $('.pop_box').slideUp('400');
-            });
-
             $('.tbody1').on("click", ".alonTr .innerbtn", function () {
                 $(this).next('.pop_box').slideDown('400');
             })
@@ -18,7 +12,7 @@
                 $('.pop_box').slideUp('400');
             })
 
-            // 新增表单
+            // add new row
             var show_count = 20;
             var count = 1;
             $(".AddTr").click(function () {
@@ -28,29 +22,6 @@
                     $(".model1 tbody .alonTr").clone().appendTo(".tabInfo .tbody1");
                 }
             });
-
-
-            // 新增内件
-            var show_count2 = 20;
-            var count2 = 1;
-            $(".addtr2").click(function () {
-                var length = $(this).parent('.btn_a1').prev('.neijian').children('.tbody2 tr').length;
-                //alert(length);
-                if (length < show_count2) {
-                    $(".model2 tbody tr").clone().appendTo($(this).parent('.btn_a1').prev('.neijian').children('.tbody2'));
-                }
-            });
-
-            // 动态的新增内件
-            var show_count3 = 20;
-            var count3 = 1;
-            $(".tbody1").on("click", ".dtadd", function () {
-                var length = $(".neijian .tbody2 tr").length;
-                //alert(length);
-                if (length < show_count3) {
-                    $('.model2 tbody tr').clone().appendTo($(this).parent('.btn_a1').prev('.neijian').children('.tbody2'));
-                }
-            });
         });
 
 
@@ -58,37 +29,13 @@
             var length = $(".tabInfo .tbody1>tr").length;
             //alert(length);
             if (length <= 1) {
-                alert("至少保留一行");
+                alert("less one row");
             } else {
-                $(opp).parent().parent().remove();//移除当前行
-
+                $(opp).parent().parent().remove();//delete row
             }
         }
         // ----
 
-        function deltr2(opp) {
-            var length = $(this).parent('.btn_a1').prev('.neijian').children('.tbody2 tr').length;
-            //alert(length);
-            if (length <= 1) {
-                alert("至少保留一行");
-            } else {
-                $(opp).parent().parent().remove();//移除当前行
-
-            }
-        }
-        // ----
-
-        function deltr3(opp) {
-            var length = $('.neijian .tbody2 tr').length;
-            //alert(length);
-            if (length <= 1) {
-                alert("至少保留一行");
-            } else {
-                $(opp).parent().parent().remove();//移除当前行
-
-            }
-        }
-        // ----
     </script>
     <style>
         * {
@@ -97,7 +44,7 @@
             font-style: normal;
             list-style-type: none;
             text-decoration: none;
-            font-family: "微软雅黑";
+<!--            font-family: "微软雅黑";-->
             font-size: 14px;
             border: 0 none;
             line-height: 24px;
@@ -237,72 +184,15 @@
 </head>
 <body>
     <div class="wrapper">
-        <table cellspacing="0" cellpadding="0" border="0" class="normTbe model2 hide">
-            <tbody>
-                <tr class="alonTr2">
-                    <td><input type="text" /></td>
-                    <td><input type="text" /></td>
-                    <td><input type="text" /></td>
-                    <td><input type="text" /></td>
-                    <td><input type="text" /></td>
-                    <td><input type="text" /></td>
-                    <td><select name=""><option value="1">中国</option><option value="2">美国</option></select></td>
-                    <td><a class="text_a" href="javascript:;" onclick="deltr3(this)">删除</a></td>
-                </tr>
-            </tbody>
-        </table>
         <table cellspacing="0" cellpadding="0" border="0" class="normTbe model1 hide">
             <tbody>
                 <tr class="alonTr">
                     <td><input type="text" /></td>
                     <td><input type="text" /></td>
                     <td><input type="text" /></td>
-                    <td><input type="text" /></td>
-                    <td><input type="text" /></td>
-                    <td><input type="text" /></td>
                     <td>
-                        <a href="javascript:;" class="innerbtn">添加内件(<span>0</span>)</a>
-                        <div class="pop_box hide">
-                            <div class="bg"></div>
-                            <div class="contentP">
-                                <div class="PTit">
-                                    <h3>内件商品信息</h3>
-                                    <a href="javascript:;" class="closepop">x</a>
-                                </div>
-                                <div class="textmian">
-                                    <table class="normTbe neijian" cellspacing="0" cellpadding="0" border="0" ;=;>
-                                        <thead>
-                                            <tr>
-                                                <th>内件商品描述</th>
-                                                <th>数量</th>
-                                                <th>重量</th>
-                                                <th>单价</th>
-                                                <th>总价</th>
-                                                <th>HSCODE</th>
-                                                <th>产地</th>
-                                                <th>操作</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody class="tbody2">
-                                            <tr>
-                                                <td><input type="text" /></td>
-                                                <td><input type="text" /></td>
-                                                <td><input type="text" /></td>
-                                                <td><input type="text" /></td>
-                                                <td><input type="text" /></td>
-                                                <td><input type="text" /></td>
-                                                <td><select name=""><option value="1">中国</option><option value="2">美国</option></select></td>
-                                                <td><a class="text_a" href="javascript:;" onclick="deltr2(this)">删除</a></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <div class="btn_a1">
-                                        <a class="dtadd" href="javascript:;">新增内件</a> <a class="closepop" href="javascript:;">确定内件</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <br /><a class="text_a" href="javascript:;" onclick="deltr(this)">删除</a>
+<!--                        <a href="javascript:;" class="AddTr">add</a>-->
+                        <a class="text_a" href="javascript:;" onclick="deltr(this)">delete</a>
                     </td>
                 </tr>
             </tbody>
@@ -311,79 +201,42 @@
             <table cellspacing="0" cellpadding="0" border="0" class="normTbe tabInfo">
                 <thead>
                     <tr>
-                        <th><em>*</em> 件数：</th>
-                        <th><em>*</em> 单件重量：</th>
-                        <th><em>*</em> 总重量：</th>
-                        <th>长度(厘米)：</th>
-                        <th>宽度(厘米)：</th>
-                        <th>高度(厘米)：</th>
-                        <th>操作</th>
+                        <th><label for="category">Category:</label></th>
+                        <th><label for="description">Desc:</label></th>
+                        <th><label for="portion">Portion:</label></th>
+                        <th>action</th>
                     </tr>
                 </thead>
                 <tbody class="tbody1">
                     <tr>
-                        <td><input type="text" /></td>
-                        <td><input type="text" /></td>
-                        <td><input type="text" /></td>
-                        <td><input type="text" /></td>
-                        <td><input type="text" /></td>
-                        <td><input type="text" /></td>
+                        <td><select id="category" name="category" class="form-control" action="{% url 'ajax_load_description' %}" style="display: inline; width: 150px; margin-top: 2px;">
+                            <option value="">Choose One</option>
+                              {% for cat in category %}
+                                <option value="{{cat.id}}">{{cat.name}}</option>
+                              {% endfor %}
+                            </select>
+                        </td>
+                        <td><select id="description" name="description" class="form-control" action="{% url 'ajax_load_portion' %}" style="display: inline; width: 150px; margin:10px; margin-top: 2px;">
+                            <option value="">Choose One</option>
+                              {% for desc in description %}
+                                <option value="{{desc.id}}">{{desc.name}}</option>
+                              {% endfor %}
+                            </select>
+                        </td>
+                        <td><select id="portion" name="portion" class="form-control" style="display: inline; width: 150px; margin:12px; margin-top: 2px;">
+                                <option value="">Choose One</option>
+                                  {% for port in portion %}
+                                    <option value="{{port.id}}">{{port.name}}</option>
+                                  {% endfor %}
+                            </select>
+                        </td>
                         <td>
-                            <a href="javascript:;" class="innerbtn">添加内件(<span>0</span>)</a>
-                            <div class="pop_box hide">
-                                <div class="bg"></div>
-                                <div class="contentP">
-                                    <div class="PTit">
-                                        <h3>内件商品信息</h3>
-                                        <a href="javascript:;" class="closepop">x</a>
-                                    </div>
-                                    <div class="textmian">
-                                        <table class="normTbe neijian" cellspacing="0" cellpadding="0" border="0" ;=;>
-                                            <thead>
-                                                <tr>
-                                                    <th>内件商品描述</th>
-                                                    <th>数量</th>
-                                                    <th>重量</th>
-                                                    <th>单价</th>
-                                                    <th>总价</th>
-                                                    <th>HSCODE</th>
-                                                    <th>产地</th>
-                                                    <th>操作</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody class="tbody2">
-                                                <tr>
-                                                    <td><input type="text" /></td>
-                                                    <td><input type="text" /></td>
-                                                    <td><input type="text" /></td>
-                                                    <td><input type="text" /></td>
-                                                    <td><input type="text" /></td>
-                                                    <td><input type="text" /></td>
-                                                    <td><select name=""><option value="1">中国</option><option value="2">美国</option></select></td>
-                                                    <td><a class="text_a" href="javascript:;" onclick="deltr2(this)">删除</a></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <div class="btn_a1">
-                                            <a class="addtr2" href="javascript:;">新增内件</a> <a class="closepop" href="javascript:;">确定内件</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br /><a class="text_a" href="javascript:;" onclick="deltr(this)">删除</a>
+                            <a href="javascript:;" class="AddTr">add</a>
+<!--                            <a class="text_a" href="javascript:;" onclick="deltr(this)">delete</a>-->
                         </td>
                     </tr>
                 </tbody>
             </table>
-            <div class="copybtn">
-                <a href="javascript:;" class="AddTr">新增</a>
-                <a href="javascript:;" class="ture">确定</a>
-            </div>
         </div>
-
     </div><!-- itemInfo -->
-
-
-
 </body>
-
