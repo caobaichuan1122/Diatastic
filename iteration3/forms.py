@@ -14,9 +14,9 @@ class DiaryForm(forms.ModelForm):
                                            decimal_places=1)
 
     # Menu-related fields.
-    category = forms.ChoiceField(choices=[(cat.id, cat.name) for cat in Category.objects.all()])
-    description = forms.ChoiceField(choices=[(desc.id, desc.name) for desc in Description.objects.all()])
-    portion = forms.ChoiceField(choices=[(port.id, port.name) for port in Portion.objects.all()])
+    # category = forms.ChoiceField(choices=[(cat.id, cat.name) for cat in Category.objects.all()])
+    # description = forms.ChoiceField(choices=[(desc.id, desc.name) for desc in Description.objects.all()])
+    # portion = forms.ChoiceField(choices=[(port.id, port.name) for port in Portion.objects.all()])
 
     class Meta:
         model = Diary_Menu

@@ -1,8 +1,8 @@
 from django import forms
 
 from .models import Drink, Food
-Food_Choices = [(item.name, item.name) for item in Food.objects.all()]
-Drinks_Choices = [(item.name, item.name) for item in Drink.objects.all()]
+# Food_Choices = [(item.name, item.name) for item in Food.objects.all()]
+# Drinks_Choices = [(item.name, item.name) for item in Drink.objects.all()]
 
 
 class UserForm(forms.Form):
@@ -20,5 +20,5 @@ class DiaryForm(forms.Form):
         max_digits=5
     )
 
-    food_items = forms.MultipleChoiceField(choices=Food_Choices)
-    drinks = forms.MultipleChoiceField(choices=Drinks_Choices)
+    # food_items = forms.MultipleChoiceField(choices=Food_Choices)
+    # drinks = forms.MultipleChoiceField(choices=Drinks_Choices)

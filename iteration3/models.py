@@ -21,18 +21,20 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
-class Portion(models.Model):
-    name = models.CharField(max_length=1280)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    def __str__(self):
-        return self.name
-
 class Description(models.Model):
     name = models.CharField(max_length=1280)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
+
+class Portion(models.Model):
+    name = models.CharField(max_length=1280)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+    description = models.ForeignKey(Description, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.name
+
 
 # Menu
 class Menu(models.Model):
