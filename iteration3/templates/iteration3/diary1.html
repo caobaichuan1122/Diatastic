@@ -232,46 +232,28 @@
 <!--      Menu options-->
           <div class="container">
             <div class="wrapper">
-            <table cellspacing="0" cellpadding="0" border="0" class="normTbe model1 hide">
+            <table id="myTable1" cellspacing="0" cellpadding="0" border="0" class="normTbe model1 hide">
                 <tbody>
-                    <tr class="alonTr">
-                            <td><select id="category1" name="category" class="form-control" action="{% url 'ajax_load_description' %}">
-                                <option value="">Choose One</option>
-                                  {% for cat in category %}
-                                    <option value="{{cat.id}}">{{cat.name}}</option>
-                                  {% endfor %}
-                                </select>
-                            </td>
-                            <td><select id="description1" name="description" class="form-control" action="{% url 'ajax_load_portion' %}">
-                                <option value="">Choose One</option>
-                                  {% for desc in description %}
-                                    <option value="{{desc.id}}">{{desc.name}}</option>
-                                  {% endfor %}
-                                </select>
-                            </td>
-                            <td><select id="portion1" name="portion" class="form-control">
-                                    <option value="">Choose One</option>
-                                      {% for port in portion %}
-                                        <option value="{{port.id}}">{{port.name}}</option>
-                                      {% endfor %}
-                                </select>
-                            </td>
-                            <td><input type="number" /></td>
+                    <tr id="alonTr1" class="alonTr">
+                        <td><input id="text1" type="text" value="" readonly></td>
+                        <td><input id="text2" type="text" value="" readonly></td>
+                        <td><input id="text3" type="text" value="" readonly></td>
+                        <td><input id="text4" type="text" value="" readonly></td>
                         <td>
     <!--                        <a href="javascript:;" class="AddTr">add</a>-->
-                            <a class="text_a" href="javascript:;" onclick="deltr(this)">delete</a>
+                            <a class="text_a" href="javascript:;" onclick="deltr(this)"><button type="button" class="btn btn-danger">Delete</button></a>
                         </td>
                     </tr>
                 </tbody>
             </table>
             <div class="itemInfo">
-                <table cellspacing="0" cellpadding="0" border="0" class="normTbe tabInfo">
+                <table id="myTable" cellspacing="0" cellpadding="0" border="0" class="normTbe tabInfo">
                     <thead>
                         <tr>
                             <th><label for="category">Category:</label></th>
                             <th><label for="description">Desc:</label></th>
                             <th><label for="portion">Portion:</label></th>
-                            <th><label for="portion">Portion:</label></th>
+                            <th><label for="quantity">Quantity:</label></th>
                             <th>action</th>
                         </tr>
                     </thead>
@@ -298,9 +280,9 @@
                                       {% endfor %}
                                 </select>
                             </td>
-                            <td><input type="number" /></td>
+                            <td><input type="number" id="quantity"></td>
                             <td>
-                                <a href="javascript:;" class="AddTr">add</a>
+                                <a href="javascript:;" class="AddTr"><button type="button" class="btn btn-primary">Confirm</button></a>
     <!--                            <a class="text_a" href="javascript:;" onclick="deltr(this)">delete</a>-->
                             </td>
                         </tr>
@@ -311,7 +293,7 @@
             </div>
         <br>
             <div style="text-align: center;">
-                <button  type="reset" class="btn btn-danger">Reset</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<!--                <button  type="reset" class="btn btn-danger">Reset</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
                 <button name="submit" id="submit" type="submit" class="btn btn-success">Submit</button>
                 <br><br>
           </div>
@@ -530,132 +512,15 @@
 
 
 
-<!--<script>-->
-<!--var cart_dict = new Array();-->
-<!--var csrfToken = document.getElementsByName('csrfmiddlewaretoken')[0].value;-->
-<!--$('#cart').click(function(e){-->
-<!--    e.preventDefault();-->
 
-<!--    var date = $('#date').val();-->
-<!--    if(date.trim() == ''){-->
-<!--        alert('Please check the date.');}-->
-<!--    else{-->
 
-<!--        var time = $('#time').val();-->
-<!--        if(time.trim() == ''){-->
-<!--            alert('Please check the time.');}-->
-<!--        else{-->
-
-<!--            var BSL = parseInt($('#blood_sugar_level').val());-->
-<!--            if(BSL != ''){-->
-<!--            if(BSL > 30 || BSL < 0){-->
-<!--                alert('Please check your Blood Sugar Levels.');}-->
-<!--                else{-->
-
-<!--                var categoryId = parseInt($('#category').val());-->
-<!--                if(!parseInt(categoryId) || categoryId == ''){-->
-<!--                    alert('Please check the category.');}-->
-<!--                else{-->
-
-<!--                    var descriptionId = parseInt($('#description').val());-->
-<!--                    if(!parseInt(descriptionId) || descriptionId == ''){-->
-<!--                        alert('Please check the description.');}-->
-<!--                    else{-->
-
-<!--                        var portionId = parseInt($('#portion').val());-->
-<!--                        if(!parseInt(portionId) || portionId == ''){-->
-<!--                            alert('Please check the portions.');}-->
-<!--                        else{-->
-
-<!--                            var Q = parseInt($('#quantity').val());-->
-<!--                            if(!parseInt(Q) || Q == ''){-->
-<!--                                alert('Please check the quantity.');}-->
-<!--                            else{-->
-
-<!--                                if(Q < 0){-->
-<!--                                    alert('Please check your quantity input.');}-->
-<!--                                    else{-->
-<!--                                    var dup = 0;-->
-<!--                                    if(cart_dict.length != 0){-->
-<!--                                        for(i = 0; i < cart_dict.length; i++){-->
-<!--                                            console.log((cart_dict[i]['categoryId'] == categoryId ) && (cart_dict[i]['descriptionId'] == descriptionId) && (cart_dict[i]['portionId'] == portionId));-->
-<!--                                            if((cart_dict[i]['categoryId'] == categoryId ) && (cart_dict[i]['descriptionId'] == descriptionId) && (cart_dict[i]['portionId'] == portionId)){-->
-<!--                                                dup = 1;-->
-<!--                                                console.log(dup);-->
-<!--                                                break;}-->
-<!--                                            }-->
-<!--                                        }-->
-<!--                                    if(dup == 1){-->
-<!--                                        cart_dict[i]['Q'] = cart_dict[i]['Q'] + Q;-->
-<!--                                                }-->
-<!--                                    else if(dup == 0){cart_dict.push({'date':date, 'time': time, 'BSL': BSL,-->
-<!--                                                                      'categoryId': categoryId, 'descriptionId': descriptionId, 'portionId': portionId,-->
-<!--                                                                      'Q': Q-->
-<!--                                                                      });-->
-<!--                                                }-->
-<!--}-->
-<!--}-->
-<!--console.log(cart_dict);-->
-<!--$('#category:input').val('Choose One');-->
-<!--$('#description:input').val('Choose One');-->
-<!--$('#portion:input').val('Choose One');-->
-<!--$('#Q').val(0);-->
-<!--}-->
-<!--}-->
-<!--}-->
-<!--}-->
-<!--}-->
-<!--}-->
-<!--}-->
-<!--});-->
-<!--</script>-->
-
-<script>
-var submit_dict = new Array();
-var csrfToken = document.getElementsByName('csrfmiddlewaretoken')[0].value;
-$('#submit').click(function(e){
-    var date = $('#date').val();
-    if(date.trim()!=''){
-
-    var time = $('#time').val();
-    if(time.trim()!=''){
-
-    var BSL = parseInt($('#blood_sugar_level').val());
-    if(BSL != ''){
-
-    var categoryId = parseInt($('#category').val());
-    if(categoryId != ''){
-
-    var descriptionId = parseInt($('#description').val());
-    if(descriptionId != ''){
-
-    var portionId = parseInt($('#portion').val());
-    if(portionId != ''){
-
-    var Q = parseInt($('#quantity').val());
-    if(Q != ''){
-    {submit_dict.push({'date':date, 'time': time, 'BSL': BSL,
-                       'categoryId': categoryId, 'descriptionId': descriptionId, 'portionId': portionId,
-                       'Q': Q
-                       });
-    }
-}
-}
-}
-}
-}
-}
-}
-console.log(submit_dict);
-});
-</script>
 
 
 
 <script>
 var url = "{% url 'create_view' %}";
 function SendCart(){
-    var data = {cart_items: JSON.stringify(cart_dict), submit_items: JSON.stringify(submit_dict), csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value};
+    var data = {cart_items: JSON.stringify(cart_dict), csrfmiddlewaretoken: document.getElementsByName('csrfmiddlewaretoken')[0].value};
     var posting = $.post('/create_view/', data);
 }
 </script>
@@ -669,6 +534,9 @@ $(document).ready(function (){
 </script>
 
 <script>
+count = 1;
+show_count = 20;
+cart_dict = new Array();
     $(function () {
         $('.tbody1').on("click", ".alonTr .innerbtn", function () {
             $(this).next('.pop_box').slideDown('400');
@@ -678,16 +546,106 @@ $(document).ready(function (){
         })
 
         // add new row
-        var show_count = 20;
-        var count = 1;
+
         $(".AddTr").click(function () {
             var length = $(".tabInfo .tbody1>tr").length;
+            console.log(length);
             //alert(length);
             if (length < show_count) {
-                $(".model1 tbody .alonTr").clone().appendTo(".tabInfo .tbody1");
+                var date = $('#date').val();
+                if(date.trim() == ''){
+                    alert('Please check the date.');}
+                else{
+
+                    var time = $('#time').val();
+                    if(time.trim() == ''){
+                        alert('Please check the time.');}
+                    else{
+
+                        var BSL = parseInt($('#blood_sugar_level').val());
+                        if(BSL != ''){
+                        if(BSL > 30 || BSL < 0){
+                            alert('Please check your Blood Sugar Levels.');}
+                            else{
+
+                            var categoryId = parseInt($('#category').val());
+                            if(!parseInt(categoryId) || categoryId == ''){
+                                alert('Please check the category.');}
+                            else{
+
+                                var descriptionId = parseInt($('#description').val());
+                                if(!parseInt(descriptionId) || descriptionId == ''){
+                                    alert('Please check the description.');}
+                                else{
+
+                                    var portionId = parseInt($('#portion').val());
+                                    if(!parseInt(portionId) || portionId == ''){
+                                        alert('Please check the portions.');}
+                                    else{
+
+                                        var Q = parseInt($('#quantity').val());
+                                        if(!parseInt(Q) || Q == ''){
+                                            alert('Please check the quantity.');}
+                                        else{
+                                            var dup = 0;
+                                        }
+                                        // If dictionary is not empty:
+                                        if(cart_dict.length != 0){
+
+                                            // Iterate through the dictionary.
+                                            for(i = 0; i < cart_dict.length; i++){
+<!--                                                console.log((cart_dict[i]['categoryId'] == categoryId ) && (cart_dict[i]['descriptionId'] == descriptionId) && (cart_dict[i]['portionId'] == portionId));-->
+                                                if((cart_dict[i]['categoryId'] == categoryId ) && (cart_dict[i]['descriptionId'] == descriptionId) && (cart_dict[i]['portionId'] == portionId)){
+                                                    dup = 1;
+                                                    console.log(dup);
+                                                    break;}
+                                                }
+                                            }
+                                        if(dup == 1){
+                                            cart_dict[i]['Q'] = cart_dict[i]['Q'] + Q;
+                                            document.querySelector("#quantity"+parseInt(i+1)).setAttribute('value', cart_dict[i]['Q']);
+                                                    }
+                                        else{
+                                            document.querySelector("#text1").setAttribute('value', category.options[category.selectedIndex].text);
+                                            document.querySelector("#text2").setAttribute('value', description.options[description.selectedIndex].text);
+                                            document.querySelector("#text3").setAttribute('value', portion.options[portion.selectedIndex].text);
+                                            document.querySelector("#text4").setAttribute('value', parseInt($('#quantity').val()));
+                                            document.querySelector("#text1").id = "category"+count;
+                                            document.querySelector("#text2").id = "description"+count;
+                                            document.querySelector("#text3").id = "portion"+count;
+                                            document.querySelector("#text4").id = "quantity"+count;
+                                            document.querySelector("#alonTr1").id = "alonTr"+count;
+
+                                            $(".model1 tbody .alonTr").clone().appendTo(".tabInfo .tbody1");
+
+                                            document.querySelector("#category"+count).id = "text1";
+                                            document.querySelector("#description"+count).id = "text2";
+                                            document.querySelector("#portion"+count).id = "text3";
+                                            document.querySelector("#quantity"+count).id = "text4";
+                                            document.querySelector("#alonTr"+count).id = "alonTr1";
+                                            count++;
+                                            cart_dict.push({'date':date, 'time': time, 'BSL': BSL,
+                                                            'categoryId': categoryId, 'descriptionId': descriptionId, 'portionId': portionId,
+                                                            'Q': Q
+                                                            });
+                                                    }
             }
+            }
+            console.log(cart_dict);
+            $('#category:input').val('Choose One');
+            $('#description:input').val('Choose One');
+            $('#portion:input').val('Choose One');
+            $('#Q').val(0);
+            }
+            }
+            }
+            }
+            }
+            }
+            });
+            console.log('Count after adding item:', count);
         });
-    });
+
 
 
     function deltr(opp) {
@@ -696,14 +654,19 @@ $(document).ready(function (){
         if (length <= 1) {
             alert("less one row");
         } else {
+            count--;
             $(opp).parent().parent().remove();//delete row
+            id = parseInt($(opp).parent().parent().attr('id').slice(-1));
+            console.log(id);
+            cart_dict.splice(id-1, 1);
+            console.log(cart_dict);
+            console.log('Count after removing item:', count);
         }
     }
-    // ----
+
 
 </script>
 <style>
-
     table {
         table-layout: fixed;
         width: 100%;
