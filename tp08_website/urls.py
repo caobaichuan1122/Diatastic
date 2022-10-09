@@ -23,5 +23,6 @@ urlpatterns = [
     path('iteration2/', include('iteration3.urls')),
     path('iteration/', include('iteration.urls')),
     path('',include('iteration3.urls')),
+    # path('auth/', include('social_django.urls', namespace='social')),
 ]
 

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'iteration',
     'iteration2',
     'iteration3',
+    # 'social_django'
 ]
 
 MIDDLEWARE = [
@@ -65,10 +66,22 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = (
+ 'social_core.backends.open_id.OpenIdAuth',  # for Google authentication
+ 'social_core.backends.google.GoogleOpenId',  # for Google authentication
+ 'social_core.backends.google.GoogleOAuth2',  # for Google authentication
+ 'social_core.backends.github.GithubOAuth2',  # for Github authentication
+ 'social_core.backends.facebook.FacebookOAuth2',  # for Facebook authentication
+
+ 'django.contrib.auth.backends.ModelBackend',
+)
 
 WSGI_APPLICATION = 'tp08_website.wsgi.application'
 
@@ -165,7 +178,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 HERE = os.path.join(HERE, '../')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
-    # os.path.join(BASE_DIR, "iteration3", "static"),
-    # os.path.join(BASE_DIR, "login", "static"),
+
 ]
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'index'
