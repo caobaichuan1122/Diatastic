@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'iteration',
     'iteration2',
     'iteration3',
-    # 'social_django'
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -183,3 +183,5 @@ STATICFILES_DIRS = [
 
 LOGIN_URL = 'login'
 LOGIN_REDIRECT_URL = 'index'
+
+SOCIAL_AUTH_URL_NAMESPACE = 'social'

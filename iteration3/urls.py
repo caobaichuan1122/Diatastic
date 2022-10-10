@@ -1,7 +1,8 @@
-from django.urls import path
+from django.urls import path, include
 from iteration3 import views
 urlpatterns = [
     path('', views.index),
+    # path('auth/', include('social_django.urls', namespace='social')),
     path('login/', views.login, name='login'),
     path('index/', views.index, name='index'),
     path('guide/', views.guide, name='guide'),
