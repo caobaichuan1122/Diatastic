@@ -93,7 +93,7 @@ WSGI_APPLICATION = 'tp08_website.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Nutrients',
+        'NAME': 'Nutrients_iteration3',
         'USER': 'root',
         'PASSWORD': 'tp08tp08',
         'HOST': '13.239.85.203',
@@ -109,7 +109,7 @@ DATABASES = {
     },
     'iteration3': {
             'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'Nutrients_iteration3',
+            'NAME': 'Nutrients',
             'USER': 'root',
             'PASSWORD': 'tp08tp08',
             'HOST': '13.239.85.203',
@@ -122,9 +122,9 @@ DATABASE_ROUTERS = ['tp08_website.database_router.DatabaseAppsRouter']
 DATABASE_APPS_MAPPING = {
     # example:
     # 'app_name':'database_name',
-    'iteration': 'default',
+    'iteration3': 'default',
     'iteration2': 'iteration2',
-    'iteration3': 'iteration3',
+    'iteration': 'iteration3',
 }
 # DATABASES = {
 #     'default': {
@@ -182,13 +182,13 @@ STATICFILES_DIRS = [
 
 ]
 
-LOGIN_URL = '/login/'
-LOGIN_REDIRECT_URL = '/index/'
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'index'
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '1087562863702-0utfhfqp4b41p4gdfnnafb4eoi370p3n.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '786663001814-9q32v7h0latmj3u08eoijntks72kjp0b.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
 
 #SMTP Configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
