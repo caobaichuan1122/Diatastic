@@ -1,13 +1,10 @@
 import json
-
 from django.db.models import Sum
-from django.http import JsonResponse
+from django.contrib import messages
 from django.shortcuts import render, get_object_or_404, redirect
 from decimal import Decimal
-from datetime import date, datetime
-from . import models
 from .models import User, Diary_Menu, Category, Portion, Menu, Description
-from .forms import DiaryForm, UserForm, DateForm, EmailForm
+from .forms import  UserForm, DateForm, EmailForm
 from .models import DiaryEntries
 import plotly.express as px
 from math import floor
@@ -30,9 +27,9 @@ def login(request):
                 request.session['user_name'] = user.name
                 return redirect('/index/')
             else:
-                message = "password error！"
+                messages.error(request, 'password error！')
         except:
-            message = "user error！"
+            messages.error(request, 'user error！')
     return render(request, 'iteration3/login.html', {'iteration3': 'iteration3'})
 
 def load_portion(request):
@@ -275,10 +272,8 @@ def success(request):
     if connection:
         email = mail.EmailMessage(subject, message, settings.EMAIL_HOST_USER, [email])
         email.send()
-        return render(request, 'iteration3/mail_template.html', {'subject': subject,
-                                                                     'message': message,
-                                                                     'email': email,
-                                                                     'error_message': "Success!"})
+        messages.success(request, 'send successful！')
+        return render(request, 'iteration3/mail.html',{'subject': subject,'message': message,'email': email,'error_message': "Success!"})
     else:
         return render(request, 'iteration3/mail_template.html', {'subject': subject,
                                                                      'message': message,

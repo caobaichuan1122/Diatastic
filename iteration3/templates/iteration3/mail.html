@@ -265,6 +265,11 @@
       <!-- END: JavaScripts -->
 </body>
 {% else %}
+<script>
+        {% for msg in messages %}
+            alert('{{ msg.message }}');
+        {% endfor %}
+    </script>
 <script type="text/javascript">
     window.location.href = "/please_login/";
 </script>
