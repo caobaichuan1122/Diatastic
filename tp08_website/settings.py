@@ -76,6 +76,7 @@ TEMPLATES = [
 AUTHENTICATION_BACKENDS = (
  'social_core.backends.open_id.OpenIdAuth',  # for Google authentication
  # 'social_core.backends.google.GoogleOpenId',  # for Google authentication
+ # 'social_core.backends.google_openidconnect.GoogleOpenIdConnect',
  'social_core.backends.google.GoogleOAuth2',  # for Google authentication
  'social_core.backends.github.GithubOAuth2',  # for Github authentication
  'social_core.backends.facebook.FacebookOAuth2',  # for Facebook authentication
@@ -186,5 +187,13 @@ LOGIN_REDIRECT_URL = '/index/'
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
-SOCIAL_AUTH_GOOGLE_KEY = '1087562863702-0utfhfqp4b41p4gdfnnafb4eoi370p3n.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_SECRET = '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'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '1087562863702-0utfhfqp4b41p4gdfnnafb4eoi370p3n.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+
+#SMTP Configuration
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.zoho.com.au'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'info@diatastic.tk'
+EMAIL_HOST_PASSWORD = 'tp08tp08'
+EMAIL_USE_TLS = True
