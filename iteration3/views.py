@@ -7,9 +7,10 @@ from decimal import Decimal
 from datetime import date, datetime
 from . import models
 from .models import User, Diary_Menu, Category, Portion, Menu, Description
-from .forms import DiaryForm, UserForm, DateForm
+from .forms import DiaryForm, UserForm, DateForm, EmailForm
 from .models import DiaryEntries
 import plotly.express as px
+from math import floor
 
 
 def login(request):
@@ -134,8 +135,9 @@ def list_view(request):
             temp = Diary_Menu.objects.filter(diary_id=id).values_list()
             for i in range(len(temp)):
                 ListViewDict[id]['rows'].append([temp[i][4], temp[i][5], temp[i][6], temp[i][7], temp[i][8]])
-            ListViewDict[id]['insulin'] = DiaryEntries.objects.filter(id=id).values_list('insulin', flat=True)[0]
+            ListViewDict[id]['insulin'] = floor(DiaryEntries.objects.filter(id=id).values_list('insulin', flat=True)[0])
             ListViewDict[id]['BSL'] = DiaryEntries.objects.filter(id=id).values_list('blood_sugar_level', flat=True)[0]
+            print(floor(DiaryEntries.objects.filter(id=id).values_list('insulin', flat=True)[0]))
     context = {
         'field': ListViewDict,
         'details': Details,
@@ -161,38 +163,61 @@ def insulin_calculation(carbs, blood_sugar_level):
     return insulin_req
 
 def carb_chart(request):
-    entries = Diary_Menu.objects.all().order_by('-date')
+    entries = Diary_Menu.objects.all().order_by('-date', '-time')
+
+    # If there are entries, check for the start date and end date.
     if entries.exists():
         start = request.GET.get('start')
         end = request.GET.get('end')
-        if start:
+
+
+        # If start and end date are provided, filter the entries.
+        if start and end:
             entries = entries.filter(date__gte=start)
-        if end:
             entries = entries.filter(date__lte=end)
 
-        fig = px.line(
-            x=[c.date for c in entries],
-            y=[c.carbohydrates for c in entries],
-            title = 'Carbohydrates Chart',
-            labels={'x': 'Date', 'y': 'Carbohydrates (g)'}
-        )
-
-        fig.update_layout(title = {
-            'font_size': 22,
-            'xanchor': 'center',
-            'x': 0.5
-        })
+            # If there are entries at that point, create the graph.
+            if entries:
+                fig = px.scatter(
+                    x=[c.date for c in entries],
+                    y=[c.carbohydrates for c in entries],
+                    title='Carbohydrates Chart',
+                    labels={'x': 'Date', 'y': 'Carbohydrates (g)'}
+                )
+            # If no entries, return 0.
+            else:
+                fig = px.scatter(
+                    x=[0],
+                    y=[0],
+                    title='Carbohydrates Chart',
+                    labels={'x': 'Date', 'y': 'Carbohydrates (g)'},
+                )
+        # If no dates are provided, return all entries.
+        else:
+            fig = px.scatter(
+                x=[c.date for c in entries],
+                y=[c.carbohydrates for c in entries],
+                title='Carbohydrates Chart',
+                labels={'x': 'Date', 'y': 'Carbohydrates (g)'},
+            )
+    # If no entries, return 0.
     else:
-        fig = px.line(
+        fig = px.scatter(
             x=[0],
             y=[0],
             title='Carbohydrates Chart',
-            labels={'x': 'Date', 'y': 'Carbohydrates (g)'}
+            labels={'x': 'Date', 'y': 'Carbohydrates (g)'},
         )
 
-
+    fig.update_layout(title={
+        'font_size': 22,
+        'xanchor': 'center',
+        'x': 0.5},
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)"
+    )
     carb_chart = fig.to_html()
-
+    # chart1 = fig.write_image("chart1.png")
     context = {'carb_chart': carb_chart,
                'form': DateForm}
     return render(request, 'iteration3/carb_chart.html', context)
@@ -231,3 +256,30 @@ def add_list(request):
     pass
     return render(request, 'iteration3/add_list.html')
 
+
+from django.core import mail
+from django.conf import settings
+from django.template.loader import render_to_string
+import smtplib, ssl
+
+def email_form(request):
+    form = EmailForm(request.POST or None)
+    return render(request, 'iteration3/mail.html')
+
+def success(request):
+    subject = request.POST['subject']
+    message = request.POST['message']
+    email = request.POST['email']
+    connection = mail.get_connection()
+    print(connection)
+    if connection:
+        email = mail.EmailMessage(subject, message, settings.EMAIL_HOST_USER, [email])
+        email.send()
+        return render(request, 'iteration3/mail_template.html', {'subject': subject,
+                                                                     'message': message,
+                                                                     'email': email,
+                                                                     'error_message': "Success!"})
+    else:
+        return render(request, 'iteration3/mail_template.html', {'subject': subject,
+                                                                     'message': message,
+                                                                     'email': email,'error_message': "Unable to send email. Please try again later"})

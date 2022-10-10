@@ -35,3 +35,10 @@ class UserForm(forms.Form):
 class DateForm(forms.Form):
     start = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
     end = forms.DateField(widget=forms.DateInput(attrs={'type': 'date'}))
+
+
+class EmailForm(forms.Form):
+    to = forms.EmailField()
+    subject = forms.CharField(max_length=100)
+    attach = forms.FileField(widget=forms.ClearableFileInput(attrs={'multiple': True}))
+    message = forms.CharField(widget=forms.Textarea)

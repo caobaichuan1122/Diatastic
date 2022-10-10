@@ -1,61 +1,7 @@
 ﻿﻿{% load static %}
 {% if request.session.is_login %}
-<head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-meter {
-  width: 150px;
-  height: 25px;
-  display: inline-block;
-  color: #DCD0FF;
-}
-meter::-webkit-meter-bar {
-  background: none;
-  background-color: whiteSmoke;
-  box-shadow: 0 5px 5px -5px #333 inset;
-}
-
-.collapsible {
-  background-color: #e6d7ff;
-  color: black;
-  cursor: pointer;
-  padding: 18px;
-  width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 15px;
-  font-family: comic-sans;
-}
-
-.active, .collapsible:hover {
-  background-color: #DCD0FF;
-}
-
-.collapsible:after {
-  content: '\02C4';
-  color: black;
-  font-weight: bold;
-  float: right;
-  margin-left: 5px;
-  border: none;
-}
-
-.active:after {
-  content: "\02C5";
-}
-
-.content {
-  padding: 0 18px;
-  width: 100%;
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  background-color: #f6f1ff;
-  border: none;
-}
-</style>
-     <!-- BEGIN: Title -->
+    <head>
+      <!-- BEGIN: Title -->
       <title>Diatastic &mdash; Easily Manage Blood Sugar</title>
       <!-- END: Title -->
 
@@ -88,7 +34,6 @@ meter::-webkit-meter-bar {
         <meta name="keywords" content="pvr, pvr tech studio, css chat box, pvr admin, pvr tech admin"/>
         <meta name="description" content="PVR Tech Studio, We Design your Future.">
         <!-- Add Your favicon here -->
-<!--        <link rel="icon" href="../static/assets/img/favicon/favicon-32x32.png">-->
 
 
         <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
@@ -104,7 +49,8 @@ meter::-webkit-meter-bar {
 
     </head>
 
-<body>
+    <body>
+
       <!-- PAGE HELP BOT -->
       <div class="container perfect_scrollbar" id="container">
           <div class="pvr_chat_button">
@@ -139,11 +85,31 @@ meter::-webkit-meter-bar {
                             Hi! I'm HelpBot. How can I help you today?
                           </div>
                       </div>
-
+    <!--                  <div class="date-break">-->
+    <!--                      Mon 10:20am-->
+    <!--                  </div>-->
+    <!--                  <div class="message">-->
+    <!--                      <div class="message-content">-->
+    <!--                        Healthy living starts with your daily diet.-->
+    <!--                      </div>-->
+    <!--                  </div>-->
+    <!--                  <div class="message self">-->
+    <!--                      <div class="message-content">-->
+    <!--                        Healthy living starts with your daily diet.-->
+    <!--                      </div>-->
+    <!--                  </div>-->
                   </div>
                   <div class="chat-controls">
                       <input class="message-input" id="message-input" placeholder="Type your message here..." type="text">
                       <div class="chat-extra">
+    <!--                      <a href="javascript:void(0)">-->
+    <!--                          <span class="extra-tooltip">Attach Document</span>-->
+    <!--                          <i class="material-icons">attach_file</i>-->
+    <!--                      </a>-->
+    <!--                      <a href="javascript:void(0)">-->
+    <!--                          <span class="extra-tooltip">Insert Photo</span>-->
+    <!--                          <i class="material-icons">add_a_photo</i>-->
+    <!--                      </a>-->
                           <a href="javascript:void(0)" class="change_chat_theme">
                               <span class="extra-tooltip">Change chat theme</span>
                               <i class="material-icons">refresh</i>
@@ -171,7 +137,7 @@ meter::-webkit-meter-bar {
             <div class="container">
 
               <!-- BEGIN: .navbar-brand -->
-              <a class="navbar-brand" href="/Diary/index/">
+              <a class="navbar-brand" href="/iteration2/index/">
               <img src="/static/images/icons8-rh-plus-gradient-32.png" >Diatastic
               </a>
               <!-- END: .navbar-brand -->
@@ -188,27 +154,25 @@ meter::-webkit-meter-bar {
               <div class="collapse navbar-collapse" id="main-nav">
 
                 <ul class="navbar-nav ml-auto">
-                  <li class="nav-item">
+                    <li class="nav-item">
                     <a class="nav-link" href="/index/">Home</a>
                   </li>
-                  <li class="nav-item">
+                  <li class="nav-item  active">
                     <a class="nav-link" href="/diary/">Diary</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/list_view/">History</a>
-                  </li>
-                  <li class="nav-item">
-                      <a class="nav-link" href="/carb_chart/">Metrics</a>
+                    <a class="nav-link" href="#">History</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="/guide/">Beginner's Guide</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/tips/">Tips and Tricks</a>
+                    <a class="nav-link" href="#">Tips and Tricks</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/faq/">FAQ</a>
+                    <a class="nav-link" href="#">F&Q</a>
                   </li>
+                </ul>
                 </ul>
 
               </div>
@@ -233,69 +197,73 @@ meter::-webkit-meter-bar {
 
         <div class="custom-breadcrumns-23195 border-bottom">
           <div class="container">
-            <a href="/Diary/index/">Home</a>
+            <a href="/iteration2/index/">Home</a>
             <span class="mx-3 icon-keyboard_arrow_right"></span>
             <span class="current">Diary</span>
+
           </div>
         </div>
         <span></span>
 
-          <div class="container">
-              <div> <h3 style="text-align:center"></h3> </div><br>
-              {% for k, v in field.items %}
-              <button class="collapsible" type="button">{{k}}. Comment</button>
-              <div class="content">
-                  <div class="row">
-                      {% for item in v.header %}
-                      <div class="col-lg-2">
-                          <h5><u>{{ item }}</u></h5>
-                      </div>
-                      {% endfor %}
+          <form method="post" action="/success/" id="EmailForm">
+              {% csrf_token %}
+              <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+              <div class="container"><br/>
+                  <div class="form-check">
+                      <label for="email">Email: </label>
+                      <input name="email" id="email" type="email" class="form-control" style="width: 400px" required="required"/>
+                      <label for="subject">Subject: </label>
+                        <input name="subject" id="subject" type="text" class="form-control" style="width: 400px" required="required"/>
                   </div>
-                  {% for row in v.rows %}
-                  <div class="row">
-                      {% for each in row %}
-                      <div class="col-lg-2">
-                            {{ each }}
-                        </div>
-                      {% endfor %}
+                  <div class="form-check">
+                      <label for="message">Message: </label>
+                      <textarea name="message" id="message" type="text" class="form-control" style="height: 200px;" required="required"></textarea>
                   </div>
-                  {% endfor %}
 
-                  <br/>
-                  <div class="row" style="display: in-line">
-                      Blood Sugar:&nbsp;&nbsp;&nbsp;<meter min="2" max="30" low="4" high="25" value="{{v.BSL}}"></meter>
-                      &nbsp;&nbsp;&nbsp;{{v.BSL}} mmol/L
-                  </div>
-                  <div class="row" style="display: in-line">
-                      Insulin:&nbsp;&nbsp;&nbsp;<meter style="display: inline" min="2" max="25" low="4" high="15" value="{{v.insulin}}"></meter>
-                      &nbsp;&nbsp;&nbsp;{{v.insulin}} units
+                  <br>
+                  <div style="float: right;">
+                      <button type="submit" class="btn btn-primary">Send mail</button>
                   </div>
               </div>
-              {% endfor %}
-          </div>
-
-<script>
-    var coll = document.getElementsByClassName("collapsible");
-    var i;
-
-    for (i = 0; i < coll.length; i++) {
-      coll[i].addEventListener("click", function() {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.maxHeight){
-          content.style.maxHeight = null;
-        } else {
-          content.style.maxHeight = content.scrollHeight + "px";
-        }
-      });
-    }
-</script>
+          </form>
+          <span></span>
 
 
+      </div>
+      <!-- END: .site-wrap -->
+
+      <!-- Loader -->
+      <div id="site-overlayer"></div>
+      <div class="site-loader-wrap">
+        <div class="site-loader"></div>
+      </div>
+
+      <!-- BEGIN: JavaScripts -->
+      <script src="/static/js/jquery-3.4.1.min.js"></script>
+      <script src="/static/js/popper.min.js"></script>
+      <script src="/static/js/bootstrap.min.js"></script>
+      <script src="/static/js/jquery.waypoints.min.js"></script>
+      <script src="/static/js/jquery.animateNumber.min.js"></script>
+      <script src="/static/js/tiny-slider.js"></script>
+      <script src="/static/js/jquery.fancybox.min.js"></script>
+      <script src="/static/js/jquery.lavalamp.min.js"></script>
+      <script src="/static/js/jquery.ajaxchimp.min.js"></script>
+      <script src="/static/js/jquery.validate.min.js"></script>
+      <script src="/static/js/jquery.easing.1.3.js"></script>
+      <script src="/static/js/main.js"></script>
+
+      <script src="/static/js/select.js"></script>
+      <script src="/static/js/select_food.js"></script>
+
+
+      <!--   Core JS Files   -->
+      <script src="/static/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
+      <script src="/static/assets/plugins/backstretch/backstretch.js" type="text/javascript"></script>
+      <script src="/static/assets/js/app.js"></script>
+
+
+      <!-- END: JavaScripts -->
 </body>
-
-
 {% else %}
 <script type="text/javascript">
     window.location.href = "/please_login/";

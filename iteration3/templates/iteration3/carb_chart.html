@@ -1,14 +1,188 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Carbohydrates Chart</title>
-</head>
+{% load static %}
+    <html lang="en">
+
+    <head>
+      <link rel="shortcut icon" href="../static/images/icons8-rh-plus-gradient-16.png">
+      <!-- BEGIN: Title -->
+      <title>Diatastic &mdash; Easily Manage Blood Sugar</title>
+      <!-- END: Title -->
+
+      <!-- BEGIN: Meta -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- END: Meta -->
+
+      <!-- BEGIN: Favicon -->
+    <!--  <link rel="shortcut icon" href="/static/images/favicon.png">-->
+      <!-- END: Favicon -->
+
+      <!-- BEGIN: Stylesheets -->
+      <link rel="stylesheet" href="/static/css/bootstrap/bootstrap.css">
+      <link rel="stylesheet" href="/static/css/tiny-slider.css">
+      <link rel="stylesheet" href="/static/fonts/lineicons/LineIcons.min.css">
+      <link rel="stylesheet" href="/static/fonts/icomoon/style.css">
+      <link rel="stylesheet" href="/static/css/animate.min.css">
+      <link rel="stylesheet" href="/static/css/jquery.lavalamp.css">
+      <link rel="stylesheet" href="/static/css/jquery.fancybox.min.css">
+      <link rel="stylesheet" href="/static/css/style.css">
+      <!-- END: Stylesheets -->
+
+    <!-- BEGIN: help bot -->
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+    <!-- ***** Boostrap Custom / Addons Stylesheets ***** -->
+    <link href="/static/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="/static/assets/plugins/material_icon/icon.css" rel="stylesheet"/>
+    <!-- Required CSS file for CSS Chat Panels element -->
+    <link href="/static/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="/static/assets/css/chat_box.css" type="text/css" media="all">
+    <!--END: help bot -->
+    <!-- BEGIN: tree -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="/static/tree/styles.css">
+    <!--END: tree -->
+
+
+    </head>
+
+        <header id="site-header">
+
+          <!-- Add '.navbar_dark' class if you want the color of the text to -->
+          <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
+
+              <!-- BEGIN: .navbar-brand -->
+              <a class="navbar-brand" href="/iteration2/index/">
+              <img src="/static/images/icons8-rh-plus-gradient-32.png" ><font color="black">Diatastic</font>
+    <!--          <img src="/static/images/logo_dark.png" alt="Covid" id="logo_dark">-->
+              </a>
+              <!-- END: .navbar-brand -->
+
+              <!-- BEGIN: .navbar-toggler -->
+              <a href="#" class="burger-toggle-menu js-burger-toggle-menu ml-auto py-4" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+              </a>
+              <!-- END: .navbar-toggler -->
+
+              <!-- BEGIN: #main-nav -->
+              <div class="collapse navbar-collapse" id="main-nav">
+
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/index/"><font color="black">Home</font></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/diary/"><font color="black">Diary</font></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/list_view/"><font color="black">History</font></a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link" href="/carb_chart/"><font color="black">Metrics</font></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/guide/"><font color="black">Beginner's Guide</font></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/tips/"><font color="black">Tips and Tricks</font></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active" href="/faq/"><font color="black">FAQ</font></a>
+                  </li>
+                </ul>
+
+              </div>
+              <!-- END: #main-nav -->
+
+            </div>
+          </nav>
+        </header>
+
+<br><br><br><br>
+ <div class="page-heading-85912" style="background-image: url('images/hero_bg_3.jpg')">
+          <div class="container">
+          </div>
+        </div>
+
+        <div class="custom-breadcrumns-23195 border-bottom">
+          <div class="container">
+            <a href="/iteration2/index/">Home</a>
+            <span class="mx-3 icon-keyboard_arrow_right"></span>
+            <span class="current">Frequently Asked Questions</span>
+          </div>
+        </div>
+        <span></span>
+
+
+      <!-- PAGE HELP BOT -->
+      <div class="container perfect_scrollbar" id="container">
+          <div class="pvr_chat_button">
+              <i class="material-icons">chat</i>
+              <span>Help Bot</span>
+          </div>
+          <div class="pvr_chat_wrapper">
+              <div class="pvr_chat_content">
+                  <div class="close_chat">
+                      <i class="material-icons">close</i>
+                  </div>
+                  <div class="chat_header">
+                      <div class="pvr-user-w with-status status-green">
+                          <div class="pvr-user-avatar-w">
+                              <div class="user-avatar">
+                                  <img alt="" src="/static/assets/img/avatar/default-avatar.jpg">
+                              </div>
+                          </div>
+                          <div class="user-name">
+                              <h6 class="user-title">
+                                  <a href="#" target="_blank">Help Bot</a>
+                              </h6>
+                              <div class="user-role">
+                                  Administrator
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                  <div class="chat-messages theme_2">
+                      <div class="message">
+                          <div class="message-content">
+                            Hi! I'm HelpBot. How can I help you today?
+                          </div>
+                      </div>
+                  </div>
+                  <div class="chat-controls">
+                      <input class="message-input" id="message-input" placeholder="Type your message here..." type="text">
+                      <div class="chat-extra">
+
+                          <a href="javascript:void(0)" class="change_chat_theme">
+                              <span class="extra-tooltip">Change chat theme</span>
+                              <i class="material-icons">refresh</i>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <!-- END: help bot -->
 <body>
-<form method="GET" action="{% url 'carb_chart' %}">
-      {{ form.as_p }}
-    <button>Submit</button>
-</form>
-{{ carb_chart|safe }}
+    <form method="GET" action="{% url 'carb_chart' %}">
+        <div style="text-align: center;">
+            <div style="display: inline-block; width: 300px;">
+                <label for="start">Start Date:</label>
+                <input name="start" id="start" type="date" class="form-control" required="required"/>
+            </div>
+            <div style="display: inline-block; width: 300px;">
+                <label for="end">End Date:</label>
+                <input name="end" id="end" type="date" class="form-control" required="required"/>
+              </div>
+            <button>Submit</button>
+        </div>
+        <div id="carb_chart" class="container" style="height:800px;">
+            {{ carb_chart|safe }}
+        </div>
+        <div style="float: center" class="container">
+            <a href="/mail/"><button type="button">Mail</button></a>
+        </div>
+    </form>
 </body>
 </html>
