@@ -8,7 +8,7 @@
   --title-color: hsl(var(--hue-color), 48%, 22%);
   --text-color: hsl(var(--hue-color), 12%, 35%);
   --body-color: hsl(var(--hue-color), 49%, 98%);
-  --container-color: #FFF;
+  --container1-color: #FFF;
   /*========== Font and typography ==========*/
   --body-font: 'Poppins', sans-serif;
   --normal-font-size: .938rem;
@@ -39,7 +39,7 @@ body {
 }
 
 /*=============== LAYOUT ===============*/
-.container {
+.container1 {
   max-width: 968px;
   margin-left: 1rem;
   margin-right: 1rem;
@@ -57,7 +57,7 @@ body {
   display: grid;
   row-gap: .75rem;
   padding: 2rem 1rem;
-  background-color: var(--container-color);
+  background-color: var(--container1-color);
   border-radius: .5rem;
   box-shadow: 0 12px 32px rgba(51, 51, 51, 0.1);
 }
@@ -91,7 +91,7 @@ body {
 
 .accordion__item {
   box-shadow: 0 2px 6px rgba(38, 38, 38, 0.1);
-  background-color: var(--container-color);
+  background-color: var(--container1-color);
   border-radius: .25rem;
   position: relative;
   transition: all .25s ease;
@@ -177,7 +177,7 @@ body {
 
 /* For large devices */
 @media screen and (min-width: 968px) {
-  .container {
+  .container1 {
     margin-left: auto;
     margin-right: auto;
   }
