@@ -16,7 +16,7 @@ meter::-webkit-meter-bar {
 }
 
 .collapsible {
-  background-color: #e6d7ff;
+<!--  background-color: #e6d7ff;-->
   color: black;
   cursor: pointer;
   padding: 18px;
@@ -29,7 +29,7 @@ meter::-webkit-meter-bar {
 }
 
 .active, .collapsible:hover {
-  background-color: #DCD0FF;
+<!--  background-color: #DCD0FF;-->
 }
 
 .collapsible:after {
@@ -51,7 +51,7 @@ meter::-webkit-meter-bar {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.2s ease-out;
-  background-color: #f6f1ff;
+<!--  background-color: #f6f1ff;-->
   border: none;
 }
 </style>
@@ -129,7 +129,7 @@ meter::-webkit-meter-bar {
                     <a class="nav-link" href="/list_view/">History</a>
                   </li>
                   <li class="nav-item">
-                      <a class="nav-link" href="/carb_chart/">Metrics</a>
+                      <a class="nav-link active" href="/carb_chart/">Metrics</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="/guide/">Beginner's Guide</a>
@@ -138,7 +138,7 @@ meter::-webkit-meter-bar {
                     <a class="nav-link" href="/tips/">Tips and Tricks</a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" href="/FAQ/">FAQ</a>
+                    <a class="nav-link" href="/faq/">FAQ</a>
                   </li>
                 </ul>
 
@@ -174,7 +174,7 @@ meter::-webkit-meter-bar {
           <div class="container">
               <div> <h3 style="text-align:center"></h3> </div><br>
               {% for k, v in field.items %}
-              <button class="collapsible" type="button">{{k}}. Comment</button>
+              <button class="form-control collapsible" type="button">{{k}}. Comment</button>
               <div class="content">
                   <div class="row">
                       {% for item in v.header %}
