@@ -183,12 +183,12 @@ STATICFILES_DIRS = [
 ]
 
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'index'
+LOGIN_REDIRECT_URL = 'diary'
 
 SOCIAL_AUTH_URL_NAMESPACE = 'social'
 
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '786663001814-9q32v7h0latmj3u08eoijntks72kjp0b.apps.googleusercontent.com'
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '1087562863702-0utfhfqp4b41p4gdfnnafb4eoi370p3n.apps.googleusercontent.com'
+SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
 
 #SMTP Configuration
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'

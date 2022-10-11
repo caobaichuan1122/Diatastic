@@ -9,7 +9,6 @@ from .models import DiaryEntries
 import plotly.express as px
 from math import floor
 
-
 def login(request):
     if request.method == "POST":
         login_form = UserForm(request.POST)
@@ -324,3 +323,12 @@ def success(request):
         return render(request, 'iteration3/mail_template.html', {'subject': subject,
                                                                      'message': message,
                                                                      'email': email,'error_message': "Unable to send email. Please try again later"})
+
+def logout(request):
+    if not request.session.get('is_login', None):
+        return redirect("/login/")
+    # request.session.flush()
+    del request.session['is_login']
+    del request.session['user_id']
+    del request.session['user_name']
+    return redirect("/index/")

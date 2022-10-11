@@ -52,9 +52,12 @@
             <div class="container">
 
               <!-- BEGIN: .navbar-brand -->
-              <a class="navbar-brand" href="/Diary/index/">
+              <div style="margin-left:3%">
+              <a class="navbar-brand" href="/index/">
               <img src="/static/images/icons8-rh-plus-gradient-32.png" >Diatastic
+    <!--          <img src="../static/images/logo_dark.png" alt="Covid" id="logo_dark">-->
               </a>
+              </div>
               <!-- END: .navbar-brand -->
 
               <!-- BEGIN: .navbar-toggler -->
@@ -99,6 +102,16 @@
               <!-- END: #main-nav -->
 
             </div>
+            <ul style="margin-right:1%;margin-top:1%;">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><font color="blue">User:{{ request.session.user_name }}</font></a>
+                  </li>
+                </ul>
+                <ul style="margin-right:1%;margin-top:1%;">
+                  <li class="nav-item">
+                      <a class="nav-link" href="/logout/"><font color="red">Log out</font></a>
+                  </li>
+                </ul>
           </nav>
         </header>
         <!-- END: #site-header -->
@@ -183,7 +196,7 @@
                         <td><input id="text4" type="text" value="" readonly></td>
                         <td>
     <!--                        <a href="javascript:;" class="AddTr">add</a>-->
-                            <a class="text_a" href="javascript:;" onclick="deltr(this)"><button type="button">Delete</button></a>
+                            <a class="text_a" href="javascript:;" onclick="deltr(this)"><button type="button" class="btn btn-danger">Delete</button></a>
                         </td>
                     </tr>
                 </tbody>
@@ -222,9 +235,9 @@
                                       {% endfor %}
                                 </select>
                             </td>
-                            <td><input type="number" id="quantity"></td>
+                            <td><input onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"></td>
                             <td>
-                                <a href="javascript:;" class="AddTr"><button type="button">Confirm</button></a>
+                                <a href="javascript:;" class="AddTr"><button type="button" class="btn btn-primary">Confirm</button></a>
     <!--                            <a class="text_a" href="javascript:;" onclick="deltr(this)">delete</a>-->
                             </td>
                         </tr>
@@ -235,7 +248,7 @@
             </div>
         <br>
             <div style="text-align: center;">
-                <button  type="reset" class="btn btn-danger">Reset</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<!--                <button  type="reset" class="btn btn-danger">Reset</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
                 <button name="submit" id="submit" type="submit" class="btn btn-success">Submit</button>
                 <br><br>
           </div>

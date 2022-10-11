@@ -43,10 +43,12 @@
             <div class="container">
 
               <!-- BEGIN: .navbar-brand -->
-              <a class="navbar-brand" href="/iteration2/index/">
+              <div style="margin-left:1%">
+              <a class="navbar-brand" href="/index/">
               <img src="/static/images/icons8-rh-plus-gradient-32.png" ><font color="black">Diatastic</font>
-    <!--          <img src="/static/images/logo_dark.png" alt="Covid" id="logo_dark">-->
+    <!--          <img src="../static/images/logo_dark.png" alt="Covid" id="logo_dark">-->
               </a>
+              </div>
               <!-- END: .navbar-brand -->
 
               <!-- BEGIN: .navbar-toggler -->
@@ -90,11 +92,29 @@
               <!-- END: #main-nav -->
 
             </div>
+              <ul style="margin-right:1%;margin-top:0.8%;">
+                  {% if request.session.is_login %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><font color="blue">User:{{ request.session.user_name }}</font></a>
+                  </li>
+                </ul>
+                <ul style="margin-right:1%;margin-top:0.8%;">
+                  <li class="nav-item">
+                      <a class="nav-link" href="/logout/"><font color="red">Log out</font></a>
+                  </li>
+                </ul>
+                  {% else %}
+                <ul style="margin-right:1%;margin-top:0.8%;">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/login/"><font color="black"><font color="blue">Sgin</font></a>
+                  </li>
+                  {% endif %}
+                </ul>
           </nav>
         </header>
 
 <br><br><br><br>
- <div class="page-heading-85912" style="background-image: url('images/hero_bg_3.jpg')">
+ <div class="page-heading-85912" style="background-image: url('images/hero_bg_3.jpg');margin-top:1%">
           <div class="container">
           </div>
         </div>

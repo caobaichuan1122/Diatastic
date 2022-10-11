@@ -35,13 +35,21 @@
 
           <!-- Add '.navbar_dark' class if you want the color of the text to -->
           <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container">
-
-              <!-- BEGIN: .navbar-brand -->
+              <div style="margin-left:3%">
               <a class="navbar-brand" href="/index/">
               <img src="/static/images/icons8-rh-plus-gradient-32.png" >Diatastic
     <!--          <img src="../static/images/logo_dark.png" alt="Covid" id="logo_dark">-->
               </a>
+              </div>
+            <div class="container">
+
+              <!-- BEGIN: .navbar-brand -->
+<!--              <div style="margin-left:1%">-->
+<!--              <a class="navbar-brand" href="/index/">-->
+<!--              <img src="/static/images/icons8-rh-plus-gradient-32.png" >Diatastic-->
+<!--    &lt;!&ndash;          <img src="../static/images/logo_dark.png" alt="Covid" id="logo_dark">&ndash;&gt;-->
+<!--              </a>-->
+<!--              </div>-->
               <!-- END: .navbar-brand -->
 
               <!-- BEGIN: .navbar-toggler -->
@@ -83,6 +91,24 @@
               <!-- END: #main-nav -->
 
             </div>
+                <ul style="margin-right:1%;margin-top:1%;">
+                  {% if request.session.is_login %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">User:{{ request.session.user_name }}</a>
+                  </li>
+                </ul>
+                <ul style="margin-right:1%;margin-top:1%;">
+                  <li class="nav-item">
+                      <a class="nav-link" href="/logout/">Log out</a>
+                  </li>
+                </ul>
+                  {% else %}
+                <ul style="margin-right:1%;margin-top:1%;">
+                  <li class="nav-item">
+                    <a class="nav-link" href="/login/">Sgin</a>
+                  </li>
+                  {% endif %}
+                </ul>
           </nav>
         </header>
         <!-- END: #site-header -->
@@ -91,20 +117,26 @@
         <div class="cover overlay" style="background-image: url('/static/images/test.jpg');">
           <div class="container">
             <div style="display: flex; align-items:center; justify-content:center;" class="row align-items-center">
-
               <div class="col-12 col-lg-7" style="margin:0 auto;margin-top:7%">
                 <h1 class="heading" style="text-align:center;">Diatastic</h1>
                   <span class="caption mb-3 d-block" style="text-align:center;margin-top:-4%">Diatastic is a one-stop-shop diabetes management website, allowing users to manage their disability with ease.</span>
               </div>
-                <div>
+            <div class="col-12 col-lg-7" style="margin:0 auto;">
+                <div >
                     <iframe width="560" height="315" src="https://www.youtube.com/embed/VglSquiCJxE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
                 </div>
             <div class="row no-gutters feature-29103 align-items-stretch" style="margin:0 auto;margin-top:-1%">
               <div class="col">
+                <a href="/guide/" class="feature-item-29103 h-100">
+                  <span class="heading d-block">Beginner's Guide</span>
+                  <span class="excerpt">All the information you will need as a new diabetic, at your fingertips.</span>
+                  <span class="more">More</span>
+                </a>
+              </div>
+                                 &nbsp; &nbsp; &nbsp;
+              <div class="col">
                 <a href="/diary/" class="feature-item-29103 h-100">
-<!--                  <span class="d-block img-wrap">-->
-<!--&lt;!&ndash;                    <img src="static/images/flaticon/svg/4519286.png" alt="Virus">&ndash;&gt;-->
-<!--                  </span>-->
                   <span class="heading d-block">Diary</span>
                   <span class="excerpt">Enter your blood sugars and food/drinks consumed, and receive a customized recommended insulin dosage.</span>
 
@@ -114,109 +146,17 @@
                  &nbsp; &nbsp; &nbsp;
               <div class="col">
                 <a href="#" class="feature-item-29103 h-100">
-<!--                  <span class="d-block img-wrap">-->
-<!--&lt;!&ndash;                    <img src="static/images/flaticon/svg/dumbbell-icon-11.jpg" alt="Virus">&ndash;&gt;-->
-<!--                  </span>-->
                   <span class="heading d-block">History</span>
                   <span class="excerpt">View your past entries for tracking your blood sugar levels and insulin used.</span>
                   <span class="more">More</span>
                 </a>
               </div>
-                 &nbsp; &nbsp; &nbsp;
-              <div class="col">
-                <a href="/guide/" class="feature-item-29103 h-100">
-<!--                  <span class="d-block img-wrap">-->
-<!--                    <img src="static/images/flaticon/svg/2806517.png" alt="Virus">-->
-<!--                  </span>-->
-                  <span class="heading d-block">Beginner's Guide</span>
-                  <span class="excerpt">All the information you will need as a new diabetic, at your fingertips.</span>
-                  <span class="more">More</span>
-                </a>
-              </div>
-<!--              <div class="col">-->
-<!--                <a href="#" class="feature-item-29103 h-100">-->
-<!--                  <span class="d-block img-wrap">-->
-<!--                    <img src="../static/images/flaticon/svg/012-temperature.svg" alt="Virus">-->
-<!--                  </span>-->
-<!--                  <span class="heading d-block">Blood-Sugar Test</span>-->
-<!--                  <span class="excerpt">Check blood sugar before and two hours after meals.</span>-->
-<!--                  <span class="more">More</span>-->
-<!--                </a>-->
-<!--              </div>-->
-<!--              <div class="col">-->
-<!--                <a href="#" class="feature-item-29103 h-100">-->
-<!--                  <span class="d-block img-wrap">-->
-<!--                    <img src="../static/images/flaticon/svg/2846193.png" alt="Virus">-->
-<!--                  </span>-->
-<!--                  <span class="heading d-block">Schedule Advice</span>-->
-<!--                  <span class="excerpt">Arrange your work and rest time and develop good living habits.</span>-->
-<!--                  <span class="more">More</span>-->
-<!--                </a>-->
-<!--              </div>-->
             </div>
             </div>
           </div>
         </div>
         <!-- END: .cover -->
 
-    <!--    <div class="analytics no-gutters d-block d-md-flex align-items-stretch ml-auto section-counter">-->
-
-    <!--      <div class="col">-->
-    <!--        <div class="data h-100 cases">-->
-
-    <!--          <span class="number number-counter" data-number="5000">0</span> &nbsp;<font size="10" color="white">cal</font>-->
-    <!--          <span class="caption d-block mb-5">Total Food Calories as of 6pm today</span>-->
-    <!--          <div class="last-record d-flex justify-content-between">-->
-    <!--            <div class="data">-->
-    <!--              <span class="caption">Yesterday</span>-->
-    <!--              <span class="number number-counter" data-number="4800">0</span> &nbsp;<font size="5" color="white">cal</font>-->
-    <!--            </div>-->
-    <!--            <div class="data">-->
-    <!--              <span class="caption">Today</span>-->
-    <!--              <span class="number">+ <span class="number-counter" data-number="200">0</span></span>-->
-    <!--            </div>-->
-    <!--          </div>-->
-    <!--          -->
-    <!--        </div>-->
-
-    <!--      </div>-->
-    <!--      <div class="col">-->
-    <!--        <div class="data h-100 deaths">-->
-
-    <!--          <span class="number number-counter" data-number="2000">0</span>&nbsp;<font size="10" color="white">cal</font>-->
-    <!--          <span class="caption d-block mb-5">Total drinks Calories as of 6pm today</span>-->
-    <!--          <div class="last-record d-flex justify-content-between">-->
-    <!--            <div class="data">-->
-    <!--              <span class="caption">Yesterday</span>-->
-    <!--              <span class="number number-counter" data-number="180">0</span> &nbsp;<font size="5" color="white">cal</font>-->
-    <!--            </div>-->
-    <!--            <div class="data">-->
-    <!--              <span class="caption number-counter">Today</span>-->
-    <!--              <span class="number">+<span class="number-counter" data-number="1200">0</span></span>-->
-    <!--            </div>-->
-    <!--          </div>-->
-    <!--        </div>-->
-    <!--      </div>-->
-    <!--      <div class="col">-->
-    <!--        <div class="data h-100 recovered">-->
-    <!--          <span class="number number-counter" data-number="7000">0</span>&nbsp;<font size="10" color="black">cal</font>-->
-    <!--          <span class="caption d-block mb-5">Total Calories as of 6pm today</span>-->
-    <!--          <div class="last-record d-flex justify-content-between">-->
-    <!--            <div class="data">-->
-    <!--              <span class="caption">Yesterday</span>-->
-    <!--              <span class="number number-counter" data-number="5600">0</span> &nbsp;<font size="5" color="black">cal</font>-->
-    <!--            </div>-->
-    <!--            <div class="data">-->
-    <!--              <span class="caption">Today</span>-->
-    <!--              <span class="number">+<span class="number-counter" data-number="1400"></span></span>-->
-    <!--            </div>-->
-    <!--          </div>-->
-    <!--        </div>-->
-    <!--      </div>-->
-    <!--      -->
-    <!--      -->
-    <!--      -->
-    <!--    </div>-->
 
         <!-- BEGIN: #main -->
         <div id="main">
@@ -234,9 +174,6 @@
             <div style="height:300px;width:100%;">
                 <canvas id="chartjs-line-chart3"></canvas>
             </div>
-<!--            <div style="height:300px;width:50%;">-->
-<!--                <canvas id="chartjs-line-chart"></canvas>-->
-<!--            </div>-->
             </div>
           </div>
         </div>
@@ -252,15 +189,6 @@
                 <h3 class="mt-2">manage your blood sugar, join US.</h3>
               </div>
               <div class="col-md-6">
-<!--                <form action="#" id="mc-form" class="form-subscribe">-->
-<!--                  <div class="d-flex align-items-stretch w-100">-->
-<!--                    <input type="email" id="mc-email" placeholder="Email address" class="form-control">-->
-<!--                    <input type="submit" value="GET INFO" class="btn btn-outline-white-reverse">-->
-<!--                  </div>-->
-<!--                  <div class="form-group">-->
-<!--                    <label for="mc-email"></label>-->
-<!--                  </div>-->
-<!--                </form>-->
               </div>
             </div>
             <!-- END: .footer-subscribe -->
@@ -270,13 +198,6 @@
                 <!-- BEGIN: .widget -->
                 <div class="widget">
                   <h3>About Our Team.</h3>
-<!--                  <ul class="nav-link">-->
-<!--                    <li><a href="#">Home</a></li>-->
-<!--                    <li><a href="#">Situation</a></li>-->
-<!--                    <li><a href="#">Prevention</a></li>-->
-<!--                    <li><a href="#">Symptoms</a></li>-->
-<!--                    <li><a href="#">Community</a></li>-->
-<!--                  </ul>-->
                 </div>
                 <!-- END: .widget -->
               </div>
@@ -284,13 +205,6 @@
                 <!-- BEGIN: .widget -->
                 <div class="widget">
                   <h3>Our Motivation.</h3>
-<!--                  <ul class="nav-link">-->
-<!--                    <li><a href="#">Reduce The Spread</a></li>-->
-<!--                    <li><a href="#">Who Are At Risk</a></li>-->
-<!--                    <li><a href="#">Social Distancing</a></li>-->
-<!--                    <li><a href="#">Community Advice</a></li>-->
-<!--                    <li><a href="#">Technical Guidance</a></li>-->
-<!--                  </ul>-->
                 </div>
                 <!-- END: .widget -->
               </div>
@@ -298,32 +212,12 @@
                 <!-- BEGIN: .widget -->
                 <div class="widget">
                   <h3>Our Data.</h3>
-<!--                  <ul class="nav-link">-->
-<!--                    <li><a href="#">Wash Your Hands Often</a></li>-->
-<!--                    <li><a href="#">Wear a Face Mask</a></li>-->
-<!--                    <li><a href="#">Avoid Contact With Sick People</a></li>-->
-<!--                    <li><a href="#">Always Cover Your Cough or Sneeze</a></li>-->
-<!--                    <li><a href="#">Protect Your Family</a></li>-->
-<!--                  </ul>-->
                 </div>
                 <!-- END: .widget -->
               </div>
               <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
                 <div class="d-block">
-<!--                  <ul class="list-unstyled d-flex social-29021">-->
-<!--                    <li><a href="#"><span class="icon-facebook"></span></a></li>-->
-<!--                    <li><a href="#"><span class="icon-twitter"></span></a></li>-->
-<!--                    <li><a href="#"><span class="icon-instagram"></span></a></li>-->
-<!--                    <li><a href="#"><span class="icon-linkedin"></span></a></li>-->
-<!--                  </ul>-->
                 </div>
-
-<!--                <div class="d-block mb-4">-->
-<!--                  <a href="#" class="d-flex call align-items-center">-->
-<!--                    <span class="lni lni-mobile wrap-icon"></span>-->
-<!--                    <span class="number">000 000 0000</span>-->
-<!--                  </a>-->
-<!--                </div>-->
                 <div class="d-block">
                   <p>If you have any question, please contact us at <a href="#" class="link-underline text-primary">info@diatastic.tk</a></p>
                 </div>

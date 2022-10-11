@@ -102,9 +102,12 @@ meter::-webkit-meter-bar {
             <div class="container">
 
               <!-- BEGIN: .navbar-brand -->
-              <a class="navbar-brand" href="/Diary/index/">
+              <div style="margin-left:3%">
+              <a class="navbar-brand" href="/index/">
               <img src="/static/images/icons8-rh-plus-gradient-32.png" >Diatastic
+    <!--          <img src="../static/images/logo_dark.png" alt="Covid" id="logo_dark">-->
               </a>
+              </div>
               <!-- END: .navbar-brand -->
 
               <!-- BEGIN: .navbar-toggler -->
@@ -146,6 +149,16 @@ meter::-webkit-meter-bar {
               <!-- END: #main-nav -->
 
             </div>
+            <ul style="margin-right:1%;margin-top:1%;">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><font color="blue">User:{{ request.session.user_name }}</font></a>
+                  </li>
+                </ul>
+                <ul style="margin-right:1%;margin-top:1%;">
+                  <li class="nav-item">
+                      <a class="nav-link" href="/logout/"><font color="red">Log out</font></a>
+                  </li>
+                </ul>
           </nav>
         </header>
         <!-- END: #site-header -->
@@ -166,7 +179,7 @@ meter::-webkit-meter-bar {
           <div class="container">
             <a href="/Diary/index/">Home</a>
             <span class="mx-3 icon-keyboard_arrow_right"></span>
-            <span class="current">Diary</span>
+            <span class="current">History</span>
           </div>
         </div>
         <span></span>

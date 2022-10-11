@@ -20,4 +20,5 @@ urlpatterns = [
     path('tips/', views.tips, name='tips'),
     path('mail/', views.email_form, name='mail'),
     path('success/', views.success, name='success'),
+    path('logout/', views.logout, name='logout'),
 ]
