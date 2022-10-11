@@ -1,7 +1,8 @@
-from django.urls import path
+from django.urls import path, include
 from iteration3 import views
 urlpatterns = [
     path('', views.index),
+    # path('auth/', include('social_django.urls', namespace='social')),
     path('login/', views.login, name='login'),
     path('index/', views.index, name='index'),
     path('guide/', views.guide, name='guide'),
@@ -15,8 +16,6 @@ urlpatterns = [
     path('please_login/', views.please_login, name='please_login'),
     path('add_list/', views.add_list, name='add_list'),
     path('carb_chart/', views.carb_chart, name='carb_chart'),
-    path('faq/', views.FAQ, name='FAQ'),
+    path('FAQ/', views.FAQ, name='FAQ'),
     path('tips/', views.tips, name='tips'),
-    path('mail/', views.email_form, name='email_form'),
-    path('success/', views.success, name='mail')
 ]

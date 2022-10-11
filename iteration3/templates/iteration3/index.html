@@ -1,627 +1,603 @@
 ﻿{% load static %}
-
-<head>
-    <!-- BEGIN: Title -->
-    <title>Diatastic &mdash; Easily Manage Blood Sugar</title>
-    <!-- END: Title -->
-
-    <!-- BEGIN: Meta -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- END: Meta -->
-
-    <!-- BEGIN: Stylesheets -->
-    <link rel="stylesheet" href="/static/css/bootstrap/bootstrap.css">
-    <link rel="stylesheet" href="/static/css/tiny-slider.css">
-    <link rel="stylesheet" href="/static/fonts/lineicons/LineIcons.min.css">
-    <link rel="stylesheet" href="/static/fonts/icomoon/style.css">
-    <link rel="stylesheet" href="/static/css/animate.min.css">
-    <link rel="stylesheet" href="/static/css/jquery.lavalamp.css">
-    <link rel="stylesheet" href="/static/css/jquery.fancybox.min.css">
-    <link rel="stylesheet" href="/static/css/style.css">
-    <!-- END: Stylesheets -->
-
-</head>
+    <head>
+      <!-- BEGIN: Title -->
+      <title>Diatastic &mdash; Easily Manage Blood Sugar</title>
+      <!-- END: Title -->
 
 
-<body>
+      <!-- BEGIN: Meta -->
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <!-- END: Meta -->
 
-    <!-- BEGIN: .site-wrap -->
-    <div class="site-wrap">
+      <!-- BEGIN: Stylesheets -->
+      <link rel="stylesheet" href="/static/css/bootstrap/bootstrap.css">
+      <link rel="stylesheet" href="/static/css/tiny-slider.css">
+      <link rel="stylesheet" href="/static/fonts/lineicons/LineIcons.min.css">
+      <link rel="stylesheet" href="/static/fonts/icomoon/style.css">
+      <link rel="stylesheet" href="/static/css/animate.min.css">
+      <link rel="stylesheet" href="/static/css/jquery.lavalamp.css">
+      <link rel="stylesheet" href="/static/css/jquery.fancybox.min.css">
+      <link rel="stylesheet" href="/static/css/style.css">
+      <!-- END: Stylesheets -->
+        <script src="/static/js/bot.js" defer></script>
+
+    </head>
+
+
+    <body>
+
+      <!-- BEGIN: .site-wrap -->
+      <div class="site-wrap">
 
         <!-- BEGIN: #site-header -->
         <header id="site-header">
 
-            <!-- Add '.navbar_dark' class if you want the color of the text to -->
-            <nav class="navbar navbar-expand-lg navbar-dark">
-                <div class="container">
+          <!-- Add '.navbar_dark' class if you want the color of the text to -->
+          <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container">
 
-                    <!-- BEGIN: .navbar-brand -->
-                    <a class="navbar-brand" href="/index/">
-                        <img src="/static/images/icons8-rh-plus-gradient-32.png">Diatastic
-                        <!--          <img src="../static/images/logo_dark.png" alt="Covid" id="logo_dark">-->
-                    </a>
-                    <!-- END: .navbar-brand -->
+              <!-- BEGIN: .navbar-brand -->
+              <a class="navbar-brand" href="/index/">
+              <img src="/static/images/icons8-rh-plus-gradient-32.png" >Diatastic
+    <!--          <img src="../static/images/logo_dark.png" alt="Covid" id="logo_dark">-->
+              </a>
+              <!-- END: .navbar-brand -->
 
-                    <!-- BEGIN: .navbar-toggler -->
-                    <a href="#" class="burger-toggle-menu js-burger-toggle-menu ml-auto py-4"
-                        data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </a>
-                    <!-- END: .navbar-toggler -->
+              <!-- BEGIN: .navbar-toggler -->
+              <a href="#" class="burger-toggle-menu js-burger-toggle-menu ml-auto py-4" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+              </a>
+              <!-- END: .navbar-toggler -->
 
-                    <!-- BEGIN: #main-nav -->
-                    <div class="collapse navbar-collapse" id="main-nav">
+              <!-- BEGIN: #main-nav -->
+              <div class="collapse navbar-collapse" id="main-nav">
 
-                        <ul class="navbar-nav ml-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link active" href="/index/">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/diary/">Diary</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/list_view/">History</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/carb_chart/">Metrics</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/guide/">Beginner's Guide</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/tips/">Tips and Tricks</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="/faq/">FAQ</a>
-                            </li>
-                        </ul>
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="/index/">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/diary/">Diary</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/list_view/">History</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/guide/">Beginner's Guide</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/tips/">Tips and Tricks</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/FAQ/">F&Q</a>
+                  </li>
+                </ul>
 
-                    </div>
-                    <!-- END: #main-nav -->
+              </div>
+              <!-- END: #main-nav -->
 
-                </div>
-            </nav>
+            </div>
+          </nav>
         </header>
         <!-- END: #site-header -->
 
         <!-- BEGIN: .cover -->
-        <div class="cover overlay" style="background-image: url('/static/images/home.jpeg');">
-            <div class="container">
-                <div class="row align-items-center">
+        <div class="cover overlay" style="background-image: url('/static/images/test.jpg');">
+          <div class="container">
+            <div class="row align-items-center">
 
-                    <div class="col-12 col-lg-7" style="margin:0 auto">
-                        <h1 class="heading" style="text-align:center;">Diatastic.tk</h1>
-                        <span class="caption mb-3 d-block" style="text-align:center;">Introduction
-                            to DiaTastic and the purpose of the site</span>
-                    </div>
-                    <div class="row no-gutters feature-29103 align-items-stretch"
-                        style="margin:0 auto">
-                        <div class="col">
-                            <a href="/diary/" class="feature-item-29103 h-100">
-                                <!--                  <span class="d-block img-wrap">-->
-                                <!--&lt;!&ndash;                    <img src="static/images/flaticon/svg/4519286.png" alt="Virus">&ndash;&gt;-->
-                                <!--                  </span>-->
-                                <span class="heading d-block">Diary</span>
-                                <span class="excerpt">What does Diary do?</span>
+              <div class="col-12 col-lg-7" style="margin:0 auto;margin-top:5%">
+                <h1 class="heading" style="text-align:center;">Diatastic.tk</h1>
+                  <span class="caption mb-3 d-block" style="text-align:center;">Diatastic is a one-stop-shop diabetes management website, allowing users to manage their disability with ease.</span>
+              </div>
+            <div class="row no-gutters feature-29103 align-items-stretch" style="margin:0 auto">
+              <div class="col">
+                <a href="/diary/" class="feature-item-29103 h-100">
+<!--                  <span class="d-block img-wrap">-->
+<!--&lt;!&ndash;                    <img src="static/images/flaticon/svg/4519286.png" alt="Virus">&ndash;&gt;-->
+<!--                  </span>-->
+                  <span class="heading d-block">Diary</span>
+                  <span class="excerpt">Enter your blood sugars and food/drinks consumed, and receive a customized recommended insulin dosage.</span>
 
-                                <span class="more">More</span>
-                            </a>
-                        </div>
-                        &nbsp; &nbsp; &nbsp;
-                        <div class="col">
-                            <a href="#" class="feature-item-29103 h-100">
-                                <!--                  <span class="d-block img-wrap">-->
-                                <!--&lt;!&ndash;                    <img src="static/images/flaticon/svg/dumbbell-icon-11.jpg" alt="Virus">&ndash;&gt;-->
-                                <!--                  </span>-->
-                                <span class="heading d-block">History</span>
-                                <span class="excerpt">What does history do?</span>
-                                <span class="more">More</span>
-                            </a>
-                        </div>
-                        &nbsp; &nbsp; &nbsp;
-                        <div class="col">
-                            <a href="/guide/" class="feature-item-29103 h-100">
-                                <!--                  <span class="d-block img-wrap">-->
-                                <!--                    <img src="static/images/flaticon/svg/2806517.png" alt="Virus">-->
-                                <!--                  </span>-->
-                                <span class="heading d-block">Beginner's Guide</span>
-                                <span class="excerpt">What does Beginner's Guide do?</span>
-                                <span class="more">More</span>
-                            </a>
-                        </div>
-                        <!--              <div class="col">-->
-                        <!--                <a href="#" class="feature-item-29103 h-100">-->
-                        <!--                  <span class="d-block img-wrap">-->
-                        <!--                    <img src="../static/images/flaticon/svg/012-temperature.svg" alt="Virus">-->
-                        <!--                  </span>-->
-                        <!--                  <span class="heading d-block">Blood-Sugar Test</span>-->
-                        <!--                  <span class="excerpt">Check blood sugar before and two hours after meals.</span>-->
-                        <!--                  <span class="more">More</span>-->
-                        <!--                </a>-->
-                        <!--              </div>-->
-                        <!--              <div class="col">-->
-                        <!--                <a href="#" class="feature-item-29103 h-100">-->
-                        <!--                  <span class="d-block img-wrap">-->
-                        <!--                    <img src="../static/images/flaticon/svg/2846193.png" alt="Virus">-->
-                        <!--                  </span>-->
-                        <!--                  <span class="heading d-block">Schedule Advice</span>-->
-                        <!--                  <span class="excerpt">Arrange your work and rest time and develop good living habits.</span>-->
-                        <!--                  <span class="more">More</span>-->
-                        <!--                </a>-->
-                        <!--              </div>-->
-                    </div>
-                </div>
+                  <span class="more">More</span>
+                </a>
+              </div>
+                 &nbsp; &nbsp; &nbsp;
+              <div class="col">
+                <a href="#" class="feature-item-29103 h-100">
+<!--                  <span class="d-block img-wrap">-->
+<!--&lt;!&ndash;                    <img src="static/images/flaticon/svg/dumbbell-icon-11.jpg" alt="Virus">&ndash;&gt;-->
+<!--                  </span>-->
+                  <span class="heading d-block">History</span>
+                  <span class="excerpt">View your past entries for tracking your blood sugar levels and insulin used.</span>
+                  <span class="more">More</span>
+                </a>
+              </div>
+                 &nbsp; &nbsp; &nbsp;
+              <div class="col">
+                <a href="/guide/" class="feature-item-29103 h-100">
+<!--                  <span class="d-block img-wrap">-->
+<!--                    <img src="static/images/flaticon/svg/2806517.png" alt="Virus">-->
+<!--                  </span>-->
+                  <span class="heading d-block">Beginner's Guide</span>
+                  <span class="excerpt">All the information you will need as a new diabetic, at your fingertips.</span>
+                  <span class="more">More</span>
+                </a>
+              </div>
+<!--              <div class="col">-->
+<!--                <a href="#" class="feature-item-29103 h-100">-->
+<!--                  <span class="d-block img-wrap">-->
+<!--                    <img src="../static/images/flaticon/svg/012-temperature.svg" alt="Virus">-->
+<!--                  </span>-->
+<!--                  <span class="heading d-block">Blood-Sugar Test</span>-->
+<!--                  <span class="excerpt">Check blood sugar before and two hours after meals.</span>-->
+<!--                  <span class="more">More</span>-->
+<!--                </a>-->
+<!--              </div>-->
+<!--              <div class="col">-->
+<!--                <a href="#" class="feature-item-29103 h-100">-->
+<!--                  <span class="d-block img-wrap">-->
+<!--                    <img src="../static/images/flaticon/svg/2846193.png" alt="Virus">-->
+<!--                  </span>-->
+<!--                  <span class="heading d-block">Schedule Advice</span>-->
+<!--                  <span class="excerpt">Arrange your work and rest time and develop good living habits.</span>-->
+<!--                  <span class="more">More</span>-->
+<!--                </a>-->
+<!--              </div>-->
             </div>
+            </div>
+          </div>
         </div>
         <!-- END: .cover -->
 
-        <!--    <div class="analytics no-gutters d-block d-md-flex align-items-stretch ml-auto section-counter">-->
+    <!--    <div class="analytics no-gutters d-block d-md-flex align-items-stretch ml-auto section-counter">-->
 
-        <!--      <div class="col">-->
-        <!--        <div class="data h-100 cases">-->
+    <!--      <div class="col">-->
+    <!--        <div class="data h-100 cases">-->
 
-        <!--          <span class="number number-counter" data-number="5000">0</span> &nbsp;<font size="10" color="white">cal</font>-->
-        <!--          <span class="caption d-block mb-5">Total Food Calories as of 6pm today</span>-->
-        <!--          <div class="last-record d-flex justify-content-between">-->
-        <!--            <div class="data">-->
-        <!--              <span class="caption">Yesterday</span>-->
-        <!--              <span class="number number-counter" data-number="4800">0</span> &nbsp;<font size="5" color="white">cal</font>-->
-        <!--            </div>-->
-        <!--            <div class="data">-->
-        <!--              <span class="caption">Today</span>-->
-        <!--              <span class="number">+ <span class="number-counter" data-number="200">0</span></span>-->
-        <!--            </div>-->
-        <!--          </div>-->
-        <!--          -->
-        <!--        </div>-->
+    <!--          <span class="number number-counter" data-number="5000">0</span> &nbsp;<font size="10" color="white">cal</font>-->
+    <!--          <span class="caption d-block mb-5">Total Food Calories as of 6pm today</span>-->
+    <!--          <div class="last-record d-flex justify-content-between">-->
+    <!--            <div class="data">-->
+    <!--              <span class="caption">Yesterday</span>-->
+    <!--              <span class="number number-counter" data-number="4800">0</span> &nbsp;<font size="5" color="white">cal</font>-->
+    <!--            </div>-->
+    <!--            <div class="data">-->
+    <!--              <span class="caption">Today</span>-->
+    <!--              <span class="number">+ <span class="number-counter" data-number="200">0</span></span>-->
+    <!--            </div>-->
+    <!--          </div>-->
+    <!--          -->
+    <!--        </div>-->
 
-        <!--      </div>-->
-        <!--      <div class="col">-->
-        <!--        <div class="data h-100 deaths">-->
+    <!--      </div>-->
+    <!--      <div class="col">-->
+    <!--        <div class="data h-100 deaths">-->
 
-        <!--          <span class="number number-counter" data-number="2000">0</span>&nbsp;<font size="10" color="white">cal</font>-->
-        <!--          <span class="caption d-block mb-5">Total drinks Calories as of 6pm today</span>-->
-        <!--          <div class="last-record d-flex justify-content-between">-->
-        <!--            <div class="data">-->
-        <!--              <span class="caption">Yesterday</span>-->
-        <!--              <span class="number number-counter" data-number="180">0</span> &nbsp;<font size="5" color="white">cal</font>-->
-        <!--            </div>-->
-        <!--            <div class="data">-->
-        <!--              <span class="caption number-counter">Today</span>-->
-        <!--              <span class="number">+<span class="number-counter" data-number="1200">0</span></span>-->
-        <!--            </div>-->
-        <!--          </div>-->
-        <!--        </div>-->
-        <!--      </div>-->
-        <!--      <div class="col">-->
-        <!--        <div class="data h-100 recovered">-->
-        <!--          <span class="number number-counter" data-number="7000">0</span>&nbsp;<font size="10" color="black">cal</font>-->
-        <!--          <span class="caption d-block mb-5">Total Calories as of 6pm today</span>-->
-        <!--          <div class="last-record d-flex justify-content-between">-->
-        <!--            <div class="data">-->
-        <!--              <span class="caption">Yesterday</span>-->
-        <!--              <span class="number number-counter" data-number="5600">0</span> &nbsp;<font size="5" color="black">cal</font>-->
-        <!--            </div>-->
-        <!--            <div class="data">-->
-        <!--              <span class="caption">Today</span>-->
-        <!--              <span class="number">+<span class="number-counter" data-number="1400"></span></span>-->
-        <!--            </div>-->
-        <!--          </div>-->
-        <!--        </div>-->
-        <!--      </div>-->
-        <!--      -->
-        <!--      -->
-        <!--      -->
-        <!--    </div>-->
+    <!--          <span class="number number-counter" data-number="2000">0</span>&nbsp;<font size="10" color="white">cal</font>-->
+    <!--          <span class="caption d-block mb-5">Total drinks Calories as of 6pm today</span>-->
+    <!--          <div class="last-record d-flex justify-content-between">-->
+    <!--            <div class="data">-->
+    <!--              <span class="caption">Yesterday</span>-->
+    <!--              <span class="number number-counter" data-number="180">0</span> &nbsp;<font size="5" color="white">cal</font>-->
+    <!--            </div>-->
+    <!--            <div class="data">-->
+    <!--              <span class="caption number-counter">Today</span>-->
+    <!--              <span class="number">+<span class="number-counter" data-number="1200">0</span></span>-->
+    <!--            </div>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--      <div class="col">-->
+    <!--        <div class="data h-100 recovered">-->
+    <!--          <span class="number number-counter" data-number="7000">0</span>&nbsp;<font size="10" color="black">cal</font>-->
+    <!--          <span class="caption d-block mb-5">Total Calories as of 6pm today</span>-->
+    <!--          <div class="last-record d-flex justify-content-between">-->
+    <!--            <div class="data">-->
+    <!--              <span class="caption">Yesterday</span>-->
+    <!--              <span class="number number-counter" data-number="5600">0</span> &nbsp;<font size="5" color="black">cal</font>-->
+    <!--            </div>-->
+    <!--            <div class="data">-->
+    <!--              <span class="caption">Today</span>-->
+    <!--              <span class="number">+<span class="number-counter" data-number="1400"></span></span>-->
+    <!--            </div>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--      </div>-->
+    <!--      -->
+    <!--      -->
+    <!--      -->
+    <!--    </div>-->
 
         <!-- BEGIN: #main -->
         <div id="main">
-            <!-- BEGIN: .news-updates-22796 -->
-            <div class=" site-section bg-light news-updates-22796">
-                <div class="container">
-                    <div style="height:300px;width:100%;">
-                        <canvas id="chartjs-line-chart"></canvas>
-                    </div>
-                    <br>
-                    <div style="height:300px;width:100%;">
-                        <canvas id="chartjs-line-chart2"></canvas>
-                    </div>
-                    <br>
-                    <div style="height:300px;width:100%;">
-                        <canvas id="chartjs-line-chart3"></canvas>
-                    </div>
-                    <!--            <div style="height:300px;width:50%;">-->
-                    <!--                <canvas id="chartjs-line-chart"></canvas>-->
-                    <!--            </div>-->
-                </div>
+          <!-- BEGIN: .news-updates-22796 -->
+          <div class=" site-section bg-light news-updates-22796">
+            <div class="container">
+            <div style="height:300px;width:100%;">
+                <canvas id="chartjs-line-chart"></canvas>
             </div>
+                <br>
+            <div style="height:300px;width:100%;">
+                <canvas id="chartjs-line-chart2"></canvas>
+            </div>
+                                <br>
+            <div style="height:300px;width:100%;">
+                <canvas id="chartjs-line-chart3"></canvas>
+            </div>
+<!--            <div style="height:300px;width:50%;">-->
+<!--                <canvas id="chartjs-line-chart"></canvas>-->
+<!--            </div>-->
+            </div>
+          </div>
         </div>
         <!-- END: #main -->
 
-        <!--         BEGIN: #footer-->
+<!--         BEGIN: #footer-->
         <footer id="footer">
-            <div class="container">
+          <div class="container">
 
-                <!-- BEGIN: .footer-subscribe -->
-                <div class="row footer-subscribe">
-                    <div class="col-md-6">
-                        <h3 class="mt-2">manage your blood sugar, join US.</h3>
-                    </div>
-                    <div class="col-md-6">
-                        <!--                <form action="#" id="mc-form" class="form-subscribe">-->
-                        <!--                  <div class="d-flex align-items-stretch w-100">-->
-                        <!--                    <input type="email" id="mc-email" placeholder="Email address" class="form-control">-->
-                        <!--                    <input type="submit" value="GET INFO" class="btn btn-outline-white-reverse">-->
-                        <!--                  </div>-->
-                        <!--                  <div class="form-group">-->
-                        <!--                    <label for="mc-email"></label>-->
-                        <!--                  </div>-->
-                        <!--                </form>-->
-                    </div>
-                </div>
-                <!-- END: .footer-subscribe -->
-
-                <div class="row">
-                    <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
-                        <!-- BEGIN: .widget -->
-                        <div class="widget">
-                            <h3>About Our Team.</h3>
-                            <!--                  <ul class="nav-link">-->
-                            <!--                    <li><a href="#">Home</a></li>-->
-                            <!--                    <li><a href="#">Situation</a></li>-->
-                            <!--                    <li><a href="#">Prevention</a></li>-->
-                            <!--                    <li><a href="#">Symptoms</a></li>-->
-                            <!--                    <li><a href="#">Community</a></li>-->
-                            <!--                  </ul>-->
-                        </div>
-                        <!-- END: .widget -->
-                    </div>
-                    <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
-                        <!-- BEGIN: .widget -->
-                        <div class="widget">
-                            <h3>Our Motivation.</h3>
-                            <!--                  <ul class="nav-link">-->
-                            <!--                    <li><a href="#">Reduce The Spread</a></li>-->
-                            <!--                    <li><a href="#">Who Are At Risk</a></li>-->
-                            <!--                    <li><a href="#">Social Distancing</a></li>-->
-                            <!--                    <li><a href="#">Community Advice</a></li>-->
-                            <!--                    <li><a href="#">Technical Guidance</a></li>-->
-                            <!--                  </ul>-->
-                        </div>
-                        <!-- END: .widget -->
-                    </div>
-                    <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
-                        <!-- BEGIN: .widget -->
-                        <div class="widget">
-                            <h3>Our Data.</h3>
-                            <!--                  <ul class="nav-link">-->
-                            <!--                    <li><a href="#">Wash Your Hands Often</a></li>-->
-                            <!--                    <li><a href="#">Wear a Face Mask</a></li>-->
-                            <!--                    <li><a href="#">Avoid Contact With Sick People</a></li>-->
-                            <!--                    <li><a href="#">Always Cover Your Cough or Sneeze</a></li>-->
-                            <!--                    <li><a href="#">Protect Your Family</a></li>-->
-                            <!--                  </ul>-->
-                        </div>
-                        <!-- END: .widget -->
-                    </div>
-                    <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
-                        <div class="d-block">
-                            <!--                  <ul class="list-unstyled d-flex social-29021">-->
-                            <!--                    <li><a href="#"><span class="icon-facebook"></span></a></li>-->
-                            <!--                    <li><a href="#"><span class="icon-twitter"></span></a></li>-->
-                            <!--                    <li><a href="#"><span class="icon-instagram"></span></a></li>-->
-                            <!--                    <li><a href="#"><span class="icon-linkedin"></span></a></li>-->
-                            <!--                  </ul>-->
-                        </div>
-
-                        <!--                <div class="d-block mb-4">-->
-                        <!--                  <a href="#" class="d-flex call align-items-center">-->
-                        <!--                    <span class="lni lni-mobile wrap-icon"></span>-->
-                        <!--                    <span class="number">000 000 0000</span>-->
-                        <!--                  </a>-->
-                        <!--                </div>-->
-                        <div class="d-block">
-                            <p>If you have any question, please contact us at <a href="#"
-                                    class="link-underline text-primary">info@diatastic.tk</a></p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- BEGIN: .copyright -->
-                <div class="row copyright">
-                    <div class="col-md-6 order-2 text-center text-md-right"><a href="#"
-                            class="js-top"><span class="icon-long-arrow-up mr-2"></span> Go to
-                            Top</a></div>
-                    <div class="col-md-6 text-center text-md-left">
-                        <p>&copy; 2022. All Rights Reserved. Design by <a href="#" target="_blank"
-                                class="link-underline text-primary">TP08</a></p>
-                    </div>
-                </div>
-                <!-- END: .copyright -->
+            <!-- BEGIN: .footer-subscribe -->
+            <div class="row footer-subscribe">
+              <div class="col-md-6">
+                <h3 class="mt-2">manage your blood sugar, join US.</h3>
+              </div>
+              <div class="col-md-6">
+<!--                <form action="#" id="mc-form" class="form-subscribe">-->
+<!--                  <div class="d-flex align-items-stretch w-100">-->
+<!--                    <input type="email" id="mc-email" placeholder="Email address" class="form-control">-->
+<!--                    <input type="submit" value="GET INFO" class="btn btn-outline-white-reverse">-->
+<!--                  </div>-->
+<!--                  <div class="form-group">-->
+<!--                    <label for="mc-email"></label>-->
+<!--                  </div>-->
+<!--                </form>-->
+              </div>
             </div>
+            <!-- END: .footer-subscribe -->
+
+            <div class="row">
+              <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                <!-- BEGIN: .widget -->
+                <div class="widget">
+                  <h3>About Our Team.</h3>
+<!--                  <ul class="nav-link">-->
+<!--                    <li><a href="#">Home</a></li>-->
+<!--                    <li><a href="#">Situation</a></li>-->
+<!--                    <li><a href="#">Prevention</a></li>-->
+<!--                    <li><a href="#">Symptoms</a></li>-->
+<!--                    <li><a href="#">Community</a></li>-->
+<!--                  </ul>-->
+                </div>
+                <!-- END: .widget -->
+              </div>
+              <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                <!-- BEGIN: .widget -->
+                <div class="widget">
+                  <h3>Our Motivation.</h3>
+<!--                  <ul class="nav-link">-->
+<!--                    <li><a href="#">Reduce The Spread</a></li>-->
+<!--                    <li><a href="#">Who Are At Risk</a></li>-->
+<!--                    <li><a href="#">Social Distancing</a></li>-->
+<!--                    <li><a href="#">Community Advice</a></li>-->
+<!--                    <li><a href="#">Technical Guidance</a></li>-->
+<!--                  </ul>-->
+                </div>
+                <!-- END: .widget -->
+              </div>
+              <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                <!-- BEGIN: .widget -->
+                <div class="widget">
+                  <h3>Our Data.</h3>
+<!--                  <ul class="nav-link">-->
+<!--                    <li><a href="#">Wash Your Hands Often</a></li>-->
+<!--                    <li><a href="#">Wear a Face Mask</a></li>-->
+<!--                    <li><a href="#">Avoid Contact With Sick People</a></li>-->
+<!--                    <li><a href="#">Always Cover Your Cough or Sneeze</a></li>-->
+<!--                    <li><a href="#">Protect Your Family</a></li>-->
+<!--                  </ul>-->
+                </div>
+                <!-- END: .widget -->
+              </div>
+              <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+                <div class="d-block">
+<!--                  <ul class="list-unstyled d-flex social-29021">-->
+<!--                    <li><a href="#"><span class="icon-facebook"></span></a></li>-->
+<!--                    <li><a href="#"><span class="icon-twitter"></span></a></li>-->
+<!--                    <li><a href="#"><span class="icon-instagram"></span></a></li>-->
+<!--                    <li><a href="#"><span class="icon-linkedin"></span></a></li>-->
+<!--                  </ul>-->
+                </div>
+
+<!--                <div class="d-block mb-4">-->
+<!--                  <a href="#" class="d-flex call align-items-center">-->
+<!--                    <span class="lni lni-mobile wrap-icon"></span>-->
+<!--                    <span class="number">000 000 0000</span>-->
+<!--                  </a>-->
+<!--                </div>-->
+                <div class="d-block">
+                  <p>If you have any question, please contact us at <a href="#" class="link-underline text-primary">info@diatastic.tk</a></p>
+                </div>
+              </div>
+            </div>
+
+            <!-- BEGIN: .copyright -->
+            <div class="row copyright">
+              <div class="col-md-6 order-2 text-center text-md-right"><a href="#" class="js-top"><span class="icon-long-arrow-up mr-2"></span> Go to Top</a></div>
+              <div class="col-md-6 text-center text-md-left">
+                <p>&copy; 2022. All Rights Reserved. Design by <a href="#" target="_blank" class="link-underline text-primary">TP08</a></p>
+              </div>
+            </div>
+            <!-- END: .copyright -->
+          </div>
         </footer>
-        <!--         END: #footer -->
+<!--         END: #footer -->
 
+      </div>
+      <!-- END: .site-wrap -->
 
-    </div>
-    <!-- END: .site-wrap -->
-
-    <!-- Loader -->
-    <div id="site-overlayer"></div>
-    <div class="site-loader-wrap">
+      <!-- Loader -->
+      <div id="site-overlayer"></div>
+      <div class="site-loader-wrap">
         <div class="site-loader"></div>
-    </div>
+      </div>
 
-    <!-- BEGIN: JavaScripts -->
-    <script src="/static/js/jquery-3.4.1.min.js"></script>
-    <script src="/static/js/popper.min.js"></script>
-    <script src="/static/js/bootstrap.min.js"></script>
-    <script src="/static/js/jquery.waypoints.min.js"></script>
-    <script src="/static/js/jquery.animateNumber.min.js"></script>
-    <script src="/static/js/tiny-slider.js"></script>
-    <script src="/static/js/jquery.fancybox.min.js"></script>
-    <script src="/static/js/jquery.lavalamp.min.js"></script>
-    <script src="/static/js/jquery.ajaxchimp.min.js"></script>
-    <script src="/static/js/jquery.validate.min.js"></script>
-    <script src="/static/js/jquery.easing.1.3.js"></script>
-    <script src="/static/js/main.js"></script>
-    <!-- END: JavaScripts -->
+      <!-- BEGIN: JavaScripts -->
+      <script src="/static/js/jquery-3.4.1.min.js"></script>
+      <script src="/static/js/popper.min.js"></script>
+      <script src="/static/js/bootstrap.min.js"></script>
+      <script src="/static/js/jquery.waypoints.min.js"></script>
+      <script src="/static/js/jquery.animateNumber.min.js"></script>
+      <script src="/static/js/tiny-slider.js"></script>
+      <script src="/static/js/jquery.fancybox.min.js"></script>
+      <script src="/static/js/jquery.lavalamp.min.js"></script>
+      <script src="/static/js/jquery.ajaxchimp.min.js"></script>
+      <script src="/static/js/jquery.validate.min.js"></script>
+      <script src="/static/js/jquery.easing.1.3.js"></script>
+      <script src="/static/js/main.js"></script>
+      <!-- END: JavaScripts -->
 
-    <!--   Core JS Files   -->
+      <!--   Core JS Files   -->
     <!--  <script src="../static/assets/plugins/jquery/jquery-3.2.1.min.js" type="text/javascript"></script>-->
-    <script src="/static/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js"
-        type="text/javascript"></script>
-    <script src="/static/assets/plugins/backstretch/backstretch.js" type="text/javascript"></script>
-    <script src="/static/assets/js/app.js"></script>
-    <!-- END: JavaScripts -->
+      <script src="/static/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
+      <script src="/static/assets/plugins/backstretch/backstretch.js" type="text/javascript"></script>
+      <script src="/static/assets/js/app.js"></script>
+      <!-- END: JavaScripts -->
 
     <!--  BEGIN: Core Chart Files   -->
     <script src="/static/chart/Chart.min.js"></script>
     <!-- END: Core Chart Files -->
 
-<script type="text/javascript">
-    (function(d, m){
-        var kommunicateSettings =
-            {"appId":"16d104c5b45123a983a4e49c65eb3f22a","popupWidget":true,"automaticChatOpenOnNavigation":true};
-        var s = document.createElement("script"); s.type = "text/javascript"; s.async = true;
-        s.src = "https://widget.kommunicate.io/v2/kommunicate.app";
-        var h = document.getElementsByTagName("head")[0]; h.appendChild(s);
-        window.kommunicate = m; m._globals = kommunicateSettings;
-    })(document, window.kommunicate || {});
-/* NOTE : Use web server to view HTML files as real-time update will not work if you directly open the HTML file in the browser. */
-</script>
-
-</body>
+    </body>
 
 <script>
 
-    window.chartColors = {
-        red: 'rgb(255, 99, 132)',
-        orange: 'rgb(255, 159, 64)',
-        yellow: 'rgb(255, 205, 86)',
-        green: 'rgb(75, 192, 192)',
-        blue: 'rgb(54, 162, 235)',
-        purple: 'rgb(153, 102, 255)',
-        grey: 'rgb(201, 203, 207)'
-    };
+        window.chartColors = {
+            red: 'rgb(255, 99, 132)',
+            orange: 'rgb(255, 159, 64)',
+            yellow: 'rgb(255, 205, 86)',
+            green: 'rgb(75, 192, 192)',
+            blue: 'rgb(54, 162, 235)',
+            purple: 'rgb(153, 102, 255)',
+            grey: 'rgb(201, 203, 207)'
+        };
 
-    window.randomScalingFactor = function () {
-        return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100);
-    };
-    var lineConfig = {
-        type: 'line',
-        data: {
-            labels: ["1", "2", "3", "4"],
-            datasets: [{
-                label: "Blood Sugar Level",
-                backgroundColor: window.chartColors.red,
-                borderColor: window.chartColors.red,
-                data: [
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor()
-                ],
-                fill: false,
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            title: {
-                display: true,
-                text: 'Blood Sugar Level'
-            },
-            tooltips: {
-                mode: 'index',
-                intersect: false,
-            },
-            hover: {
-                mode: 'nearest',
-                intersect: true
-            },
-            scales: {
-                xAxes: [{
-                    display: true,
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Datetime'
-                    }
-                }],
-                yAxes: [{
-                    display: true,
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Value'
-                    }
+        window.randomScalingFactor = function () {
+            return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100);
+        };
+        var lineConfig = {
+            type: 'line',
+            data: {
+                labels: ["1", "2", "3", "4"],
+                datasets: [{
+                    label: "Blood Sugar Level",
+                    backgroundColor: window.chartColors.red,
+                    borderColor: window.chartColors.red,
+                    data: [
+                        randomScalingFactor(),
+                        randomScalingFactor(),
+                        randomScalingFactor(),
+                        randomScalingFactor()
+                    ],
+                    fill: false,
                 }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                title: {
+                    display: true,
+                    text: 'Blood Sugar Level'
+                },
+                tooltips: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                hover: {
+                    mode: 'nearest',
+                    intersect: true
+                },
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Date and Time'
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'mmol/L'
+                        }
+                    }]
+                }
             }
-        }
-    };
+        };
 
 
 
-    var lineCtx = document.getElementById("chartjs-line-chart").getContext("2d");
-    window.myLine = new Chart(lineCtx, lineConfig);
+        var lineCtx = document.getElementById("chartjs-line-chart").getContext("2d");
+        window.myLine = new Chart(lineCtx, lineConfig);
 
 </script>
 
 <script>
 
-    window.chartColors = {
-        red: 'rgb(255, 99, 132)',
-        orange: 'rgb(255, 159, 64)',
-        yellow: 'rgb(255, 205, 86)',
-        green: 'rgb(75, 192, 192)',
-        blue: 'rgb(54, 162, 235)',
-        purple: 'rgb(153, 102, 255)',
-        grey: 'rgb(201, 203, 207)'
-    };
+        window.chartColors = {
+            red: 'rgb(255, 99, 132)',
+            orange: 'rgb(255, 159, 64)',
+            yellow: 'rgb(255, 205, 86)',
+            green: 'rgb(75, 192, 192)',
+            blue: 'rgb(54, 162, 235)',
+            purple: 'rgb(153, 102, 255)',
+            grey: 'rgb(201, 203, 207)'
+        };
 
-    window.randomScalingFactor = function () {
-        return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100);
-    };
-
-
+        window.randomScalingFactor = function () {
+            return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100);
+        };
 
 
-    var lineConfig = {
-        type: 'line',
-        data: {
-            labels: ["January", "February", "March", "April"],
-            datasets: [{
-                label: "Carbohydrates",
-                backgroundColor: window.chartColors.blue,
-                borderColor: window.chartColors.blue,
-                data: [
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                ],
-                fill: false,
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            title: {
-                display: true,
-                text: 'Carbohydrates'
-            },
-            tooltips: {
-                mode: 'index',
-                intersect: false,
-            },
-            hover: {
-                mode: 'nearest',
-                intersect: true
-            },
-            scales: {
-                xAxes: [{
-                    display: true,
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Datetime'
-                    }
-                }],
-                yAxes: [{
-                    display: true,
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Value'
-                    }
+
+
+        var lineConfig = {
+            type: 'line',
+            data: {
+                labels: ["January", "February", "March", "April"],
+                datasets: [{
+                    label: "Carbohydrates",
+                    backgroundColor: window.chartColors.blue,
+                    borderColor: window.chartColors.blue,
+                    data: [
+                        randomScalingFactor(),
+                        randomScalingFactor(),
+                        randomScalingFactor(),
+                        randomScalingFactor(),
+                    ],
+                    fill: false,
                 }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                title: {
+                    display: true,
+                    text: 'Carbohydrates'
+                },
+                tooltips: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                hover: {
+                    mode: 'nearest',
+                    intersect: true
+                },
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Date and Time'
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Grams'
+                        }
+                    }]
+                }
             }
-        }
-    };
+        };
 
 
 
-    var lineCtx2 = document.getElementById("chartjs-line-chart2").getContext("2d");
-    window.myLine = new Chart(lineCtx2, lineConfig);
+        var lineCtx2 = document.getElementById("chartjs-line-chart2").getContext("2d");
+        window.myLine = new Chart(lineCtx2, lineConfig);
 
 </script>
 
 <script>
 
-    window.chartColors = {
-        red: 'rgb(255, 99, 132)',
-        orange: 'rgb(255, 159, 64)',
-        yellow: 'rgb(255, 205, 86)',
-        green: 'rgb(75, 192, 192)',
-        blue: 'rgb(54, 162, 235)',
-        purple: 'rgb(153, 102, 255)',
-        grey: 'rgb(201, 203, 207)'
-    };
+        window.chartColors = {
+            red: 'rgb(255, 99, 132)',
+            orange: 'rgb(255, 159, 64)',
+            yellow: 'rgb(255, 205, 86)',
+            green: 'rgb(75, 192, 192)',
+            blue: 'rgb(54, 162, 235)',
+            purple: 'rgb(153, 102, 255)',
+            grey: 'rgb(201, 203, 207)'
+        };
 
-    window.randomScalingFactor = function () {
-        return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100);
-    };
-
-
+        window.randomScalingFactor = function () {
+            return (Math.random() > 0.5 ? 1.0 : -1.0) * Math.round(Math.random() * 100);
+        };
 
 
-    var lineConfig = {
-        type: 'line',
-        data: {
-            labels: ["January", "February", "March", "April"],
-            datasets: [{
-                label: "Insulin",
-                backgroundColor: window.chartColors.green,
-                borderColor: window.chartColors.green,
-                data: [
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                    randomScalingFactor(),
-                ],
-                fill: false,
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            title: {
-                display: true,
-                text: 'Insulin'
-            },
-            tooltips: {
-                mode: 'index',
-                intersect: false,
-            },
-            hover: {
-                mode: 'nearest',
-                intersect: true
-            },
-            scales: {
-                xAxes: [{
-                    display: true,
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Datetime'
-                    }
-                }],
-                yAxes: [{
-                    display: true,
-                    scaleLabel: {
-                        display: true,
-                        labelString: 'Value'
-                    }
+
+
+        var lineConfig = {
+            type: 'line',
+            data: {
+                labels: ["January", "February", "March", "April"],
+                datasets: [{
+                    label: "Insulin",
+                    backgroundColor: window.chartColors.green,
+                    borderColor: window.chartColors.green,
+                    data: [
+                        randomScalingFactor(),
+                        randomScalingFactor(),
+                        randomScalingFactor(),
+                        randomScalingFactor(),
+                    ],
+                    fill: false,
                 }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                title: {
+                    display: true,
+                    text: 'Insulin'
+                },
+                tooltips: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                hover: {
+                    mode: 'nearest',
+                    intersect: true
+                },
+                scales: {
+                    xAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Date and Time'
+                        }
+                    }],
+                    yAxes: [{
+                        display: true,
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Units'
+                        }
+                    }]
+                }
             }
-        }
-    };
+        };
 
 
 
 
-    var lineCtx3 = document.getElementById("chartjs-line-chart3").getContext("2d");
-    window.myLine = new Chart(lineCtx3, lineConfig);
+        var lineCtx3 = document.getElementById("chartjs-line-chart3").getContext("2d");
+        window.myLine = new Chart(lineCtx3, lineConfig);
 
 </script>
 
