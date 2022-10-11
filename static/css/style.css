@@ -375,7 +375,6 @@ a.more {
       .cover .heading {
         font-size: 2rem; } }
   .cover .caption {
-    text-transform: uppercase;
     font-size: 12px;
     letter-spacing: .1rem;
     color: #fff;
