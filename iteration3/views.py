@@ -34,7 +34,9 @@ def login(request):
 
 def load_portion(request):
     category_id = request.GET.get('category')
-    portion = Portion.objects.filter(category_id=category_id).order_by('name')
+    description_id = request.GET.get('description')
+    portion = Portion.objects.filter(category_id=category_id,
+                                     description_id=description_id).order_by('name')
     return render(request, 'iteration3/portion_dropdown_list_options.html', {'portion': portion})
 
 def load_description(request):
