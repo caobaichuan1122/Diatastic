@@ -35,15 +35,15 @@
                     {% csrf_token %}
                     <h1>login</h1>
                     <div class="social-links">
-                        <div>
-                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-                        </div>
+<!--                        <div>-->
+<!--                            <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>-->
+<!--                        </div>-->
                         <div>
                             <a href="{% url 'social:begin' 'google-oauth2' %}"><i class="fa fa-google" aria-hidden="true"></i></a>
                         </div>
-                        <div>
-                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
-                        </div>
+<!--                        <div>-->
+<!--                            <a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a>-->
+<!--                        </div>-->
                     </div>
                     <span>use account</span>
                     <input name='user' type="user" placeholder="User">

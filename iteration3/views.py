@@ -1,35 +1,59 @@
 import json
 from django.db.models import Sum
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from decimal import Decimal
-from .models import User, Diary_Menu, Category, Portion, Menu, Description
-from .forms import  UserForm, DateForm, EmailForm
+from .models import Diary_Menu, Category, Portion, Menu, Description
+from .forms import UserForm, DateForm, EmailForm
 from .models import DiaryEntries
+from django.contrib.auth.models import User
 import plotly.express as px
 from math import floor
+from social_django.models import UserSocialAuth
 
 def login(request):
-    if request.method == "POST":
-        login_form = UserForm(request.POST)
-        message = "please check！"
-        if login_form.is_valid():
-            username = login_form.cleaned_data['username']
-            password = login_form.cleaned_data['password']
-        username = request.POST.get('user')
-        password = request.POST.get('password')
-        try:
-            user = User.objects.get(name=username)
-            if user.password == password:
+    for key, value in request.session.items():
+        print('{} => {}'.format(key, value))
+    # if request.method == "POST":
+    #     if request.session['_auth_user_id']:
+    #         user_id = request.session['_auth_user_id']
+    #         if user_id:
+    #             print(UserSocialAuth.objects.get(user_id=user_id))
+    #     login_form = UserForm(request.POST)
+    #     message = "please check！"
+    #     if login_form.is_valid():
+    #         username = login_form.cleaned_data['username']
+    #         password = login_form.cleaned_data['password']
+    #     username = request.POST.get('user')
+    #     password = request.POST.get('password')
+        if request.session['_auth_user_id']:
+            try:
+                id=request.session['_auth_user_id']
                 request.session['is_login'] = True
-                request.session['user_id'] = user.id
-                request.session['user_name'] = user.name
-                return redirect('/index/')
-            else:
-                messages.error(request, 'password error！')
-        except:
-            messages.error(request, 'user error！')
+                request.session['user_name'] = User.objects.get(id=id).first_name
+                return redirect('/diary/')
+            except:
+                return render(request, 'iteration3/login.html', {'iteration3':'iteration3'})
+        # else:
+        #     messages.error(request, 'password error！')
+        # except:
+        #     messages.error(request, 'user error！')
     return render(request, 'iteration3/login.html',{'iteration3':'iteration3'})
+
+def logout(request):
+    if not request.session.get('is_login', None):
+        return redirect("/login/")
+    request.session.flush()
+    # del request.session['is_login']
+    # del request.session['user_id']
+    # del request.session['user_name']
+    return redirect("/index/")
+
+    # print(user)
+    # if request.method == "GET":
+    #     social = user.social_auth.get(provider='google-oauth2')
+    #     print(social)
 
 def load_portion(request):
     category_id = request.GET.get('category')
@@ -324,11 +348,3 @@ def success(request):
                                                                      'message': message,
                                                                      'email': email,'error_message': "Unable to send email. Please try again later"})
 
-def logout(request):
-    if not request.session.get('is_login', None):
-        return redirect("/login/")
-    # request.session.flush()
-    del request.session['is_login']
-    del request.session['user_id']
-    del request.session['user_name']
-    return redirect("/index/")
