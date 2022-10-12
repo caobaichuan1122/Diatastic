@@ -187,7 +187,7 @@ meter::-webkit-meter-bar {
           <div class="container">
               <div> <h3 style="text-align:center"></h3> </div><br>
               {% for k, v in field.items %}
-              <button class="form-control collapsible" type="button">{{k}}. Comment</button>
+              <button class="form-control collapsible" type="button">{{k}}. {{v.comment}}</button>
               <div class="content">
                   <div class="row">
                       {% for item in v.header %}

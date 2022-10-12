@@ -154,24 +154,37 @@
         </div>
 <!--    Date Time-->
         <br><br><br>
-        <div style="text-align: center;">
+        <div style="text-align: center;display: inline;">
+<!--            <div>-->
+<!--                <div style="float: left;"><label for="date" style="margin-right: 20%">Date:</label></div>-->
+<!--                <div style="float: left;"><label for="time" style="margin-right: 20%;">Time: </label></div>-->
+<!--                <div style="float: left;"><label for="blood_sugar_level" style="margin-right: 5%">Blood Sugar Level: </label></div>-->
+<!--            </div>-->
+            <fieldset style="display: inline;margin-left:15%">
+            <legend>Date:</legend>
             <div style="display: inline-block; width: 200px;">
-                <label for="date">Date:</label>
+<!--                <label for="date">Date:</label>-->
                     <input name="date" id="date" type="date" class="form-control" required="required"/>
               </div>
-
-
+                </fieldset>
     <!--      Time field.-->
-              <div style="display: inline-block; width: 200px; margin:15px">
-                  <label for="time">Time: </label>
+            <fieldset style="display: inline;">
+                <legend>Time:</legend>
+              <div style="display: inline-block; width: 200px;">
+<!--                  <label for="time">Time: </label>-->
                         <input name="time" id="time" type="time" class="form-control" required="required"/>
               </div>
+            </fieldset>
+
+            <!--      blood_sugar_level field.-->
+            <fieldset style="display: inline;">
+            <legend>Blood Sugar Level:</legend>
           <div id="bsl_slider" class="form-class numeric-slider" style="display: inline">
-              <label for="blood_sugar_level">Blood Sugar Level: </label>
+<!--              <label for="blood_sugar_level">Blood Sugar Level: </label>-->
 <!--                Number input-->
                     <input name="blood_sugar_level" id="blood_sugar_level" type="number"
                            min = "1" max="30" step="0.1"
-                           class="form-control" style="display: inline; width: 80px;"
+                           class="form-control" style="display: inline; width: 180px;"
                            required="required" value="{{blood_sugar_level}}"/>
 
 <!--                Slider input-->
@@ -181,7 +194,13 @@
                            required="required"/>
               <span class="font-weight-bold">30</span>
           </div>
+        </fieldset>
+            <br><br>
         </div>
+        <fieldset style="margin-left:15%">
+                     <legend>Comment:</legend>
+                    <input id="comment" type="text" style="width:300%">
+                 </fieldset>
         <br/>
 
 <!--      Menu options-->
@@ -235,7 +254,7 @@
                                       {% endfor %}
                                 </select>
                             </td>
-                            <td><input onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"></td>
+                            <td><input type="number"  id='quantity' onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}"></td>
                             <td>
                                 <a href="javascript:;" class="AddTr"><button type="button" class="btn btn-primary">Confirm</button></a>
     <!--                            <a class="text_a" href="javascript:;" onclick="deltr(this)">delete</a>-->
@@ -249,12 +268,16 @@
         <br>
             <div style="text-align: center;">
 <!--                <button  type="reset" class="btn btn-danger">Reset</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-->
+<!--                 <fieldset style="margin-left:15%">-->
+<!--                     <legend>comment:</legend>-->
+<!--                    <input id="comment" type="text" style="width:300%">-->
+<!--                 </fieldset>-->
+                <br><br>
                 <button name="submit" id="submit" type="submit" class="btn btn-success">Submit</button>
                 <br><br>
           </div>
     </div>
 </form>
-
         <!-- END: diary form -->
 
 
@@ -581,7 +604,7 @@ cart_dict = new Array();
                                             count++;
                                             cart_dict.push({'date':date, 'time': time, 'BSL': BSL,
                                                             'categoryId': categoryId, 'descriptionId': descriptionId, 'portionId': portionId,
-                                                            'Q': Q
+                                                            'Q': Q,'comment':comment
                                                             });
                                                     }
             }
@@ -692,6 +715,23 @@ cart_dict = new Array();
         .btn_a1 .addtr2, .btn_a1 .dtadd {
             background: #ff9900;
         }
+
+fieldset {
+  width: max-content;
+}
+
+legend {
+  font-size: 12px;
+}
+
+#exampleDataList {
+  width: 15rem;
+  border: none;
+}
+
+#exampleDataList:focus {
+  outline: none;
+}
 </style>
 
 {% else %}

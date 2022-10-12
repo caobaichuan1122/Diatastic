@@ -12,6 +12,7 @@ class DiaryForm(forms.ModelForm):
 
     blood_sugar_level = forms.DecimalField(max_digits=3,
                                            decimal_places=1)
+    comment = forms.CharField(max_length=1280, widget=forms.TextInput(attrs={'class': 'form-control'}),required=False)
 
     # Menu-related fields.
     # category = forms.ChoiceField(choices=[(cat.id, cat.name) for cat in Category.objects.all()])

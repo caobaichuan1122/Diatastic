@@ -1,7 +1,9 @@
 # iteration3/models.py
-
+from django.conf import settings
 from django.db import models
 from django.core.validators import MinValueValidator
+
+
 
 # User
 class User(models.Model):
@@ -53,6 +55,8 @@ class Menu(models.Model):
 class DiaryEntries(models.Model):
     date = models.DateField()
     time = models.TimeField()
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,default=3)
+    comment = models.CharField(max_length=1280,null=True)
 
     blood_sugar_level = models.DecimalField(
         decimal_places=2,
@@ -69,10 +73,12 @@ class DiaryEntries(models.Model):
         max_digits=5
     )
 
+
 # Diary_Menu - Stores each item separately, and records the individual carb value.
 class Diary_Menu(models.Model):
     id = models.AutoField(primary_key=True)
     diary = models.ForeignKey(DiaryEntries, on_delete=models.CASCADE)
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,default=3)
     date = models.DateField()
     time = models.TimeField()
 

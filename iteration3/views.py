@@ -1,16 +1,17 @@
 import json
+from datetime import datetime
+
 from django.db.models import Sum
 from django.contrib import messages
-from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, get_object_or_404, redirect
 from decimal import Decimal
 from .models import Diary_Menu, Category, Portion, Menu, Description
-from .forms import UserForm, DateForm, EmailForm
+from .forms import  DateForm, EmailForm
 from .models import DiaryEntries
 from django.contrib.auth.models import User
 import plotly.express as px
 from math import floor
-from social_django.models import UserSocialAuth
+
 
 def login(request):
     for key, value in request.session.items():
@@ -32,7 +33,7 @@ def login(request):
                 id=request.session['_auth_user_id']
                 request.session['is_login'] = True
                 request.session['user_name'] = User.objects.get(id=id).first_name
-                return redirect('/diary/')
+                return redirect('/index/')
             except:
                 return render(request, 'iteration3/login.html', {'iteration3':'iteration3'})
         # else:
@@ -45,15 +46,8 @@ def logout(request):
     if not request.session.get('is_login', None):
         return redirect("/login/")
     request.session.flush()
-    # del request.session['is_login']
-    # del request.session['user_id']
-    # del request.session['user_name']
     return redirect("/index/")
 
-    # print(user)
-    # if request.method == "GET":
-    #     social = user.social_auth.get(provider='google-oauth2')
-    #     print(social)
 
 def load_portion(request):
     category_id = request.GET.get('category')
@@ -79,17 +73,18 @@ def diary(request):
 # Diary views.
 def create_view(request):
     if request.method == "POST":
+        id = request.session['_auth_user_id']
+        # print(id)
         cart = request.POST.get('cart_items')
-        sub = request.POST.get('submit_items')
         if len(json.loads(cart)) != 0:
             cart = json.loads(cart)
 
             # Generate the diary_id.
             DiaryEntries.objects.create(date=cart[0]['date'], time=cart[0]['time'],
                                         blood_sugar_level=cart[0]['BSL'],
-                                        carbohydrates=0.0, insulin=0.0)
+                                        carbohydrates=0.0, insulin=0.0,user_id=id)
             # Retrieve the id.
-            diaryentries_id = DiaryEntries.objects.filter(date=cart[0]['date'], time=cart[0]['time']).values('id')[0]['id']
+            diaryentries_id = DiaryEntries.objects.filter(date=cart[0]['date'], time=cart[0]['time'],user_id=id).values('id')[0]['id']
 
             for item in cart:
                 category = Category.objects.filter(id=item['categoryId']).values('name')[0]['name']
@@ -110,7 +105,7 @@ def create_view(request):
                 Diary_Menu.objects.create(diary_id=diaryentries_id,
                                           date=item['date'], time=item['time'],
                                           category=category, description=description, portion=portion, quantity=item['Q'],
-                                          carbohydrates=item_carbs)
+                                          carbohydrates=item_carbs,user_id=id)
 
             # Groupby to get the sum of carbohydrates.
             carbs = Diary_Menu.objects.filter(date=cart[0]['date'], time=cart[0]['time'],
@@ -124,51 +119,8 @@ def create_view(request):
             # Update insulin value.
             DiaryEntries.objects.filter(id=diaryentries_id).update(carbohydrates=carbs)
             DiaryEntries.objects.filter(id=diaryentries_id).update(insulin=insulin)
+            DiaryEntries.objects.filter(id=diaryentries_id).update(comment=cart[0]['comment'])
             return render(request, 'Diary/list_view.html', context={'cart': cart})
-
-        elif len(json.loads(sub)) != 0:
-            sub = json.loads(sub)
-            # Generate the diary_id.
-            DiaryEntries.objects.create(date=sub[0]['date'], time=sub[0]['time'],
-                                        blood_sugar_level=sub[0]['BSL'],
-                                        carbohydrates=0.0, insulin=0.0)
-            # Retrieve the id.
-            diaryentries_id = DiaryEntries.objects.filter(date=sub[0]['date'], time=sub[0]['time']).values('id')[0]['id']
-
-            category = Category.objects.filter(id=sub[0]['categoryId']).values('name')[0]['name']
-            description = Description.objects.filter(id=sub[0]['descriptionId']).values('name')[0]['name']
-            portion = Portion.objects.filter(id=sub[0]['portionId']).values('name')[0]['name']
-
-            # Retrieving item carb value, and weight.
-            item_carbs = Menu.objects.filter(category=category,
-                                             description=description,
-                                             portion=portion).values('carbohydrates')[0]['carbohydrates']
-            item_weight = Menu.objects.filter(category=category,
-                                              description=description,
-                                              portion=portion).values('portion_weight')[0]['portion_weight']
-
-            # Calculate carb value for item.
-            item_carbs = item_carbs * item_weight * Decimal(0.01) * sub[0]['Q']
-
-            # Update database.
-            Diary_Menu.objects.create(diary_id=diaryentries_id,
-                                      date=sub[0]['date'], time=sub[0]['time'],
-                                      category=category, description=description, portion=portion, quantity=sub[0]['Q'],
-                                      carbohydrates=item_carbs)
-
-            # Groupby to get the sum of carbohydrates.
-            carbs = Diary_Menu.objects.filter(date=sub[0]['date'], time=sub[0]['time'],
-                                              diary_id=diaryentries_id).aggregate(total_sum=Sum('carbohydrates'))
-            # Retrieve sum.
-            carbs = carbs['total_sum']
-
-            # Get insulin value.
-            insulin = insulin_calculation(carbs, sub[0]['BSL'])
-
-            # Update insulin value.
-            DiaryEntries.objects.filter(id=diaryentries_id).update(carbohydrates=carbs)
-            DiaryEntries.objects.filter(id=diaryentries_id).update(insulin=insulin)
-            return render(request, 'iteration3/list_view.html', context={'cart': cart})
     return render(request, 'iteration3/list_view.html', context={'cart': request.GET.get('cart')})
 
 
@@ -187,7 +139,8 @@ def entry_view(request, diary_id):
     return render(request, "iteration3/entry_view.html", context)
 
 def list_view(request):
-    Entries = DiaryEntries.objects.values().all()
+    user_id = request.session['_auth_user_id']
+    Entries = DiaryEntries.objects.filter(user_id=user_id).values().all()
     Details = Diary_Menu.objects.values().values_list()
     ListViewDict = {}
 
@@ -202,7 +155,11 @@ def list_view(request):
                 ListViewDict[id]['rows'].append([temp[i][4], temp[i][5], temp[i][6], temp[i][7], temp[i][8]])
             ListViewDict[id]['insulin'] = floor(DiaryEntries.objects.filter(id=id).values_list('insulin', flat=True)[0])
             ListViewDict[id]['BSL'] = DiaryEntries.objects.filter(id=id).values_list('blood_sugar_level', flat=True)[0]
-            print(floor(DiaryEntries.objects.filter(id=id).values_list('insulin', flat=True)[0]))
+            comment = DiaryEntries.objects.filter(id=id).values_list('comment', flat=True)[0]
+            if comment=="{}":
+                DiaryEntries.objects.filter(id=id).update(comment="Date: {}, Time: {}".format(item['date'], item['time']))
+                # ListViewDict[id]['comment'] = "Date: {}, Time: {}".format(item.date, item.time)
+            ListViewDict[id]['comment'] = DiaryEntries.objects.filter(id=id).values_list('comment', flat=True)[0]
     context = {
         'field': ListViewDict,
         'details': Details,
@@ -228,62 +185,126 @@ def insulin_calculation(carbs, blood_sugar_level):
     return insulin_req
 
 def carb_chart(request):
-    entries = Diary_Menu.objects.all().order_by('-date', '-time')
-
+    entries = DiaryEntries.objects.all().order_by('-date', '-time')
     # If there are entries, check for the start date and end date.
     if entries.exists():
         start = request.GET.get('start')
         end = request.GET.get('end')
-
+        print([datetime.combine(c.date, c.time) for c in entries])
 
         # If start and end date are provided, filter the entries.
         if start and end:
             entries = entries.filter(date__gte=start)
             entries = entries.filter(date__lte=end)
-
             # If there are entries at that point, create the graph.
             if entries:
-                fig = px.scatter(
-                    x=[c.date for c in entries],
+                fig1 = px.line(
+                    x=[datetime.combine(c.date, c.time) for c in entries],
+                    y=[c.blood_sugar_level for c in entries],
+                    title='Blood Sugar Chart',
+                    labels={'x': 'Date', 'y': 'Blood Sugar (mmol/L)'}
+                )
+                fig2 = px.line(
+                    x=[datetime.combine(c.date, c.time) for c in entries],
                     y=[c.carbohydrates for c in entries],
                     title='Carbohydrates Chart',
                     labels={'x': 'Date', 'y': 'Carbohydrates (g)'}
                 )
+                fig3 = px.line(
+                    x=[datetime.combine(c.date, c.time) for c in entries],
+                    y=[c.insulin for c in entries],
+                    title='Insulin Chart',
+                    labels={'x': 'Date', 'y': 'Insulin (units)'}
+                )
             # If no entries, return 0.
             else:
-                fig = px.scatter(
+                fig1 = px.line(
+                    x=[0],
+                    y=[0],
+                    title='Blood Sugar Chart',
+                    labels={'x': 'Date', 'y': 'Blood Sugar (mmol/L)'}
+                )
+                fig2 = px.line(
                     x=[0],
                     y=[0],
                     title='Carbohydrates Chart',
-                    labels={'x': 'Date', 'y': 'Carbohydrates (g)'},
+                    labels={'x': 'Date', 'y': 'Carbohydrates (g)'}
+                )
+                fig3 = px.line(
+                    x=[0],
+                    y=[0],
+                    title='Insulin Chart',
+                    labels={'x': 'Date', 'y': 'Insulin (units)'}
                 )
         # If no dates are provided, return all entries.
         else:
-            fig = px.scatter(
-                x=[c.date for c in entries],
+            fig1 = px.line(
+                x=[datetime.combine(c.date, c.time) for c in entries],
+                y=[c.blood_sugar_level for c in entries],
+                title='Blood Sugar Chart',
+                labels={'x': 'Date', 'y': 'Blood Sugar (mmol/L)'}
+            )
+            fig2 = px.line(
+                x=[datetime.combine(c.date, c.time) for c in entries],
                 y=[c.carbohydrates for c in entries],
                 title='Carbohydrates Chart',
-                labels={'x': 'Date', 'y': 'Carbohydrates (g)'},
+                labels={'x': 'Date', 'y': 'Carbohydrates (g)'}
+            )
+            fig3 = px.line(
+                x=[datetime.combine(c.date, c.time) for c in entries],
+                y=[c.insulin for c in entries],
+                title='Insulin Chart',
+                labels={'x': 'Date', 'y': 'Insulin (units)'}
             )
     # If no entries, return 0.
     else:
-        fig = px.scatter(
+        fig1 = px.line(
+            x=[0],
+            y=[0],
+            title='Blood Sugar Chart',
+            labels={'x': 'Date', 'y': 'Blood Sugar (mmol/L)'}
+        )
+        fig2 = px.line(
             x=[0],
             y=[0],
             title='Carbohydrates Chart',
-            labels={'x': 'Date', 'y': 'Carbohydrates (g)'},
+            labels={'x': 'Date', 'y': 'Carbohydrates (g)'}
+        )
+        fig3 = px.line(
+            x=[0],
+            y=[0],
+            title='Insulin Chart',
+            labels={'x': 'Date', 'y': 'Insulin (units)'}
         )
 
-    fig.update_layout(title={
+    fig1.update_layout(title={
         'font_size': 22,
         'xanchor': 'center',
         'x': 0.5},
         paper_bgcolor="rgba(0,0,0,0)",
-        plot_bgcolor="rgba(0,0,0,0)"
-    )
-    carb_chart = fig.to_html()
-    # chart1 = fig.write_image("chart1.png")
-    context = {'carb_chart': carb_chart,
+        plot_bgcolor="rgba(0,0,0,0)")
+
+    fig2.update_layout(title={
+        'font_size': 22,
+        'xanchor': 'center',
+        'x': 0.5},
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)")
+
+    fig3.update_layout(title={
+        'font_size': 22,
+        'xanchor': 'center',
+        'x': 0.5},
+        paper_bgcolor="rgba(0,0,0,0)",
+        plot_bgcolor="rgba(0,0,0,0)")
+
+    bsl_chart = fig1.to_html()
+    carb_chart = fig2.to_html()
+    insulin_chart = fig3.to_html()
+    fig1.write_html('test.html')
+    context = {'bsl_chart': bsl_chart,
+               'carb_chart': carb_chart,
+               'insulin_chart': insulin_chart,
                'form': DateForm}
     return render(request, 'iteration3/carb_chart.html', context)
 
@@ -336,15 +357,16 @@ def success(request):
     subject = request.POST['subject']
     message = request.POST['message']
     email = request.POST['email']
+    fig1 = "C:/Users/HP-user/OneDrive/Desktop/Ansen/test.html"
     connection = mail.get_connection()
     print(connection)
     if connection:
         email = mail.EmailMessage(subject, message, settings.EMAIL_HOST_USER, [email])
+        email.attach_file(fig1)
         email.send()
         messages.success(request, 'send successful！')
         return render(request, 'iteration3/mail.html',{'subject': subject,'message': message,'email': email,'error_message': "Success!"})
     else:
         return render(request, 'iteration3/mail_template.html', {'subject': subject,
-                                                                     'message': message,
-                                                                     'email': email,'error_message': "Unable to send email. Please try again later"})
+                                                                     'message': message,'email': email,'error_message': "Unable to send email. Please try again later"})
 
