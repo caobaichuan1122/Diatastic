@@ -97,11 +97,21 @@
               <!-- END: #main-nav -->
 
             </div>
+                          <ul style="margin-right:1%;margin-top:1%;">
+                  <li class="nav-item">
+                    <a class="nav-link" href="#"><font color="blue">User:{{ request.session.user_name }}</font></a>
+                  </li>
+                </ul>
+                <ul style="margin-right:1%;margin-top:1%;">
+                  <li class="nav-item">
+                      <a class="nav-link" href="/logout/"><font color="red">Log out</font></a>
+                  </li>
+                </ul>
           </nav>
         </header>
 
 <br><br><br><br>
- <div class="page-heading-85912" style="background-image: url('images/hero_bg_3.jpg')">
+ <div class="page-heading-85912" style="background-image: url('images/hero_bg_3.jpg');margin-top:1.9%">
           <div class="container">
           </div>
         </div>
@@ -110,7 +120,7 @@
           <div class="container">
             <a href="/iteration2/index/">Home</a>
             <span class="mx-3 icon-keyboard_arrow_right"></span>
-            <span class="current">Frequently Asked Questions</span>
+            <span class="current">Metrics</span>
           </div>
         </div>
         <span></span>
@@ -126,11 +136,12 @@
             <div style="display: inline-block; width: 300px;">
                 <label for="end">End Date:</label>
                 <input name="end" id="end" type="date" class="form-control" required="required"/>
-            </div>
+            </div><br><br>
             <div style="float: center" class="container">
-                <a href="/mail/"><button type="button">Mail</button></a>
-                <button>Submit</button>
+                <a href="/mail/"><button type="button" class="btn btn-primary">Mail</button></a>
+                <button class="btn btn-primary">Submit</button>
             </div>
+            <br>
             <div class="row">
                 {{ bsl_chart|safe }}
                 {{ carb_chart|safe }}
@@ -138,6 +149,62 @@
             </div>
         </div>
     </form>
+<!--         BEGIN: #footer-->
+    <footer id="footer">
+      <div class="container">
+
+        <!-- BEGIN: .footer-subscribe -->
+        <div class="row footer-subscribe">
+          <div class="col-md-6">
+            <h3 class="mt-2">manage your blood sugar, join US.</h3>
+          </div>
+          <div class="col-md-6">
+          </div>
+        </div>
+        <!-- END: .footer-subscribe -->
+
+        <div class="row">
+          <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+            <!-- BEGIN: .widget -->
+            <div class="widget">
+              <h3>About Our Team.</h3>
+            </div>
+            <!-- END: .widget -->
+          </div>
+          <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+            <!-- BEGIN: .widget -->
+            <div class="widget">
+              <h3>Our Motivation.</h3>
+            </div>
+            <!-- END: .widget -->
+          </div>
+          <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+            <!-- BEGIN: .widget -->
+            <div class="widget">
+              <h3>Our Data.</h3>
+            </div>
+            <!-- END: .widget -->
+          </div>
+          <div class="col-md-6 col-lg-3 mb-4 mb-md-0">
+            <div class="d-block">
+            </div>
+            <div class="d-block">
+              <p>If you have any question, please contact us at <a href="#" class="link-underline text-primary">info@diatastic.tk</a></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- BEGIN: .copyright -->
+        <div class="row copyright">
+          <div class="col-md-6 order-2 text-center text-md-right"><a href="#" class="js-top"><span class="icon-long-arrow-up mr-2"></span> Go to Top</a></div>
+          <div class="col-md-6 text-center text-md-left">
+            <p>&copy; 2022. All Rights Reserved. Design by <a href="#" target="_blank" class="link-underline text-primary">TP08</a></p>
+          </div>
+        </div>
+        <!-- END: .copyright -->
+      </div>
+    </footer>
+<!--         END: #footer -->
 </body>
 </html>
 <script src="/static/js/bot.js" defer></script>
