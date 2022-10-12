@@ -15,19 +15,6 @@ from math import floor
 
 def login(request):
     for key, value in request.session.items():
-        print('{} => {}'.format(key, value))
-    # if request.method == "POST":
-    #     if request.session['_auth_user_id']:
-    #         user_id = request.session['_auth_user_id']
-    #         if user_id:
-    #             print(UserSocialAuth.objects.get(user_id=user_id))
-    #     login_form = UserForm(request.POST)
-    #     message = "please check！"
-    #     if login_form.is_valid():
-    #         username = login_form.cleaned_data['username']
-    #         password = login_form.cleaned_data['password']
-    #     username = request.POST.get('user')
-    #     password = request.POST.get('password')
         if request.session['_auth_user_id']:
             try:
                 id=request.session['_auth_user_id']
@@ -36,10 +23,6 @@ def login(request):
                 return redirect('/index/')
             except:
                 return render(request, 'iteration3/login.html', {'iteration3':'iteration3'})
-        # else:
-        #     messages.error(request, 'password error！')
-        # except:
-        #     messages.error(request, 'user error！')
     return render(request, 'iteration3/login.html',{'iteration3':'iteration3'})
 
 def logout(request):
@@ -74,7 +57,6 @@ def diary(request):
 def create_view(request):
     if request.method == "POST":
         id = request.session['_auth_user_id']
-        # print(id)
         cart = request.POST.get('cart_items')
         if len(json.loads(cart)) != 0:
             cart = json.loads(cart)
@@ -190,7 +172,6 @@ def carb_chart(request):
     if entries.exists():
         start = request.GET.get('start')
         end = request.GET.get('end')
-        print([datetime.combine(c.date, c.time) for c in entries])
 
         # If start and end date are provided, filter the entries.
         if start and end:
@@ -359,7 +340,6 @@ def success(request):
     email = request.POST['email']
     fig1 = "C:/Users/HP-user/OneDrive/Desktop/Ansen/test.html"
     connection = mail.get_connection()
-    print(connection)
     if connection:
         email = mail.EmailMessage(subject, message, settings.EMAIL_HOST_USER, [email])
         email.attach_file(fig1)
