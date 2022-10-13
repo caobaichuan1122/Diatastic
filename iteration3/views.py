@@ -1,15 +1,15 @@
 import json
 import os
 from datetime import datetime
-
+from django.core import mail
+from django.conf import settings
 from django.db.models import Sum
-from django.contrib import messages
 from django.shortcuts import render, get_object_or_404, redirect
 from decimal import Decimal
-from .models import Diary_Menu, Category, Portion, Menu, Description
+from .models import Diary_Menu, Category, Portion, Menu, Description,DiaryEntries
 from .forms import  DateForm, EmailForm
-from .models import DiaryEntries
 from django.contrib.auth.models import User
+import plotly
 import plotly.express as px
 from math import floor
 from django.core.exceptions import ValidationError
@@ -365,11 +365,6 @@ def add_list(request):
     return render(request, 'iteration3/add.html')
 
 
-
-from django.core import mail
-from django.conf import settings
-from django.template.loader import render_to_string
-import smtplib, ssl
 
 
 
