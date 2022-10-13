@@ -92,7 +92,7 @@
 
             </div>
                 <ul style="margin-right:1%;margin-top:1%;">
-                  {% if request.session.is_login %}
+                {% if request.session.is_login %}
                   <li class="nav-item">
                     <a class="nav-link" href="#">User:{{ request.session.user_name }}</a>
                   </li>
@@ -102,12 +102,18 @@
                       <a class="nav-link" href="/logout/">Log out</a>
                   </li>
                 </ul>
-                  {% else %}
+                  <ul>
+                {% elif request.session.signup %}
                 <ul style="margin-right:1%;margin-top:1%;">
                   <li class="nav-item">
                     <a class="nav-link" href="/login/">Login</a>
                   </li>
-                  {% endif %}
+                {% else %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="/login/">Sign Up</a>
+                    </li>
+                {% endif %}
+                 </ul>
                 </ul>
           </nav>
         </header>

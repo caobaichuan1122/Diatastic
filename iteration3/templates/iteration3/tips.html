@@ -92,23 +92,29 @@
               <!-- END: #main-nav -->
 
             </div>
-              <ul style="margin-right:1%;margin-top:0.8%;">
-                  {% if request.session.is_login %}
+                <ul style="margin-right:1%;margin-top:1%;">
+                {% if request.session.is_login %}
                   <li class="nav-item">
                     <a class="nav-link" href="#"><font color="blue">User:{{ request.session.user_name }}</font></a>
                   </li>
                 </ul>
-                <ul style="margin-right:1%;margin-top:0.8%;">
+                <ul style="margin-right:1%;margin-top:1%;">
                   <li class="nav-item">
                       <a class="nav-link" href="/logout/"><font color="red">Log out</font></a>
                   </li>
                 </ul>
-                  {% else %}
-                <ul style="margin-right:1%;margin-top:0.8%;">
+                  <ul>
+                {% elif request.session.signup %}
+                <ul style="margin-right:1%;margin-top:1%;">
                   <li class="nav-item">
-                    <a class="nav-link" href="/login/"><font color="blue">Login</font></a>
+                      <a class="nav-link" href="/login/"><font color="black">Login</font>></a>
                   </li>
-                  {% endif %}
+                {% else %}
+                    <li class="nav-item">
+                      <a class="nav-link" href="/login/"><font color="black">Sign Up</font></a>
+                    </li>
+                {% endif %}
+                 </ul>
                 </ul>
           </nav>
         </header>

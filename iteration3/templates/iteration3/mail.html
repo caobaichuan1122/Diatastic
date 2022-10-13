@@ -130,13 +130,13 @@
               <div class="container"><br/>
                   <div class="form-check">
                       <label for="email">Email: </label>
-                      <input name="email" id="email" type="email" class="form-control" style="width: 400px" required="required"/>
+                      <input name="email" id="email" type="email" class="form-control" style="width: 400px" required="required" pattern="[^ @]*@[^ @]*" placeholder="example@example.com" multiple/>
                       <label for="subject">Subject: </label>
-                        <input name="subject" id="subject" type="text" class="form-control" style="width: 400px" required="required"/>
+                        <input name="subject" id="subject" type="text" class="form-control" style="width: 400px" required="required" value="{{user_name}} metrics from Diatastic.tk" readonly/>
                   </div>
                   <div class="form-check">
                       <label for="message">Message: </label>
-                      <textarea name="message" id="message" type="text" class="form-control" style="height: 200px;" required="required"></textarea>
+                      <textarea name="message" id="message" type="text" class="form-control" style="height: 200px;" required="required" value="{{user_name}} has sent you an attachment from Diatastic.tk . Diatastic is a management tool for diabetics that allows them to track their blood sugar levels, carbohydrate count and recommended insulin dosage over any period of time. Please find attached the metrics of {{user_name}}." readonly>{{user_name}} has sent you an attachment from Diatastic.tk . Diatastic is a management tool for diabetics that allows them to track their blood sugar levels, carbohydrate count and recommended insulin dosage over any period of time. Please find attached the metrics of {{user_name}}.</textarea>
                   </div>
 
                   <br>
@@ -242,12 +242,12 @@
 
       <!-- END: JavaScripts -->
 </body>
-{% else %}
 <script>
-        {% for msg in messages %}
-            alert('{{ msg.message }}');
-        {% endfor %}
-    </script>
+{% if message %}
+      alert('{{ message }}');
+{% endif %}
+</script>
+{% else %}
 <script type="text/javascript">
     window.location.href = "/please_login/";
 </script>

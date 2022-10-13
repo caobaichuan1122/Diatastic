@@ -1,4 +1,5 @@
 import json
+import os
 from datetime import datetime
 
 from django.db.models import Sum
@@ -11,18 +12,24 @@ from .models import DiaryEntries
 from django.contrib.auth.models import User
 import plotly.express as px
 from math import floor
+from django.core.exceptions import ValidationError
+from django.core.validators import validate_email
+
 
 
 def login(request):
-    for key, value in request.session.items():
-        if request.session['_auth_user_id']:
-            try:
-                id=request.session['_auth_user_id']
-                request.session['is_login'] = True
-                request.session['user_name'] = User.objects.get(id=id).first_name
-                return redirect('/index/')
-            except:
-                return render(request, 'iteration3/login.html', {'iteration3':'iteration3'})
+    if request.session:
+        try:
+            id=request.session['_auth_user_id']
+            request.session['is_login'] = True
+            request.session['signup'] = True
+            request.session['user_name'] = User.objects.get(id=id).first_name
+            return redirect('/index/')
+        except:
+            request.session['signup'] = True
+            return render(request, 'iteration3/login.html', {'iteration3':'iteration3'})
+    else:
+        return render(request, 'iteration3/login.html', {'iteration3': 'iteration3'})
     return render(request, 'iteration3/login.html',{'iteration3':'iteration3'})
 
 def logout(request):
@@ -129,18 +136,16 @@ def list_view(request):
     if Entries.exists():
         for item in Entries:
             id = int(item['id'])
-            ListViewDict[id] = {'header': [], 'rows': []}
+            ListViewDict[id] = {'header': [], 'rows': [], 'rows': []}
             ListViewDict[id]['header'] = ['Category', 'Description', 'Portion', 'Quantity', 'Carbohydrates']
-
             temp = Diary_Menu.objects.filter(diary_id=id).values_list()
             for i in range(len(temp)):
-                ListViewDict[id]['rows'].append([temp[i][4], temp[i][5], temp[i][6], temp[i][7], temp[i][8]])
+                ListViewDict[id]['rows'].append([temp[i][5], temp[i][6], temp[i][7], temp[i][8], temp[i][9]])
             ListViewDict[id]['insulin'] = floor(DiaryEntries.objects.filter(id=id).values_list('insulin', flat=True)[0])
             ListViewDict[id]['BSL'] = DiaryEntries.objects.filter(id=id).values_list('blood_sugar_level', flat=True)[0]
             comment = DiaryEntries.objects.filter(id=id).values_list('comment', flat=True)[0]
-            if comment=="{}":
+            if not comment:
                 DiaryEntries.objects.filter(id=id).update(comment="Date: {}, Time: {}".format(item['date'], item['time']))
-                # ListViewDict[id]['comment'] = "Date: {}, Time: {}".format(item.date, item.time)
             ListViewDict[id]['comment'] = DiaryEntries.objects.filter(id=id).values_list('comment', flat=True)[0]
     context = {
         'field': ListViewDict,
@@ -167,7 +172,7 @@ def insulin_calculation(carbs, blood_sugar_level):
     return insulin_req
 
 def carb_chart(request):
-    entries = DiaryEntries.objects.all().order_by('-date', '-time')
+    entries = DiaryEntries.objects.filter(user_id=request.session['_auth_user_id']).all().order_by('-date', '-time')
     # If there are entries, check for the start date and end date.
     if entries.exists():
         start = request.GET.get('start')
@@ -282,12 +287,48 @@ def carb_chart(request):
     bsl_chart = fig1.to_html()
     carb_chart = fig2.to_html()
     insulin_chart = fig3.to_html()
-    fig1.write_html('test.html')
+
+    try:
+        os.makedirs('../tp08_website/attachments/{}'.format(request.session['_auth_user_id']))
+    except:
+        fig1.write_html("../tp08_website/attachments/{}/fig_bsl.html".format(request.session['_auth_user_id']))
+        fig2.write_html("../tp08_website/attachments/{}/fig_carb.html".format(request.session['_auth_user_id']))
+        fig3.write_html("../tp08_website/attachments/{}/fig_isl.html".format(request.session['_auth_user_id']))
     context = {'bsl_chart': bsl_chart,
                'carb_chart': carb_chart,
                'insulin_chart': insulin_chart,
                'form': DateForm}
     return render(request, 'iteration3/carb_chart.html', context)
+
+def email_form(request):
+    form = EmailForm(request.POST or None)
+    user_name = request.session['user_name']
+    return render(request, 'iteration3/mail.html',context={'form':form,'user_name':user_name})
+
+def success(request):
+    subject = request.POST['subject']
+    email_message = request.POST['message']
+    email = request.POST['email']
+    try:
+        validate_email(email)
+    except ValidationError:
+        message = 'Bad email'
+        return render(request, 'iteration3/mail.html',
+                      {'message':message})
+    else:
+        message = 'Send successful！'
+        connection = mail.get_connection()
+        if connection:
+            email = mail.EmailMessage(subject, email_message, settings.EMAIL_HOST_USER, [email])
+            email.attach_file("../tp08_website/attachments/{}/fig_bsl.html".format(request.session['_auth_user_id']))
+            email.attach_file("../tp08_website/attachments/{}/fig_carb.html".format(request.session['_auth_user_id']))
+            email.attach_file("../tp08_website/attachments/{}/fig_isl.html".format(request.session['_auth_user_id']))
+            email.send()
+            return render(request, 'iteration3/mail.html',{'message':message})
+        else:
+            message = 'Could not connect to the mail server. Please try again later.'
+            return render(request, 'iteration3/mail.html',{'message':message})
+
 
 def load_cart(request):
     cart = request.POST.get('cart_items')
@@ -330,23 +371,5 @@ from django.conf import settings
 from django.template.loader import render_to_string
 import smtplib, ssl
 
-def email_form(request):
-    form = EmailForm(request.POST or None)
-    return render(request, 'iteration3/mail.html')
 
-def success(request):
-    subject = request.POST['subject']
-    message = request.POST['message']
-    email = request.POST['email']
-    fig1 = "C:/Users/HP-user/OneDrive/Desktop/Ansen/test.html"
-    connection = mail.get_connection()
-    if connection:
-        email = mail.EmailMessage(subject, message, settings.EMAIL_HOST_USER, [email])
-        email.attach_file(fig1)
-        email.send()
-        messages.success(request, 'send successful！')
-        return render(request, 'iteration3/mail.html',{'subject': subject,'message': message,'email': email,'error_message': "Success!"})
-    else:
-        return render(request, 'iteration3/mail_template.html', {'subject': subject,
-                                                                     'message': message,'email': email,'error_message': "Unable to send email. Please try again later"})
 
