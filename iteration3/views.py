@@ -6,6 +6,9 @@ from django.conf import settings
 from django.db.models import Sum
 from django.shortcuts import render, get_object_or_404, redirect
 from decimal import Decimal
+
+from numpy import double
+
 from .models import Diary_Menu, Category, Portion, Menu, Description,DiaryEntries
 from .forms import  DateForm, EmailForm
 from django.contrib.auth.models import User
@@ -290,6 +293,9 @@ def carb_chart(request):
 
     try:
         os.makedirs('../tp08_website/attachments/{}'.format(request.session['_auth_user_id']))
+        fig1.write_html("../tp08_website/attachments/{}/fig_bsl.html".format(request.session['_auth_user_id']))
+        fig2.write_html("../tp08_website/attachments/{}/fig_carb.html".format(request.session['_auth_user_id']))
+        fig3.write_html("../tp08_website/attachments/{}/fig_isl.html".format(request.session['_auth_user_id']))
     except:
         fig1.write_html("../tp08_website/attachments/{}/fig_bsl.html".format(request.session['_auth_user_id']))
         fig2.write_html("../tp08_website/attachments/{}/fig_carb.html".format(request.session['_auth_user_id']))
@@ -345,8 +351,19 @@ def page_no_found(request,**kwargs):
     return render(request, "iteration3/404.html")
 
 def index(request):
-    pass
-    return render(request, 'iteration3/index.html',{'iteration3':'iteration3'})
+    if request.session:
+        try:
+            entries = DiaryEntries.objects.filter(user_id=request.session['_auth_user_id']).all().order_by('-date', '-time')
+            y_bsl = str([double(c.blood_sugar_level) for c in entries])
+            y_carb = str([double(c.carbohydrates) for c in entries])
+            y_isl = str([double(c.insulin) for c in entries])
+            return render(request, 'iteration3/index.html', {'y_bsl': y_bsl,'y_carb': y_carb,'y_isl': y_isl})
+        except:
+            request.session['signup'] = True
+            return render  ( request,'iteration3/index.html', {'iteration3':'iteration3'})
+    else:
+
+        return render(request, 'iteration3/index.html',{'iteration3':'iteration3'})
 
 def guide(request):
     pass

@@ -1,8 +1,8 @@
-from django.urls import path, include
+from django.urls import path
 from iteration3 import views
+
 urlpatterns = [
     path('', views.index),
-    # path('auth/', include('social_django.urls', namespace='social')),
     path('login/', views.login, name='login'),
     path('index/', views.index, name='index'),
     path('guide/', views.guide, name='guide'),
@@ -20,5 +20,6 @@ urlpatterns = [
     path('tips/', views.tips, name='tips'),
     path('mail/', views.email_form, name='mail'),
     path('success/', views.success, name='success'),
+    # path('line_chart/', views.line_chart, name='line_chart'),
     path('logout/', views.logout, name='logout'),
 ]
