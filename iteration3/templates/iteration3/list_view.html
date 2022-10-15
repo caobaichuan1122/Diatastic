@@ -1,5 +1,4 @@
 ﻿﻿{% load static %}
-{% if request.session.is_login %}
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -296,10 +295,3 @@ meter::-webkit-meter-bar {
 
 
 </body>
-
-
-{% else %}
-<script type="text/javascript">
-    window.location.href = "/please_login/";
-</script>
-{% endif %}

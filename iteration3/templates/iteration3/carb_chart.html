@@ -1,5 +1,4 @@
 ﻿﻿{% load static %}
-{% if request.session.is_login %}
     <html lang="en">
 
     <head>
@@ -216,8 +215,3 @@
 </body>
 </html>
 <script src="/static/js/bot.js" defer></script>
-{% else %}
-<script type="text/javascript">
-    window.location.href = "/please_login/";
-</script>
-{% endif %}

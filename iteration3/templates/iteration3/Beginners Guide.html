@@ -99,18 +99,13 @@
                       <a class="nav-link" href="/logout/"><font color="red">Log out</font></a>
                   </li>
                 </ul>
+              {% else %}
                   <ul>
-                {% elif request.session.signup %}
-                <ul style="margin-right:1%;margin-top:1%;">
-                  <li class="nav-item">
-                      <a class="nav-link" href="/login/"><font color="black">Login</font>></a>
-                  </li>
-                {% else %}
                     <li class="nav-item">
                       <a class="nav-link" href="/login/"><font color="black">Sign Up</font></a>
                     </li>
-                {% endif %}
                  </ul>
+                {% endif %}
                 </ul>
           </nav>
         </header>

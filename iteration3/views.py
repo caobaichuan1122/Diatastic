@@ -1,6 +1,8 @@
 import json
 import os
 from datetime import datetime
+
+from django.contrib.auth.decorators import login_required
 from django.core import mail
 from django.conf import settings
 from django.db.models import Sum
@@ -25,8 +27,8 @@ def login(request):
         try:
             id=request.session['_auth_user_id']
             request.session['is_login'] = True
-            request.session['signup'] = True
             request.session['user_name'] = User.objects.get(id=id).first_name
+            request.session['signup'] = True
             return redirect('/index/')
         except:
             request.session['signup'] = True
@@ -54,6 +56,8 @@ def load_description(request):
     description = Description.objects.filter(category_id=category_id).order_by('name')
     return render(request, 'iteration3/description_dropdown_list_options.html', {'description': description})
 
+
+@login_required
 def diary(request):
     category = Category.objects.values('id', 'name')
     portion = Portion.objects.values('id', 'name')
@@ -130,6 +134,7 @@ def entry_view(request, diary_id):
 
     return render(request, "iteration3/entry_view.html", context)
 
+@login_required
 def list_view(request):
     user_id = request.session['_auth_user_id']
     Entries = DiaryEntries.objects.filter(user_id=user_id).values().all()
@@ -174,6 +179,7 @@ def insulin_calculation(carbs, blood_sugar_level):
     insulin_req = CHO + HBSCD
     return insulin_req
 
+@login_required
 def carb_chart(request):
     entries = DiaryEntries.objects.filter(user_id=request.session['_auth_user_id']).all().order_by('-date', '-time')
     # If there are entries, check for the start date and end date.
@@ -380,6 +386,9 @@ def tips(request):
 def add_list(request):
     pass
     return render(request, 'iteration3/add.html')
+
+def page_404(request,exception):
+    return render(request, 'iteration3/404.html')
 
 
 

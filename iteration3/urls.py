@@ -1,5 +1,6 @@
 from django.urls import path
 from iteration3 import views
+from django.conf.urls import handler404
 
 urlpatterns = [
     path('', views.index),
@@ -23,3 +24,5 @@ urlpatterns = [
     # path('line_chart/', views.line_chart, name='line_chart'),
     path('logout/', views.logout, name='logout'),
 ]
+
+handler404 = views.page_404
