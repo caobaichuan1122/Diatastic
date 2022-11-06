@@ -78,11 +78,6 @@ WSGI_APPLICATION = 'tp08_website.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'tp08_website',
-        'USER': 'mysql',
-        'PASSWORD': 'TP08',
-        'HOST': '3.25.191.104',
-        'PORT': '3306',
     }
 }
 
