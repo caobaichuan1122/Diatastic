@@ -80,19 +80,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'new_nutrients',
-        'USER': 'root',
-        'PASSWORD': 'tp08tp08',
-        'HOST': '13.239.85.203',
-        'PORT': '3306',
-    },
-    'iteration2': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'Nutrients_I2',
-        'USER': 'root',
-        'PASSWORD': 'tp08tp08',
-        'HOST': '13.239.85.203',
-        'PORT': '3306',
-    }
+
 }
 
 DATABASE_ROUTERS = ['tp08_website.database_router.DatabaseAppsRouter']
